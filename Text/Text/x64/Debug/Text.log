@@ -1,0 +1,6 @@
+﻿  Main.cpp
+  Player.cpp
+D:\Game\Text\Text\Player.cpp(138,22): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
+D:\Game\Text\Text\Player.cpp(141,22): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
+  正在生成代码...
+  Text.vcxproj -> D:\Game\Text\x64\Debug\Text.exe
