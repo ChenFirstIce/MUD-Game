@@ -10,7 +10,7 @@ const int PLAYERITEMS = 20;
 class Player{
 public:
 	//构造函数
-	static Player& getNewPlayer(string p_name);//只有一个实例
+	static Player& getNewPlayer(string p_name = "雌鹰");//只有一个实例
 	static Player& getPlayer() { return *Instance; }
 	~Player() = default;
 	void showPlayer();

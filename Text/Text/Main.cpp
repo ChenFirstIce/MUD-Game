@@ -4,8 +4,8 @@
 using namespace std;
 
 int main() {
-	Player oc = Player::getNewPlayer("Nami");
-	ItemDatabase Itembase = ItemDatabase::getInstance();
+	Player oc = Player::getNewPlayer();
+	ItemDatabase Itembase;
 
 	Itembase.Load();
 	oc.showPlayer();

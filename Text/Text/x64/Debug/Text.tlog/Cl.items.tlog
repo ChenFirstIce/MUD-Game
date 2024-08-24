@@ -1,4 +1,6 @@
 D:\Game\Text\Text\Attributes.cpp;D:\Game\Text\Text\x64\Debug\Attributes.obj
+D:\Game\Text\Text\CommandExecutor.cpp;D:\Game\Text\Text\x64\Debug\CommandExecutor.obj
+D:\Game\Text\Text\CommandParser.cpp;D:\Game\Text\Text\x64\Debug\CommandParser.obj
 D:\Game\Text\Text\DatabasePointer.cpp;D:\Game\Text\Text\x64\Debug\DatabasePointer.obj
 D:\Game\Text\Text\Entity.cpp;D:\Game\Text\Text\x64\Debug\Entity.obj
 D:\Game\Text\Text\Item.cpp;D:\Game\Text\Text\x64\Debug\Item.obj

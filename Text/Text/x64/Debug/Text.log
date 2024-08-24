@@ -1,6 +1,300 @@
-﻿  Main.cpp
+﻿  CommandExecutor.cpp
+D:\Game\Text\Text\Command.h(10,21): error C4596: “{ctor}”: 成员声明中的非法限定名
+  (编译源文件“CommandExecutor.cpp”)
+  
+D:\Game\Text\Text\CommandExecutor.cpp(5,23): error C2511: “void CommandExecutor::execute(Player &,const Command &)”:“CommandExecutor”中没有找到重载的成员函数
+  D:\Game\Text\Text\CommandExecutor.h(5,7):
+  参见“CommandExecutor”的声明
+  
+D:\Game\Text\Text\CommandExecutor.cpp(7,9): error C3861: “handleMove”: 找不到标识符
+D:\Game\Text\Text\CommandExecutor.cpp(10,9): error C3861: “handleAttack”: 找不到标识符
+D:\Game\Text\Text\CommandExecutor.cpp(13,9): error C3861: “handlePickup”: 找不到标识符
+  CommandParser.cpp
+D:\Game\Text\Text\Command.h(10,21): error C4596: “{ctor}”: 成员声明中的非法限定名
+  (编译源文件“CommandParser.cpp”)
+  
+  DatabasePointer.cpp
+D:\Game\Text\Text\DatabasePointer.cpp(24,1): error C2653: “RoomDatabase”: 不是类或命名空间名称
+D:\Game\Text\Text\DatabasePointer.cpp(24,1): error C2672: “std::get”: 未找到匹配的重载函数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\tuple(994,34):
+  可能是“const _Ty &&std::get(const std::tuple<_Types...> &&) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“const _Ty &&std::get(const std::tuple<_Types...> &&) noexcept”: 无法从“entityid”推导出“const std::tuple<_Types...> &&”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\tuple(988,28):
+  或    “_Ty &&std::get(std::tuple<_Types...> &&) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“_Ty &&std::get(std::tuple<_Types...> &&) noexcept”: 无法从“entityid”推导出“std::tuple<_Types...> &&”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\tuple(982,33):
+  或    “const _Ty &std::get(const std::tuple<_Types...> &) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“const _Ty &std::get(const std::tuple<_Types...> &) noexcept”: 无法从“entityid”推导出“const std::tuple<_Types...> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\tuple(976,27):
+  或    “_Ty &std::get(std::tuple<_Types...> &) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“_Ty &std::get(std::tuple<_Types...> &) noexcept”: 无法从“entityid”推导出“std::tuple<_Types...> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(753,35):
+  或    “const _Ty2 &&std::get(const std::pair<_Ty1,_Ty2> &&) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“const _Ty2 &&std::get(const std::pair<_Ty1,_Ty2> &&) noexcept”: 无法从“entityid”推导出“const std::pair<_Ty1,_Ty2> &&”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(747,35):
+  或    “const _Ty1 &&std::get(const std::pair<_Ty1,_Ty2> &&) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“const _Ty1 &&std::get(const std::pair<_Ty1,_Ty2> &&) noexcept”: 无法从“entityid”推导出“const std::pair<_Ty1,_Ty2> &&”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(737,70):
+  或    “const tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &&std::get(const std::pair<_Ty1,_Ty2> &&) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“const tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &&std::get(const std::pair<_Ty1,_Ty2> &&) noexcept”: 无法从“entityid”推导出“const std::pair<_Ty1,_Ty2> &&”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(731,29):
+  或    “_Ty2 &&std::get(std::pair<_Ty1,_Ty2> &&) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“_Ty2 &&std::get(std::pair<_Ty1,_Ty2> &&) noexcept”: 无法从“entityid”推导出“std::pair<_Ty1,_Ty2> &&”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(725,29):
+  或    “_Ty1 &&std::get(std::pair<_Ty1,_Ty2> &&) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“_Ty1 &&std::get(std::pair<_Ty1,_Ty2> &&) noexcept”: 无法从“entityid”推导出“std::pair<_Ty1,_Ty2> &&”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(715,64):
+  或    “tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &&std::get(std::pair<_Ty1,_Ty2> &&) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &&std::get(std::pair<_Ty1,_Ty2> &&) noexcept”: 无法从“entityid”推导出“std::pair<_Ty1,_Ty2> &&”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(709,34):
+  或    “const _Ty2 &std::get(const std::pair<_Ty1,_Ty2> &) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“const _Ty2 &std::get(const std::pair<_Ty1,_Ty2> &) noexcept”: 无法从“entityid”推导出“const std::pair<_Ty1,_Ty2> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(703,34):
+  或    “const _Ty1 &std::get(const std::pair<_Ty1,_Ty2> &) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“const _Ty1 &std::get(const std::pair<_Ty1,_Ty2> &) noexcept”: 无法从“entityid”推导出“const std::pair<_Ty1,_Ty2> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(693,69):
+  或    “const tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &std::get(const std::pair<_Ty1,_Ty2> &) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“const tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &std::get(const std::pair<_Ty1,_Ty2> &) noexcept”: 无法从“entityid”推导出“const std::pair<_Ty1,_Ty2> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(687,28):
+  或    “_Ty2 &std::get(std::pair<_Ty1,_Ty2> &) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“_Ty2 &std::get(std::pair<_Ty1,_Ty2> &) noexcept”: 无法从“entityid”推导出“std::pair<_Ty1,_Ty2> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(681,28):
+  或    “_Ty1 &std::get(std::pair<_Ty1,_Ty2> &) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“_Ty1 &std::get(std::pair<_Ty1,_Ty2> &) noexcept”: 无法从“entityid”推导出“std::pair<_Ty1,_Ty2> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(671,63):
+  或    “tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &std::get(std::pair<_Ty1,_Ty2> &) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &std::get(std::pair<_Ty1,_Ty2> &) noexcept”: 无法从“entityid”推导出“std::pair<_Ty1,_Ty2> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(186,34):
+  或    “const _Ty &&std::get(const std::array<_Ty,_Size> &&) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“const _Ty &&std::get(const std::array<_Ty,_Size> &&) noexcept”: 无法从“entityid”推导出“const std::array<_Ty,_Size> &&”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(183,28):
+  或    “_Ty &&std::get(std::array<_Ty,_Size> &&) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“_Ty &&std::get(std::array<_Ty,_Size> &&) noexcept”: 无法从“entityid”推导出“std::array<_Ty,_Size> &&”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(180,33):
+  或    “const _Ty &std::get(const std::array<_Ty,_Size> &) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“const _Ty &std::get(const std::array<_Ty,_Size> &) noexcept”: 无法从“entityid”推导出“const std::array<_Ty,_Size> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(177,27):
+  或    “_Ty &std::get(std::array<_Ty,_Size> &) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“_Ty &std::get(std::array<_Ty,_Size> &) noexcept”: 无法从“entityid”推导出“std::array<_Ty,_Size> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(174,72):
+  或    “const tuple_element<_Index,std::tuple<_Types...>>::type &&std::get(const std::tuple<_Types...> &&) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“const tuple_element<_Index,std::tuple<_Types...>>::type &&std::get(const std::tuple<_Types...> &&) noexcept”: 无法从“entityid”推导出“const std::tuple<_Types...> &&”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(171,66):
+  或    “tuple_element<_Index,std::tuple<_Types...>>::type &&std::get(std::tuple<_Types...> &&) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“tuple_element<_Index,std::tuple<_Types...>>::type &&std::get(std::tuple<_Types...> &&) noexcept”: 无法从“entityid”推导出“std::tuple<_Types...> &&”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(168,71):
+  或    “const tuple_element<_Index,std::tuple<_Types...>>::type &std::get(const std::tuple<_Types...> &) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“const tuple_element<_Index,std::tuple<_Types...>>::type &std::get(const std::tuple<_Types...> &) noexcept”: 无法从“entityid”推导出“const std::tuple<_Types...> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(165,65):
+  或    “tuple_element<_Index,std::tuple<_Types...>>::type &std::get(std::tuple<_Types...> &) noexcept”
+  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	“tuple_element<_Index,std::tuple<_Types...>>::type &std::get(std::tuple<_Types...> &) noexcept”: 无法从“entityid”推导出“std::tuple<_Types...> &”的 模板 参数
+  
+  Entity.cpp
+  ItemDatabase.cpp
+D:\Game\Text\Text\ItemDatabase.cpp(6,21): warning C4356: “EntityDatabase<Item>::m_map”: 静态数据成员无法通过派生类初始化
+  Main.cpp
   Player.cpp
 D:\Game\Text\Text\Player.cpp(138,22): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
 D:\Game\Text\Text\Player.cpp(141,22): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
+  Room.cpp
+D:\Game\Text\Text\Room.h(19,16): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+  (编译源文件“Room.cpp”)
+  
+D:\Game\Text\Text\Room.h(19,16): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“Room.cpp”)
+  
+D:\Game\Text\Text\Room.h(19,36): error C2334: “{”的前面有意外标记；跳过明显的函数体
+  (编译源文件“Room.cpp”)
+  
+D:\Game\Text\Text\Room.h(21,7): error C2065: “enemy”: 未声明的标识符
+  (编译源文件“Room.cpp”)
+  
+D:\Game\Text\Text\Room.h(21,2): error C2923: "std::list": "enemy" 不是参数 "_Ty" 的有效 模板 类型参数
+  (编译源文件“Room.cpp”)
+  D:\Game\Text\Text\Room.h(21,7):
+  参见“enemy”的声明
+  
+D:\Game\Text\Text\Room.h(21,2): error C2976: “std::list'”: 模板 参数太少
+  (编译源文件“Room.cpp”)
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
+  参见“std::list”的声明
+  
+D:\Game\Text\Text\Room.h(24,14): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+  (编译源文件“Room.cpp”)
+  
+D:\Game\Text\Text\Room.h(24,14): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“Room.cpp”)
+  
+D:\Game\Text\Text\Room.h(24,32): error C2334: “{”的前面有意外标记；跳过明显的函数体
+  (编译源文件“Room.cpp”)
+  
+D:\Game\Text\Text\Room.h(25,7): error C2065: “npc”: 未声明的标识符
+  (编译源文件“Room.cpp”)
+  
+D:\Game\Text\Text\Room.h(25,2): error C2923: "std::list": "npc" 不是参数 "_Ty" 的有效 模板 类型参数
+  (编译源文件“Room.cpp”)
+  D:\Game\Text\Text\Room.h(25,7):
+  参见“npc”的声明
+  
+D:\Game\Text\Text\Room.h(25,2): error C2976: “std::list'”: 模板 参数太少
+  (编译源文件“Room.cpp”)
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
+  参见“std::list”的声明
+  
+D:\Game\Text\Text\Room.h(52,7): error C2065: “enemy”: 未声明的标识符
+  (编译源文件“Room.cpp”)
+  
+D:\Game\Text\Text\Room.h(52,2): error C2923: "std::list": "enemy" 不是参数 "_Ty" 的有效 模板 类型参数
+  (编译源文件“Room.cpp”)
+  D:\Game\Text\Text\Room.h(52,7):
+  参见“enemy”的声明
+  
+D:\Game\Text\Text\Room.h(52,2): error C2976: “std::list'”: 模板 参数太少
+  (编译源文件“Room.cpp”)
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
+  参见“std::list”的声明
+  
+D:\Game\Text\Text\Room.h(53,16): error C3646: “m_enemy”: 未知重写说明符
+  (编译源文件“Room.cpp”)
+  
+D:\Game\Text\Text\Room.h(53,23): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“Room.cpp”)
+  
+D:\Game\Text\Text\Room.h(57,7): error C2065: “npc”: 未声明的标识符
+  (编译源文件“Room.cpp”)
+  
+D:\Game\Text\Text\Room.h(57,2): error C2923: "std::list": "npc" 不是参数 "_Ty" 的有效 模板 类型参数
+  (编译源文件“Room.cpp”)
+  D:\Game\Text\Text\Room.h(57,7):
+  参见“npc”的声明
+  
+D:\Game\Text\Text\Room.h(57,2): error C2976: “std::list'”: 模板 参数太少
+  (编译源文件“Room.cpp”)
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
+  参见“std::list”的声明
+  
+D:\Game\Text\Text\Room.h(58,14): error C3646: “m_npc”: 未知重写说明符
+  (编译源文件“Room.cpp”)
+  
+D:\Game\Text\Text\Room.h(58,19): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“Room.cpp”)
+  
+D:\Game\Text\Text\Room.cpp(15,29): error C3861: “fine_if”: 找不到标识符
+D:\Game\Text\Text\Room.cpp(21,9): error C3861: “fine_if”: 找不到标识符
+D:\Game\Text\Text\Room.cpp(67,20): error C2065: “m_des”: 未声明的标识符
+D:\Game\Text\Text\Room.cpp(69,22): error C2440: “=”: 无法从“void”转换为“RoomType”
+  D:\Game\Text\Text\Room.cpp(69,22):
+  void 类型的表达式不能转换为其他类型
+  
+D:\Game\Text\Text\Room.cpp(75,22): error C2065: “m_enemy”: 未声明的标识符
+D:\Game\Text\Text\Room.cpp(77,22): error C2065: “m_npc”: 未声明的标识符
+  RoomDatabase.cpp
+D:\Game\Text\Text\RoomDatabase.cpp(1,10): error C1083: 无法打开包括文件: “ifstream”: No such file or directory
+  RoomDatabase.h
+D:\Game\Text\Text\Room.h(19,16): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+  (编译源文件“RoomDatabase.h”)
+  
+D:\Game\Text\Text\Room.h(19,16): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“RoomDatabase.h”)
+  
+D:\Game\Text\Text\Room.h(19,36): error C2334: “{”的前面有意外标记；跳过明显的函数体
+  (编译源文件“RoomDatabase.h”)
+  
+D:\Game\Text\Text\Room.h(21,7): error C2065: “enemy”: 未声明的标识符
+  (编译源文件“RoomDatabase.h”)
+  
+D:\Game\Text\Text\Room.h(21,2): error C2923: "std::list": "enemy" 不是参数 "_Ty" 的有效 模板 类型参数
+  (编译源文件“RoomDatabase.h”)
+  D:\Game\Text\Text\Room.h(21,7):
+  参见“enemy”的声明
+  
+D:\Game\Text\Text\Room.h(21,2): error C2976: “std::list'”: 模板 参数太少
+  (编译源文件“RoomDatabase.h”)
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
+  参见“std::list”的声明
+  
+D:\Game\Text\Text\Room.h(24,14): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+  (编译源文件“RoomDatabase.h”)
+  
+D:\Game\Text\Text\Room.h(24,14): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“RoomDatabase.h”)
+  
+D:\Game\Text\Text\Room.h(24,32): error C2334: “{”的前面有意外标记；跳过明显的函数体
+  (编译源文件“RoomDatabase.h”)
+  
+D:\Game\Text\Text\Room.h(25,7): error C2065: “npc”: 未声明的标识符
+  (编译源文件“RoomDatabase.h”)
+  
+D:\Game\Text\Text\Room.h(25,2): error C2923: "std::list": "npc" 不是参数 "_Ty" 的有效 模板 类型参数
+  (编译源文件“RoomDatabase.h”)
+  D:\Game\Text\Text\Room.h(25,7):
+  参见“npc”的声明
+  
+D:\Game\Text\Text\Room.h(25,2): error C2976: “std::list'”: 模板 参数太少
+  (编译源文件“RoomDatabase.h”)
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
+  参见“std::list”的声明
+  
+D:\Game\Text\Text\Room.h(52,7): error C2065: “enemy”: 未声明的标识符
+  (编译源文件“RoomDatabase.h”)
+  
+D:\Game\Text\Text\Room.h(52,2): error C2923: "std::list": "enemy" 不是参数 "_Ty" 的有效 模板 类型参数
+  (编译源文件“RoomDatabase.h”)
+  D:\Game\Text\Text\Room.h(52,7):
+  参见“enemy”的声明
+  
+D:\Game\Text\Text\Room.h(52,2): error C2976: “std::list'”: 模板 参数太少
+  (编译源文件“RoomDatabase.h”)
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
+  参见“std::list”的声明
+  
+D:\Game\Text\Text\Room.h(53,16): error C3646: “m_enemy”: 未知重写说明符
+  (编译源文件“RoomDatabase.h”)
+  
+D:\Game\Text\Text\Room.h(53,23): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“RoomDatabase.h”)
+  
+D:\Game\Text\Text\Room.h(57,7): error C2065: “npc”: 未声明的标识符
+  (编译源文件“RoomDatabase.h”)
+  
+D:\Game\Text\Text\Room.h(57,2): error C2923: "std::list": "npc" 不是参数 "_Ty" 的有效 模板 类型参数
+  (编译源文件“RoomDatabase.h”)
+  D:\Game\Text\Text\Room.h(57,7):
+  参见“npc”的声明
+  
+D:\Game\Text\Text\Room.h(57,2): error C2976: “std::list'”: 模板 参数太少
+  (编译源文件“RoomDatabase.h”)
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
+  参见“std::list”的声明
+  
+D:\Game\Text\Text\Room.h(58,14): error C3646: “m_npc”: 未知重写说明符
+  (编译源文件“RoomDatabase.h”)
+  
+D:\Game\Text\Text\Room.h(58,19): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“RoomDatabase.h”)
+  
   正在生成代码...
-  Text.vcxproj -> D:\Game\Text\x64\Debug\Text.exe

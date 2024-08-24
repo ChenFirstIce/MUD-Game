@@ -46,6 +46,7 @@ inline istream& operator>>( istream& s, pt& p )         \
 }
 
 DATABASEPOINTER(item, Item)
+DATABASEPOINTER(room, Room)
 //
 //
 //#define DATABASEPOINTERIMPL( pt, t, db )                \

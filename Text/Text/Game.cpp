@@ -2,31 +2,50 @@
 #include "Game.h"
 using namespace std;
 
-void Game::Enter(){
-	if (m_lastcommand == "new"||Player::Instance == nullptr) {
-		string m_name = "雌鹰"
+//void Game::Enter(){
+//	if (m_lastcommand == "new"||Player::Instance == nullptr) {
+//		cout << "请输入你的名字：（默认为“雌鹰”）";
+//		cin >> m_name;
+//
+//		m_player = Player::getNewPlayer(m_name);
+//	}
+//	else if (m_lastcommand == "continue") {
+//		m_player = Player::addPlayer();
+//	}
+//}
+//
+//void Game::Leave(){
+//	Player::savePlayer();
+//}
+//
+////集成处理命令
+//void Game::Handle() {
+//	CommandParser parser;
+//	CommandExecutor executor;
+//
+//	while (true) {
+//		cout << "> ";
+//		string input;
+//		getline(cin, input);
+//
+//		Command cmd = parser.parse(input);
+//		executor.execute(cmd);
+//	}
+//}
 
-		cout << "请输入你的名字：（默认为“雌鹰”）";
-		cin >> m_name;
+void Game::handleCommands() {
+    CommandParser parser;
+    CommandExecutor executor;
 
-		m_player = Player::getNewPlayer(m_name);
-	}
-	else if (m_lastcommand == "continue") {
-		m_player = Player::addPlayer();
-	}
-}
+    while (true) {
+        cout << "> ";
+        string input;
+        getline(cin, input);
 
-void Game::Leave(){
-	Player::savePlayer();
-}
+        // 解析命令
+        Command cmd = parser.parse(input);
 
-void Game::Handle(string p_data){
-	Player& p = *m_player;
-	if (p_data == "/") {
-		p_data = m_lastcommand;
-	}
-	else {
-		m_lastcommand = p_data;
-	}
-	string firstword = 
+        // 执行命令
+        executor.execute(cmd);
+    }
 }

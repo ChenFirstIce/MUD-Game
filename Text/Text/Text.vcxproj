@@ -131,6 +131,8 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Attributes.cpp" />
+    <ClCompile Include="CommandExecutor.cpp" />
+    <ClCompile Include="CommandParser.cpp" />
     <ClCompile Include="DatabasePointer.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Game.cpp">
@@ -140,12 +142,21 @@
     <ClCompile Include="ItemDatabase.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Room.cpp" />
+    <ClCompile Include="RoomDatabase.cpp" />
+    <ClCompile Include="RoomDatabase.h" />
+    <ClCompile Include="Store.cpp" />
+    <ClCompile Include="Store.h" />
+    <ClCompile Include="StoreDatabase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\MUD代码\Libraries\SocketLib\Telnet.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="Attributes.h" />
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="CommandExecutor.h" />
+    <ClInclude Include="CommandParser.h" />
     <ClInclude Include="DatabasePointer.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityDatabase.h" />
@@ -156,6 +167,8 @@
     <ClInclude Include="ItemDatabase.h" />
     <ClInclude Include="Matchentity.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Room.h" />
+    <ClInclude Include="StoreDatabase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -279,16 +279,16 @@ void Player::savePlayer(){
 
     file << *Instance;
 
-    cout << "玩家" << m_name << "存档成功" << endl;
+    cout << "玩家" << Instance->name << "存档成功" << endl;
 }
 
 Player& Player::addPlayer(){
     ifstream file("player.txt");
 
-    Instance = &Player::getNewPlayer("雌鹰");
+    Instance = &Player::getNewPlayer();
     file >> *Instance;
 
-    cout << "玩家" << m_name << "读档成功" << endl;
+    cout << "玩家" << Instance->name << "读档成功" << endl;
     return *Instance;
 }
 

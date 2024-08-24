@@ -8,6 +8,8 @@ enum Attribute { MAXHITPOINTS,ATTACK,CRITING,DODGING };//属性,对应AttributeSet下
 
 enum ItemType { WEAPON, ARMOR, HEALING, EXP };//物品类型
 
+enum RoomType { NORTH, SOUTH, WEST, EAST };
+
 class AttributeSet {//属性集，相当于包含属性的数组
 public:
 	AttributeSet();
