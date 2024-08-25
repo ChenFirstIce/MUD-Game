@@ -14,108 +14,977 @@ D:\Game\Text\Text\Command.h(10,21): error C4596: “{ctor}”: 成员声明中�
   (编译源文件“CommandParser.cpp”)
   
   DatabasePointer.cpp
-D:\Game\Text\Text\DatabasePointer.cpp(24,1): error C2653: “RoomDatabase”: 不是类或命名空间名称
-D:\Game\Text\Text\DatabasePointer.cpp(24,1): error C2672: “std::get”: 未找到匹配的重载函数
+D:\Game\Text\Text\Room.h(19,16): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+  (编译源文件“DatabasePointer.cpp”)
+  
+D:\Game\Text\Text\Room.h(19,16): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“DatabasePointer.cpp”)
+  
+D:\Game\Text\Text\Room.h(19,36): error C2334: “{”的前面有意外标记；跳过明显的函数体
+  (编译源文件“DatabasePointer.cpp”)
+  
+D:\Game\Text\Text\Room.h(24,14): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+  (编译源文件“DatabasePointer.cpp”)
+  
+D:\Game\Text\Text\Room.h(24,14): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“DatabasePointer.cpp”)
+  
+D:\Game\Text\Text\Room.h(24,32): error C2334: “{”的前面有意外标记；跳过明显的函数体
+  (编译源文件“DatabasePointer.cpp”)
+  
+D:\Game\Text\Text\Room.h(25,7): error C2065: “npc”: 未声明的标识符
+  (编译源文件“DatabasePointer.cpp”)
+  
+D:\Game\Text\Text\Room.h(25,2): error C2923: "std::list": "npc" 不是参数 "_Ty" 的有效 模板 类型参数
+  (编译源文件“DatabasePointer.cpp”)
+  D:\Game\Text\Text\Room.h(25,7):
+  参见“npc”的声明
+  
+D:\Game\Text\Text\Room.h(25,2): error C2976: “std::list'”: 模板 参数太少
+  (编译源文件“DatabasePointer.cpp”)
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
+  参见“std::list”的声明
+  
+D:\Game\Text\Text\Room.h(53,16): error C3646: “m_enemy”: 未知重写说明符
+  (编译源文件“DatabasePointer.cpp”)
+  
+D:\Game\Text\Text\Room.h(53,23): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“DatabasePointer.cpp”)
+  
+D:\Game\Text\Text\Room.h(57,7): error C2065: “npc”: 未声明的标识符
+  (编译源文件“DatabasePointer.cpp”)
+  
+D:\Game\Text\Text\Room.h(57,2): error C2923: "std::list": "npc" 不是参数 "_Ty" 的有效 模板 类型参数
+  (编译源文件“DatabasePointer.cpp”)
+  D:\Game\Text\Text\Room.h(57,7):
+  参见“npc”的声明
+  
+D:\Game\Text\Text\Room.h(57,2): error C2976: “std::list'”: 模板 参数太少
+  (编译源文件“DatabasePointer.cpp”)
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
+  参见“std::list”的声明
+  
+D:\Game\Text\Text\Room.h(58,14): error C3646: “m_npc”: 未知重写说明符
+  (编译源文件“DatabasePointer.cpp”)
+  
+D:\Game\Text\Text\Room.h(58,19): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“DatabasePointer.cpp”)
+  
+D:\Game\Text\Text\DatabasePointer.cpp(26,1): error C2653: “EnemyDatabase”: 不是类或命名空间名称
+D:\Game\Text\Text\DatabasePointer.cpp(26,1): error C2672: “std::get”: 未找到匹配的重载函数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\tuple(994,34):
   可能是“const _Ty &&std::get(const std::tuple<_Types...> &&) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“const _Ty &&std::get(const std::tuple<_Types...> &&) noexcept”: 无法从“entityid”推导出“const std::tuple<_Types...> &&”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\tuple(988,28):
   或    “_Ty &&std::get(std::tuple<_Types...> &&) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“_Ty &&std::get(std::tuple<_Types...> &&) noexcept”: 无法从“entityid”推导出“std::tuple<_Types...> &&”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\tuple(982,33):
   或    “const _Ty &std::get(const std::tuple<_Types...> &) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“const _Ty &std::get(const std::tuple<_Types...> &) noexcept”: 无法从“entityid”推导出“const std::tuple<_Types...> &”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\tuple(976,27):
   或    “_Ty &std::get(std::tuple<_Types...> &) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“_Ty &std::get(std::tuple<_Types...> &) noexcept”: 无法从“entityid”推导出“std::tuple<_Types...> &”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(753,35):
   或    “const _Ty2 &&std::get(const std::pair<_Ty1,_Ty2> &&) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“const _Ty2 &&std::get(const std::pair<_Ty1,_Ty2> &&) noexcept”: 无法从“entityid”推导出“const std::pair<_Ty1,_Ty2> &&”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(747,35):
   或    “const _Ty1 &&std::get(const std::pair<_Ty1,_Ty2> &&) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“const _Ty1 &&std::get(const std::pair<_Ty1,_Ty2> &&) noexcept”: 无法从“entityid”推导出“const std::pair<_Ty1,_Ty2> &&”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(737,70):
   或    “const tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &&std::get(const std::pair<_Ty1,_Ty2> &&) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“const tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &&std::get(const std::pair<_Ty1,_Ty2> &&) noexcept”: 无法从“entityid”推导出“const std::pair<_Ty1,_Ty2> &&”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(731,29):
   或    “_Ty2 &&std::get(std::pair<_Ty1,_Ty2> &&) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“_Ty2 &&std::get(std::pair<_Ty1,_Ty2> &&) noexcept”: 无法从“entityid”推导出“std::pair<_Ty1,_Ty2> &&”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(725,29):
   或    “_Ty1 &&std::get(std::pair<_Ty1,_Ty2> &&) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“_Ty1 &&std::get(std::pair<_Ty1,_Ty2> &&) noexcept”: 无法从“entityid”推导出“std::pair<_Ty1,_Ty2> &&”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(715,64):
   或    “tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &&std::get(std::pair<_Ty1,_Ty2> &&) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &&std::get(std::pair<_Ty1,_Ty2> &&) noexcept”: 无法从“entityid”推导出“std::pair<_Ty1,_Ty2> &&”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(709,34):
   或    “const _Ty2 &std::get(const std::pair<_Ty1,_Ty2> &) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“const _Ty2 &std::get(const std::pair<_Ty1,_Ty2> &) noexcept”: 无法从“entityid”推导出“const std::pair<_Ty1,_Ty2> &”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(703,34):
   或    “const _Ty1 &std::get(const std::pair<_Ty1,_Ty2> &) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“const _Ty1 &std::get(const std::pair<_Ty1,_Ty2> &) noexcept”: 无法从“entityid”推导出“const std::pair<_Ty1,_Ty2> &”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(693,69):
   或    “const tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &std::get(const std::pair<_Ty1,_Ty2> &) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“const tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &std::get(const std::pair<_Ty1,_Ty2> &) noexcept”: 无法从“entityid”推导出“const std::pair<_Ty1,_Ty2> &”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(687,28):
   或    “_Ty2 &std::get(std::pair<_Ty1,_Ty2> &) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“_Ty2 &std::get(std::pair<_Ty1,_Ty2> &) noexcept”: 无法从“entityid”推导出“std::pair<_Ty1,_Ty2> &”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(681,28):
   或    “_Ty1 &std::get(std::pair<_Ty1,_Ty2> &) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“_Ty1 &std::get(std::pair<_Ty1,_Ty2> &) noexcept”: 无法从“entityid”推导出“std::pair<_Ty1,_Ty2> &”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(671,63):
   或    “tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &std::get(std::pair<_Ty1,_Ty2> &) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“tuple_element<_Idx,std::pair<_Ty1,_Ty2>>::type &std::get(std::pair<_Ty1,_Ty2> &) noexcept”: 无法从“entityid”推导出“std::pair<_Ty1,_Ty2> &”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(186,34):
   或    “const _Ty &&std::get(const std::array<_Ty,_Size> &&) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“const _Ty &&std::get(const std::array<_Ty,_Size> &&) noexcept”: 无法从“entityid”推导出“const std::array<_Ty,_Size> &&”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(183,28):
   或    “_Ty &&std::get(std::array<_Ty,_Size> &&) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“_Ty &&std::get(std::array<_Ty,_Size> &&) noexcept”: 无法从“entityid”推导出“std::array<_Ty,_Size> &&”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(180,33):
   或    “const _Ty &std::get(const std::array<_Ty,_Size> &) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“const _Ty &std::get(const std::array<_Ty,_Size> &) noexcept”: 无法从“entityid”推导出“const std::array<_Ty,_Size> &”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(177,27):
   或    “_Ty &std::get(std::array<_Ty,_Size> &) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“_Ty &std::get(std::array<_Ty,_Size> &) noexcept”: 无法从“entityid”推导出“std::array<_Ty,_Size> &”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(174,72):
   或    “const tuple_element<_Index,std::tuple<_Types...>>::type &&std::get(const std::tuple<_Types...> &&) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“const tuple_element<_Index,std::tuple<_Types...>>::type &&std::get(const std::tuple<_Types...> &&) noexcept”: 无法从“entityid”推导出“const std::tuple<_Types...> &&”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(171,66):
   或    “tuple_element<_Index,std::tuple<_Types...>>::type &&std::get(std::tuple<_Types...> &&) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“tuple_element<_Index,std::tuple<_Types...>>::type &&std::get(std::tuple<_Types...> &&) noexcept”: 无法从“entityid”推导出“std::tuple<_Types...> &&”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(168,71):
   或    “const tuple_element<_Index,std::tuple<_Types...>>::type &std::get(const std::tuple<_Types...> &) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“const tuple_element<_Index,std::tuple<_Types...>>::type &std::get(const std::tuple<_Types...> &) noexcept”: 无法从“entityid”推导出“const std::tuple<_Types...> &”的 模板 参数
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(165,65):
   或    “tuple_element<_Index,std::tuple<_Types...>>::type &std::get(std::tuple<_Types...> &) noexcept”
-  	D:\Game\Text\Text\DatabasePointer.cpp(24,1):
+  	D:\Game\Text\Text\DatabasePointer.cpp(26,1):
   	“tuple_element<_Index,std::tuple<_Types...>>::type &std::get(std::tuple<_Types...> &) noexcept”: 无法从“entityid”推导出“std::tuple<_Types...> &”的 模板 参数
   
+D:\Game\Text\Text\DatabasePointer.cpp(27,1): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+D:\Game\Text\Text\DatabasePointer.cpp(27,1): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\Game\Text\Text\DatabasePointer.cpp(27,1): error C2653: “enemytemplate”: 不是类或命名空间名称
+D:\Game\Text\Text\DatabasePointer.cpp(27,1): error C2059: 语法错误:“{”
+D:\Game\Text\Text\DatabasePointer.cpp(27,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+D:\Game\Text\Text\DatabasePointer.cpp(27,1): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+D:\Game\Text\Text\DatabasePointer.cpp(27,1): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+D:\Game\Text\Text\DatabasePointer.cpp(27,1): error C2086: “int EnemyTemplate”: 重定义
+  D:\Game\Text\Text\DatabasePointer.cpp(27,1):
+  参见“EnemyTemplate”的声明
+  
+D:\Game\Text\Text\DatabasePointer.cpp(27,1): error C2653: “EnemyTemplateDatabase”: 不是类或命名空间名称
+D:\Game\Text\Text\DatabasePointer.cpp(27,1): error C2059: 语法错误:“}”
+D:\Game\Text\Text\DatabasePointer.cpp(27,1): error C2833: “operator EnemyTemplate”不是可识别的运算符或类型
+D:\Game\Text\Text\DatabasePointer.cpp(27,1): error C2589: “operator”:“::”右边的非法标记
+D:\Game\Text\Text\DatabasePointer.cpp(27,1): error C2059: 语法错误:“return”
+  Enemy.cpp
+D:\Game\Text\Text\Enemy.h(5,14): error C2065: “item”: 未声明的标识符
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(5,9): error C2923: "std::pair": "item" 不是参数 "_Ty1" 的有效 模板 类型参数
+  (编译源文件“Enemy.cpp”)
+  D:\Game\Text\Text\Enemy.h(5,14):
+  参见“item”的声明
+  
+D:\Game\Text\Text\Enemy.h(23,7): error C3203: "pair": 未指定的 类 模板 不能用作 模板 参数 "_Ty" 的 模板 参数，应为真实类型
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(31,20): error C2061: 语法错误: 标识符“enemytemplate”
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(36,6): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(36,6): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(36,22): error C2334: “{”的前面有意外标记；跳过明显的函数体
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(40,7): error C3646: “Weapon”: 未知重写说明符
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(40,13): error C2059: 语法错误:“(”
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(40,16): error C2334: “{”的前面有意外标记；跳过明显的函数体
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(45,7): error C3203: "pair": 未指定的 类 模板 不能用作 模板 参数 "_Ty" 的 模板 参数，应为真实类型
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(48,11): error C2804: 二进制“operator <<”的参数太多
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(50,16): error C3646: “m_template”: 未知重写说明符
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(50,26): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(52,7): error C3646: “m_room”: 未知重写说明符
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(52,13): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(34,26): error C2065: “m_template”: 未声明的标识符
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(35,28): error C2065: “m_hitpointers”: 未声明的标识符
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(37,25): error C2065: “m_template”: 未声明的标识符
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(38,30): error C2065: “m_template”: 未声明的标识符
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(39,21): error C2065: “m_template”: 未声明的标识符
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(41,28): error C2065: “m_template”: 未声明的标识符
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(42,28): error C2065: “m_template”: 未声明的标识符
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(45,34): error C2065: “m_template”: 未声明的标识符
+  (编译源文件“Enemy.cpp”)
+  
+D:\Game\Text\Text\Enemy.cpp(7,5): error C2065: “m_accuracy”: 未声明的标识符
+D:\Game\Text\Text\Enemy.cpp(10,5): error C2065: “m_damageabsorb”: 未声明的标识符
+D:\Game\Text\Text\Enemy.cpp(11,5): error C2065: “m_experience”: 未声明的标识符
+D:\Game\Text\Text\Enemy.cpp(37,32): error C2440: “<function-style-cast>”: 无法从“initializer list”转换为“loot”
+  D:\Game\Text\Text\Enemy.cpp(37,32):
+  “std::pair<_Ty1,_Ty2>::pair”: 函数不接受 2 个参数
+  	D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(312,5):
+  	可能是“std::pair<_Ty1,_Ty2>::pair(std::piecewise_construct_t,std::tuple<_Types1...>,std::tuple<_Types2...>)”
+  	D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(308,5):
+  	或    “std::pair<_Ty1,_Ty2>::pair(_Tuple1 &,_Tuple2 &,std::integer_sequence<size_t,_Indices1...>,std::integer_sequence<size_t,_Indices2...>)”
+  	D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(275,5):
+  	或    “std::pair<_Ty1,_Ty2>::pair(std::pair<_Other1,_Other2> &&) noexcept(<expr>)”
+  	D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(268,5):
+  	或    “std::pair<_Ty1,_Ty2>::pair(const std::pair<_Other1,_Other2> &) noexcept(<expr>)”
+  	D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(247,5):
+  	或    “std::pair<_Ty1,_Ty2>::pair(_Other1 &&,_Other2 &&) noexcept(<expr>)”
+  	D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(236,5):
+  	或    “std::pair<_Ty1,_Ty2>::pair(const _Ty1 &,const _Ty2 &) noexcept(<expr>)”
+  	D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(228,5):
+  	或    “std::pair<_Ty1,_Ty2>::pair(void) noexcept(<expr>)”
+  	D:\Game\Text\Text\Enemy.cpp(37,32):
+  	尝试匹配参数列表“(entityid, int)”时
+  
+D:\Game\Text\Text\Enemy.cpp(44,5): error C2065: “m_template”: 未声明的标识符
+D:\Game\Text\Text\Enemy.cpp(46,5): error C2065: “m_room”: 未声明的标识符
+D:\Game\Text\Text\Enemy.cpp(49,40): error C2761: “void Enemy::LoadTemplate(void)”: 不允许重新声明成员
+D:\Game\Text\Text\Enemy.cpp(49,26): error C2065: “enemytemplate”: 未声明的标识符
+D:\Game\Text\Text\Enemy.cpp(49,40): error C2146: 语法错误: 缺少“)”(在标识符“p_template”的前面)
+D:\Game\Text\Text\Enemy.cpp(49,51): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+D:\Game\Text\Text\Enemy.cpp(49,51): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+D:\Game\Text\Text\Enemy.cpp(55,42): error C2039: "m_template": 不是 "Enemy" 的成员
+  D:\Game\Text\Text\Enemy.h(28,7):
+  参见“Enemy”的声明
+  
+D:\Game\Text\Text\Enemy.cpp(57,42): error C2039: "m_room": 不是 "Enemy" 的成员
+  D:\Game\Text\Text\Enemy.h(28,7):
+  参见“Enemy”的声明
+  
+  EnemyDatabase.cpp
+D:\Game\Text\Text\Enemy.h(5,14): error C2065: “item”: 未声明的标识符
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(5,9): error C2923: "std::pair": "item" 不是参数 "_Ty1" 的有效 模板 类型参数
+  (编译源文件“EnemyDatabase.cpp”)
+  D:\Game\Text\Text\Enemy.h(5,14):
+  参见“item”的声明
+  
+D:\Game\Text\Text\Enemy.h(23,7): error C3203: "pair": 未指定的 类 模板 不能用作 模板 参数 "_Ty" 的 模板 参数，应为真实类型
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(31,20): error C2061: 语法错误: 标识符“enemytemplate”
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(36,6): error C2143: 语法错误: 缺少“;”(在“&”的前面)
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(36,6): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(36,22): error C2334: “{”的前面有意外标记；跳过明显的函数体
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(40,7): error C3646: “Weapon”: 未知重写说明符
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(40,13): error C2059: 语法错误:“(”
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(40,16): error C2334: “{”的前面有意外标记；跳过明显的函数体
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(45,7): error C3203: "pair": 未指定的 类 模板 不能用作 模板 参数 "_Ty" 的 模板 参数，应为真实类型
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(48,11): error C2804: 二进制“operator <<”的参数太多
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(50,16): error C3646: “m_template”: 未知重写说明符
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(50,26): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(52,7): error C3646: “m_room”: 未知重写说明符
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(52,13): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(34,26): error C2065: “m_template”: 未声明的标识符
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(35,28): error C2065: “m_hitpointers”: 未声明的标识符
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(37,25): error C2065: “m_template”: 未声明的标识符
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(38,30): error C2065: “m_template”: 未声明的标识符
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(39,21): error C2065: “m_template”: 未声明的标识符
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(41,28): error C2065: “m_template”: 未声明的标识符
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(42,28): error C2065: “m_template”: 未声明的标识符
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\Enemy.h(45,34): error C2065: “m_template”: 未声明的标识符
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\EnemyDatabase.h(16,45): error C2061: 语法错误: 标识符“room”
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\EnemyDatabase.h(17,24): error C2061: 语法错误: 标识符“enemy”
+  (编译源文件“EnemyDatabase.cpp”)
+  
+D:\Game\Text\Text\EnemyDatabase.cpp(20,49): error C2061: 语法错误: 标识符“room”
+D:\Game\Text\Text\EnemyDatabase.cpp(21,16): error C3861: “findOpenID”: 找不到标识符
+D:\Game\Text\Text\EnemyDatabase.cpp(25,3): error C2660: “Enemy::LoadTemplate”: 函数不接受 1 个参数
+  D:\Game\Text\Text\Enemy.h(31,7):
+  参见“Enemy::LoadTemplate”的声明
+  D:\Game\Text\Text\EnemyDatabase.cpp(25,3):
+  尝试匹配参数列表“(entityid)”时
+  
+D:\Game\Text\Text\EnemyDatabase.cpp(26,4): error C2039: "CurrentRoom": 不是 "Enemy" 的成员
+  D:\Game\Text\Text\Enemy.h(28,7):
+  参见“Enemy”的声明
+  
+D:\Game\Text\Text\EnemyDatabase.cpp(26,20): error C2065: “p_room”: 未声明的标识符
+D:\Game\Text\Text\EnemyDatabase.cpp(28,2): error C2065: “p_room”: 未声明的标识符
+D:\Game\Text\Text\EnemyDatabase.cpp(31,34): error C2761: “void EnemyDatabase::Delete(void)”: 不允许重新声明成员
+D:\Game\Text\Text\EnemyDatabase.cpp(31,28): error C2065: “enemy”: 未声明的标识符
+D:\Game\Text\Text\EnemyDatabase.cpp(31,34): error C2146: 语法错误: 缺少“)”(在标识符“p_enemy”的前面)
+D:\Game\Text\Text\EnemyDatabase.cpp(31,42): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+D:\Game\Text\Text\EnemyDatabase.cpp(31,42): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+D:\Game\Text\Text\EnemyDatabase.cpp(46,3): error C2679: 二元“>>”: 没有找到接受“Enemy”类型的右操作数的运算符(或没有可接受的转换)
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(297,39):
+  可能是“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(std::basic_streambuf<char,std::char_traits<char>> *)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(std::basic_streambuf<char,std::char_traits<char>> *)”: 无法将参数 2 从“Enemy”转换为“std::basic_streambuf<char,std::char_traits<char>> *”
+  		D:\Game\Text\Text\EnemyDatabase.cpp(46,19):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(293,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(void *&)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(void *&)”: 无法将参数 2 从“Enemy”转换为“void *&”
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(289,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(long double &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(long double &)”: 无法将参数 2 从“Enemy”转换为“long double &”
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(285,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(double &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(double &)”: 无法将参数 2 从“Enemy”转换为“double &”
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(281,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(float &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(float &)”: 无法将参数 2 从“Enemy”转换为“float &”
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(277,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(unsigned __int64 &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(unsigned __int64 &)”: 无法将参数 2 从“Enemy”转换为“unsigned __int64 &”
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(273,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(__int64 &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(__int64 &)”: 无法将参数 2 从“Enemy”转换为“__int64 &”
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(269,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(unsigned long &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(unsigned long &)”: 无法将参数 2 从“Enemy”转换为“unsigned long &”
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(265,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(long &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(long &)”: 无法将参数 2 从“Enemy”转换为“long &”
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(261,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(unsigned int &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(unsigned int &)”: 无法将参数 2 从“Enemy”转换为“unsigned int &”
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(253,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(int &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(int &)”: 无法将参数 2 从“Enemy”转换为“int &”
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(249,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(unsigned short &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(unsigned short &)”: 无法将参数 2 从“Enemy”转换为“unsigned short &”
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(217,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(short &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(short &)”: 无法将参数 2 从“Enemy”转换为“short &”
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(213,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(bool &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(bool &)”: 无法将参数 2 从“Enemy”转换为“bool &”
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(184,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(std::ios_base &(__cdecl *)(std::ios_base &))”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(std::ios_base &(__cdecl *)(std::ios_base &))”: 无法将参数 2 从“Enemy”转换为“std::ios_base &(__cdecl *)(std::ios_base &)”
+  		D:\Game\Text\Text\EnemyDatabase.cpp(46,19):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(179,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &))”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &))”: 无法将参数 2 从“Enemy”转换为“std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &)”
+  		D:\Game\Text\Text\EnemyDatabase.cpp(46,19):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(174,39):
+  或    “std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(std::basic_istream<char,std::char_traits<char>> &(__cdecl *)(std::basic_istream<char,std::char_traits<char>> &))”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,std::char_traits<char>> &std::basic_istream<char,std::char_traits<char>>::operator >>(std::basic_istream<char,std::char_traits<char>> &(__cdecl *)(std::basic_istream<char,std::char_traits<char>> &))”: 无法将参数 2 从“Enemy”转换为“std::basic_istream<char,std::char_traits<char>> &(__cdecl *)(std::basic_istream<char,std::char_traits<char>> &)”
+  		D:\Game\Text\Text\EnemyDatabase.cpp(46,19):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\valarray(985,26):
+  或    “std::valarray<_Ty> std::operator >>(const std::valarray<_Ty> &,const std::valarray<_Ty> &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::valarray<_Ty> std::operator >>(const std::valarray<_Ty> &,const std::valarray<_Ty> &)”: 无法从“std::ifstream”推导出“const std::valarray<_Ty> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\valarray(818,26):
+  或    “std::valarray<_Ty> std::operator >>(const valarray<_Ty>::value_type &,const std::valarray<_Ty> &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::valarray<_Ty> std::operator >>(const valarray<_Ty>::value_type &,const std::valarray<_Ty> &)”: 无法从“Enemy”推导出“const std::valarray<_Ty> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\valarray(808,26):
+  或    “std::valarray<_Ty> std::operator >>(const std::valarray<_Ty> &,const valarray<_Ty>::value_type &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::valarray<_Ty> std::operator >>(const std::valarray<_Ty> &,const valarray<_Ty>::value_type &)”: 无法从“std::ifstream”推导出“const std::valarray<_Ty> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\complex(2235,28):
+  或    “std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,std::complex<_Other> &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,std::complex<_Other> &)”: 无法从“std::ifstream”推导出“std::basic_istream<_Elem,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,std::complex<_Other> &)”: 无法从“Enemy”推导出“std::complex<_Other> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(901,9):
+  或    “_Istr &&std::operator >>(_Istr &&,_Ty &&)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“_Istr &&std::operator >>(_Istr &&,_Ty &&)”: 无法推导“__formal”的 模板 参数
+  		D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(900,102):
+  		“<template-parameter>”: 无法创建指向引用的指针
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(888,31):
+  或    “std::basic_istream<char,_Traits> &std::operator >>(std::basic_istream<char,_Traits> &,unsigned char &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,_Traits> &std::operator >>(std::basic_istream<char,_Traits> &,unsigned char &)”: 无法从“std::ifstream”推导出“std::basic_istream<char,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,19):
+  	“初始化”: 无法从“Enemy”转换为“unsigned char &”
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(882,31):
+  或    “std::basic_istream<char,_Traits> &std::operator >>(std::basic_istream<char,_Traits> &,signed char &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,_Traits> &std::operator >>(std::basic_istream<char,_Traits> &,signed char &)”: 无法从“std::ifstream”推导出“std::basic_istream<char,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,19):
+  	“初始化”: 无法从“Enemy”转换为“signed char &”
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(859,32):
+  或    “std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,_Elem &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,_Elem &)”: 无法从“std::ifstream”推导出“std::basic_istream<_Elem,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,_Elem &)”: 模板 参数“_Elem”不明确
+  		D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  		可能是“Enemy”
+  		D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  		或    “char”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,_Elem &)”: 无法从“Enemy”推导出“_Elem &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(853,31):
+  或    “std::basic_istream<char,_Traits> &std::operator >>(std::basic_istream<char,_Traits> &,unsigned char *)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,_Traits> &std::operator >>(std::basic_istream<char,_Traits> &,unsigned char *)”: 无法从“std::ifstream”推导出“std::basic_istream<char,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,19):
+  	“初始化”: 无法从“Enemy”转换为“unsigned char *”
+  		D:\Game\Text\Text\EnemyDatabase.cpp(46,19):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(848,31):
+  或    “std::basic_istream<char,_Traits> &std::operator >>(std::basic_istream<char,_Traits> &,signed char *)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<char,_Traits> &std::operator >>(std::basic_istream<char,_Traits> &,signed char *)”: 无法从“std::ifstream”推导出“std::basic_istream<char,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,19):
+  	“初始化”: 无法从“Enemy”转换为“signed char *”
+  		D:\Game\Text\Text\EnemyDatabase.cpp(46,19):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\istream(843,32):
+  或    “std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,_Elem *)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,_Elem *)”: 无法从“std::ifstream”推导出“std::basic_istream<_Elem,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,_Elem *)”: 无法从“Enemy”推导出“_Elem *”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\bitset(528,28):
+  或    “std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,std::bitset<_Bits> &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,std::bitset<_Bits> &)”: 无法从“std::ifstream”推导出“std::basic_istream<_Elem,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,std::bitset<_Bits> &)”: 无法从“Enemy”推导出“std::bitset<_Bits> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\xstring(5179,32):
+  或    “std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,std::basic_string<_Elem,_Traits,_Alloc> &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,std::basic_string<_Elem,_Traits,_Alloc> &)”: 无法从“std::ifstream”推导出“std::basic_istream<_Elem,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  	“std::basic_istream<_Elem,_Traits> &std::operator >>(std::basic_istream<_Elem,_Traits> &,std::basic_string<_Elem,_Traits,_Alloc> &)”: 无法从“Enemy”推导出“std::basic_string<_Elem,_Traits,_Alloc> &”的 模板 参数
+  D:\Game\Text\Text\EnemyDatabase.cpp(46,3):
+  尝试匹配参数列表“(std::ifstream, Enemy)”时
+  
+D:\Game\Text\Text\EnemyDatabase.cpp(47,13): error C2039: "currentRoom": 不是 "Enemy" 的成员
+  D:\Game\Text\Text\Enemy.h(28,7):
+  参见“Enemy”的声明
+  
+D:\Game\Text\Text\EnemyDatabase.cpp(55,17): error C2352: “EntityDatabase<Enemy>::begin”: 调用非静态成员函数需要一个对象
+  D:\Game\Text\Text\EntityDatabase.h(16,14):
+  参见“EntityDatabase<Enemy>::begin”的声明
+  
+D:\Game\Text\Text\EnemyDatabase.cpp(56,16): error C2352: “EntityDatabase<Enemy>::end”: 调用非静态成员函数需要一个对象
+  D:\Game\Text\Text\EntityDatabase.h(17,14):
+  参见“EntityDatabase<Enemy>::end”的声明
+  
+D:\Game\Text\Text\EnemyDatabase.cpp(58,39): error C2039: "ID": 不是 "std::pair<const entityid,datatype>" 的成员
+D:\Game\Text\Text\EnemyDatabase.cpp(58,39): error C2039:         with
+D:\Game\Text\Text\EnemyDatabase.cpp(58,39): error C2039:         [
+D:\Game\Text\Text\EnemyDatabase.cpp(58,39): error C2039:             datatype=Enemy
+D:\Game\Text\Text\EnemyDatabase.cpp(58,39): error C2039:         ]
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\utility(222,8):
+  参见“std::pair<const entityid,datatype>”的声明
+          with
+          [
+              datatype=Enemy
+          ]
+  
+D:\Game\Text\Text\EnemyDatabase.cpp(59,3): error C2679: 二元“<<”: 没有找到接受“std::pair<const entityid,datatype>”类型的右操作数的运算符(或没有可接受的转换)
+D:\Game\Text\Text\EnemyDatabase.cpp(59,3): error C2679:         with
+D:\Game\Text\Text\EnemyDatabase.cpp(59,3): error C2679:         [
+D:\Game\Text\Text\EnemyDatabase.cpp(59,3): error C2679:             datatype=Enemy
+D:\Game\Text\Text\EnemyDatabase.cpp(59,3): error C2679:         ]
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(480,39):
+  可能是“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_streambuf<char,std::char_traits<char>> *)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_streambuf<char,std::char_traits<char>> *)”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“std::basic_streambuf<char,std::char_traits<char>> *”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(448,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(const void *)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(const void *)”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“const void *”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(430,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long double)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long double)”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“long double”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(412,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(double)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(double)”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“double”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(394,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(float)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(float)”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“float”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(376,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned __int64)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned __int64)”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“unsigned __int64”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(358,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(__int64)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(__int64)”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“__int64”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(340,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned long)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned long)”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“unsigned long”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(322,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long)”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“long”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(303,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned int)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned int)”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“unsigned int”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(277,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(int)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(int)”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“int”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(258,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned short)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned short)”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“unsigned short”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(224,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(short)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(short)”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“short”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(206,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(bool)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(bool)”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“bool”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(200,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::ios_base &(__cdecl *)(std::ios_base &))”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::ios_base &(__cdecl *)(std::ios_base &))”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“std::ios_base &(__cdecl *)(std::ios_base &)”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(194,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &))”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &))”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &)”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(189,39):
+  或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ostream<char,std::char_traits<char>> &(__cdecl *)(std::basic_ostream<char,std::char_traits<char>> &))”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ostream<char,std::char_traits<char>> &(__cdecl *)(std::basic_ostream<char,std::char_traits<char>> &))”: 无法将参数 2 从“std::pair<const entityid,datatype>”转换为“std::basic_ostream<char,std::char_traits<char>> &(__cdecl *)(std::basic_ostream<char,std::char_traits<char>> &)”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\valarray(972,26):
+  或    “std::valarray<_Ty> std::operator <<(const std::valarray<_Ty> &,const std::valarray<_Ty> &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::valarray<_Ty> std::operator <<(const std::valarray<_Ty> &,const std::valarray<_Ty> &)”: 无法从“std::ofstream”推导出“const std::valarray<_Ty> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\valarray(798,26):
+  或    “std::valarray<_Ty> std::operator <<(const valarray<_Ty>::value_type &,const std::valarray<_Ty> &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::valarray<_Ty> std::operator <<(const valarray<_Ty>::value_type &,const std::valarray<_Ty> &)”: 无法从“std::pair<const entityid,datatype>”推导出“const std::valarray<_Ty> &”的 模板 参数
+          with
+          [
+              datatype=Enemy
+          ]
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\valarray(788,26):
+  或    “std::valarray<_Ty> std::operator <<(const std::valarray<_Ty> &,const valarray<_Ty>::value_type &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::valarray<_Ty> std::operator <<(const std::valarray<_Ty> &,const valarray<_Ty>::value_type &)”: 无法从“std::ofstream”推导出“const std::valarray<_Ty> &”的 模板 参数
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\complex(2265,28):
+  或    “std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::complex<_Other> &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::complex<_Other> &)”: 无法从“std::ofstream”推导出“std::basic_ostream<_Elem,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::complex<_Other> &)”: 无法从“std::pair<const entityid,datatype>”推导出“const std::complex<_Other> &”的 模板 参数
+          with
+          [
+              datatype=Enemy
+          ]
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(1080,32):
+  或    “std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::error_code &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::error_code &)”: 无法从“std::ofstream”推导出“std::basic_ostream<_Elem,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  	“初始化”: 无法从“std::pair<const entityid,datatype>”转换为“const std::error_code &”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		原因如下: 无法从“std::pair<const entityid,datatype>”转换为“const std::error_code”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(1003,9):
+  或    “_Ostr &&std::operator <<(_Ostr &&,const _Ty &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“_Ostr &&std::operator <<(_Ostr &&,const _Ty &)”: 无法推导“__formal”的 模板 参数
+  		D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(1002,103):
+  		“<template-parameter>”: 无法创建指向引用的指针
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(945,31):
+  或    “std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,unsigned char)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,unsigned char)”: 无法从“std::ofstream”推导出“std::basic_ostream<char,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  	“初始化”: 无法从“std::pair<const entityid,datatype>”转换为“unsigned char”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(939,31):
+  或    “std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,const unsigned char *)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,const unsigned char *)”: 无法从“std::ofstream”推导出“std::basic_ostream<char,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  	“初始化”: 无法从“std::pair<const entityid,datatype>”转换为“const unsigned char *”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(934,31):
+  或    “std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,signed char)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,signed char)”: 无法从“std::ofstream”推导出“std::basic_ostream<char,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  	“初始化”: 无法从“std::pair<const entityid,datatype>”转换为“signed char”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(928,31):
+  或    “std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,const signed char *)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,const signed char *)”: 无法从“std::ofstream”推导出“std::basic_ostream<char,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  	“初始化”: 无法从“std::pair<const entityid,datatype>”转换为“const signed char *”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(892,32):
+  或    “std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,_Elem)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,_Elem)”: 无法从“std::ofstream”推导出“std::basic_ostream<_Elem,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,_Elem)”: 模板 参数“_Elem”不明确
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  		可能是“std::pair<const entityid,datatype>”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  		或    “char”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,_Elem)”: 无法从“std::pair<const entityid,datatype>”推导出“_Elem”的 模板 参数
+          with
+          [
+              datatype=Enemy
+          ]
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(849,32):
+  或    “std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const _Elem *)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const _Elem *)”: 无法从“std::ofstream”推导出“std::basic_ostream<_Elem,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const _Elem *)”: 无法从“std::pair<const entityid,datatype>”推导出“const _Elem *”的 模板 参数
+          with
+          [
+              datatype=Enemy
+          ]
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(811,31):
+  或    “std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,char)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,char)”: 无法从“std::ofstream”推导出“std::basic_ostream<char,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  	“初始化”: 无法从“std::pair<const entityid,datatype>”转换为“char”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(766,31):
+  或    “std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,const char *)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,const char *)”: 无法从“std::ofstream”推导出“std::basic_ostream<char,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  	“初始化”: 无法从“std::pair<const entityid,datatype>”转换为“const char *”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(730,32):
+  或    “std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,char)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,char)”: 无法从“std::ofstream”推导出“std::basic_ostream<_Elem,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  	“初始化”: 无法从“std::pair<const entityid,datatype>”转换为“char”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\ostream(686,32):
+  或    “std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const char *)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const char *)”: 无法从“std::ofstream”推导出“std::basic_ostream<_Elem,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  	“初始化”: 无法从“std::pair<const entityid,datatype>”转换为“const char *”
+          with
+          [
+              datatype=Enemy
+          ]
+  		D:\Game\Text\Text\EnemyDatabase.cpp(59,11):
+  		没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\memory(3598,32):
+  或    “std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::unique_ptr<_Ty2,_Dx2> &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::unique_ptr<_Ty2,_Dx2> &)”: 无法从“std::ofstream”推导出“std::basic_ostream<_Elem,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::unique_ptr<_Ty2,_Dx2> &)”: 无法从“std::pair<const entityid,datatype>”推导出“const std::unique_ptr<_Ty2,_Dx2> &”的 模板 参数
+          with
+          [
+              datatype=Enemy
+          ]
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\memory(1946,32):
+  或    “std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::shared_ptr<_Ty> &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::shared_ptr<_Ty> &)”: 无法从“std::ofstream”推导出“std::basic_ostream<_Elem,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::shared_ptr<_Ty> &)”: 无法从“std::pair<const entityid,datatype>”推导出“const std::shared_ptr<_Ty> &”的 模板 参数
+          with
+          [
+              datatype=Enemy
+          ]
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\bitset(518,28):
+  或    “std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::bitset<_Bits> &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::bitset<_Bits> &)”: 无法从“std::ofstream”推导出“std::basic_ostream<_Elem,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::bitset<_Bits> &)”: 无法从“std::pair<const entityid,datatype>”推导出“const std::bitset<_Bits> &”的 模板 参数
+          with
+          [
+              datatype=Enemy
+          ]
+  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\xstring(5228,32):
+  或    “std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::basic_string<_Elem,_Traits,_Alloc> &)”
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::basic_string<_Elem,_Traits,_Alloc> &)”: 无法从“std::ofstream”推导出“std::basic_ostream<_Elem,_Traits> &”的 模板 参数
+  	D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  	“std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::basic_string<_Elem,_Traits,_Alloc> &)”: 无法从“std::pair<const entityid,datatype>”推导出“const std::basic_string<_Elem,_Traits,_Alloc> &”的 模板 参数
+          with
+          [
+              datatype=Enemy
+          ]
+  D:\Game\Text\Text\EnemyDatabase.cpp(59,3):
+  尝试匹配参数列表“(std::ofstream, std::pair<const entityid,datatype>)”时
+          with
+          [
+              datatype=Enemy
+          ]
+  
   Entity.cpp
+  Item.cpp
   ItemDatabase.cpp
-D:\Game\Text\Text\ItemDatabase.cpp(6,21): warning C4356: “EntityDatabase<Item>::m_map”: 静态数据成员无法通过派生类初始化
   Main.cpp
   Player.cpp
 D:\Game\Text\Text\Player.cpp(138,22): warning C4244: “return”: 从“__int64”转换到“int”，可能丢失数据
@@ -130,19 +999,6 @@ D:\Game\Text\Text\Room.h(19,16): error C4430: 缺少类型说明符 - 假定为 
 D:\Game\Text\Text\Room.h(19,36): error C2334: “{”的前面有意外标记；跳过明显的函数体
   (编译源文件“Room.cpp”)
   
-D:\Game\Text\Text\Room.h(21,7): error C2065: “enemy”: 未声明的标识符
-  (编译源文件“Room.cpp”)
-  
-D:\Game\Text\Text\Room.h(21,2): error C2923: "std::list": "enemy" 不是参数 "_Ty" 的有效 模板 类型参数
-  (编译源文件“Room.cpp”)
-  D:\Game\Text\Text\Room.h(21,7):
-  参见“enemy”的声明
-  
-D:\Game\Text\Text\Room.h(21,2): error C2976: “std::list'”: 模板 参数太少
-  (编译源文件“Room.cpp”)
-  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
-  参见“std::list”的声明
-  
 D:\Game\Text\Text\Room.h(24,14): error C2143: 语法错误: 缺少“;”(在“&”的前面)
   (编译源文件“Room.cpp”)
   
@@ -161,19 +1017,6 @@ D:\Game\Text\Text\Room.h(25,2): error C2923: "std::list": "npc" 不是参数 "_T
   参见“npc”的声明
   
 D:\Game\Text\Text\Room.h(25,2): error C2976: “std::list'”: 模板 参数太少
-  (编译源文件“Room.cpp”)
-  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
-  参见“std::list”的声明
-  
-D:\Game\Text\Text\Room.h(52,7): error C2065: “enemy”: 未声明的标识符
-  (编译源文件“Room.cpp”)
-  
-D:\Game\Text\Text\Room.h(52,2): error C2923: "std::list": "enemy" 不是参数 "_Ty" 的有效 模板 类型参数
-  (编译源文件“Room.cpp”)
-  D:\Game\Text\Text\Room.h(52,7):
-  参见“enemy”的声明
-  
-D:\Game\Text\Text\Room.h(52,2): error C2976: “std::list'”: 模板 参数太少
   (编译源文件“Room.cpp”)
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
   参见“std::list”的声明
@@ -203,15 +1046,15 @@ D:\Game\Text\Text\Room.h(58,14): error C3646: “m_npc”: 未知重写说明符
 D:\Game\Text\Text\Room.h(58,19): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
   (编译源文件“Room.cpp”)
   
-D:\Game\Text\Text\Room.cpp(15,29): error C3861: “fine_if”: 找不到标识符
-D:\Game\Text\Text\Room.cpp(21,9): error C3861: “fine_if”: 找不到标识符
-D:\Game\Text\Text\Room.cpp(67,20): error C2065: “m_des”: 未声明的标识符
-D:\Game\Text\Text\Room.cpp(69,22): error C2440: “=”: 无法从“void”转换为“RoomType”
-  D:\Game\Text\Text\Room.cpp(69,22):
+D:\Game\Text\Text\Room.cpp(8,29): error C3861: “fine_if”: 找不到标识符
+D:\Game\Text\Text\Room.cpp(14,9): error C3861: “fine_if”: 找不到标识符
+D:\Game\Text\Text\Room.cpp(60,20): error C2065: “m_des”: 未声明的标识符
+D:\Game\Text\Text\Room.cpp(62,22): error C2440: “=”: 无法从“void”转换为“RoomType”
+  D:\Game\Text\Text\Room.cpp(62,22):
   void 类型的表达式不能转换为其他类型
   
-D:\Game\Text\Text\Room.cpp(75,22): error C2065: “m_enemy”: 未声明的标识符
-D:\Game\Text\Text\Room.cpp(77,22): error C2065: “m_npc”: 未声明的标识符
+D:\Game\Text\Text\Room.cpp(68,22): error C2065: “m_enemy”: 未声明的标识符
+D:\Game\Text\Text\Room.cpp(70,22): error C2065: “m_npc”: 未声明的标识符
   RoomDatabase.cpp
 D:\Game\Text\Text\RoomDatabase.cpp(1,10): error C1083: 无法打开包括文件: “ifstream”: No such file or directory
   RoomDatabase.h
@@ -224,19 +1067,6 @@ D:\Game\Text\Text\Room.h(19,16): error C4430: 缺少类型说明符 - 假定为 
 D:\Game\Text\Text\Room.h(19,36): error C2334: “{”的前面有意外标记；跳过明显的函数体
   (编译源文件“RoomDatabase.h”)
   
-D:\Game\Text\Text\Room.h(21,7): error C2065: “enemy”: 未声明的标识符
-  (编译源文件“RoomDatabase.h”)
-  
-D:\Game\Text\Text\Room.h(21,2): error C2923: "std::list": "enemy" 不是参数 "_Ty" 的有效 模板 类型参数
-  (编译源文件“RoomDatabase.h”)
-  D:\Game\Text\Text\Room.h(21,7):
-  参见“enemy”的声明
-  
-D:\Game\Text\Text\Room.h(21,2): error C2976: “std::list'”: 模板 参数太少
-  (编译源文件“RoomDatabase.h”)
-  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
-  参见“std::list”的声明
-  
 D:\Game\Text\Text\Room.h(24,14): error C2143: 语法错误: 缺少“;”(在“&”的前面)
   (编译源文件“RoomDatabase.h”)
   
@@ -255,19 +1085,6 @@ D:\Game\Text\Text\Room.h(25,2): error C2923: "std::list": "npc" 不是参数 "_T
   参见“npc”的声明
   
 D:\Game\Text\Text\Room.h(25,2): error C2976: “std::list'”: 模板 参数太少
-  (编译源文件“RoomDatabase.h”)
-  D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
-  参见“std::list”的声明
-  
-D:\Game\Text\Text\Room.h(52,7): error C2065: “enemy”: 未声明的标识符
-  (编译源文件“RoomDatabase.h”)
-  
-D:\Game\Text\Text\Room.h(52,2): error C2923: "std::list": "enemy" 不是参数 "_Ty" 的有效 模板 类型参数
-  (编译源文件“RoomDatabase.h”)
-  D:\Game\Text\Text\Room.h(52,7):
-  参见“enemy”的声明
-  
-D:\Game\Text\Text\Room.h(52,2): error C2976: “std::list'”: 模板 参数太少
   (编译源文件“RoomDatabase.h”)
   D:\VScommunity\VC\Tools\MSVC\14.39.33519\include\list(755,7):
   参见“std::list”的声明
@@ -297,4 +1114,17 @@ D:\Game\Text\Text\Room.h(58,14): error C3646: “m_npc”: 未知重写说明符
 D:\Game\Text\Text\Room.h(58,19): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
   (编译源文件“RoomDatabase.h”)
   
+  Store.cpp
+D:\Game\Text\Text\Store.cpp(22,12): error C2660: “Store::find”: 函数不接受 3 个参数
+  D:\Game\Text\Text\Store.cpp(4,13):
+  参见“Store::find”的声明
+  D:\Game\Text\Text\Store.cpp(22,12):
+  尝试匹配参数列表“(Store::iterator, Store::iterator, entityid)”时
+  
+D:\Game\Text\Text\Store.cpp(22,41): error C2446: “!=”: 没有从“Store::iterator”到“item”的转换
+  D:\Game\Text\Text\Store.cpp(22,47):
+  没有可用于执行该转换的用户定义的转换运算符，或者无法调用该运算符
+  
+  Store.h
+  StoreDatabase.cpp
   正在生成代码...

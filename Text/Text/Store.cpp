@@ -1,11 +1,25 @@
 #include "Store.h"
 using namespace std;
 
-template< typename type >
-inline type& extract(istream& s, type& t)
+item Store::find(string& p_item){
+    iterator itr = find_if(begin(), end(), matchEntityFull(p_item));
+
+    if (itr != end()) {
+        return *itr;
+    }
+    else {
+        itr = find_if(begin(), end(), matchEntity(p_item));
+        if (itr != end()) {
+            return *itr;
+        }
+    }
+
+    return 0;
+}
+
+bool Store::has(entityid p_item)
 {
-    s >> t;
-    return t;
+    return find(begin(), end(), p_item) != end();
 }
 
 istream& operator>>(istream& p_stream, Store& s){
@@ -17,10 +31,10 @@ istream& operator>>(istream& p_stream, Store& s){
     s.m_items.clear();
 
     entityid last;
-    p_stream >> temp;                           // chew up "[ITEMS]" tag
+    p_stream >> temp;                           
 
-    while (extract(p_stream, last) != 0)     // loop while item ID's valid
-        s.m_items.push_back(last);            // add item
+    while (extract(p_stream, last) != 0)     
+        s.m_items.push_back(last);            
 
     return p_stream;
 }

@@ -4,6 +4,12 @@ using namespace std;
 //实体
 typedef unsigned int entityid;
 
+template< typename type >
+inline type& extract(istream& s, type& t){//管理ID标签的加载，加载名称和各个物品，ID为0结束
+	s >> t;
+	return t;
+}
+
 class Entity {
 public:
 	Entity(string p_name = "UNDEFINED", entityid p_id = 0) :m_id(p_id), m_name(p_name) {}//默认物品ID为0，0为无效ID

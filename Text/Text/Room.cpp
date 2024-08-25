@@ -4,13 +4,6 @@ using namespace std;
 
 const int MAXITEMNUM = 32;
 
-template< typename type >
-inline type& extract(istream& s, type& t)
-{
-	s >> t; 
-	return t;
-}
-
 item Room::findItem(string& p_item){
 	list<item>::iterator itr = fine_if(m_items.begin(), m_items.end(), matchEntityFull(p_item));
 	
