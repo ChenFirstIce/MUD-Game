@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #include "Entity.h"
 #include "Player.h"
+#include "ItemDatabase.h"
 using namespace std;
 
 int main() {

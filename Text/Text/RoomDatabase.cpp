@@ -1,4 +1,4 @@
-#include <ifstream>
+#include <fstream>
 #include "RoomDatabase.h"
 using namespace std;
 
@@ -13,7 +13,7 @@ void RoomDatabase::loadTemplates(){
 		file >> temp >> id;
 		
 		m_map[id].ID() = id;
-		m_map[id].LoadTemplate(file);
+		m_map[id].loadTemplate(file);//函数名字之前写错了
 		file >> ws;
 	}
 }
@@ -41,8 +41,8 @@ void RoomDatabase::saveData(){
 
     while (itr != end())
     {
-        file << "[ROOMID] " << itr->ID() << "\n";
-        m_vector[itr->ID()].SaveData(file);
+        file << "[ROOMID] " << itr->second.ID() << "\n";
+        m_map[itr->second.ID()].saveData(file);//之前打成vector了
         file << "\n";
 
         itr++;

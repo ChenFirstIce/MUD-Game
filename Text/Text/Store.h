@@ -14,8 +14,8 @@ public:
 	size_t size() { return m_items.size(); }
 
 	//物品互动
-	item find(string& p_item);
-	bool has(entityid p_item);
+	item find(string& p_item);//通过名称查找给物品并返回物品的指针
+	bool has(entityid p_item);//通过ID查找是否存在该物品
 
 	//重载输入
 	friend istream& operator>>(istream& p_stream, Store& s);

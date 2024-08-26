@@ -1,5 +1,7 @@
 #pragma once
 #include <bits/stdc++.h>
+#include "DatabasePointer.h"
+#include "Enemy.h"
 #include "Player.h"
 #include "Item.h"
 using namespace std;
@@ -13,22 +15,28 @@ public:
 	int& Data() { return m_data; }
 	string& Description() { return m_desc; }//会变
 	entityid& Adjacent(int p_dir) { return m_rooms[p_dir]; }
-	void getRoomType(string p_arr);
+	RoomType getRoomType(string p_arr);
 
 	//敌人
-	enemytemplates& spawnWhichEnemy() { return m_enemy; }
+	enemytemplate& spawnWhichEnemy() { return m_enemy; }
 	int& maxEnemies() { return m_maxenemies; }
 	list<enemy>& Enemies() { return m_enemies; }
 
 	//npc
-	npctemplates& spawnWhichNpc() { return m_npc; }
-	list<npc>& Npces() { return m_npces; }
+	//npctemplate& spawnWhichNpc() { return m_npc; }
+	//list<npc>& Npces() { return m_npces; }
 	
 	//物品信息
 	list<item>& Item() { return m_items; }
 	money& Money() { return m_money; }
 
 	//玩家进入和退出
+	void addPlayer(Player* p_player);
+	void removePlayer(Player* p_player);
+
+	//其他人物进入和退出
+	void addEnemy(enemy p_enemy);
+	void removeEnemy(enemy p_enemy);
 
 	//物品函数
 	item findItem(string& p_item);
@@ -54,13 +62,13 @@ private:
 	int m_maxenemies;//最大敌人数
 
 	//npc信息
-	list<npc> m_npces;
-	npctemplate m_npc;//产生哪个npc
+	//list<npc> m_npces;
+	//npctemplate m_npc;//产生哪个npc
 
 	//物品信息
 	list<item> m_items;
 	money m_money;
 
 	//玩家信息
-	Player& player;
+	Player* m_player;
 };

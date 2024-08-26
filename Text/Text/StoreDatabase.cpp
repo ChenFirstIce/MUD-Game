@@ -1,4 +1,6 @@
+#include <fstream>
 #include "StoreDatabase.h"
+#include "Store.h"
 using namespace std;
 
 map<entityid, Store> EntityDatabase<Store>::m_map;

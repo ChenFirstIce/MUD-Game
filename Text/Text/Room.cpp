@@ -1,43 +1,64 @@
+#include <bits/stdc++.h>
 #include "Room.h"
 #include "Matchentity.h"
 using namespace std;
 
 const int MAXITEMNUM = 32;
 
-item Room::findItem(string& p_item){
-	list<item>::iterator itr = fine_if(m_items.begin(), m_items.end(), matchEntityFull(p_item));
-	
+RoomType Room::getRoomType(string p_arr) {
+	char chr = p_arr[0];
+
+	switch (chr) {
+	case 'N':
+		return NORTH;
+		break;
+	case 'S':
+		return SOUTH;
+		break;
+	case 'W':
+		return WEST;
+		break;
+	case 'E':
+		return EAST;
+		break;
+	default:
+		cout << "Error" << endl;
+	}
+}
+
+//玩家的进入进出
+void Room::addPlayer(Player* p_player){
+	m_player = p_player;
+}
+
+void Room::removePlayer(Player* p_player){
+	m_player = nullptr;
+}
+
+//其他人物的进入和退出
+void Room::addEnemy(enemy p_enemy){
+	m_enemies.push_back(p_enemy);
+}
+
+void Room::removeEnemy(enemy p_enemy){
+	m_enemies.erase(find(m_enemies.begin(), m_enemies.end(), (entityid)p_enemy));
+}
+
+//物品函数
+item Room::findItem(string& p_item) {
+	list<item>::iterator itr = find_if(m_items.begin(), m_items.end(), matchEntityFull(p_item));
+
 	if (itr != m_items.end()) {
 		return *itr;
 	}
 	else {
-		itr = fine_if(m_items.begin(), m_items.end(), matchEntity(p_item));
+		itr = find_if(m_items.begin(), m_items.end(), matchEntity(p_item));
 		if (itr != m_items.end()) {
 			return *itr;
 		}
 	}
 
 	return 0;
-}
-
-void Room::getRoomType(string p_arr) {
-	char chr = p_arr[0];
-
-	switch (chr) {
-	case 'N':
-		m_type = NORTH;
-		break;
-	case 'S':
-		m_type = SOUTH;
-		break;
-	case 'W':
-		m_type = WEST;
-		break;
-	case 'E':
-		m_type = EAST;
-		break;
-	default:cout << "Error" << endl;
-	}
 }
 
 void Room::addItem(item p_item){
@@ -51,13 +72,14 @@ void Room::removeItem(item p_item){
 	m_items.erase(find(m_items.begin(),m_items.end(),(entityid)p_item));
 }
 
+//加载和保存房间模板
 void Room::loadTemplate(istream& p_stream){
 	string temp;
 
 	p_stream >> temp >> ws;    
 	getline(p_stream, m_name);
 	p_stream >> temp >> ws;    
-	getline(p_stream, m_des);
+	getline(p_stream, m_desc);
 	p_stream >> temp >> temp;       
 	m_type = getRoomType(temp);
 	p_stream >> temp >> m_data;
@@ -67,7 +89,7 @@ void Room::loadTemplate(istream& p_stream){
 
 	p_stream >> temp >> m_enemy;
 	p_stream >> temp >> m_maxenemies;
-	p_stream >> temp >> m_npc;
+	//p_stream >> temp >> m_npc;
 
 }
 

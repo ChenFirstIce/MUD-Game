@@ -1,4 +1,6 @@
 #include "Store.h"
+#include "Item.h"
+#include "Matchentity.h"
 using namespace std;
 
 item Store::find(string& p_item){
@@ -15,11 +17,22 @@ item Store::find(string& p_item){
     }
 
     return 0;
+    /*iterator itr;
+    for (itr = begin(); itr != end(); itr++) {
+        if ((*itr)->Match(p_item)) {
+            return *itr;
+        }
+    }
+
+    for (itr = begin(); itr != end(); itr++) {
+        if ((*itr)->fullMatch(p_item)) {
+            return *itr;
+        }
+    }*/
 }
 
-bool Store::has(entityid p_item)
-{
-    return find(begin(), end(), p_item) != end();
+bool Store::has(entityid p_item){
+    return std:: find(begin(), end(), p_item) != end();
 }
 
 istream& operator>>(istream& p_stream, Store& s){

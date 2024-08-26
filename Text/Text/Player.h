@@ -1,7 +1,9 @@
 #pragma once
 #include <bits/stdc++.h>
-#include "Entity.h"
 #include "DatabasePointer.h"
+#include "Room.h"
+#include "Entity.h"
+#include "Attributes.h"
 using namespace std;
 //未完成
 
@@ -26,6 +28,10 @@ public:
 	int getAttr(int p_attr);//获得总属性点数
 	void setBaseAttr(int p_attr, int p_val);//重新设置某属性基础点数
 	void addToBaseAttr(int p_attr, int p_val);//增加某属性基础点数
+	
+	//战斗属性
+	int getType();
+	void setType(int p_attr);
 
 	//装备加持
 	void addDynamicBonuses(item p_item);//额外数值
@@ -35,9 +41,11 @@ public:
 	int hitPoints() { return m_hitpoints; }
 	void addHitPoints(int p_hitpoints);
 
-	void recalculateStats();//重新计算属性值
+    //重新计算属性值
+	void recalculateStats();
+	
 	//物品函数
-	item GetItem(int p_index) { return m_inventory[p_index]; }
+	item getItem(int p_index) { return m_inventory[p_index]; }
 	int Items() { return m_items; }
 	int MaxItems() { return PLAYERITEMS; }
 	int getItemIndex(string& p_name);
@@ -57,6 +65,9 @@ public:
 	void useArmor(int p_index);
 	void useHealing(int p_index);
 	void useExp(int p_index);
+
+	//房间函数
+	room currentRoom() { return m_room; }
 
 	//输入输出重载
 	friend ostream& operator <<(ostream& p_stream, Player& p);
@@ -78,6 +89,8 @@ private:
 	int m_exp;//经验值（随等级重置）
 	money m_money;//金钱
 	int m_hitpoints;//血量;
+	//int m_statpoints;
+	AttackType m_type;
 	AttributeSet m_baseattributes;//基础属性值
 	AttributeSet m_attributes;//总属性值
 
@@ -88,6 +101,6 @@ private:
 	int m_armor;
 
 	//房间
-	int m_statpoints;
+	/*int m_statpoints;*/
 	int m_room;
 };

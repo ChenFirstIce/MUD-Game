@@ -1,8 +1,6 @@
 #pragma once
 #include <iostream>
-#include "ItemDatabase.h"
 #include "Entity.h"
-#include "Item.h"
 using namespace std;
 
 typedef unsigned int entityid;
@@ -48,24 +46,5 @@ inline istream& operator>>( istream& s, pt& p )         \
 DATABASEPOINTER(item, Item)
 DATABASEPOINTER(room, Room)
 DATABASEPOINTER(enemy,Enemy)
-//
-//
-//#define DATABASEPOINTERIMPL( pt, t, db )                \
-//t& pt::operator*()                                      \
-//{                                                       \
-//    return db.get( m_id );                             \
-//}                                                       \
-//                                                        \
-//t* pt::operator->()                                     \
-//{                                                       \
-//    return &( db.get( m_id ) );                       \
-//}                                                       \
-//                                                        \
-//pt::operator t*()                                       \
-//{                                                       \
-//    if( m_id == 0 )                                     \
-//        return 0;                                       \
-//    return &( db.get( m_id ) );                       \
-//}
-//
-//DATABASEPOINTERIMPL(item, Item, ItemDatabase::getInstance())
+DATABASEPOINTER(player, Player)
+DATABASEPOINTER(enemytemplate, EnemyTemplate)

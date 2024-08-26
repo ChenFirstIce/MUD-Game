@@ -4,8 +4,6 @@
 #include "Entity.h"
 using namespace std;
 
-typedef unsigned long int money;
-
 class Item : public Entity {
 public:
     Item() = default;

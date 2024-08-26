@@ -13,9 +13,9 @@ public:
 
     EntityDatabase() = default;
 
-    iterator begin();
-    iterator end();
-    size_t size();
+    static iterator begin();
+    static iterator end();
+    static size_t size();
 
     // ÓÃidËÑË÷
     static bool has(entityid p_id);
