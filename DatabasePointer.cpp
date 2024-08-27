@@ -1,4 +1,5 @@
 #include "DatabasePointer.h"
+#include "NPCDatabase.h"
 #include "EnemyDatabase.h"
 #include "RoomDatabase.h"
 #include "ItemDatabase.h"
@@ -25,5 +26,6 @@ pt::operator t*()                                       \
 
 DATABASEPOINTERIMPL(item, Item, ItemDatabase)
 DATABASEPOINTERIMPL(room, Room, RoomDatabase)
+DATABASEPOINTERIMPL(npc, NPC, NPCDatabase)
 DATABASEPOINTERIMPL(enemy, Enemy, EnemyDatabase)
 DATABASEPOINTERIMPL(enemytemplate, EnemyTemplate, EnemyTemplateDatabase)

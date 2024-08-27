@@ -29,6 +29,10 @@ public:
 	int getType();
 	void setType(int p_attr);
 
+	//是否被拯救
+	bool getStats();
+	void setStats(bool p_stats);
+
 	//装备加持
 	void addDynamicBonuses(item p_item);//额外数值
 	void addBonuses(item p_item);//基础数值
@@ -61,8 +65,9 @@ public:
 protected:
 	//信息
 	string m_name;
+	bool m_stats;
 
-	//玩家属性
+	//NPC属性
 	int m_level;//等级
 	int m_exp;//经验值（随等级重置）
 	int m_hitpoints;//血量;

@@ -105,5 +105,5 @@ private:
 
 	//房间
 	/*int m_statpoints;*/
-	int m_room;
+	int m_room;//房间的ID
 };

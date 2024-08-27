@@ -70,5 +70,5 @@ protected:
 	enemytemplate m_template;
 	AttackType m_type;//后来增加的
 	int m_hitpoints;
-	room m_room;          //敌人所在房间的指针
+	room m_room;//敌人所在房间的指针
 };

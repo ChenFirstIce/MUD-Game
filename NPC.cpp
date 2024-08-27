@@ -4,6 +4,7 @@ using namespace std;
 
 NPC::NPC(string p_name) :m_name(p_name) {
 	m_level = 1;
+	m_stats = false;
 	//m_statpoints = 0;
 	m_type = GOLD;
 	m_weapon = -1;
@@ -85,6 +86,14 @@ void NPC::setType(int p_attr){
 		cout << "AttackType Error!";
 		exit(3);
 	}
+}
+
+//是否被拯救
+bool NPC::getStats(){
+	return m_stats;
+}
+void NPC::setStats(bool p_stats){
+	m_stats;
 }
 
 //加持
@@ -191,7 +200,7 @@ void NPC::useExp(int p_index) {
 //文件储存
 ostream& operator<<(ostream& p_stream, NPC& p) {
 	p_stream << "[NAME]           " << p.m_name << "\n";
-	//p_stream << "[STATPOINTS]     " << p.m_statpoints << "\n";
+	p_stream << "[STATPOINTS]     " << p.m_stats << "\n";
 	p_stream << "[ATTACKTYPE]     " << p.getType() << "\n";//后来增加的
 	p_stream << "[EXPERIENCE]     " << p.m_exp << "\n";
 	p_stream << "[LEVEL]          " << p.m_level << "\n";
@@ -210,7 +219,7 @@ istream& operator>>(istream& p_stream, NPC& p) {
 
 	p_stream >> temp >> ws;
 	getline(p_stream, p.m_name);
-	//p_stream >> temp >> p.m_statpoints;
+	p_stream >> temp >> p.m_stats;
 	p_stream >> temp >> type;
 	p.setType(type);
 	p_stream >> temp >> p.m_exp;

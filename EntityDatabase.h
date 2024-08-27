@@ -9,7 +9,7 @@ template<class datatype>
 class EntityDatabase {
 public:
     using iterator = typename map<entityid, datatype>::iterator;
-    using constIterator = typename map<entityid, datatype>::const_iterator;
+    using const_iterator = typename map<entityid, datatype>::const_iterator;
 
     EntityDatabase() = default;
 
