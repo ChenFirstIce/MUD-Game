@@ -1,12 +1,13 @@
 #pragma once 
 #include <iostream>
 #include <vector>
+#include <string>
 #include "Entity.h"
 using namespace std;
 
 class NPC :public Entity {
 public:
-
+	NPC(string p_name = "UNDEFINED");
 	//void showNPC();未完成
 
 	//等级&经验
@@ -36,12 +37,6 @@ public:
 	//重新计算属性值
 	void recalculateStats();
 
-	//物品函数
-	item getItem(int p_index) { return m_inventory[p_index]; }
-	int Items() { return m_items; }
-	int MaxItems() { return PLAYERITEMS; }
-	int getItemIndex(string& p_name);
-
 	//攻击人数
 	int getTarget(){return m_target;}
 
@@ -50,13 +45,24 @@ public:
 	item Armor();
 
 	//输入输出重载
-	friend ostream& operator <<(ostream& p_stream, Player& p);
-	friend istream& operator >>(istream& p_stream, Player& p);
+	friend ostream& operator <<(ostream& p_stream, NPC& p);
+	friend istream& operator >>(istream& p_stream, NPC& p);
+
+	//物品互动
+	void removeWeapon();
+	void removeArmor();
+	void useWeapon(int p_index);
+	void useArmor(int p_index);
+	void useHealing(int p_index);
+	void useExp(int p_index);
 
 	//玩家存读档
 	void saveNPC();
 	static void addNPC();
 protected:
+	//信息
+	string m_name;
+
 	//玩家属性
 	int m_level;//等级
 	int m_exp;//经验值（随等级重置）

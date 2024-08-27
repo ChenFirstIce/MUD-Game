@@ -58,13 +58,14 @@ istream& operator>>(istream& p_stream, EnemyTemplate& t)
     int type;
 
     p_stream >> temp >> ws;  
-    getline(p_stream, t.m_name);
+    getline(p_stream, t.m_name);//名字
     p_stream >> temp >> type;//增加的
     t.setType(type);
-    p_stream >> temp >> t.m_hitpoints;
-    p_stream >> temp >> t.m_dodging;
-    p_stream >> temp >> t.m_strikedamage;
-    p_stream >> temp >> t.m_exp;
+    p_stream >> temp >> t.m_hitpoints;//血量
+    p_stream >> temp >> t.m_dodging;//闪避
+    p_stream >> temp >> t.m_strikedamage;//攻击力
+    p_stream >> temp >> t.m_speed;
+    p_stream >> temp >> t.m_exp;//经验
     p_stream >> temp >> t.m_weapon;
     p_stream >> temp >> t.m_moneymin;
     p_stream >> temp >> t.m_moneymax;

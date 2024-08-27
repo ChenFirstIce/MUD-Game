@@ -5,13 +5,13 @@ using namespace std;
 
 //实例化
 Player* Player::Instance = nullptr;
-const int levelExp_Max[5] = { 10,20,40,80,160, };
 
 Player::Player(string p_name = "雌鹰") :name(p_name) {
     m_level = 1;
     m_room = 0;
+    //m_statpoints = 0;
+    m_type = LIGHT;
     m_money = 100;
-    m_statpoints = 0;
     m_items = 0;
     m_weapon = -1;
     m_armor = -1;
@@ -61,6 +61,7 @@ int Player::getAttr(int p_attr) {
     int val = m_attributes[p_attr] + m_baseattributes[p_attr];
     return val;
 }
+
 void Player::setBaseAttr(int p_attr, int p_val){
     m_baseattributes[p_attr] = p_val;
     recalculateStats();
@@ -71,11 +72,51 @@ void Player::addToBaseAttr(int p_attr, int p_val) {
     recalculateStats();
 }
 
+//战斗属性
+int Player::getType(){
+    if (m_type == LIGHT) {
+        return 1;
+    }
+    else if (m_type == GOLD) {
+        return 2;
+    }
+    else if (m_type == FIRE) {
+        return 3;
+    }
+    else if (m_type == GRASS) {
+        return 4;
+    }
+    else {
+        cout << "AttackType Error!";
+        exit(2);
+    }
+}
+
+void Player::setType(int p_attr) {
+    switch (p_attr) {
+    case 1:
+        m_type = LIGHT;
+        break;
+    case 2:
+        m_type = GOLD;
+        break;
+    case 3:
+        m_type = FIRE;
+        break;
+    case 4:
+        m_type = GRASS;
+    default:
+        cout << "AttackType Error!";
+        exit(3);
+    }
+}
+
+
 //加持
 void Player::addDynamicBonuses(item p_item){
     Item& i = *p_item;
 
-    if (p_item == nullptr)
+    if (p_item == 0)
         return;
     
     for (int x = 0; x < NUMATTRIBUTES; x++)
@@ -87,7 +128,7 @@ void Player::addBonuses(item p_item){
     Item& i = *p_item;
     int t = 0;
 
-    if (p_item == nullptr) {
+    if (p_item == 0) {
         return;
     }//不成功，未找到
     else {
@@ -223,9 +264,10 @@ void Player::useExp(int p_index){
 ostream& operator<<(ostream& p_stream, Player& p){
     p_stream << "[NAME]           " << p.name << "\n";
     //p_stream << "[STATPOINTS]     " << p.m_statpoints << "\n";
+    p_stream << "[ATTACKTYPE]     " << p.getType() << "\n";//后来增加的
     p_stream << "[EXPERIENCE]     " << p.m_exp << "\n";
     p_stream << "[LEVEL]          " << p.m_level << "\n";
-    //p_stream << "[ROOM]           " << p.m_room << "\n";
+    p_stream << "[ROOM]           " << p.m_room << "\n";
     p_stream << "[MONEY]          " << p.m_money << "\n";
     p_stream << "[HITPOINTS]      " << p.m_hitpoints << "\n";
     p_stream << p.m_baseattributes;
@@ -246,12 +288,16 @@ ostream& operator<<(ostream& p_stream, Player& p){
 
 istream& operator>>(istream& p_stream, Player& p){
     string temp;
+    int type;
+
     p_stream >> temp >> ws;
     getline(p_stream, p.name);
-    p_stream >> temp >> p.m_statpoints;
+    //p_stream >> temp >> p.m_statpoints;
+    p_stream >> temp >> type;
+    p.setType(type);
     p_stream >> temp >> p.m_exp;
     p_stream >> temp >> p.m_level;
-    //p_stream >> temp >> p.m_room;
+    p_stream >> temp >> p.m_room;
     p_stream >> temp >> p.m_money;
     p_stream >> temp >> p.m_hitpoints;
     p_stream >> p.m_baseattributes;

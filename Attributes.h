@@ -2,9 +2,9 @@
 #include <iostream>
 using namespace std;
 
-const int NUMATTRIBUTES = 4;//属性数量
+const int NUMATTRIBUTES = 5;//属性数量
 
-enum Attribute { MAXHITPOINTS,ATTACK,CRITING,DODGING };//属性,对应AttributeSet下标
+enum Attribute { MAXHITPOINTS,ATTACK,CRITING,DODGING,SPEED };//属性,对应AttributeSet下标
 
 enum ItemType { WEAPON, ARMOR, HEALING, EXP};//物品类型
 

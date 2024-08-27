@@ -21,7 +21,7 @@ void EnemyTemplateDatabase::Load(){
 
 //EnemyDatabase类
 void EnemyDatabase::Create(entityid p_template, room p_room){
-	entityid id = size() + 1;  //查找未被使用的ID
+	entityid id = size() + 1;  
 	Enemy& e = m_map[id];        
 
 	e.ID() = id;                   
@@ -52,8 +52,7 @@ void EnemyDatabase::Load(){
 	}
 }
 
-void EnemyDatabase::Save()
-{
+void EnemyDatabase::Save(){
 	ofstream file("enemies.txt");
 
 	iterator itr = begin();

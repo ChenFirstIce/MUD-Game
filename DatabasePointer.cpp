@@ -20,7 +20,8 @@ pt::operator t*()                                       \
     if( m_id == 0 )                                     \
         return 0;                                       \
     return &( db::get( m_id ) );                        \
-}
+}                                                       \
+
 
 DATABASEPOINTERIMPL(item, Item, ItemDatabase)
 DATABASEPOINTERIMPL(room, Room, RoomDatabase)

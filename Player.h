@@ -28,10 +28,14 @@ public:
 	int getAttr(int p_attr);//获得总属性点数
 	void setBaseAttr(int p_attr, int p_val);//重新设置某属性基础点数
 	void addToBaseAttr(int p_attr, int p_val);//增加某属性基础点数
+	
+	//战斗属性
+	int getType();
+	void setType(int p_attr);
 
 	//装备加持
-	void addDynamicBonuses(item p_item);//额外数值
-	void addBonuses(item p_item);//基础数值
+	void addDynamicBonuses(item p_item);//可变数值（比如武器装备和卸下）
+	void addBonuses(item p_item);//永久数值（增加就不会改变）
 
 	//血量
 	int hitPoints() { return m_hitpoints; }
@@ -85,8 +89,10 @@ private:
 	int m_exp;//经验值（随等级重置）
 	money m_money;//金钱
 	int m_hitpoints;//血量;
+	//int m_statpoints;
+	AttackType m_type;
 	AttributeSet m_baseattributes;//基础属性值
-	AttributeSet m_attributes;//总属性值
+	AttributeSet m_attributes;//额外属性值
 
 	//玩家装备仓
 	item m_inventory[PLAYERITEMS];//item数据库指针数组
@@ -95,6 +101,6 @@ private:
 	int m_armor;
 
 	//房间
-	int m_statpoints;
+	/*int m_statpoints;*/
 	int m_room;
 };

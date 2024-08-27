@@ -1,5 +1,6 @@
 #pragma once
 #include <bits/stdc++.h>
+#include "Attributes.h"
 using namespace std;
 //ΚµΜε
 typedef unsigned int entityid;
