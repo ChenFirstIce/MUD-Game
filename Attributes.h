@@ -6,9 +6,11 @@ const int NUMATTRIBUTES = 4;//属性数量
 
 enum Attribute { MAXHITPOINTS,ATTACK,CRITING,DODGING };//属性,对应AttributeSet下标
 
-enum ItemType { WEAPON, ARMOR, HEALING, EXP };//物品类型
+enum ItemType { WEAPON, ARMOR, HEALING, EXP};//物品类型
 
 enum RoomType { NORTH, SOUTH, WEST, EAST };
+
+enum AttackType { LIGHT = 1, GOLD, FIRE, GRASS };
 
 class AttributeSet {//属性集，相当于包含属性的数组
 public:
