@@ -179,24 +179,23 @@ void NPC::useArmor(int p_index) {
 }
 
 void NPC::useHealing(int p_index) {
-	item itr = m_inventory[p_index];
+	item itr = p_index;
 	addBonuses(itr);
 }
 
 void NPC::useExp(int p_index) {
-	item itr = m_inventory[p_index];
+	item itr = p_index;
 	addBonuses(itr);
 }
 
 //文件储存
 ostream& operator<<(ostream& p_stream, NPC& p) {
-	p_stream << "[NAME]           " << p.name << "\n";
+	p_stream << "[NAME]           " << p.m_name << "\n";
 	//p_stream << "[STATPOINTS]     " << p.m_statpoints << "\n";
 	p_stream << "[ATTACKTYPE]     " << p.getType() << "\n";//后来增加的
 	p_stream << "[EXPERIENCE]     " << p.m_exp << "\n";
 	p_stream << "[LEVEL]          " << p.m_level << "\n";
 	p_stream << "[ROOM]           " << p.m_room << "\n";
-	p_stream << "[MONEY]          " << p.m_money << "\n";
 	p_stream << "[HITPOINTS]      " << p.m_hitpoints << "\n";
 	p_stream << p.m_baseattributes;
 	p_stream << "[WEAPON]         " << p.m_weapon << "\n";
@@ -210,14 +209,13 @@ istream& operator>>(istream& p_stream, NPC& p) {
 	int type;
 
 	p_stream >> temp >> ws;
-	getline(p_stream, p.name);
+	getline(p_stream, p.m_name);
 	//p_stream >> temp >> p.m_statpoints;
 	p_stream >> temp >> type;
 	p.setType(type);
 	p_stream >> temp >> p.m_exp;
 	p_stream >> temp >> p.m_level;
 	p_stream >> temp >> p.m_room;
-	p_stream >> temp >> p.m_money;
 	p_stream >> temp >> p.m_hitpoints;
 	p_stream >> p.m_baseattributes;
 	p_stream >> temp >> p.m_weapon;
@@ -226,24 +224,5 @@ istream& operator>>(istream& p_stream, NPC& p) {
 	p.recalculateStats();
 
 	return p_stream;
-}
-
-//NPC存读档
-void NPC::saveNPC(){
-	ofstream file("NPC.txt");
-
-	file << *this;
-
-	cout << "NPC" << m_name << "存档成功." << endl;
-}
-
-void NPC::addNPC(){
-	ifstream file("player.txt");
-
-	Instance = &Player::getNewPlayer();
-	file >> *Instance;
-
-	cout << "玩家" << Instance->name << "读档成功" << endl;
-	return *Instance;
 }
 

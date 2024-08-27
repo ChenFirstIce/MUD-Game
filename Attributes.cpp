@@ -12,6 +12,7 @@ Attribute getAttribute(string p_arr) {
 	case 'A':return ATTACK;
 	case 'C':return CRITING;
 	case 'D':return DODGING;
+	case 'S':return SPEED;
 	default:cout << "Error" << endl;
 	}
 }
@@ -24,6 +25,7 @@ string getAttributesString(Attribute p_arr) {
 	case 1:return "ATTACK";
 	case 2:return "CRITING";
 	case 3:return "DODGING";
+	case 4:return "SPEED";
 	default:cout << "Error" << endl;
 	}
 }

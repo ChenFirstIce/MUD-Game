@@ -2,7 +2,10 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "DatabasePointer.h"
+#include "Attributes.h"
 #include "Entity.h"
+#include "Item.h"
 using namespace std;
 
 class NPC :public Entity {
@@ -55,10 +58,6 @@ public:
 	void useArmor(int p_index);
 	void useHealing(int p_index);
 	void useExp(int p_index);
-
-	//玩家存读档
-	void saveNPC();
-	static void addNPC();
 protected:
 	//信息
 	string m_name;
@@ -74,8 +73,6 @@ protected:
 	AttributeSet m_attributes;//总属性值
 
 	//玩家装备仓
-	item m_inventory[PLAYERITEMS];//item数据库指针数组
-	int m_items;
 	int m_weapon;//在数组中的索引
 	int m_armor;
 

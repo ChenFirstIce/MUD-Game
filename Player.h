@@ -1,13 +1,13 @@
 #pragma once
 #include <bits/stdc++.h>
 #include "DatabasePointer.h"
-#include "Room.h"
-#include "Entity.h"
+#include "Item.h"
 #include "Attributes.h"
 using namespace std;
 //未完成
 
 const int PLAYERITEMS = 20;
+const int NPCNUM = 4;
 
 class Player{
 public:
@@ -48,7 +48,7 @@ public:
 	item getItem(int p_index) { return m_inventory[p_index]; }
 	int Items() { return m_items; }
 	int MaxItems() { return PLAYERITEMS; }
-	int getItemIndex(string& p_name);
+	int getItemIndex(string& p_name);//返回物品在物品数据库中的ID
 
 	//返回武器
 	item Weapon();
@@ -99,6 +99,9 @@ private:
 	int m_items;
 	int m_weapon;//在数组中的索引
 	int m_armor;
+
+	//男主们
+	npc m_npc[NPCNUM];
 
 	//房间
 	/*int m_statpoints;*/
