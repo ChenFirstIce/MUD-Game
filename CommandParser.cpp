@@ -16,10 +16,12 @@ Command CommandParser::parse(const string& input) {
     string action = tokens[0];
     tokens.erase(tokens.begin());
 
-    string argus = tokens[0];
+    string argus = tokens[0] + " ";
     for (auto i = tokens.begin() + 1; i != tokens.end(); i++) {
         argus += *i;
+        argus += " ";
     }
+    argus -= " ";
 
     return Command(action, argus);
 }

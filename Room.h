@@ -12,7 +12,7 @@ class Room :public Entity {
 public:
 	//房间信息
 	RoomType& Type() { return m_type; }
-	int& Data() { return m_data; }
+	int& Data() { return m_data; }//判断是不是商店
 	string& Description() { return m_desc; }//会变
 	entityid& Adjacent(int p_dir) { return m_rooms[p_dir]; }
 	RoomType getRoomType(string p_arr);

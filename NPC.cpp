@@ -11,7 +11,7 @@ NPC::NPC(string p_name) :m_name(p_name) {
 	m_armor = -1;
 	recalculateStats();
 	m_hitpoints = getAttr(MAXHITPOINTS);
-	cout << "NPC" << m_name << "成功…" << endl;
+	cout << "NPC" << m_name << "创造成功…" << endl;
 }
 
 //等级经验
@@ -154,14 +154,22 @@ void NPC::recalculateStats(){
 }
 
 //返回武器
-item NPC::Weapon()
-{
-	return item();
+item NPC::Weapon(){
+	if (m_weapon == -1) {
+		return 0;
+	}
+	else {
+		return m_weapon;
+	}
 }
 
-item NPC::Armor()
-{
-	return item();
+item NPC::Armor(){
+	if (m_armor == -1) {
+		return 0;
+	}
+	else {
+		return m_armor;
+	}
 }
 
 //修改装备仓

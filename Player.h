@@ -12,10 +12,16 @@ const int NPCNUM = 4;
 class Player{
 public:
 	//构造函数
-	static Player& getNewPlayer(string p_name = "雌鹰");//只有一个实例
-	static Player& getPlayer() { return *Instance; }
+	static void creatPlayer(string p_name = "雌鹰", int type = 1);//
+	static void deletePlayer();
+	static Player* getPlayer();
 	~Player() = default;
+
+	//信息
+	string& Name() { return name; }
 	void showPlayer();
+	//void setTask(int p_task) { m_task = p_task; }
+	int& Task() { return m_task; }//改变剧情节点
 
 	//等级&经验
 	int getLevel() { return m_level; }
@@ -48,7 +54,7 @@ public:
 	item getItem(int p_index) { return m_inventory[p_index]; }
 	int Items() { return m_items; }
 	int MaxItems() { return PLAYERITEMS; }
-	int getItemIndex(string& p_name);//返回物品在物品数据库中的ID
+	int getItemIndex(string& p_name);//查找背包中的物品并返回物品在物品数据库中的ID
 
 	//返回武器
 	item Weapon();
@@ -75,10 +81,10 @@ public:
 
 	//玩家存读档
 	static void savePlayer();
-	static Player& addPlayer();
+	static Player* addPlayer();
 private:
 	//构造函数（单例模式）
-	Player(string p_name);//未完成
+	Player(string p_name = "雌鹰", AttackType p_type = LIGHT);//未完成
 
 	//玩家信息
 	static Player* Instance;
@@ -101,7 +107,7 @@ private:
 	int m_armor;
 
 	//男主们
-	npc m_npc[NPCNUM];
+	int m_task;//新增加剧情结点
 
 	//房间
 	/*int m_statpoints;*/

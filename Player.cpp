@@ -6,11 +6,11 @@ using namespace std;
 //实例化
 Player* Player::Instance = nullptr;
 
-Player::Player(string p_name = "雌鹰") :name(p_name) {
+Player::Player(string p_name, AttackType p_type) :name(p_name),m_type(p_type) {
     m_level = 1;
     m_room = 0;
     //m_statpoints = 0;
-    m_type = LIGHT;
+    m_task = 0;
     m_money = 100;
     m_items = 0;
     m_weapon = -1;
@@ -20,13 +20,30 @@ Player::Player(string p_name = "雌鹰") :name(p_name) {
     cout << "创建玩家" << name << "成功…" << endl;
 }
 
-Player& Player::getNewPlayer(string p_name){
+void Player::creatPlayer(string p_name, int type){
     if (Instance == nullptr) {
         Instance = new Player(p_name);
+        Instance->setType(type);
     }
 
-    return *Instance;
+   /* return *Instance;*/
 }
+
+void Player::deletePlayer(){
+    if (Instance != nullptr) {
+        delete Instance;
+        Instance = nullptr;
+    }
+}
+
+Player* Player::getPlayer(){
+    if (Instance == nullptr) {
+        return nullptr;
+    }
+
+    return Instance;
+}
+
 //打印信息
 void Player::showPlayer() {//未完成
     cout << "*********************************************************************" << endl;
@@ -135,7 +152,7 @@ void Player::addBonuses(item p_item){
         t = i.Min() + rand() % (i.Max() - i.Min());
     }
 
-    if(i.Type()==HEALING){
+    if (i.Type() == HEALING) {
         addHitPoints(t);
     }
     else if (i.Type() == EXP) {
@@ -265,6 +282,7 @@ ostream& operator<<(ostream& p_stream, Player& p){
     p_stream << "[NAME]           " << p.name << "\n";
     //p_stream << "[STATPOINTS]     " << p.m_statpoints << "\n";
     p_stream << "[ATTACKTYPE]     " << p.getType() << "\n";//后来增加的
+    p_stream << "[TASK]           " << p.m_task << '\n';//增加的故事节点
     p_stream << "[EXPERIENCE]     " << p.m_exp << "\n";
     p_stream << "[LEVEL]          " << p.m_level << "\n";
     p_stream << "[ROOM]           " << p.m_room << "\n";
@@ -328,13 +346,14 @@ void Player::savePlayer(){
     cout << "玩家" << Instance->name << "存档成功" << endl;
 }
 
-Player& Player::addPlayer(){
+Player* Player::addPlayer(){
     ifstream file("player.txt");
+    Player::creatPlayer();
 
-    Instance = &Player::getNewPlayer();
+    Instance = Player::getPlayer();
     file >> *Instance;
 
     cout << "玩家" << Instance->name << "读档成功" << endl;
-    return *Instance;
+    return Instance;
 }
 

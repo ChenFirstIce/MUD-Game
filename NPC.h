@@ -47,7 +47,7 @@ public:
 	//攻击人数
 	int getTarget(){return m_target;}
 
-	//返回武器
+	//返回武器,未写完
 	item Weapon();
 	item Armor();
 
