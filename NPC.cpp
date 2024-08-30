@@ -2,7 +2,7 @@
 #include "NPC.h"
 using namespace std;
 
-NPC::NPC(string p_name) :m_name(p_name) {
+NPC::NPC(){
 	m_level = 1;
 	m_stats = false;
 	//m_statpoints = 0;
@@ -86,14 +86,6 @@ void NPC::setType(int p_attr){
 		cout << "AttackType Error!";
 		exit(3);
 	}
-}
-
-//是否被拯救
-bool NPC::getStats(){
-	return m_stats;
-}
-void NPC::setStats(bool p_stats){
-	m_stats;
 }
 
 //加持
@@ -183,25 +175,25 @@ void NPC::removeArmor() {
 	recalculateStats();
 }
 
-void NPC::useWeapon(int p_index) {
+void NPC::useWeapon(int p_item) {
 	removeWeapon();
-	m_weapon = p_index;
+	m_weapon = p_item;
 	recalculateStats();
 }
 
-void NPC::useArmor(int p_index) {
+void NPC::useArmor(int p_item) {
 	removeArmor();
-	m_armor = p_index;
+	m_armor = p_item;
 	recalculateStats();
 }
 
-void NPC::useHealing(int p_index) {
-	item itr = p_index;
+void NPC::useHealing(int p_item) {
+	item itr = p_item;
 	addBonuses(itr);
 }
 
-void NPC::useExp(int p_index) {
-	item itr = p_index;
+void NPC::useExp(int p_item) {
+	item itr = p_item;
 	addBonuses(itr);
 }
 

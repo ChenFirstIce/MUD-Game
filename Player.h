@@ -3,6 +3,7 @@
 #include "DatabasePointer.h"
 #include "Item.h"
 #include "Attributes.h"
+#include "NPC.h"
 using namespace std;
 //未完成
 
@@ -22,7 +23,7 @@ public:
 	void showPlayer();
 	//void setTask(int p_task) { m_task = p_task; }
 	int& Task() { return m_task; }//改变剧情节点
-
+	money& Money() { return m_money; }
 	//等级&经验
 	int getLevel() { return m_level; }
 	void addExp(int exp);
@@ -51,10 +52,10 @@ public:
 	void recalculateStats();
 	
 	//物品函数
-	item getItem(int p_index) { return m_inventory[p_index]; }
+	item getItem(int p_index) { return m_inventory[p_index]; }//p_index使item在背包中的索引
 	int Items() { return m_items; }
 	int MaxItems() { return PLAYERITEMS; }
-	int getItemIndex(string& p_name);//查找背包中的物品并返回物品在物品数据库中的ID
+	int getItemIndex(string& p_name);//查找背包中的物品并返回物品在背包中的ID
 
 	//返回武器
 	item Weapon();
@@ -64,7 +65,11 @@ public:
 	bool pickItem(item p_item);
 	bool dropItem(int p_index);
 
-	//物品互动
+	//寻找NPC和增加NPC
+	npc findNPC(string& p_npc);
+	void addNPC(npc p_npc);
+
+	//物品互动(p_index全部是背包中的索引)
 	void removeWeapon();
 	void removeArmor();
 	void useWeapon(int p_index);
@@ -104,10 +109,11 @@ private:
 	item m_inventory[PLAYERITEMS];//item数据库指针数组
 	int m_items;
 	int m_weapon;//在数组中的索引
-	int m_armor;
+	int m_armor;//在数组中的索引
 
 	//男主们
 	int m_task;//新增加剧情结点
+	list<npc> m_npces;
 
 	//房间
 	/*int m_statpoints;*/

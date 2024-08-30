@@ -10,7 +10,7 @@ using namespace std;
 
 class NPC :public Entity {
 public:
-	NPC(string p_name = "UNDEFINED");
+	NPC();
 	//void showNPC();未完成
 
 	//等级&经验
@@ -30,15 +30,14 @@ public:
 	void setType(int p_attr);
 
 	//是否被拯救
-	bool getStats();
-	void setStats(bool p_stats);
+	bool& Stats() { return m_stats; }
 
 	//装备加持
 	void addDynamicBonuses(item p_item);//额外数值
 	void addBonuses(item p_item);//基础数值
 
 	//血量
-	int hitPoints() { return m_hitpoints; }
+	int& hitPoints() { return m_hitpoints; }
 	void addHitPoints(int p_hitpoints);
 
 	//重新计算属性值
@@ -46,6 +45,14 @@ public:
 
 	//攻击人数
 	int getTarget(){return m_target;}
+	
+	//物品互动(这里的item全部都是数据库中的ID)
+	void removeWeapon();
+	void removeArmor();
+	void useWeapon(int p_item);
+	void useArmor(int p_item);
+	void useHealing(int p_item);
+	void useExp(int p_item);
 
 	//返回武器,未写完
 	item Weapon();
@@ -55,16 +62,9 @@ public:
 	friend ostream& operator <<(ostream& p_stream, NPC& p);
 	friend istream& operator >>(istream& p_stream, NPC& p);
 
-	//物品互动
-	void removeWeapon();
-	void removeArmor();
-	void useWeapon(int p_index);
-	void useArmor(int p_index);
-	void useHealing(int p_index);
-	void useExp(int p_index);
+	
 protected:
-	//信息
-	string m_name;
+	//信息(姓名在Entity里)
 	bool m_stats;
 
 	//NPC属性
@@ -78,8 +78,8 @@ protected:
 	AttributeSet m_attributes;//总属性值
 
 	//玩家装备仓
-	int m_weapon;//在数组中的索引
-	int m_armor;
+	int m_weapon;//武器的ID
+	int m_armor;//武器的ID
 
 	//房间
 	/*int m_statpoints;*/

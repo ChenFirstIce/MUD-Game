@@ -244,6 +244,28 @@ bool Player::dropItem(int p_index) {
     return false;
 }
 
+//增加NPC和寻找NPC
+npc Player::findNPC(string& p_npc){
+    list<npc>::iterator itr = find_if(m_npces.begin(), m_npces.end(), matchEntityFull(p_npc));
+
+    if (itr != m_npces.end()) {
+        return *itr;
+    }
+    else {
+        itr = find_if(m_npces.begin(), m_npces.end(), matchEntity(p_npc));
+        if (itr != m_npces.end()) {
+            return *itr;
+        }
+    }
+
+    return 0;
+}
+
+void Player::addNPC(npc p_npc){
+    m_npces.push_back(p_npc);
+    p_npc->Stats() = true;
+}
+
 //物品互动
 void Player::removeWeapon() {
     m_weapon = -1;
