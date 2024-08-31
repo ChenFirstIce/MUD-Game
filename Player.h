@@ -21,9 +21,9 @@ public:
 	//信息
 	string& Name() { return name; }
 	void showPlayer();
-	//void setTask(int p_task) { m_task = p_task; }
 	int& Task() { return m_task; }//改变剧情节点
 	money& Money() { return m_money; }
+
 	//等级&经验
 	int getLevel() { return m_level; }
 	void addExp(int exp);
@@ -87,6 +87,9 @@ public:
 	//玩家存读档
 	static void savePlayer();
 	static Player* addPlayer();
+
+	//
+	static Player& get(int m_id);
 private:
 	//构造函数（单例模式）
 	Player(string p_name = "雌鹰", AttackType p_type = LIGHT);//未完成
@@ -94,6 +97,7 @@ private:
 	//玩家信息
 	static Player* Instance;
 	string name;
+	entityid id = 0;
 
 	//玩家属性
 	int m_level;//等级

@@ -9,7 +9,6 @@ Player* Player::Instance = nullptr;
 Player::Player(string p_name, AttackType p_type) :name(p_name),m_type(p_type) {
     m_level = 1;
     m_room = 0;
-    //m_statpoints = 0;
     m_task = 0;
     m_money = 100;
     m_items = 0;
@@ -264,6 +263,7 @@ npc Player::findNPC(string& p_npc){
 void Player::addNPC(npc p_npc){
     m_npces.push_back(p_npc);
     p_npc->Stats() = true;
+    m_task++;
 }
 
 //物品互动
@@ -319,6 +319,13 @@ ostream& operator<<(ostream& p_stream, Player& p){
     }
     p_stream << "\n";
 
+    p_stream << "[NPC]            ";
+    list<npc>::iterator itr = p.m_npces.begin();
+    while (itr != p.m_npces.end()) {
+        p_stream << *itr << " ";
+        itr++;
+    }
+    p_stream << "\n";
 
     p_stream << "[WEAPON]         " << p.m_weapon << "\n";
     p_stream << "[ARMOR]          " << p.m_armor << "\n";
@@ -335,6 +342,7 @@ istream& operator>>(istream& p_stream, Player& p){
     //p_stream >> temp >> p.m_statpoints;
     p_stream >> temp >> type;
     p.setType(type);
+    p_stream >> temp >> p.m_task;
     p_stream >> temp >> p.m_exp;
     p_stream >> temp >> p.m_level;
     p_stream >> temp >> p.m_room;
@@ -344,12 +352,16 @@ istream& operator>>(istream& p_stream, Player& p){
 
     p_stream >> temp;
     p.m_items = 0;
-    for (int i = 0; i < p.MaxItems(); i++)
-    {
+    for (int i = 0; i < p.MaxItems(); i++){
         p_stream >> p.m_inventory[i];
         if (p.m_inventory[i] != 0)
             p.m_items++;
     }
+
+    p.m_npces.clear();
+    entityid last;
+    while (extract(p_stream, last) != 0)
+        p.m_npces.push_back(last);
 
     p_stream >> temp >> p.m_weapon;
     p_stream >> temp >> p.m_armor;
@@ -377,5 +389,16 @@ Player* Player::addPlayer(){
 
     cout << "玩家" << Instance->name << "读档成功" << endl;
     return Instance;
+}
+
+//
+Player& Player::get(int m_id) {
+    if (Instance == nullptr) {
+        cout << "未创建玩家Instance" << endl;
+        exit(5);
+    }
+    else {
+        return *Instance;
+    }
 }
 

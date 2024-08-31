@@ -200,6 +200,7 @@ void NPC::useExp(int p_item) {
 //文件储存
 ostream& operator<<(ostream& p_stream, NPC& p) {
 	p_stream << "[NAME]           " << p.m_name << "\n";
+	p_stream << "[ENGLISHNAME]    " << p.m_enname << "\n";
 	p_stream << "[STATPOINTS]     " << p.m_stats << "\n";
 	p_stream << "[ATTACKTYPE]     " << p.getType() << "\n";//后来增加的
 	p_stream << "[EXPERIENCE]     " << p.m_exp << "\n";
@@ -219,6 +220,8 @@ istream& operator>>(istream& p_stream, NPC& p) {
 
 	p_stream >> temp >> ws;
 	getline(p_stream, p.m_name);
+	p_stream >> temp >> ws;
+	getline(p_stream, p.m_enname);//英文名字
 	p_stream >> temp >> p.m_stats;
 	p_stream >> temp >> type;
 	p.setType(type);

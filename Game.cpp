@@ -2,50 +2,49 @@
 #include "Game.h"
 using namespace std;
 
-//void Game::Enter(){
-//	if (m_lastcommand == "new"||Player::Instance == nullptr) {
-//		cout << "请输入你的名字：（默认为“雌鹰”）";
-//		cin >> m_name;
-//
-//		m_player = Player::getNewPlayer(m_name);
-//	}
-//	else if (m_lastcommand == "continue") {
-//		m_player = Player::addPlayer();
-//	}
-//}
-//
-//void Game::Leave(){
-//	Player::savePlayer();
-//}
-//
-////集成处理命令
-//void Game::Handle() {
-//	CommandParser parser;
-//	CommandExecutor executor;
-//
-//	while (true) {
-//		cout << "> ";
-//		string input;
-//		getline(cin, input);
-//
-//		Command cmd = parser.parse(input);
-//		executor.execute(cmd);
-//	}
-//}
+void Game::Load(){
+    ItemDatabase::Load();
+    PlayerDatabase::Load();
+    RoomDatabase::LoadTemplates();
+    RoomDatabase::LoadData();
+    StoreDatabase::Load();
+    EnemyTemplateDatabase::Load();
+    EnemyDatabase::Load();
+    NPCDatabase::Load();
+}
 
-void Game::handleCommands() {
-    CommandParser parser;
-    CommandExecutor executor;
+void Game::Run(){
+    string input;
+    Command cmd;
+    CommandParser commandpar;
+    CommandExecutor commandexec;
+    
+    cout << "> ";
+    cin >> input;
 
-    while (true) {
-        cout << "> ";
-        string input;
-        getline(cin, input);
+    cmd = commandpar.Parse(input);
 
-        // 解析命令
-        Command cmd = parser.parse(input);
-
-        // 执行命令
-        executor.execute(cmd);
+    if (cmd.action == "attack") {
+        Player* m_player = Player::getPlayer();
+        int cnt = m_player->Task();
+        //进入战斗系统（要增加NPC到player）
+        //判断是否进入下一阶段
+        if (cnt < (m_player->Task())) {
+            //开始下一段剧情
+        }
     }
+    else if (cmd.action == "map") {
+        //进入地图界面
+        //进入房间
+    }
+    else {
+        commandexec.Execute(cmd);
+    }
+}
+
+void Game::Save(){
+    PlayerDatabase::Save();
+    RoomDatabase::SaveData();
+    EnemyDatabase::Save();
+    Player::savePlayer();
 }

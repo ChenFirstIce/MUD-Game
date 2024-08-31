@@ -1,24 +1,24 @@
-#include <bits/stdc++.h>
+#include <sstream>
 #include "Entity.h"
 #include "Player.h"
 #include "DatabasePointer.h"
-#include "ItemDatabase.h"
+#include "Game.h"
+#include "CommandExecutor.h"
 using namespace std;
 
-
-
 int main() {
-	ItemDatabase Itembase;
-	Player::creatPlayer();
-	Player oc = *Player::getPlayer();
-	Itembase.Load();
-	oc.showPlayer();
-	/*item i = 1;
-	Item* m = i;
-	item d = m;//Item*不能赋值给item
-	cout << '\n' <<d->Max();*/
+	Game game;
+	CommandParser commandpar;
+	CommandExecutor commandexec;
 
-	vector<int> a = { 0,1,2,3,4 };
-	a.erase(a.begin());
+	//游戏开始界面
+	while (1) {
+		string input;
+		cout << ">  ";
+		getline(cin, input);
+
+		Command
+	}
+
 	return 0;
 }

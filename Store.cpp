@@ -4,7 +4,7 @@
 using namespace std;
 
 item Store::find(string& p_item){
-    /*iterator itr = find_if(begin(), end(), matchEntityFull(p_item));
+    iterator itr = find_if(begin(), end(), matchEntityFull(p_item));
 
     if (itr != end()) {
         return *itr;
@@ -16,8 +16,8 @@ item Store::find(string& p_item){
         }
     }
 
-    return 0;*/
-    iterator itr;
+    return 0;
+    /*iterator itr;
     for (itr = begin(); itr != end(); itr++) {
         if ((*itr)->Match(p_item)) {
             return *itr;
@@ -28,7 +28,7 @@ item Store::find(string& p_item){
         if ((*itr)->fullMatch(p_item)) {
             return *itr;
         }
-    }
+    }*/
 }
 
 bool Store::has(entityid p_item){
@@ -38,7 +38,7 @@ bool Store::has(entityid p_item){
 istream& operator>>(istream& p_stream, Store& s){
     string temp;
 
-    p_stream >> temp >> ws;    
+    p_stream >> temp >> ws;    //ÖĞÎÄÃû
     getline(p_stream, s.Name());
 
     s.m_items.clear();

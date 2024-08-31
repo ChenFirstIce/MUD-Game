@@ -29,6 +29,8 @@ istream& operator>>(istream& p_stream, Item& i)
 
     p_stream >> temp >> ws;     //ÈÓµôId
     getline(p_stream, i.m_name);//ÊäÈëÃû×Ö
+    p_stream >> temp >> ws;     //ÈÓµôId
+    getline(p_stream, i.m_enname);//ÊäÈëÓ¢ÎÄÃû×Ö
     p_stream >> temp >> temp;    
     i.setItemType(temp);        //ÊäÈëtype
     p_stream >> temp >> i.m_min;
