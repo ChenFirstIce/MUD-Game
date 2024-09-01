@@ -5,7 +5,7 @@ using namespace std;
 void attack1(int n){
 	if(n==1){
 		while(Enemy[0].getHP() > 0){
-		Atk(*patk, Enemy[0]);
+		Atk1(*patk, Enemy[0]);
 		}
 		if(Enemy[0].getHP()==0){
 		    cout << "’Ω∂∑ §¿˚!" << endl;
@@ -18,7 +18,7 @@ void attack1(int n){
 	    	if(Enemy[0].getHP()>0&&Enemy[1].getHP()>0) {
 					    cout << "“™π•ª˜À≠£ø" << endl;
 						for (int i = 0; i < 2; i++)
-						   	cout << i << "." << Enemy[i].getName();
+						   	cout << i << "." << Enemy[i].Name();
 						cin >> choose;
 						while (choose != 1 && choose !=0) {
 								cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
@@ -26,8 +26,8 @@ void attack1(int n){
 								cin.ignore(cin.rdbuf()->in_avail());
 								cin >> choose;
 						}
-						if (choose == 0) Atk(*patk, Enemy[0]);
-						else Atk(*patk, Enemy[1]);
+						if (choose == 0) Atk1(*patk, Enemy[0]);
+						else Atk1(*patk, Enemy[1]);
 			}
 			else {
 					for (int i = 0; i < 2; i++) {
@@ -51,11 +51,11 @@ void attack1(int n){
     if(n==3){
 		    if (patk->getTarget() == 1) {
 				if (Enemy[0].getHP() > 0) //≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
-					Atk(*patk, Enemy[0]);
+					Atk1(*patk, Enemy[0]);
 					else if(Enemy[1].getHP()>0&&Enemy[2].getHP()>0) {
 					    	cout << "“™π•ª˜À≠£ø" << endl;
 							for (int i = 1; i < 3; i++)
-						    	cout << i << "." << Enemy[i].getName();
+						    	cout << i << "." << Enemy[i].Name();
 							cin >> choose;
 							while (choose != 1 && choose!= 2) {
 									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
@@ -63,13 +63,13 @@ void attack1(int n){
 									cin.ignore(cin.rdbuf()->in_avail());
 									cin >> choose;
 							}
-							if (choose == 1) Atk(*patk, Enemy[1]);
-							else Atk(*patk, Enemy[2]);
+							if (choose == 1) Atk1(*patk, Enemy[1]);
+							else Atk1(*patk, Enemy[2]);
 					}
 					else {
 							for (int i = 1; i < 3; i++) {
 								if (Enemy[i].getHP() > 0) {
-									Atk(*patk, Enemy[i]);
+									Atk1(*patk, Enemy[i]);
 									break;
 								}
 							}
@@ -79,7 +79,7 @@ void attack1(int n){
 					if (Enemy[0].getHP() > 0) {//≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
 						cout << "“™π•ª˜À≠£ø" << endl;
 						for (int i = 1; i < 3; i++) {
-							cout << i << "." << Enemy[0].getName() << " ∫Õ " << Enemy[i].getName() << endl;
+							cout << i << "." << Enemy[0].Name() << " ∫Õ " << Enemy[i].Name() << endl;
 						}
 						cin >> choose;
 						while (choose != 1 && choose != 2) {
@@ -89,23 +89,23 @@ void attack1(int n){
 								cin >> choose;
 						}
 						if (choose == 1) {
-							Atk(*patk, Enemy[0]);
-							Atk(*patk, Enemy[1]);
+							Atk1(*patk, Enemy[0]);
+							Atk1(*patk, Enemy[1]);
 						}
 						else {
-							Atk(*patk, Enemy[0]);
-							Atk(*patk, Enemy[2]);
+							Atk1(*patk, Enemy[0]);
+							Atk1(*patk, Enemy[2]);
 						}
 					}
 					else {
-						Atk(*patk, Enemy[1]);
-						Atk(*patk, Enemy[2]);
+						Atk1(*patk, Enemy[1]);
+						Atk1(*patk, Enemy[2]);
 				}
 			}
 			else {
-				Atk(*patk, Enemy[0]);
-				Atk(*patk, Enemy[1]);
-				Atk(*patk, Enemy[2]);
+				Atk1(*patk, Enemy[0]);
+				Atk1(*patk, Enemy[1]);
+				Atk1(*patk, Enemy[2]);
 			}
 			if (Enemy[0].getHP() == 0 && Enemy[1].getHP() == 0 && Enemy[2].getHP() == 0) {
 				cout << "’Ω∂∑ §¿˚!" << endl;
@@ -119,7 +119,7 @@ void attack1(int n){
 				if (Enemy[0].getHP() > 0 && Enemy[1].getHP() > 0) {
 					cout << "“™π•ª˜À≠£ø" << endl;
 					    for (int i = 0; i < 2; i++)
-				    	    cout << i << "." << Enemy[i].getName();
+				    	    cout << i << "." << Enemy[i].Name();
 					    cin >> choose;
 					    while (choose !=0 && choose != 1) {
 							cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
@@ -127,18 +127,18 @@ void attack1(int n){
 							cin.ignore(cin.rdbuf()->in_avail());
 							cin >> choose;
 					}
-					    if (choose == 0) Atk(*patk, Enemy[0]);
-					    if (choose == 1) Atk(*patk, Enemy[1]);
+					    if (choose == 0) Atk1(*patk, Enemy[0]);
+					    if (choose == 1) Atk1(*patk, Enemy[1]);
 				}
 				if (Enemy[0].getHP() > 0 && Enemy[1].getHP() == 0) 
-				    Atk(*patk, Enemy[0]);
+				    Atk1(*patk, Enemy[0]);
 				if (Enemy[0].getHP() == 0 && Enemy[1].getHP() > 0) 
-				    Atk(*patk, Enemy[1]);
+				    Atk1(*patk, Enemy[1]);
 				else{
 					if(Enemy[2].getHP()>0&&Enemy[3].getHP()>0) {
 				    	cout << "“™π•ª˜À≠£ø" << endl;
 							for (int i = 2; i < 4; i++)
-						    	cout << i << "." << Enemy[i].getName();
+						    	cout << i << "." << Enemy[i].Name();
 							cin >> choose;
 							while (choose != 2 && choose!= 3) {
 									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
@@ -146,13 +146,13 @@ void attack1(int n){
 									cin.ignore(cin.rdbuf()->in_avail());
 									cin >> choose;
 							}
-							if (choose == 2) Atk(*patk, Enemy[2]);
-							else Atk(*patk, Enemy[3]);
+							if (choose == 2) Atk1(*patk, Enemy[2]);
+							else Atk1(*patk, Enemy[3]);
 					}
 					else {
 							for (int i = 2; i < 4; i++) {
 								if (Enemy[i].getHP() > 0) {
-									Atk(*patk, Enemy[i]);
+									Atk1(*patk, Enemy[i]);
 									break;
 								}
 							}
@@ -161,14 +161,14 @@ void attack1(int n){
 			}	
 			else if (patk->getTarget() == 2) {
 					if (Enemy[0].getHP() > 0 && Enemy[1].getHP() > 0) {//≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
-						Atk(*patk, Enemy[0]);
-			            Atk(*patk, Enemy[1]);
+						Atk1(*patk, Enemy[0]);
+			            Atk1(*patk, Enemy[1]);
 					}
 					if (Enemy[0].getHP() > 0 && Enemy[1].getHP() == 0){
-						Atk(*patk, Enemy[0])
+						Atk1(*patk, Enemy[0])
 				    	cout << "“™π•ª˜À≠£ø" << endl;
 						for (int i = 2; i < 4; i++)
-						 	cout << i << "." << Enemy[i].getName();
+						 	cout << i << "." << Enemy[i].Name();
 						cin >> choose;
 							while (choose != 2 && choose!= 3) {
 									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
@@ -176,14 +176,14 @@ void attack1(int n){
 									cin.ignore(cin.rdbuf()->in_avail());
 									cin >> choose;
 							}
-							if (choose == 2) Atk(*patk, Enemy[2]);
-							else Atk(*patk, Enemy[3]);
+							if (choose == 2) Atk1(*patk, Enemy[2]);
+							else Atk1(*patk, Enemy[3]);
 					}
 					if (Enemy[0].getHP() == 0 && Enemy[1].getHP() > 0){
-						Atk(*patk, Enemy[1])
+						Atk1(*patk, Enemy[1])
 				    	cout << "“™π•ª˜À≠£ø" << endl;
 						for (int i = 2; i < 4; i++)
-						 	cout << i << "." << Enemy[i].getName();
+						 	cout << i << "." << Enemy[i].Name();
 						cin >> choose;
 							while (choose != 2 && choose!= 3) {
 									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
@@ -191,21 +191,21 @@ void attack1(int n){
 									cin.ignore(cin.rdbuf()->in_avail());
 									cin >> choose;
 							}
-							if (choose == 2) Atk(*patk, Enemy[2]);
-							else Atk(*patk, Enemy[3]);
+							if (choose == 2) Atk1(*patk, Enemy[2]);
+							else Atk1(*patk, Enemy[3]);
 					}
 					else {
-						Atk(*patk, Enemy[2]);
-						Atk(*patk, Enemy[3]);
+						Atk1(*patk, Enemy[2]);
+						Atk1(*patk, Enemy[3]);
 					}
 				}
 				if (patk->getTarget() == 3){
 					if(Enemy[0].getHP() > 0 && Enemy[1].getHP() > 0){
-						Atk(*patk, Enemy[0]);
-			            Atk(*patk, Enemy[1]);
+						Atk1(*patk, Enemy[0]);
+			            Atk1(*patk, Enemy[1]);
 			            cout << "“™π•ª˜À≠£ø" << endl;
 						for (int i = 2; i < 4; i++)
-						 	cout << i << "." << Enemy[i].getName();
+						 	cout << i << "." << Enemy[i].Name();
 						cin >> choose;
 							while (choose != 2 && choose!= 3) {
 									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
@@ -213,25 +213,25 @@ void attack1(int n){
 									cin.ignore(cin.rdbuf()->in_avail());
 									cin >> choose;
 							}
-							if (choose == 2) Atk(*patk, Enemy[2]);
-							else Atk(*patk, Enemy[3]);
+							if (choose == 2) Atk1(*patk, Enemy[2]);
+							else Atk1(*patk, Enemy[3]);
 					}
 					else{
-						Atk(*patk, Enemy[2]);
-						Atk(*patk, Enemy[3]);
+						Atk1(*patk, Enemy[2]);
+						Atk1(*patk, Enemy[3]);
 						for(int i=0;i<2;i++){
 								if (Enemy[i].getHP() > 0) {
-									Atk(*patk, Enemy[i]);
+									Atk1(*patk, Enemy[i]);
 									break;
 						}
 					}
 				}
 			}
 			if (patk->getTarget() == 4){
-				Atk(*patk, Enemy[0]);
-				Atk(*patk, Enemy[1]);
-				Atk(*patk, Enemy[2]);
-				Atk(*patk, Enemy[3]);
+				Atk1(*patk, Enemy[0]);
+				Atk1(*patk, Enemy[1]);
+				Atk1(*patk, Enemy[2]);
+				Atk1(*patk, Enemy[3]);
 			}
 			if (Enemy[0].getHP() == 0 && Enemy[1].getHP() == 0 && Enemy[2].getHP() == 0) {
 				cout << "’Ω∂∑ §¿˚!" << endl;
@@ -245,7 +245,7 @@ void attack1(int n){
 void attack2(int n){
 	if(n==1){
 		while(Me[0].getHP() > 0){
-		Atk(*patk, Me[0]);
+		Atk2(*patk, Me[0]);
 		}
 		if(Me[0].getHP()==0){
 		    cout << "’Ω∂∑ ß∞‹,«Î÷ÿ–¬¿¥π˝" << endl;
@@ -258,7 +258,7 @@ void attack2(int n){
 	    	if(Me[0].getHP()>0&&Me[1].getHP()>0) {
 					    cout << "“™π•ª˜À≠£ø" << endl;
 						for (int i = 0; i < 2; i++)
-						   	cout << i << "." << Me[i].getName();
+						   	cout << i << "." << Me[i].Name();
 						cin >> choose;
 						while (choose != 1 && choose !=0) {
 								cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
@@ -266,21 +266,21 @@ void attack2(int n){
 								cin.ignore(cin.rdbuf()->in_avail());
 								cin >> choose;
 						}
-						if (choose == 0) Atk(*patk, Me[0]);
-						else Atk(*patk, Me[1]);
+						if (choose == 0) Atk2(*patk, Me[0]);
+						else Atk2(*patk, Me[1]);
 			}
 			else {
 					for (int i = 0; i < 2; i++) {
 						if (Me[i].getHP() > 0) {
-							Atk(*patk, Me[i]);
+							Atk2(*patk, Me[i]);
 							break;
 		                }
                     }
             }
         }
         if (patk->getTarget() == 2){
-        	Atk(*patk, Me[0]);
-			Atk(*patk, Me[1]);
+        	Atk2(*patk, Me[0]);
+			Atk2(*patk, Me[1]);
 		}
 		if (Me[0].getHP() == 0 && Me[1].getHP() == 0) {
 								cout << "’Ω∂∑ ß∞‹,«Î÷ÿ–¬¿¥π˝" << endl;
@@ -291,11 +291,11 @@ void attack2(int n){
     if(n==3){
 		    if (patk->getTarget() == 1) {
 				if (Me[0].getHP() > 0) //≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
-					Atk(*patk, Me[0]);
+					Atk2(*patk, Me[0]);
 					else if(Me[1].getHP()>0&&Me[2].getHP()>0) {
 					    	cout << "“™π•ª˜À≠£ø" << endl;
 							for (int i = 1; i < 3; i++)
-						    	cout << i << "." << Me[i].getName();
+						    	cout << i << "." << Me[i].Name();
 							cin >> choose;
 							while (choose != 1 && choose!= 2) {
 									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
@@ -303,13 +303,13 @@ void attack2(int n){
 									cin.ignore(cin.rdbuf()->in_avail());
 									cin >> choose;
 							}
-							if (choose == 1) Atk(*patk, Me[1]);
-							else Atk(*patk, Me[2]);
+							if (choose == 1) Atk2(*patk, Me[1]);
+							else Atk2(*patk, Me[2]);
 					}
 					else {
 							for (int i = 1; i < 3; i++) {
 								if (Me[i].getHP() > 0) {
-									Atk(*patk, Me[i]);
+									Atk2(*patk, Me[i]);
 									break;
 								}
 							}
@@ -319,7 +319,7 @@ void attack2(int n){
 					if (Me[0].getHP() > 0) {//≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
 						cout << "“™π•ª˜À≠£ø" << endl;
 						for (int i = 1; i < 3; i++) {
-							cout << i << "." << Me[0].getName() << " ∫Õ " << Me[i].getName() << endl;
+							cout << i << "." << Me[0].Name() << " ∫Õ " << Me[i].Name() << endl;
 						}
 						cin >> choose;
 						while (choose != 1 && choose != 2) {
@@ -329,23 +329,23 @@ void attack2(int n){
 								cin >> choose;
 						}
 						if (choose == 1) {
-							Atk(*patk, Me[0]);
-							Atk(*patk, Me[1]);
+							Atk2(*patk, Me[0]);
+							Atk2(*patk, Me[1]);
 						}
 						else {
-							Atk(*patk, Me[0]);
-							Atk(*patk, Me[2]);
+							Atk2(*patk, Me[0]);
+							Atk2(*patk, Me[2]);
 						}
 					}
 					else {
-						Atk(*patk, Me[1]);
-						Atk(*patk, Me[2]);
+						Atk2(*patk, Me[1]);
+						Atk2(*patk, Me[2]);
 				}
 			}
 			else {
-				Atk(*patk, Me[0]);
-				Atk(*patk, Me[1]);
-				Atk(*patk, Me[2]);
+				Atk2(*patk, Me[0]);
+				Atk2(*patk, Me[1]);
+				Atk2(*patk, Me[2]);
 			}
 			if (Me[0].getHP() == 0 && Me[1].getHP() == 0 && Me[2].getHP() == 0) {
 				cout << "’Ω∂∑ ß∞‹,«Î÷ÿ–¬¿¥π˝" << endl;
@@ -359,7 +359,7 @@ void attack2(int n){
 				if (Me[0].getHP() > 0 && Me[1].getHP() > 0) {
 					cout << "“™π•ª˜À≠£ø" << endl;
 					    for (int i = 0; i < 2; i++)
-				    	    cout << i << "." << Me[i].getName();
+				    	    cout << i << "." << Me[i].Name();
 					    cin >> choose;
 					    while (choose !=0 && choose != 1) {
 							cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
@@ -367,18 +367,18 @@ void attack2(int n){
 							cin.ignore(cin.rdbuf()->in_avail());
 							cin >> choose;
 					}
-					    if (choose == 0) Atk(*patk, Me[0]);
-					    if (choose == 1) Atk(*patk, Me[1]);
+					    if (choose == 0) Atk2(*patk, Me[0]);
+					    if (choose == 1) Atk2(*patk, Me[1]);
 				}
 				if (Me[0].getHP() > 0 && Me[1].getHP() == 0) 
-				    Atk(*patk, Me[0]);
+				    Atk2(*patk, Me[0]);
 				if (Me[0].getHP() == 0 && Me[1].getHP() > 0) 
-				    Atk(*patk, Me[1]);
+				    Atk2(*patk, Me[1]);
 				else{
 					if(Me[2].getHP()>0&&Me[3].getHP()>0) {
 				    	cout << "“™π•ª˜À≠£ø" << endl;
 							for (int i = 2; i < 4; i++)
-						    	cout << i << "." << Me[i].getName();
+						    	cout << i << "." << Me[i].Name();
 							cin >> choose;
 							while (choose != 2 && choose!= 3) {
 									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
@@ -386,13 +386,13 @@ void attack2(int n){
 									cin.ignore(cin.rdbuf()->in_avail());
 									cin >> choose;
 							}
-							if (choose == 2) Atk(*patk, Me[2]);
-							else Atk(*patk, Me[3]);
+							if (choose == 2) Atk2(*patk, Me[2]);
+							else Atk2(*patk, Me[3]);
 					}
 					else {
 							for (int i = 2; i < 4; i++) {
 								if (Me[i].getHP() > 0) {
-									Atk(*patk, Me[i]);
+									Atk2(*patk, Me[i]);
 									break;
 								}
 							}
@@ -401,14 +401,14 @@ void attack2(int n){
 			}	
 			else if (patk->getTarget() == 2) {
 					if (Me[0].getHP() > 0 && Me[1].getHP() > 0) {//≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
-						Atk(*patk, Me[0]);
-			            Atk(*patk, Me[1]);
+						Atk2(*patk, Me[0]);
+			            Atk2(*patk, Me[1]);
 					}
 					if (Me[0].getHP() > 0 && Me[1].getHP() == 0){
-						Atk(*patk, Me[0])
+						Atk2(*patk, Me[0])
 				    	cout << "“™π•ª˜À≠£ø" << endl;
 						for (int i = 2; i < 4; i++)
-						 	cout << i << "." << Me[i].getName();
+						 	cout << i << "." << Me[i].Name();
 						cin >> choose;
 							while (choose != 2 && choose!= 3) {
 									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
@@ -416,14 +416,14 @@ void attack2(int n){
 									cin.ignore(cin.rdbuf()->in_avail());
 									cin >> choose;
 							}
-							if (choose == 2) Atk(*patk, Me[2]);
-							else Atk(*patk, Me[3]);
+							if (choose == 2) Atk2(*patk, Me[2]);
+							else Atk2(*patk, Me[3]);
 					}
 					if (Me[0].getHP() == 0 && Me[1].getHP() > 0){
-						Atk(*patk, Me[1])
+						Atk2(*patk, Me[1])
 				    	cout << "“™π•ª˜À≠£ø" << endl;
 						for (int i = 2; i < 4; i++)
-						 	cout << i << "." << Me[i].getName();
+						 	cout << i << "." << Me[i].Name();
 						cin >> choose;
 							while (choose != 2 && choose!= 3) {
 									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
@@ -431,21 +431,21 @@ void attack2(int n){
 									cin.ignore(cin.rdbuf()->in_avail());
 									cin >> choose;
 							}
-							if (choose == 2) Atk(*patk, ,Me[2]);
-							else Atk(*patk, Me[3]);
+							if (choose == 2) Atk2(*patk, ,Me[2]);
+							else Atk2(*patk, Me[3]);
 					}
 					else {
-						Atk(*patk, Me[2]);
-						Atk(*patk, Me[3]);
+						Atk2(*patk, Me[2]);
+						Atk2(*patk, Me[3]);
 					}
 				}
 				if (patk->getTarget() == 3){
 					if(Me[0].getHP() > 0 && Me[1].getHP() > 0){
-						Atk(*patk, Me[0]);
-			            Atk(*patk, Me[1]);
+						Atk2(*patk, Me[0]);
+			            Atk2(*patk, Me[1]);
 			            cout << "“™π•ª˜À≠£ø" << endl;
 						for (int i = 2; i < 4; i++)
-						 	cout << i << "." << Me[i].getName();
+						 	cout << i << "." << Me[i].Name();
 						cin >> choose;
 							while (choose != 2 && choose!= 3) {
 									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
@@ -453,25 +453,25 @@ void attack2(int n){
 									cin.ignore(cin.rdbuf()->in_avail());
 									cin >> choose;
 							}
-							if (choose == 2) Atk(*patk, Me[2]);
-							else Atk(*patk, Me[3]);
+							if (choose == 2) Atk2(*patk, Me[2]);
+							else Atk2(*patk, Me[3]);
 					}
 					else{
-						Atk(*patk, Me[2]);
-						Atk(*patk, Me[3]);
+						Atk2(*patk, Me[2]);
+						Atk2(*patk, Me[3]);
 						for(int i=0;i<2;i++){
 								if (Me[i].getHP() > 0) {
-									Atk(*patk, Me[i]);
+									Atk2(*patk, Me[i]);
 									break;
 						}
 					}
 				}
 			}
 			if (patk->getTarget() == 4){
-				Atk(*patk, Me[0]);
-				Atk(*patk, Me[1]);
-				Atk(*patk, Me[2]);
-				Atk(*patk, Me[3]);
+				Atk2(*patk, Me[0]);
+				Atk2(*patk, Me[1]);
+				Atk2(*patk, Me[2]);
+				Atk2(*patk, Me[3]);
 			}
 			if (Me[0].getHP() == 0 && Me[1].getHP() == 0 && Me[2].getHP() == 0) {
 				cout << "’Ω∂∑ ß∞‹,«Î÷ÿ–¬¿¥π˝" << endl;
@@ -494,7 +494,7 @@ Fight::Fight(Array myArray,	Elf *enemyElf)//Ω´Œ“∑Ω≤º’Û¥´»Î,≥ı ºªØ’Ω∂∑Ω´µ–Œ“À´∑Ω’
 	}
 }
 
-int Fight::ProceedFight(int log, ItemBag &myItem,ElfBag &myElf)//≤Œ ˝±Í ∂±Ì æ «∑Òø…“‘≤∂◊Ω∫ÕÃ”≈‹, IBag «¥´»Î±≥∞¸ŒÔ∆∑ ˝æ›
+int Fight::ProceedFight(int n, int m, ItemBag &myItem,ElfBag &myElf)//≤Œ ˝±Í ∂±Ì æ «∑Òø…“‘≤∂◊Ω∫ÕÃ”≈‹, IBag «¥´»Î±≥∞¸ŒÔ∆∑ ˝æ›
 {
 	int choose;
 	int Round=1;
@@ -502,8 +502,7 @@ int Fight::ProceedFight(int log, ItemBag &myItem,ElfBag &myElf)//≤Œ ˝±Í ∂±Ì æ «∑
 	Elf x;
 	Turn();//≈≈–Ú≥ˆ ÷À≥–Ú
 	while (1) {
-		int n=Me.size();
-		for (int i = 0; i < 2*n; i++) {
+		for (int i = 0; i < m+n; i++) {
 			// ∂±Œ™Œ“∑Ωæ´¡È
 			if (BattleTurn[i][0] < n) {
 				if (Me[BattleTurn[i][0]].getHP() > 0) {
@@ -512,7 +511,7 @@ int Fight::ProceedFight(int log, ItemBag &myItem,ElfBag &myElf)//≤Œ ˝±Í ∂±Ì æ «∑
 					ShowBattle();
 					patk = &Me[BattleTurn[i][0]];
 					while (1) {
-						cout << " " << patk->getName() << " “™◊ˆ ≤√¥£ø" << endl;
+						cout << " " << patk->Name() << " “™◊ˆ ≤√¥£ø" << endl;
 						cout << "1.π•ª˜  2. π”√µ¿æﬂ 3.Ã”≈‹" << endl;
 						cin >> choose;
 						if (choose != 1 && choose != 2 && choose != 3) {
@@ -540,7 +539,7 @@ int Fight::ProceedFight(int log, ItemBag &myItem,ElfBag &myElf)//≤Œ ˝±Í ∂±Ì æ «∑
 								if (choose == 1) {
 									cout << "∏¯À≠ π”√£ø" << endl;
 									for (int i = 0; i < n; i++) {
-										cout << i << " ." << Me[i].getName();
+										cout << i << " ." << Me[i].Name();
 									}
 									cout << " 1.…À“© 2.»°œ˚ ";
 									cin >> choose;
@@ -551,7 +550,7 @@ int Fight::ProceedFight(int log, ItemBag &myItem,ElfBag &myElf)//≤Œ ˝±Í ∂±Ì æ «∑
 										cin >> choose;
 									}
 									if (choose == 2) break;
-									else if (myItem.getMedicine() < 1) {
+									else if (m_items < 1) {
 										cout << "…À“© ˝¡ø≤ª◊„£°";
 										system("pause");
 										break;
@@ -599,7 +598,7 @@ int Fight::ProceedFight(int log, ItemBag &myItem,ElfBag &myElf)//≤Œ ˝±Í ∂±Ì æ «∑
 	}
 }
 
-void Fight::Turn(int n)//0-2*n-1“¿¥Œ¥˙±ÌŒ“∑Ωn÷ªæ´¡È°¢µ–∑Ωn÷ªæ´¡È£ª∂˛Œ¨ ˝◊È√ø∏ˆµ•‘™µ⁄“ª∏ˆ¥Ê…œ ˆ±‡∫≈£¨µ⁄∂˛∏Ò¥Ê∂‘”¶æ´¡ÈÀŸ∂»
+void Fight::Turn(int n, int m)//0-2*n-1“¿¥Œ¥˙±ÌŒ“∑Ωn÷ªæ´¡È°¢µ–∑Ωn÷ªæ´¡È£ª∂˛Œ¨ ˝◊È√ø∏ˆµ•‘™µ⁄“ª∏ˆ¥Ê…œ ˆ±‡∫≈£¨µ⁄∂˛∏Ò¥Ê∂‘”¶æ´¡ÈÀŸ∂»
 {
 	int t[2];
 
@@ -608,7 +607,7 @@ void Fight::Turn(int n)//0-2*n-1“¿¥Œ¥˙±ÌŒ“∑Ωn÷ªæ´¡È°¢µ–∑Ωn÷ªæ´¡È£ª∂˛Œ¨ ˝◊È√ø∏ˆµ•
 		BattleTurn[i][1] = Me[i].getSpe();
 	}
 
-	for (int i = n; i < 2*n; i++) {
+	for (int i = n; i < m+n; i++) {
 		BattleTurn[i][0] = i;
 		BattleTurn[i][1] = Enemy[i-n].getSpe();
 	}
@@ -627,19 +626,19 @@ void Fight::Turn(int n)//0-2*n-1“¿¥Œ¥˙±ÌŒ“∑Ωn÷ªæ´¡È°¢µ–∑Ωn÷ªæ´¡È£ª∂˛Œ¨ ˝◊È√ø∏ˆµ•
 	}
 }
 
-void Fight::Atk(Elf &atk,Elf &target)
+void Fight::Atk1(Elf &atk,Elf &target)
 {
 	if (target.getHP() > 0) {
-		if (rand() % 100 <= 2) {
-			cout << atk.getName() << " π•ª˜¡À " << target.getName();
-			cout << "£¨ µ´ « " << target.getName() << " ∂„ø™¡Àπ•ª˜!" << endl;
+		if (rand() % 100 <= NPC.getAttr(3)) {
+			cout << atk.Name() << " π•ª˜¡À " << target.Name();
+			cout << "£¨ µ´ « " << target.Name() << " ∂„ø™¡Àπ•ª˜!" << endl;
 			system("pause");
 		}
 		else {
 			int hurt;
 			hurt = atk.getAtk() - target.getDef();
-			cout << atk.getName() << " π•ª˜¡À " << target.getName() << " , ";
-			if (rand() % 100 <= 0) {
+			cout << atk.Name() << " π•ª˜¡À " << target.Name() << " , ";
+			if (rand() % 100 <= NPC.getAttr(2)) {
 				hurt *= 2;
 				cout << "ª˜÷–¡À“™∫¶! ";
 			}
@@ -659,13 +658,45 @@ void Fight::Atk(Elf &atk,Elf &target)
 	}
 }
 
-void Fight::UseMedicine(int n,ItemBag &myItem)
+void Fight::Atk2(Elf &atk,Elf &target)
 {
-	Me[n].ChangeHP(50);
+	if (target.getHP() > 0) {
+		if (rand() % 100 <= Enemy.m_dodging) {
+			cout << atk.Name() << " π•ª˜¡À " << target.Name();
+			cout << "£¨ µ´ « " << target.Name() << " ∂„ø™¡Àπ•ª˜!" << endl;
+			system("pause");
+		}
+		else {
+			int hurt;
+			hurt = atk.getAtk() - target.getDef();
+			cout << atk.Name() << " π•ª˜¡À " << target.Name() << " , ";
+			if (rand() % 100 <= Enemy.m_hitpoints) {
+				hurt *= 2;
+				cout << "ª˜÷–¡À“™∫¶! ";
+			}
+			if (Restrain(atk, target) == 1) {
+				hurt *= 1.5;
+				cout << "–ßπ˚∞Œ»∫! ";
+			}
+			else if(Restrain(atk, target) == 0) {
+				hurt *= 0.5;
+				cout << " ’–ß…ıŒ¢ ";
+			}
+			if (hurt < 1) hurt = 1;
+			cout << " ‘Ï≥…¡À " << hurt << " µ„…À∫¶°£";
+			target.ChangeHP(-hurt);
+			system("pause");
+		}
+	}
+}
+
+void Fight::useHealing(int n)
+{
+	Me[n].addHitPoints(50);
 	if (Me[n].getHP() > MyArray[n]->getHP())
 		Me[n] = *MyArray[n];
-	myItem.ChangeMedicine(-1);
-	cout <<" " << Me[n].getName()<<" ª÷∏¥¡À50…˙√¸°£";
+	m_items-1;
+	cout <<" " << Me[n].Name()<<" ª÷∏¥¡À50…˙√¸°£";
 }
 
 int Fight::Restrain(Elf& atk, Elf& target)//0Œ™π•ª˜∑Ω±ªøÀ÷∆, 1Œ™π•ª˜∑ΩøÀ÷∆±ªπ•ª˜∑Ω, -1Œ™ŒﬁøÀ÷∆πÿœµ
