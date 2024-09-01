@@ -11,5 +11,9 @@ public:
 	void Save();
 	void Load();
 
-	void Run();
+	bool First(string input);
+	bool Map();
+	bool Bag();
+	bool NPC();
+	bool Print();
 };

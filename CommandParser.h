@@ -5,5 +5,5 @@ using namespace std;
 
 class CommandParser {
 public:
-    Command parse(const string& input);
+    Command Parse(const string& input);
 };

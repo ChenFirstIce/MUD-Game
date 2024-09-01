@@ -37,6 +37,8 @@ public:
 	//其他人物进入和退出
 	void addEnemy(enemy p_enemy);
 	void removeEnemy(enemy p_enemy);
+	void addNPC(npc p_npc);
+	void remove(npc p_npc);
 
 	//物品函数
 	item findItem(string& p_item);
@@ -62,8 +64,7 @@ private:
 	int m_maxenemies;//最大敌人数
 
 	//npc信息
-	//list<npc> m_npces;
-	//npctemplate m_npc;//产生哪个npc
+	list<npc> m_npces;
 
 	//物品信息
 	list<item> m_items;

@@ -10,8 +10,8 @@ string lowerCase(string str) {// 全部转写成小写字母,但实参不改变
 	return str;
 }
 
-string Entity::compName(){//输出全小写名字	
-	return lowerCase(m_name);
+string Entity::compName(){//输出全小写英文名字	
+	return lowerCase(m_enname);
 }
 
 bool Entity::fullMatch(const string p_str){

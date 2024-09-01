@@ -4,7 +4,7 @@
 #include "CommandParser.h"
 using namespace std;
 
-Command CommandParser::parse(const string& input) {
+Command CommandParser::Parse(const string& input) {
     istringstream iss(input);
     string word;
     vector<string> tokens;
@@ -22,6 +22,7 @@ Command CommandParser::parse(const string& input) {
         argus += " ";
     }
     argus -= " ";
+    cout << argus;//ºóÃæÔÙÉ¾µô
 
     return Command(action, argus);
 }

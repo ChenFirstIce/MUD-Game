@@ -39,6 +39,7 @@ public:
 	
 	//信息
 	string& Name() { return m_template->Name(); }
+	string& EnName() { return m_template->EnName(); }
 
 	//获得各个属性点数
 	int& HitPoints() { return m_hitpoints; }

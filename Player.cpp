@@ -45,11 +45,12 @@ Player* Player::getPlayer(){
 
 //打印信息
 void Player::showPlayer() {//未完成
-    cout << "*********************************************************************" << endl;
-    cout << left;
-    cout << setw(10) << "name:" << setw(10) << name << endl;
-    cout << setw(10) << "HP:" << setw(10) << m_hitpoints << '/' << m_attributes[MAXHITPOINTS];
-    cout << setw(10) << "EXP:";
+    cout << "---------------------------------- 玩家信息 ----------------------------------" << endl;
+    cout << " 名字:          " << name << endl;
+    cout << " 等级:          " << m_level << endl;
+    cout << " 经验:          " << right << setw(4) << m_exp << " / " << right << setw(4) << NeedForLevel(m_level + 1) << endl;
+    cout << " HP/Max:        " << right << setw(4) << m_hitpoints << " / " << right << setw(4) << m_attributes[MAXHITPOINTS] << endl;
+    cout << "--------------------------------------------------------------------------------\n\n";
 }
 
 //等级&经验

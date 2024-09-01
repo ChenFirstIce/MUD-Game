@@ -44,6 +44,14 @@ void Room::removeEnemy(enemy p_enemy){
 	m_enemies.erase(find(m_enemies.begin(), m_enemies.end(), (entityid)p_enemy));
 }
 
+void Room::addNPC(npc p_npc){
+	m_npces.push_back(p_npc);
+}
+
+void Room::remove(npc p_npc){
+	m_npces.erase(find(m_npces.begin(), m_npces.end(), (entityid)p_npc));
+}
+
 //物品函数
 item Room::findItem(string& p_item) {
 	list<item>::iterator itr = find_if(m_items.begin(), m_items.end(), matchEntityFull(p_item));
@@ -95,23 +103,40 @@ void Room::loadTemplate(istream& p_stream){
 
 void Room::loadData(istream& p_stream){
 	string temp;
+
 	p_stream >> temp;
 
-	m_items.clear();
+	m_items.clear();//房间物品
 	entityid last;
 	while (extract(p_stream, last) != 0)
 		m_items.push_back(last);
+
+	p_stream >> temp;
+
+	m_npces.clear();//房间NPC
+	entityid lase;
+	while (extract(p_stream, last) != 0)
+		m_npces.push_back(last);
 
 	p_stream >> temp;   
 	p_stream >> m_money;
 }
 
 void Room::saveData(ostream& p_stream){
-	p_stream << "[ITEMS] ";
+	p_stream << "[ITEMS] ";//房间物品
 
 	list<item>::iterator itr = m_items.begin();
-	while (itr != m_items.end())
-	{
+	while (itr != m_items.end()){
+		p_stream << *itr << " ";
+		itr++;
+	}
+
+	p_stream << "0\n";
+
+	p_stream << "[NPCES] ";//房间NPC
+
+	list<npc>::iterator itr = m_npces.begin();
+	while (itr != m_items.end()){
 		p_stream << *itr << " ";
 		itr++;
 	}

@@ -1,8 +1,10 @@
+#pragma once
 #include "DatabasePointer.h"
 #include "CommandParser.h"
 #include "RoomDatabase.h"
 #include "ItemDatabase.h"
 #include "StoreDatabase.h"
+#include "NPCDatabase.h"
 #include "Player.h"
 #include "NPC.h"
 using namespace std;
@@ -19,37 +21,35 @@ public:
     //玩家登入登出
     void New();//应该增加一个克制关系的输出
     void Continue();
-    void Quit();//更完善一点
+    void Quit(const Command& cmd);//更完善一点
 
     //玩家状态打印函数
     static void PrintHelp();
-    void PrintStats();
-    void PrintExperience();
     void PrintInventory();
     void PrintMyNPC();
-
+   
     //物品互动函数
+    void PrintRoom();
     bool UseItem(const Command& cmd);
     bool RemoveItem(const Command& cmd);
 
     //房间互动函数
-    void PrintMap();
-    void PrintRoom();
-    void Move(const Command& cmd);
-    void GetItem(const Command& cmd);
-    void DropItem(const Command& cmd);
+    //void Move(const Command& cmd);
+    bool GetItem(const Command& cmd);
+    bool DropItem(const Command& cmd);
 
     //商店函数（//可以增加缅甸的商店不适用yuan的判断）
-    static void StoreList();//暂时不知道怎么进入函数
-    void Buy(const Command& cmd);
-    void Sell(const Command& cmd);
+    static void StoreList(entityid p_store);//暂时不知道怎么进入函数
+    bool Buy(const Command& cmd);
+    bool Sell(const Command& cmd);
 
     //NPC互动函数
     npc ChooseNPC(string p_item);
-    void UseItemToNPC(const Command& cmd);
-    void RemoveItemFromNPC(const Command& cmd);
+    bool UseItemToNPC(const Command& cmd);
+    bool RemoveItemFromNPC(const Command& cmd);
 
     //Fight互动函数(应该用不到)
+    bool EnterFight(const Command& cmd);//未完成
    /* static void EnemyAttack(enemy p_enemy);
     static void PlayerKilled(player p_player);
     void PlayerAttack(const string& p_enemy);
@@ -57,6 +57,4 @@ public:
 
 protected:
     Player* m_player;
-
-    int situation = 0;
 };

@@ -18,9 +18,9 @@ void RoomDatabase::loadTemplates(){
 	}
 }
 
-void RoomDatabase::loadData()
+void RoomDatabase::loadData(string filename)
 {
-    ifstream file("Roomthings.txt");
+    ifstream file(filename);
 
     string temp;
     entityid roomid;

@@ -45,6 +45,7 @@ inline istream& operator>>( istream& s, pt& p )         \
 
 DATABASEPOINTER(item, Item)
 DATABASEPOINTER(room, Room)
-DATABASEPOINTER(enemy,Enemy)
+DATABASEPOINTER(enemy, Enemy)
 DATABASEPOINTER(npc, NPC)
 DATABASEPOINTER(enemytemplate, EnemyTemplate)
+DATABASEPOINTER(player, Player)

@@ -59,6 +59,8 @@ istream& operator>>(istream& p_stream, EnemyTemplate& t)
 
     p_stream >> temp >> ws;  
     getline(p_stream, t.m_name);//名字
+    p_stream >> temp >> ws;
+    getline(p_stream, t.m_enname);//英文名字
     p_stream >> temp >> type;//增加的
     t.setType(type);
     p_stream >> temp >> t.m_hitpoints;//血量
