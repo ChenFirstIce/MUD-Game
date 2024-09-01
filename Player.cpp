@@ -49,7 +49,8 @@ void Player::showPlayer() {//未完成
     cout << " 名字:          " << name << endl;
     cout << " 等级:          " << m_level << endl;
     cout << " 经验:          " << right << setw(4) << m_exp << " / " << right << setw(4) << NeedForLevel(m_level + 1) << endl;
-    cout << " HP/Max:        " << right << setw(4) << m_hitpoints << " / " << right << setw(4) << m_attributes[MAXHITPOINTS] << endl;
+
+    
     cout << "--------------------------------------------------------------------------------\n\n";
 }
 
@@ -90,18 +91,18 @@ void Player::addToBaseAttr(int p_attr, int p_val) {
 }
 
 //战斗属性
-int Player::getType(){
+string Player::getType(){
     if (m_type == LIGHT) {
-        return 1;
+        return "LIGHT";
     }
     else if (m_type == GOLD) {
-        return 2;
+        return "GOLD";
     }
     else if (m_type == FIRE) {
-        return 3;
+        return "FIRE";
     }
     else if (m_type == GRASS) {
-        return 4;
+        return "GRASS";
     }
     else {
         cout << "AttackType Error!";
@@ -109,20 +110,20 @@ int Player::getType(){
     }
 }
 
-void Player::setType(int p_attr) {
-    switch (p_attr) {
-    case 1:
+void Player::setType(string type) {
+    if (type == "LIGHT") {
         m_type = LIGHT;
-        break;
-    case 2:
+    }
+    else if (type == "GOLD") {
         m_type = GOLD;
-        break;
-    case 3:
+    }
+    else if (type == "FIRE") {
         m_type = FIRE;
-        break;
-    case 4:
+    }
+    else if (type == "GRASS") {
         m_type = GRASS;
-    default:
+    }
+    else {
         cout << "AttackType Error!";
         exit(3);
     }

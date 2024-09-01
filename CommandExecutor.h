@@ -45,11 +45,12 @@ public:
 
     //NPC互动函数
     npc ChooseNPC(string p_item);
-    bool UseItemToNPC(const Command& cmd);
-    bool RemoveItemFromNPC(const Command& cmd);
+    bool UseItemToNPC(const Command& cmd, npc& p_npc);
+    bool RemoveItemFromNPC(const Command& cmd, npc& p_npc);
+    bool ShowFace(npc p_npc);
 
     //Fight互动函数(应该用不到)
-    bool EnterFight(const Command& cmd);//未完成
+    //bool EnterFight(const Command& cmd);//未完成
    /* static void EnemyAttack(enemy p_enemy);
     static void PlayerKilled(player p_player);
     void PlayerAttack(const string& p_enemy);

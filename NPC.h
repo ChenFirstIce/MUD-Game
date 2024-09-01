@@ -26,8 +26,8 @@ public:
 	void addToBaseAttr(int p_attr, int p_val);//增加某属性基础点数
 
 	//战斗属性
-	int getType();
-	void setType(int p_attr);
+	string getType();
+	void setType(string type);
 
 	//是否被拯救
 	bool& Stats() { return m_stats; }

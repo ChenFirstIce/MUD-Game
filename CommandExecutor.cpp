@@ -446,7 +446,6 @@ void CommandExecutor::Sell(const Command& cmd){
 
 //NPC互动函数
 npc CommandExecutor::ChooseNPC(string p_item){
-    //NPC打印界面
     int id = m_player->findNPC(p_item);
 
     if (id = 0) {
@@ -460,21 +459,14 @@ npc CommandExecutor::ChooseNPC(string p_item){
     return id;
 }
 
-bool CommandExecutor::UseItemToNPC(const Command& cmd){//未完成
-    string p_item;
+bool CommandExecutor::UseItemToNPC(const Command& cmd, npc& p_npc){//未完成
+    string p_item = cmd.argus;
 
     if (cmd.argus.empty()) {
         cout << "啥？" << endl;
 
         return false;
     }
-
-    npc p_npc = ChooseNPC(cmd.argus);
-
-    //输入要使用的东西
-    cout << "你要使用？" << endl;
-    cout << "> " << endl;
-    cin >> p_item;
 
     //检验物品在不在
     int index = m_player->getItemIndex(p_item);
@@ -522,8 +514,8 @@ bool CommandExecutor::UseItemToNPC(const Command& cmd){//未完成
     }
 }
 
-bool CommandExecutor::RemoveItemFromNPC(const Command& cmd){
-    string p_item;
+bool CommandExecutor::RemoveItemFromNPC(const Command& cmd, npc& p_npc){
+    string p_item = cmd.argus;
 
     if (cmd.argus.empty()) {
         cout << "啥？" << endl;
@@ -551,9 +543,26 @@ bool CommandExecutor::RemoveItemFromNPC(const Command& cmd){
     }
 }
 
-bool CommandExecutor::EnterFight(const Command& cmd){
-    
-    return false;
+bool CommandExecutor::ShowFace(npc p_npc){
+    int id = npc;
+    switch (id) {
+    case 1:
+        firstFace();
+        break;
+    case 2:
+        secondFace();
+        break;
+    case 3:
+        thirdFace();
+        break;
+    case 4:
+        forthFace();
+        break;
+    default:
+        return false;
+    }
+    return true;
 }
+
 
 

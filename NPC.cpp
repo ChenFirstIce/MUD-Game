@@ -50,18 +50,18 @@ void NPC::addToBaseAttr(int p_attr, int p_val){
 	recalculateStats();
 }
 
-int NPC::getType(){
+string NPC::getType(){
 	if (m_type == LIGHT) {
-		return 1;
+		return "LIGHT";
 	}
 	else if (m_type == GOLD) {
-		return 2;
+		return "GOLD";
 	}
 	else if (m_type == FIRE) {
-		return 3;
+		return "FIRE";
 	}
 	else if (m_type == GRASS) {
-		return 4;
+		return "GRASS";
 	}
 	else {
 		cout << "AttackType Error!";
@@ -69,20 +69,20 @@ int NPC::getType(){
 	}
 }
 
-void NPC::setType(int p_attr){
-	switch (p_attr) {
-	case 1:
+void NPC::setType(string type){
+	if (type == "LIGHT") {
 		m_type = LIGHT;
-		break;
-	case 2:
+	}
+	else if (type == "GOLD") {
 		m_type = GOLD;
-		break;
-	case 3:
+	}
+	else if (type == "FIRE") {
 		m_type = FIRE;
-		break;
-	case 4:
+	}
+	else if (type == "GRASS") {
 		m_type = GRASS;
-	default:
+	}
+	else {
 		cout << "AttackType Error!";
 		exit(3);
 	}

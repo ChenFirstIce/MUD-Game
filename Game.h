@@ -12,8 +12,8 @@ public:
 	void Load();
 
 	bool First(string input);
-	bool Map();
-	bool Bag();
-	bool NPC();
-	bool Print();
+	void Map();
+	void Bag();
+	void NPC();
+	void PrintPrime();
 };

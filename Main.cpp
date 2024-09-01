@@ -27,7 +27,7 @@ int main() {
 	} while (!isStart);
 
 	if (input == "new") {
-		//剧情
+		//背景剧情
 	}
 
 	Player* m_player = Player::getPlayer();
@@ -35,15 +35,15 @@ int main() {
 	while (1) {
 		system("cls");
 
-		//打印个人信息
-		//打印房间信息(判断是不是商店)
+		game.PrintPrime();
 
 		cout << "> ";
 		cin >> input;
 		input = lowerCase(intput);
 
 		if (input == "map") {
-			//进入map改变player的room信息
+			system("cls");
+			game.Map();
 			continue;
 		}
 		else if (input == "attack") {
@@ -59,14 +59,10 @@ int main() {
 			}
 		}
 		else if (input == "npc") {
-			system("cls");
-			//npc界面
-			//选择npc
-			//进入循环
-				//输入（如果返回就跳出循环）
-				//操作
+			game.NPC();
 		}
 		else if (input == "bag") {
+			system("cls");
 			//背包界面
 			//选择背包
 			//进入循环

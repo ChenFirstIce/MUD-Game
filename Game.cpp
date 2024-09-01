@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <windows.h>
 #include "Game.h"
 using namespace std;
 
@@ -54,22 +55,90 @@ bool Game::Map() {
 
     cmd = commandpar.Parse(input);
 
-    if (m_player->currentRoom()->Data() == 0) {
-        //打印房间信息
-    }
-    else {
-        //打印商店信息
-    }
-
-    return (commandexec.Excute(cmd));
+    
 }
 
-bool Game::Print(){
+void Game::NPC() {
+    string input;
+    Player* m_player = Player::getPlayer();
+    Command cmd;
+    CommandParser commandpar;
+    CommandExecutor commandexec(m_player);
+
+    npc ta;
+    bool isRun = false;
+
+    do {
+        system("cls");
+
+        commandexec.PrintMyNPC();
+
+        cout << "请选择你要互动的对象（输入他的英文名or输入cancel退出当前界面）:" << endl;
+        cout << "> ";
+        cin >> input;
+
+        if (input == "cancel") return;
+
+        ta = commandexec.ChooseNPC(input);
+
+        if (ta != 0) {
+            isRun = true;
+        }
+
+    } while (!isRun);
+
+    isRun = false;
+
+    while(true) {
+        system("cls");
+
+        ta->showNPC();
+
+        cout << "对他进行操作[use <>; remove <>; look]（输入命令or输入cancel退出当前界面）:" << endl;
+        cout << "> ";
+        cin >> input;
+
+        if (input == "cancel") return;
+
+        cmd = commandpar.Parse(input);
+
+        if (cmd.action == "use") {
+            isRun = commandexec.UseItemToNPC(cmd,ta);
+        }
+        else if (cmd.action == "remove") {
+            isRun = commandexec.RemoveItemFromNPC(cmd,ta);
+        }
+        else if (cmd.action == "look") {
+            isRun = commandexec.ShowFace(ta);
+            Sleep(5000);
+            cout << "他也看向你，" << endl;
+            cout << "      （在屏幕之外的你）" << endl;
+            cout << "你移开了目光……" << endl;
+        }
+        else {
+            isRun = false;
+        }
+
+        if (!isRun) {
+            cout << "这都能输错，重新输入吧" << endl;
+        }
+    } 
+
+}
+
+void Game::PrintPrime(){
     Player* m_player = Player::getPlayer();
     Command cmd;
     CommandParser commandpar;
     CommandExecutor commandexec(m_player);
     
+    m_player->showPlayer();
+    if (m_player->currentRoom()->Data() != 0) {
+        CommandExesutor::StoreList(m_player->currentRoom()->Data());
+    }
+    else {
+        commandexec.PrintRoom();
+    }
 }
 
 

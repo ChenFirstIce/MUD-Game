@@ -10,8 +10,8 @@ typedef pair<item, int> loot;        //int 表示留下物品的概率
 class EnemyTemplate :public Entity {
 public:
 	EnemyTemplate();
-	int getType();
-	void setType(int p_attr);
+	string getType();
+	void setType(string type);
 	friend istream& operator >>(istream& p_stream, EnemyTemplate& t);
 
 	//模板状态栏
@@ -58,8 +58,8 @@ public:
 	room& currentRoom() { return m_room; }
 
 	//获得战斗属性
-	int getType();
-	void setType(int p_attr);
+	string getType();
+	void setType(string type);
 
 	//物品函数
 	list<loot>& LootList() { return m_template->m_loot; }

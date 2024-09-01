@@ -37,8 +37,8 @@ public:
 	void addToBaseAttr(int p_attr, int p_val);//增加某属性基础点数
 	
 	//战斗属性
-	int getType();
-	void setType(int p_attr);
+	string getType();
+	void setType(string type);
 
 	//装备加持
 	void addDynamicBonuses(item p_item);//可变数值（比如武器装备和卸下）
