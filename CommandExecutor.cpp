@@ -45,12 +45,12 @@ void CommandExecutor::New() {
         Player::deletePlayer();
     }
 
-    cout << "你的名字是？（例如：雌鹰）" << endl;
-    cout << "> ";
+    cout << "你的"<<"\033[36m"<<"名字"<<"\033[0m"<<"是？（例如：雌鹰）" << endl;
+    cout <<"\033[34m" <<">"<<"\033[0m";
     cin >> name;
 
-    cout << "你的攻击类型是？（输入1，则攻击类型为光）" << endl;
-    cout << "> ";
+    cout << "你的"<<"\033[36m"<<"攻击类型"<<"\033[0m"<<"是？（输入1，则攻击类型为光）" << endl;
+    cout <<"\033[34m" <<">"<<"\033[0m";
     cin >> type;
 
     //增加元素选择
@@ -95,7 +95,7 @@ void CommandExecutor::PrintInventory(){
     cout << "\n-------------------------------- 你的装备 --------------------------------" << endl;
 
     if (p.Weapon() == 0) {
-        cout << "没有武器！手无烤鸭之力！" << endl;
+        cout << "\033[31m"<<"没有武器！"<<"\033[0m"<<"手无烤鸭之力！" << endl;
     }
     else {
         cout << " 武器:  " << p.Weapon()->Name() << endl;
@@ -129,7 +129,7 @@ bool CommandExecutor::UseItem(const Command& cmd){
 
     if (i == -1)
     {
-        cout << "找不到该物品。" << endl;
+        cout <<"\033[31m"<< "找不到该物品。" <<"\033[0m"<< endl;
         return false;
     }
 
@@ -209,7 +209,7 @@ bool CommandExecutor::RemoveItem(const Command& cmd){
         return true;
     }*/
 
-    cout << "无法卸掉" << p_item << endl;
+    cout <<"`\033[31m"<< "无法卸掉" << p_item<<"\033[0m" << endl;
     return false;
 }
 
@@ -287,7 +287,7 @@ bool CommandExecutor::GetItem(const Command& cmd){
        
         if (m > m_player->CurrentRoom()->Money())
         {
-            cout << "没有那么多钱，少做梦！" << endl;
+            cout << "没有那么多钱，"<<"\033[31m"<<"少做梦！" <<"\033[0m"<< endl;
 
             return false;
         }
@@ -311,7 +311,7 @@ bool CommandExecutor::GetItem(const Command& cmd){
     }
     
     if (!m_player->pickItem(i)){
-        cout << "你拿不下这么多东西了，别太贪。" << endl;
+        cout << "你拿不下这么多东西了，"<<"\033[31m"<<"别太贪！" <<"\033[0m" << endl;
 
         return false;
     }
@@ -347,7 +347,7 @@ bool CommandExecutor::DropItem(const Command& cmd){
         else{
             m_player->Money() -= m;
             m_player->currentRoom()->Money() += m;
-            cout << "恭喜你！你又少了" << m << "元钱！" << endl;
+            cout << "\033[33m"<<"恭喜你！"<<"\033[0m"<<"你又少了" << m << "元钱！" << endl;
         }
 
         return true;
@@ -439,14 +439,14 @@ void CommandExecutor::Sell(const Command& cmd){
     item i = p.getItem(index);
     if (!s.has(i))
     {
-        cout << "我们已经有" << p_item << "，交易取消" << endl;
+        cout << "我们已经有" << p_item << "，"<<"\033[31m"<<"交易取消" <<"\033[0m"<< endl;
 
         return false;
     }
 
     p.dropItem(index);
     p.Money() += i->Price();
-    cout << "成功卖出" << p_item << "，恭喜钱包又多了" << i->Price() << "元" << endl;
+    cout << "\033[31m"<<"成功卖出" << p_item <<"\033[0m"<< "，恭喜钱包又多了" << i->Price() << "元" << endl;
 
     return true;
 }
@@ -460,7 +460,7 @@ npc CommandExecutor::ChooseNPC(string p_item){
         return 0;
     }
 
-    cout << "> " << endl;
+    cout << "\033[34m" <<">"<<"\033[0m"; << endl;
     cin >>
 
     return id;
@@ -485,7 +485,7 @@ bool CommandExecutor::UseItemToNPC(const Command& cmd, npc& p_npc){//未完成
     }
     //判断装备有没有被装备过
     if (itm == m_player->Weapon()||itm == m_player->Armor()) {
-        cout << "你已经装备过来，物品可不会分身……" << endl;
+        cout << "你已经装备过了，物品可不会分身……" << endl;
 
         return false;
     }
@@ -494,24 +494,24 @@ bool CommandExecutor::UseItemToNPC(const Command& cmd, npc& p_npc){//未完成
     {
     case WEAPON:
         m_npc->useWeapon(itm);
-        cout << "给" << m_npc->Name() << "装备上" << itm.Name() << endl;
+        cout << "给" <<"\033[33m"<< m_npc->Name() <<"\033[0m"<< "装备上" << itm.Name() << endl;
 
         return true;
     case ARMOR:
         m_npc->useArmor(itm);
-        cout << "给" << m_npc->Name() << "穿上" << itm.Name() < endl;
+        cout << "给" <<"\033[33m"<< m_npc->Name() << "\033[0m"<< "穿上" << itm.Name() < endl;
 
         return true;
     case HEALING:
         m_npc->useHealing(itm);
         m_player->dropItem(index);
-        cout << "给" << m_npc->Name() << "使用" << itm.Name() << endl;
+        cout << "给" <<"\033[33m"<< m_npc->Name() << "\033[0m"<< "使用" << itm.Name() << endl;
 
         return true;
     case EXP:
         m_npc->addEXP(itm);
         m_player->dropItem(index);
-        cout << <<"给" << m_npc->Name() << "使用" << itm.Name() << endl;
+        cout << <<"给" <<"\033[33m"<< m_npc->Name() << "\033[0m"<< "使用" << itm.Name() << endl;
 
         return true;
     default:
@@ -550,112 +550,26 @@ bool CommandExecutor::RemoveItemFromNPC(const Command& cmd, npc& p_npc){
     }
 }
 
-bool CommandExecutor::ShowFace(npc p_npc) {
+bool CommandExecutor::ShowFace(npc p_npc){
     int id = npc;
-
-    if (p_npc == 1) {
-
-        cout << ".ii,...EGKLWt,,KKWijiLtjijKiEEiELtiELGKWKtjtGELEiG" << endl;
-        cout << " ti   #EWGLKLttE     LLttitEiGEWLGGiEKEKKEEjtEEtGti" << endl;
-        cout << " ti.iKWLKEGiiEtt      LLEiiGtiGKjGWLiEKEKK#WKLGE,E,i" << endl;
-        cout << " tt    tGKKGLKij       LLGiiKiLKE GtLLEKKGKWjjiGK,G,i" << endl;
-        cout << " ti   .#EEWELKL.      GKGLLiELiE L,EGEEKGK#jjiGE,E,i" << endl;
-        cout << " tt    EWWEEGKL        KGLKLWLiG E jGEEKWE#WjtGKjGji" << endl;
-        cout << " tt .WE#WWEEGKi       GGGLGLKWWWKGGEEKWE#jitGEjEji" << endl;
-        cout << " tt    #KWEEGGL.EKWWKEiLLELEELj,,jLEEKKG#jjtGKjGji" << endl;
-        cout << " ti    .LWEEEGWt.,,,,,,KLjL #######EGWKWEjjtGEGGGE" << endl;
-        cout << " ti     ,#K#GGLtWKKKEGKLEt ii#####i#GiLKjWjtGLLLGG" << endl;
-        cout << ".tt   . .GKKGG#G#####j,E  # LjWWKE,#LLGGjjjtGKKKKW" << endl;
-        cout << ".ti     .GWGLKG#EWKWL..K,,G   GGt .KLiGKjjjtGKKKKK" << endl;
-        cout << " ti    G.jKWG# G ,i    .          jt#GjKjjjjtGWKKEK" << endl;
-        cout << " ti.    ..Wt#KL        L .  #        WiLjjjjjjtGKELtE" << endl;
-        cout << " ti     .,LGW        #  .    W   tK   G LjjjjjtGKEijG" << endl;
-        cout << ".ti..    E.Ej#####W     .             tKLjjjjjtGKEijE" << endl;
-        cout << " tt.  .   # L                        WiGjjjjjtGKGLjE" << endl;
-        cout << ",ti    .   WW           .            tEiGjjjjttGKGLjG" << endl;
-        cout << "iit.,j.......W                       #.iGjjjjjtGKEGLE" << endl;
-        cout << "iLiLiij.  ..  L                     , .iG,jjjjiGKELiE" << endl;
-        cout << ".LLi,  .. ..  .j      iiiiLL       .iGjjjjttGKGLiE" << endl;
-        cout << "GLL,,,.  .....  L,                 E.,LGjjjjjiGKELiE" << endl;
-        cout << "GEGGGGG...      #t                Li.,LGjjjttiGKEGiE" << endl;
-        cout << "..,iLEiiiiiiiiiiiK t          ,ttttiiG#GEjjtttLGKEGiE" << endl;
-        cout << ",.,iLELLLLLiLiLLGt#tW.      tttt ttttLtWitijjjttLiE" << endl;
-        cout << ",.jLLEjjtjtjjjjWtiWjtjjtjjjttijtKtGjjttttGGKEEGE" << endl;
-        cout << "j.tLLEtttjtjtjWjtKijjji,,jjtjEjjtijjLjttttLGGLGGG" << endl;
-        cout << "GjiLLEjjtttttKjjjWjjj  K,  jK, jjtLtjjKjtttLGEEEKK" << endl;
-        cout << "          .#E,,,jWjt.   K  W    jtii,,,WWjj,,,,,jj" << endl;
-        cout << "EGGEEEEEE#EL,.. j#t,     j,     .tGi,,,,GWWKWWWWWW" << endl;
-        cout << "EEEEEEE#it,,.   j#i     ####    .j#i ,,,jiLL#KKWWW" << endl;
-        cout << "EEEEKWj,LLE     tWW    WGLGK#   .tWL    .L.tttiWKW" << endl;
+    switch (id) {
+    case 1:
+        firstFace();
+        break;
+    case 2:
+        secondFace();
+        break;
+    case 3:
+        thirdFace();
+        break;
+    case 4:
+        forthFace();
+        break;
+    default:
+        return false;
     }
-    else if (p_npc == 2) {
-
-        cout << "!!!&......   #$@$%#**#oo@#&@@&$!*&&&   .......;!$." << endl;
-        cout << "##@@&$%*#**#;;     .@**%&@&%$$$$$&&$.%%;" << endl;
-        cout << "  o;!&$!!!#!&#&&$$$#*%%*!       &o&#&#.!!!!!&&!! ;% " << endl;
-        cout << "  o. %.     o#&&$$#$$&%%        &#$&#@#     **   ;% " << endl;
-        cout << "  o. *.    #@#$&$&%$#&$@         *$&@&#     **   ;% " << endl;
-        cout << "  o. *.     @#&#&&&&!&&@          &&@#;#    **   ;% " << endl;
-        cout << "  !. *.     #&@&&@&!!&&#    o#    #@!#      **   ;% " << endl;
-        cout << "  !. *.    # @#@&&%  &&@ #.;@@@ @$o@      **   ;* " << endl;
-        cout << "  !. *.   o  ##@$@###@&o  #%*   #!!       o*   !% " << endl;
-        cout << "  !. *.      !@&#@@@%@;              o.       oo   !* " << endl;
-        cout << "  !. o.      !&#! oo   *             .;.       oo   !* " << endl;
-        cout << "  ;. o.      #&&          .           *         oo   !* " << endl;
-        cout << "  ;. o                   .           $@        !!   !* " << endl;
-        cout << "  ;. !       @#          $;          @         !!   !o " << endl;
-        cout << "  ;  !        *!         .          &@         !!   !o " << endl;
-        cout << "  ;  !                             !          !!   ;o " << endl;
-        cout << "  ;  !           @       ;         oo          !!   ;o " << endl;
-        cout << "  ;  !            $             ;o;          ;!   ;o " << endl;
-        cout << "  ;  !             @           o*;.          ;;   ;o " << endl;
-        cout << "  .  ;               &  .%;  %      ...;;.. ;o$" << endl;
-        cout << "  .  ;             o**;.*;!  o      ...;;.. ;oo" << endl;
-        cout << ". .  ;            $!!!%!;;@ ;!#     ...;;.. ;oo" << endl;
-        cout << "  .  ;           ;*!**;;*.  ;!#     ...;... .!o" << endl;
-        cout << "$    .          o@oo!!;;    ;;###      .. . .;o" << endl;
-        cout << "     .         #%%!!.#      ;!&&&#     ..   ;!*" << endl;
-        cout << "     .        @&@*!.o;$     ;@$$$$$@   ..   ;!;" << endl;
-        cout << "*           #&&&#!.#%%%.    @**%$@$$%&;     .;." << endl;
-        cout << "*o       @#$&&&#@!!#%%%#   ..********$$$&@% ..." << endl;
-        cout << "    #@@#&$$$%&&&&&o#;&%%#;@  .%*****%o**o***%%$&@" << endl;
-        cout << "    &$$$%%$%@%%##!. *&%#    ;$@*****@*o*******o$$" << endl;
-        cout << "   $$$$$%%%%$%%%*   $%%! ... *****#*******$@*o**%" << endl;
-        cout << "  @$$%%%%%%%%%%%@.  #&&..   *@*****@*****$%%*%**%" << endl;
-    }
-    else if (p_npc == 3) {
-        cout << "                GEEGjLjEWWELtEE                 " << endl;
-        cout << "               KKKKGGKjLW#KKjGK#W                 " << endl;
-        cout << "             i#KWKWGKKjG   WWKWKW                 " << endl;
-        cout << "             W#KKEWK#KKK    WW#WW                 " << endl;
-        cout << "              KWK#WEWKEE    .WKKLG                " << endl;
-        cout << "              W#KWKKGEWG WWW W#KW K               " << endl;
-        cout << "              W#KWiKGEE##E## W,LW                 " << endl;
-        cout << "             #WKKjLK#i  E##L#WEt                  " << endl;
-        cout << "              WiWWE###K  t   EGi                  " << endl;
-        cout << "                KKL   W W    #  ,.                  " << endl;
-        cout << "                 Wi  #t        jK                   " << endl;
-        cout << "                      t        GK                   " << endl;
-        cout << "                  .    t       j.                   " << endl;
-        cout << "                   j          Kj                    " << endl;
-        cout << "                    ,        tti                    " << endl;
-        cout << "                      , . .  j .E                   " << endl;
-        cout << "                          jt  E                   " << endl;
-        cout << "                     LEGLjt.  tKW                 " << endl;
-        cout << "                    EjGjjt , iiiWj                " << endl;
-        cout << "                   KitKjt  L,,,i#E                " << endl;
-        cout << "                 iG itLj  .   ,tWEKj              " << endl;
-        cout << "                .GWW ttj  tG   #WEEjG             " << endl;
-        cout << "              WiEEtW ttL  tji  WKGGKKiW           " << endl;
-        cout << "            .GjEEWGjWit,,itWW  KKGGGEEEj          " << endl;
-        cout << "         t GK#EE#WWtK  i.LLKWi GKLtLWKEGEt        " << endl;
-        cout << "       ijjKjWWGGKEi WL..jtEK,tLLEtttWEGjjjGj      " << endl;
-        cout << "      KtWtttjttGGL, WKWjKjj.  #LEtttjjLtjjtjG#K   " << endl;
-        cout << "      EEttttttt#LE  ,GEEEE   .GLEttttEGttttjWKGW  " << endl;
-    }
+    return true;
 }
-
-
 
 
 
