@@ -1,6 +1,7 @@
 #pragma once
 #include "CommandExecutor.h"
 #include "Player.h"
+#include "Map.h"
 using namespace std;
 
 class Game {

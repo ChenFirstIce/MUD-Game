@@ -80,7 +80,7 @@ public:
 	void useExp(int p_index);
 
 	//房间函数
-	room currentRoom() { return m_room; }
+	room& currentRoom() { return m_room; }
 
 	//输入输出重载
 	friend ostream& operator <<(ostream& p_stream, Player& p);

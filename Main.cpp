@@ -54,9 +54,7 @@ int main() {
 			fight.ProceedFight();
 			//改变room和player的npc，改变npc的状态
 			if (cnt != m_player) {
-				if (//目标房间){
-					//迷宫
-					//剧情
+				if
 			}
 			//改变房间
 		}

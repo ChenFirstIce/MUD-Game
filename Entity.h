@@ -14,7 +14,7 @@ inline type& extract(istream& s, type& t){//管理ID标签的加载，加载名称和各个物品
 
 class Entity {
 public:
-	Entity(string p_name = "UNDEFINED", string p_enname = "UNDEFINED", entityid p_id = 0) :m_id(p_id), m_name(p_name) {}//默认物品ID为0，0为无效ID
+	Entity(string p_name = "UNDEFINED", string p_enname = "UNDEFINED", entityid p_id = 0) :m_id(p_id), m_name(p_name),m_enname(p_enname) {}//默认物品ID为0，0为无效ID
 	friend string lowerCase(string);
 	string& Name() { return m_name; }//引用可以直接修改变量
 	string& EnName() { return m_enname; }

@@ -50,8 +50,11 @@ bool Game::Map() {
     CommandParser commandpar;
     CommandExecutor commandexec(m_player);
 
+    cout << "请输入你的操作" << endl;
     cout << "> ";
     cin >> input;
+
+
 
     cmd = commandpar.Parse(input);
 
@@ -97,7 +100,7 @@ void Game::NPC() {
 
         commandexec.PrintMyNPC();
 
-        cout << "请选择你要互动的对象（输入他的英文名or输入cancel退出当前界面）:" << endl;
+        cout << "请选择你要互动的对象（输入他的英文名or输入cancel退出当前界面）" << endl;
         cout << "> ";
         cin >> input;
 
@@ -118,7 +121,7 @@ void Game::NPC() {
 
         ta->showNPC();
 
-        cout << "对他进行操作[use <>; remove <>; look]（输入命令or输入cancel退出当前界面）:" << endl;
+        cout << "对他进行操作[use <>; remove <>; look]（输入命令or输入cancel退出当前界面）" << endl;
         cout << "> ";
         cin >> input;
 

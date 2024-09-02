@@ -1,7 +1,9 @@
 #include <cstdio>
 #include <windows.h>
 #include <conio.h>
-//8*12
+#include "Maze.h"
+
+
 char a[50][50] = { "############",
 				"#O#    #   #",
 				"#   ## # # #",
@@ -24,8 +26,8 @@ void Maze::Hide()//用于隐藏控制台光标
 
 void Maze::Welcome()//欢迎界面 
 {
-	printf("\n\n           走 迷 宫");
-	printf("\n\n        请按任意键开始");
+	cout << "\n\n           走 迷 宫";
+	cout << "\n\n        请按任意键开始";
 	getch();
 	system("cls");
 }
@@ -93,5 +95,9 @@ void Maze::Set()//设置光标到初始位置
 	cout << "获得了：" << endl;
 	cout << "去往缅甸的车票*2" << endl;
 	cout << "魔杖*2" << endl;
+
+	m_player->pickItem(1);
+	m_player->pickItem(1);
+
 	Sleep(10000);
 }
