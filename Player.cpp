@@ -44,13 +44,14 @@ Player* Player::getPlayer(){
 }
 
 //打印信息
-void Player::showPlayer() {//未完成
+void Player::showPlayer() {
     cout << "---------------------------------- 玩家信息 ----------------------------------" << endl;
     cout << " 名字:          " << name << endl;
     cout << " 等级:          " << m_level << endl;
     cout << " 经验:          " << right << setw(4) << m_exp << " / " << right << setw(4) << NeedForLevel(m_level + 1) << endl;
-
-    
+    cout << " 攻击属性:      " << getType() << endl;
+    cout << " 暴击率：       " << getAttr(CRITING )<<endl;  
+    cout << " 闪避率：       " << getAttr(DODGING) <<endl;
     cout << "--------------------------------------------------------------------------------\n\n";
 }
 
