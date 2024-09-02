@@ -1,7 +1,8 @@
 #include<iostream>
 #include"map.h"
 
-void ShowShip() {                                                      
+void ShowShip() {   
+    cout << "\033[34m";
     cout << "                                      #" << endl;
     cout << "                                    @ .@ " << endl;
     cout << "                                   @   & " << endl;
@@ -55,6 +56,7 @@ void ShowShip() {
     cout << "                       @       @            .         .@     @" << endl;
     cout << "                        o@     @                        o@@@ @" << endl;
     cout << "                          %@@@@@" << endl;
+    cout << "\033[0m";
                                                                                                                                                       
 
 }

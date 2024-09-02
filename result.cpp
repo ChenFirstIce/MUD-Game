@@ -1,7 +1,8 @@
 #include<iostream>
 using namespace std;
 
-void printWin() {                                                                     
+void printWin() {   
+    cout << "\033[32m";
     cout << "    11111111111111111111111 111111111  11111       1111111" << endl;
     cout << "    11111111111111111111111 1111111     11111        11111" << endl;
     cout << "     1111   111   11    11     111        1111        11" << endl;
@@ -20,9 +21,11 @@ void printWin() {
     cout << "           111    111       111111111    111111       11" << endl;
     cout << "           11     11        111111111  11111111        1" << endl;
     cout << "           11      1 " << endl;
+    cout << "\033[0m";
 }
 
-void printOUT() {                                           
+void printOUT() {  
+    cout << "\033[31m";
     cout << "        ???       ???????  ?????  ?????????????" << endl;
     cout << "     ????????       ?????    ??   ?????????????" << endl;
     cout << "    ???     ??      ???      ??   ??   ???   ??" << endl;
@@ -37,4 +40,5 @@ void printOUT() {
     cout << "   ???       ??     ???     ??         ???" << endl;
     cout << "    ???     ??       ?????????         ???" << endl;
     cout << "      ???????          ?????         ???????" << endl;
+    cout << "\033[0m";
 }

@@ -74,6 +74,7 @@ void gotoc() {
 void Map::ShowMap2()
 {
 	system("cls");
+	cout << "033[33m";
 	cout << "地图1:" << endl;
 	cout << " __________ __________ __________ " << endl;
 	cout << "|          |          |          |" << endl;
@@ -81,6 +82,7 @@ void Map::ShowMap2()
 	cout << "|     " << pos[0][0] << "    |    " << pos[0][1] << "     |    " << pos[0][2] << "     |" << endl;
 	cout << "|__________|__________|__________|" << endl;
 	cout << "您现在的位置为" << mapName2[position] << endl;
+	cout << "033[0m";
 }
 
 void Map::Move2(char order)

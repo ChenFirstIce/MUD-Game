@@ -1,6 +1,7 @@
 #include<iostream>
 #include"map.h"
-void ShowHouse(){                                      
+void ShowHouse(){ 
+         cout << "\033[33m";
          cout << "                         GGGGG" << endl;
          cout << "                         GGGGG"<< endl;                                
          cout << "                         GGGGG" << endl;
@@ -35,4 +36,5 @@ void ShowHouse(){
          cout << "  jjjGGGGG#GGGGGjjjj#######jjjjGGGGGGGGGGWjjj#######jj     " << endl;
          cout << "  jjjGGGGG#GGGGGjjjjjjjjjjjjjjjGGGGGGGGGGWjjjjjjjjjjjj     " << endl;
          cout << "  jjjtttttttttttjjjjjj,,,,,,,,,iiiiiiiiiii,,,,,,,,,,,,     " << endl;
+         cout << "\033[0m";
 }
