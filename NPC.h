@@ -11,7 +11,7 @@ using namespace std;
 class NPC :public Entity {
 public:
 	NPC();
-	//void showNPC();未完成
+	void showNPC();
 
 	//等级&经验
 	int getLevel() { return m_level; }

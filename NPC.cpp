@@ -88,6 +88,19 @@ void NPC::setType(string type){
 	}
 }
 
+//打印信息
+void NPC::showNPC() {
+    cout << "---------------------------------- NPC信息 ----------------------------------" << endl;
+    cout << " 名字:          " << m_name << endl;
+    cout << " 等级:          " << m_level << endl;
+    cout << " 经验:          " << right << setw(4) << m_exp << " / " << right << setw(4) << NeedForLevel(m_level + 1) << endl;
+    cout << " 攻击属性:      " << getType() << endl;
+    cout << " 暴击率：       " << getAttr(CRITING) <<endl;  
+    cout << " 闪避率：       " << getAttr(DODGING) <<endl; 
+    cout << " 是否被拯救     " << m_stats <<endl;
+    cout << "--------------------------------------------------------------------------------\n\n";
+}
+ 
 //加持
 void NPC::addDynamicBonuses(item p_item){
 	Item& i = *p_item;
