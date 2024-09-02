@@ -10,16 +10,10 @@ RoomType Room::getRoomType(string p_arr) {
 
 	switch (chr) {
 	case 'N':
-		return NORTH;
+		return NOMAL;
 		break;
 	case 'S':
-		return SOUTH;
-		break;
-	case 'W':
-		return WEST;
-		break;
-	case 'E':
-		return EAST;
+		return STORE;
 		break;
 	default:
 		cout << "Error" << endl;

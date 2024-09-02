@@ -11,7 +11,7 @@ using namespace std;
 class NPC :public Entity {
 public:
 	NPC();
-	void showNPC();
+	//void showNPC();未完成
 
 	//等级&经验
 	int getLevel() { return m_level; }
@@ -37,7 +37,7 @@ public:
 	void addBonuses(item p_item);//基础数值
 
 	//血量
-	int& hitPoints() { return m_hitpoints; }
+	double& HitPoints() { return m_hitpoints; }
 	void addHitPoints(int p_hitpoints);
 
 	//重新计算属性值
@@ -70,7 +70,7 @@ protected:
 	//NPC属性
 	int m_level;//等级
 	int m_exp;//经验值（随等级重置）
-	int m_hitpoints;//血量;
+	double m_hitpoints;//血量;
 	int m_target;//增加可攻击敌人个数
 	//int m_statpoints;
 	AttackType m_type;

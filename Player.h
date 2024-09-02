@@ -23,6 +23,7 @@ public:
 	void showPlayer();
 	int& Task() { return m_task; }//改变剧情节点
 	money& Money() { return m_money; }
+	int& Exp() { return m_exp; }
 
 	//等级&经验
 	int getLevel() { return m_level; }
@@ -45,7 +46,7 @@ public:
 	void addBonuses(item p_item);//永久数值（增加就不会改变）
 
 	//血量
-	int hitPoints() { return m_hitpoints; }
+	double& HitPoints() { return m_hitpoints; }
 	void addHitPoints(int p_hitpoints);
 
     //重新计算属性值
@@ -66,6 +67,7 @@ public:
 	bool dropItem(int p_index);
 
 	//寻找NPC和增加NPC
+	list<npc>& Npces() { return m_npces; }
 	npc findNPC(string& p_npc);
 	void addNPC(npc p_npc);
 
@@ -103,7 +105,7 @@ private:
 	int m_level;//等级
 	int m_exp;//经验值（随等级重置）
 	money m_money;//金钱
-	int m_hitpoints;//血量;
+	double m_hitpoints;//血量;
 	//int m_statpoints;
 	AttackType m_type;
 	AttributeSet m_baseattributes;//基础属性值

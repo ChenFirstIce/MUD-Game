@@ -62,13 +62,8 @@ int main() {
 			game.NPC();
 		}
 		else if (input == "bag") {
-			system("cls");
-			//背包界面
-			//选择背包
-			//进入循环
-				//输入（如果返回就跳出循环）
-				//操作
-		}
+		    game.Bag();
+	    }
 		else {
 			//操作
 		}

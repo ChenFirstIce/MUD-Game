@@ -10,7 +10,7 @@ enum ItemType { WEAPON, ARMOR, HEALING, EXP};//物品类型
 
 enum RoomType { NOMAL, STORE };
 
-enum AttackType { LIGHT = 1, GOLD, FIRE, GRASS };
+enum AttackType { LIGHT, GOLD, FIRE, GRASS };
 
 class AttributeSet {//属性集，相当于包含属性的数组
 public:

@@ -58,6 +58,30 @@ bool Game::Map() {
     
 }
 
+void Game::Bag(){
+    string input;
+    Player* m_player = Player::getPlayer();
+    Command cmd;
+    CommandParser commandpar;
+    CommandExecutor commandexec(m_player);
+
+    while (true) {
+        system("cls");
+
+        PrintInventory();
+
+        cout << "请输入指令进行操作" << endl;
+        cout << "> ";
+        cin >> input;
+
+        if (input == "cancel") {
+            return;
+        }
+
+        commandexec.Execute(input);
+    }
+}
+
 void Game::NPC() {
     string input;
     Player* m_player = Player::getPlayer();
@@ -140,53 +164,3 @@ void Game::PrintPrime(){
         commandexec.PrintRoom();
     }
 }
-
-
-//void Game::Run() {
-//    string input;
-//    Player* m_player = Player::getPlayer();
-//    Command cmd;
-//    CommandParser commandpar;
-//    CommandExecutor commandexec(m_player);
-//
-//    cout << "> ";
-//    cin >> input;
-//
-//    cmd = commandpar.Parse(input);
-//
-//    bool isRun = false;
-//
-//    if (cmd.action == "map") {
-//        //地图系统
-//        //获得房间号，打印房间
-//        do {
-//            system("cls");
-//
-//            if (m_player->currentRoom()->Data() == 0) {
-//                commandexec.PrintRoom();
-//            }
-//            else {
-//                commandexec.StoreList(m_player->currentRoom());
-//            }
-//
-//            isRun = commandexec.Execute(cmd);
-//        } while (!isRun)
-//    }
-//    else if (cmd.action == "attack") {
-//        int cnt = m_player->Task();
-//        //攻击系统
-//        if (cnt != m_player->Task()) {
-//            //推动剧情
-//            //判断是否使火车篇
-//            //加入迷宫游戏
-//        }
-//    }
-//    else if (cmd.action == "npc") {
-//        //npc界面
-//        
-//    }
-//    else {
-//        commandexec.Execute(cmd);
-//    }
-//}
-

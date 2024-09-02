@@ -23,8 +23,8 @@ public:
 	list<enemy>& Enemies() { return m_enemies; }
 
 	//npc
-	//npctemplate& spawnWhichNpc() { return m_npc; }
-	//list<npc>& Npces() { return m_npces; }
+	void removeNPC(entityid p_npc);
+	list<npc>& Npces() { return m_npces; }
 	
 	//物品信息
 	list<item>& Item() { return m_items; }
@@ -69,7 +69,4 @@ private:
 	//物品信息
 	list<item> m_items;
 	money m_money;
-
-	//玩家信息
-	Player* m_player;
 };

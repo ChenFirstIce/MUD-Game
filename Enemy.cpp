@@ -69,6 +69,7 @@ istream& operator>>(istream& p_stream, EnemyTemplate& t)
     p_stream >> temp >> t.m_speed;
     p_stream >> temp >> t.m_exp;//О­бщ
     p_stream >> temp >> t.m_weapon;
+    p_stream >> temp >> t.m_target;
     p_stream >> temp >> t.m_moneymin;
     p_stream >> temp >> t.m_moneymax;
 

@@ -15,12 +15,13 @@ public:
 	friend istream& operator >>(istream& p_stream, EnemyTemplate& t);
 
 	//模板状态栏
-	int m_hitpoints;
+	double m_hitpoints;
 	int m_dodging;
 	int m_strikedamage;
 	int m_speed;
 	int m_exp;
 	int m_weapon;
+	int m_target;
 	AttackType m_type;//后来增加的
 	money m_moneymin;
 	money m_moneymax;
@@ -42,10 +43,11 @@ public:
 	string& EnName() { return m_template->EnName(); }
 
 	//获得各个属性点数
-	int& HitPoints() { return m_hitpoints; }
+	double& HitPoints() { return m_hitpoints; }
 	int Dodging() { return m_template->m_dodging; }
 	int StrikeDamage() { return m_template->m_strikedamage; }
 	int Speed() { return m_template->m_speed; }
+	int getTarget() { return m_template->m_target; }
 	
 	
 	//掉落物
@@ -70,6 +72,6 @@ public:
 protected:
 	enemytemplate m_template;
 	AttackType m_type;//后来增加的
-	int m_hitpoints;
+	double m_hitpoints;
 	room m_room;//敌人所在房间的指针
 };
