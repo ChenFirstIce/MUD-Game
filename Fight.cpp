@@ -2,508 +2,507 @@
 #include<vector>
 using namespace std;
 
-void attack1(int n){
-	if(n==1){
-		while(Enemy[0].getHP() > 0){
-		Atk(*patk, Enemy[0]);
+void attack1(int n) {
+	if (n == 1) {
+		while (Enemy[0].getHP() > 0) {
+			Atk1(*patk, Enemy[0]);
 		}
-		if(Enemy[0].getHP()==0){
-		    cout << "’Ω∂∑ §¿˚!" << endl;
+		if (Enemy[0].getHP() == 0) {
+			cout << "’Ω∂∑ §¿˚!" << endl;
 			system("pause");
 			return 1;
 		}
 	}
-	if(n==2){
-	    if (patk->getTarget() == 1){
-	    	if(Enemy[0].getHP()>0&&Enemy[1].getHP()>0) {
-					    cout << "“™π•ª˜À≠£ø" << endl;
-						for (int i = 0; i < 2; i++)
-						   	cout << i << "." << Enemy[i].getName();
-						cin >> choose;
-						while (choose != 1 && choose !=0) {
-								cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-								cin.clear();
-								cin.ignore(cin.rdbuf()->in_avail());
-								cin >> choose;
-						}
-						if (choose == 0) Atk(*patk, Enemy[0]);
-						else Atk(*patk, Enemy[1]);
+	if (n == 2) {
+		if (patk->getTarget() == 1) {
+			if (Enemy[0].getHP() > 0 && Enemy[1].getHP() > 0) {
+				cout << "“™π•ª˜À≠£ø" << endl;
+				for (int i = 0; i < 2; i++)
+					cout << i << "." << Enemy[i].Name();
+				cin >> choose;
+				while (choose != 1 && choose != 0) {
+					cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+					cin >> choose;
+				}
+				if (choose == 0) Atk1(*patk, Enemy[0]);
+				else Atk1(*patk, Enemy[1]);
 			}
 			else {
-					for (int i = 0; i < 2; i++) {
-						if (Enemy[i].getHP() > 0) {
-							Atk(*patk, Enemy[i]);
-							break;
-		                }
-                    }
-            }
-        }
-        if (patk->getTarget() == 2){
-        	Atk(*patk, Enemy[0]);
+				for (int i = 0; i < 2; i++) {
+					if (Enemy[i].getHP() > 0) {
+						Atk(*patk, Enemy[i]);
+						break;
+					}
+				}
+			}
+		}
+		if (patk->getTarget() == 2) {
+			Atk(*patk, Enemy[0]);
 			Atk(*patk, Enemy[1]);
 		}
 		if (Enemy[0].getHP() == 0 && Enemy[1].getHP() == 0) {
-								cout << "’Ω∂∑ §¿˚!" << endl;
-								system("pause");
-								return 1;
-							}
-    }
-    if(n==3){
-		    if (patk->getTarget() == 1) {
-				if (Enemy[0].getHP() > 0) //≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
-					Atk(*patk, Enemy[0]);
-					else if(Enemy[1].getHP()>0&&Enemy[2].getHP()>0) {
-					    	cout << "“™π•ª˜À≠£ø" << endl;
-							for (int i = 1; i < 3; i++)
-						    	cout << i << "." << Enemy[i].getName();
-							cin >> choose;
-							while (choose != 1 && choose!= 2) {
-									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-									cin.clear();
-									cin.ignore(cin.rdbuf()->in_avail());
-									cin >> choose;
-							}
-							if (choose == 1) Atk(*patk, Enemy[1]);
-							else Atk(*patk, Enemy[2]);
-					}
-					else {
-							for (int i = 1; i < 3; i++) {
-								if (Enemy[i].getHP() > 0) {
-									Atk(*patk, Enemy[i]);
-									break;
-								}
-							}
-					}
-			}
-			else if (patk->getTarget() == 2) {
-					if (Enemy[0].getHP() > 0) {//≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
-						cout << "“™π•ª˜À≠£ø" << endl;
-						for (int i = 1; i < 3; i++) {
-							cout << i << "." << Enemy[0].getName() << " ∫Õ " << Enemy[i].getName() << endl;
-						}
-						cin >> choose;
-						while (choose != 1 && choose != 2) {
-								cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-								cin.clear();
-								cin.ignore(cin.rdbuf()->in_avail());
-								cin >> choose;
-						}
-						if (choose == 1) {
-							Atk(*patk, Enemy[0]);
-							Atk(*patk, Enemy[1]);
-						}
-						else {
-							Atk(*patk, Enemy[0]);
-							Atk(*patk, Enemy[2]);
-						}
-					}
-					else {
-						Atk(*patk, Enemy[1]);
-						Atk(*patk, Enemy[2]);
-				}
-			}
-			else {
-				Atk(*patk, Enemy[0]);
-				Atk(*patk, Enemy[1]);
-				Atk(*patk, Enemy[2]);
-			}
-			if (Enemy[0].getHP() == 0 && Enemy[1].getHP() == 0 && Enemy[2].getHP() == 0) {
-				cout << "’Ω∂∑ §¿˚!" << endl;
-				system("pause");
-				return 1;
-			}
-			break;
-	}
-	if(n==4){
-		    if (patk->getTarget() == 1) {
-				if (Enemy[0].getHP() > 0 && Enemy[1].getHP() > 0) {
-					cout << "“™π•ª˜À≠£ø" << endl;
-					    for (int i = 0; i < 2; i++)
-				    	    cout << i << "." << Enemy[i].getName();
-					    cin >> choose;
-					    while (choose !=0 && choose != 1) {
-							cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-							cin.clear();
-							cin.ignore(cin.rdbuf()->in_avail());
-							cin >> choose;
-					}
-					    if (choose == 0) Atk(*patk, Enemy[0]);
-					    if (choose == 1) Atk(*patk, Enemy[1]);
-				}
-				if (Enemy[0].getHP() > 0 && Enemy[1].getHP() == 0) 
-				    Atk(*patk, Enemy[0]);
-				if (Enemy[0].getHP() == 0 && Enemy[1].getHP() > 0) 
-				    Atk(*patk, Enemy[1]);
-				else{
-					if(Enemy[2].getHP()>0&&Enemy[3].getHP()>0) {
-				    	cout << "“™π•ª˜À≠£ø" << endl;
-							for (int i = 2; i < 4; i++)
-						    	cout << i << "." << Enemy[i].getName();
-							cin >> choose;
-							while (choose != 2 && choose!= 3) {
-									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-									cin.clear();
-									cin.ignore(cin.rdbuf()->in_avail());
-									cin >> choose;
-							}
-							if (choose == 2) Atk(*patk, Enemy[2]);
-							else Atk(*patk, Enemy[3]);
-					}
-					else {
-							for (int i = 2; i < 4; i++) {
-								if (Enemy[i].getHP() > 0) {
-									Atk(*patk, Enemy[i]);
-									break;
-								}
-							}
-					}
-				}
-			}	
-			else if (patk->getTarget() == 2) {
-					if (Enemy[0].getHP() > 0 && Enemy[1].getHP() > 0) {//≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
-						Atk(*patk, Enemy[0]);
-			            Atk(*patk, Enemy[1]);
-					}
-					if (Enemy[0].getHP() > 0 && Enemy[1].getHP() == 0){
-						Atk(*patk, Enemy[0])
-				    	cout << "“™π•ª˜À≠£ø" << endl;
-						for (int i = 2; i < 4; i++)
-						 	cout << i << "." << Enemy[i].getName();
-						cin >> choose;
-							while (choose != 2 && choose!= 3) {
-									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-									cin.clear();
-									cin.ignore(cin.rdbuf()->in_avail());
-									cin >> choose;
-							}
-							if (choose == 2) Atk(*patk, Enemy[2]);
-							else Atk(*patk, Enemy[3]);
-					}
-					if (Enemy[0].getHP() == 0 && Enemy[1].getHP() > 0){
-						Atk(*patk, Enemy[1])
-				    	cout << "“™π•ª˜À≠£ø" << endl;
-						for (int i = 2; i < 4; i++)
-						 	cout << i << "." << Enemy[i].getName();
-						cin >> choose;
-							while (choose != 2 && choose!= 3) {
-									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-									cin.clear();
-									cin.ignore(cin.rdbuf()->in_avail());
-									cin >> choose;
-							}
-							if (choose == 2) Atk(*patk, Enemy[2]);
-							else Atk(*patk, Enemy[3]);
-					}
-					else {
-						Atk(*patk, Enemy[2]);
-						Atk(*patk, Enemy[3]);
-					}
-				}
-				if (patk->getTarget() == 3){
-					if(Enemy[0].getHP() > 0 && Enemy[1].getHP() > 0){
-						Atk(*patk, Enemy[0]);
-			            Atk(*patk, Enemy[1]);
-			            cout << "“™π•ª˜À≠£ø" << endl;
-						for (int i = 2; i < 4; i++)
-						 	cout << i << "." << Enemy[i].getName();
-						cin >> choose;
-							while (choose != 2 && choose!= 3) {
-									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-									cin.clear();
-									cin.ignore(cin.rdbuf()->in_avail());
-									cin >> choose;
-							}
-							if (choose == 2) Atk(*patk, Enemy[2]);
-							else Atk(*patk, Enemy[3]);
-					}
-					else{
-						Atk(*patk, Enemy[2]);
-						Atk(*patk, Enemy[3]);
-						for(int i=0;i<2;i++){
-								if (Enemy[i].getHP() > 0) {
-									Atk(*patk, Enemy[i]);
-									break;
-						}
-					}
-				}
-			}
-			if (patk->getTarget() == 4){
-				Atk(*patk, Enemy[0]);
-				Atk(*patk, Enemy[1]);
-				Atk(*patk, Enemy[2]);
-				Atk(*patk, Enemy[3]);
-			}
-			if (Enemy[0].getHP() == 0 && Enemy[1].getHP() == 0 && Enemy[2].getHP() == 0) {
-				cout << "’Ω∂∑ §¿˚!" << endl;
-				system("pause");
-				return 1;
-			}
-			break;
-	}
-}
-
-void attack2(int n){
-	if(n==1){
-		while(Me[0].getHP() > 0){
-		Atk(*patk, Me[0]);
-		}
-		if(Me[0].getHP()==0){
-		    cout << "’Ω∂∑ ß∞‹,«Î÷ÿ–¬¿¥π˝" << endl;
+			cout << "’Ω∂∑ §¿˚!" << endl;
 			system("pause");
 			return 1;
 		}
 	}
-	if(n==2){
-	    if (patk->getTarget() == 1){
-	    	if(Me[0].getHP()>0&&Me[1].getHP()>0) {
-					    cout << "“™π•ª˜À≠£ø" << endl;
-						for (int i = 0; i < 2; i++)
-						   	cout << i << "." << Me[i].getName();
-						cin >> choose;
-						while (choose != 1 && choose !=0) {
-								cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-								cin.clear();
-								cin.ignore(cin.rdbuf()->in_avail());
-								cin >> choose;
-						}
-						if (choose == 0) Atk(*patk, Me[0]);
-						else Atk(*patk, Me[1]);
+	if (n == 3) {
+		if (patk->getTarget() == 1) {
+			if (Enemy[0].getHP() > 0) //≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
+				Atk1(*patk, Enemy[0]);
+			else if (Enemy[1].getHP() > 0 && Enemy[2].getHP() > 0) {
+				cout << "“™π•ª˜À≠£ø" << endl;
+				for (int i = 1; i < 3; i++)
+					cout << i << "." << Enemy[i].Name();
+				cin >> choose;
+				while (choose != 1 && choose != 2) {
+					cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+					cin >> choose;
+				}
+				if (choose == 1) Atk1(*patk, Enemy[1]);
+				else Atk1(*patk, Enemy[2]);
 			}
 			else {
-					for (int i = 0; i < 2; i++) {
-						if (Me[i].getHP() > 0) {
-							Atk(*patk, Me[i]);
-							break;
-		                }
-                    }
-            }
-        }
-        if (patk->getTarget() == 2){
-        	Atk(*patk, Me[0]);
-			Atk(*patk, Me[1]);
+				for (int i = 1; i < 3; i++) {
+					if (Enemy[i].getHP() > 0) {
+						Atk1(*patk, Enemy[i]);
+						break;
+					}
+				}
+			}
 		}
-		if (Me[0].getHP() == 0 && Me[1].getHP() == 0) {
-								cout << "’Ω∂∑ ß∞‹,«Î÷ÿ–¬¿¥π˝" << endl;
-								system("pause");
-								return 1;
-							}
-    }
-    if(n==3){
-		    if (patk->getTarget() == 1) {
-				if (Me[0].getHP() > 0) //≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
-					Atk(*patk, Me[0]);
-					else if(Me[1].getHP()>0&&Me[2].getHP()>0) {
-					    	cout << "“™π•ª˜À≠£ø" << endl;
-							for (int i = 1; i < 3; i++)
-						    	cout << i << "." << Me[i].getName();
-							cin >> choose;
-							while (choose != 1 && choose!= 2) {
-									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-									cin.clear();
-									cin.ignore(cin.rdbuf()->in_avail());
-									cin >> choose;
-							}
-							if (choose == 1) Atk(*patk, Me[1]);
-							else Atk(*patk, Me[2]);
-					}
-					else {
-							for (int i = 1; i < 3; i++) {
-								if (Me[i].getHP() > 0) {
-									Atk(*patk, Me[i]);
-									break;
-								}
-							}
-					}
-			}
-			else if (patk->getTarget() == 2) {
-					if (Me[0].getHP() > 0) {//≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
-						cout << "“™π•ª˜À≠£ø" << endl;
-						for (int i = 1; i < 3; i++) {
-							cout << i << "." << Me[0].getName() << " ∫Õ " << Me[i].getName() << endl;
-						}
-						cin >> choose;
-						while (choose != 1 && choose != 2) {
-								cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-								cin.clear();
-								cin.ignore(cin.rdbuf()->in_avail());
-								cin >> choose;
-						}
-						if (choose == 1) {
-							Atk(*patk, Me[0]);
-							Atk(*patk, Me[1]);
-						}
-						else {
-							Atk(*patk, Me[0]);
-							Atk(*patk, Me[2]);
-						}
-					}
-					else {
-						Atk(*patk, Me[1]);
-						Atk(*patk, Me[2]);
+		else if (patk->getTarget() == 2) {
+			if (Enemy[0].getHP() > 0) {//≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
+				cout << "“™π•ª˜À≠£ø" << endl;
+				for (int i = 1; i < 3; i++) {
+					cout << i << "." << Enemy[0].Name() << " ∫Õ " << Enemy[i].Name() << endl;
+				}
+				cin >> choose;
+				while (choose != 1 && choose != 2) {
+					cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+					cin >> choose;
+				}
+				if (choose == 1) {
+					Atk1(*patk, Enemy[0]);
+					Atk1(*patk, Enemy[1]);
+				}
+				else {
+					Atk1(*patk, Enemy[0]);
+					Atk1(*patk, Enemy[2]);
 				}
 			}
 			else {
-				Atk(*patk, Me[0]);
-				Atk(*patk, Me[1]);
-				Atk(*patk, Me[2]);
+				Atk1(*patk, Enemy[1]);
+				Atk1(*patk, Enemy[2]);
 			}
-			if (Me[0].getHP() == 0 && Me[1].getHP() == 0 && Me[2].getHP() == 0) {
-				cout << "’Ω∂∑ ß∞‹,«Î÷ÿ–¬¿¥π˝" << endl;
-				system("pause");
-				return 1;
-			}
-			break;
+		}
+		else {
+			Atk1(*patk, Enemy[0]);
+			Atk1(*patk, Enemy[1]);
+			Atk1(*patk, Enemy[2]);
+		}
+		if (Enemy[0].getHP() == 0 && Enemy[1].getHP() == 0 && Enemy[2].getHP() == 0) {
+			cout << "’Ω∂∑ §¿˚!" << endl;
+			system("pause");
+			return 1;
+		}
+		break;
 	}
-	if(n==4){
-		    if (patk->getTarget() == 1) {
-				if (Me[0].getHP() > 0 && Me[1].getHP() > 0) {
+	if (n == 4) {
+		if (patk->getTarget() == 1) {
+			if (Enemy[0].getHP() > 0 && Enemy[1].getHP() > 0) {
+				cout << "“™π•ª˜À≠£ø" << endl;
+				for (int i = 0; i < 2; i++)
+					cout << i << "." << Enemy[i].Name();
+				cin >> choose;
+				while (choose != 0 && choose != 1) {
+					cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+					cin >> choose;
+				}
+				if (choose == 0) Atk1(*patk, Enemy[0]);
+				if (choose == 1) Atk1(*patk, Enemy[1]);
+			}
+			if (Enemy[0].getHP() > 0 && Enemy[1].getHP() == 0)
+				Atk1(*patk, Enemy[0]);
+			if (Enemy[0].getHP() == 0 && Enemy[1].getHP() > 0)
+				Atk1(*patk, Enemy[1]);
+			else {
+				if (Enemy[2].getHP() > 0 && Enemy[3].getHP() > 0) {
 					cout << "“™π•ª˜À≠£ø" << endl;
-					    for (int i = 0; i < 2; i++)
-				    	    cout << i << "." << Me[i].getName();
-					    cin >> choose;
-					    while (choose !=0 && choose != 1) {
-							cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-							cin.clear();
-							cin.ignore(cin.rdbuf()->in_avail());
-							cin >> choose;
-					}
-					    if (choose == 0) Atk(*patk, Me[0]);
-					    if (choose == 1) Atk(*patk, Me[1]);
-				}
-				if (Me[0].getHP() > 0 && Me[1].getHP() == 0) 
-				    Atk(*patk, Me[0]);
-				if (Me[0].getHP() == 0 && Me[1].getHP() > 0) 
-				    Atk(*patk, Me[1]);
-				else{
-					if(Me[2].getHP()>0&&Me[3].getHP()>0) {
-				    	cout << "“™π•ª˜À≠£ø" << endl;
-							for (int i = 2; i < 4; i++)
-						    	cout << i << "." << Me[i].getName();
-							cin >> choose;
-							while (choose != 2 && choose!= 3) {
-									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-									cin.clear();
-									cin.ignore(cin.rdbuf()->in_avail());
-									cin >> choose;
-							}
-							if (choose == 2) Atk(*patk, Me[2]);
-							else Atk(*patk, Me[3]);
-					}
-					else {
-							for (int i = 2; i < 4; i++) {
-								if (Me[i].getHP() > 0) {
-									Atk(*patk, Me[i]);
-									break;
-								}
-							}
-					}
-				}
-			}	
-			else if (patk->getTarget() == 2) {
-					if (Me[0].getHP() > 0 && Me[1].getHP() > 0) {//≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
-						Atk(*patk, Me[0]);
-			            Atk(*patk, Me[1]);
-					}
-					if (Me[0].getHP() > 0 && Me[1].getHP() == 0){
-						Atk(*patk, Me[0])
-				    	cout << "“™π•ª˜À≠£ø" << endl;
-						for (int i = 2; i < 4; i++)
-						 	cout << i << "." << Me[i].getName();
+					for (int i = 2; i < 4; i++)
+						cout << i << "." << Enemy[i].Name();
+					cin >> choose;
+					while (choose != 2 && choose != 3) {
+						cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+						cin.clear();
+						cin.ignore(cin.rdbuf()->in_avail());
 						cin >> choose;
-							while (choose != 2 && choose!= 3) {
-									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-									cin.clear();
-									cin.ignore(cin.rdbuf()->in_avail());
-									cin >> choose;
-							}
-							if (choose == 2) Atk(*patk, Me[2]);
-							else Atk(*patk, Me[3]);
 					}
-					if (Me[0].getHP() == 0 && Me[1].getHP() > 0){
-						Atk(*patk, Me[1])
-				    	cout << "“™π•ª˜À≠£ø" << endl;
-						for (int i = 2; i < 4; i++)
-						 	cout << i << "." << Me[i].getName();
-						cin >> choose;
-							while (choose != 2 && choose!= 3) {
-									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-									cin.clear();
-									cin.ignore(cin.rdbuf()->in_avail());
-									cin >> choose;
-							}
-							if (choose == 2) Atk(*patk, ,Me[2]);
-							else Atk(*patk, Me[3]);
-					}
-					else {
-						Atk(*patk, Me[2]);
-						Atk(*patk, Me[3]);
-					}
+					if (choose == 2) Atk1(*patk, Enemy[2]);
+					else Atk1(*patk, Enemy[3]);
 				}
-				if (patk->getTarget() == 3){
-					if(Me[0].getHP() > 0 && Me[1].getHP() > 0){
-						Atk(*patk, Me[0]);
-			            Atk(*patk, Me[1]);
-			            cout << "“™π•ª˜À≠£ø" << endl;
-						for (int i = 2; i < 4; i++)
-						 	cout << i << "." << Me[i].getName();
-						cin >> choose;
-							while (choose != 2 && choose!= 3) {
-									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
-									cin.clear();
-									cin.ignore(cin.rdbuf()->in_avail());
-									cin >> choose;
-							}
-							if (choose == 2) Atk(*patk, Me[2]);
-							else Atk(*patk, Me[3]);
-					}
-					else{
-						Atk(*patk, Me[2]);
-						Atk(*patk, Me[3]);
-						for(int i=0;i<2;i++){
-								if (Me[i].getHP() > 0) {
-									Atk(*patk, Me[i]);
-									break;
+				else {
+					for (int i = 2; i < 4; i++) {
+						if (Enemy[i].getHP() > 0) {
+							Atk1(*patk, Enemy[i]);
+							break;
 						}
 					}
 				}
 			}
-			if (patk->getTarget() == 4){
-				Atk(*patk, Me[0]);
-				Atk(*patk, Me[1]);
-				Atk(*patk, Me[2]);
-				Atk(*patk, Me[3]);
+		}
+		else if (patk->getTarget() == 2) {
+			if (Enemy[0].getHP() > 0 && Enemy[1].getHP() > 0) {//≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
+				Atk1(*patk, Enemy[0]);
+				Atk1(*patk, Enemy[1]);
 			}
-			if (Me[0].getHP() == 0 && Me[1].getHP() == 0 && Me[2].getHP() == 0) {
-				cout << "’Ω∂∑ ß∞‹,«Î÷ÿ–¬¿¥π˝" << endl;
-				system("pause");
-				return 1;
+			if (Enemy[0].getHP() > 0 && Enemy[1].getHP() == 0) {
+				Atk1(*patk, Enemy[0])
+					cout << "“™π•ª˜À≠£ø" << endl;
+				for (int i = 2; i < 4; i++)
+					cout << i << "." << Enemy[i].Name();
+				cin >> choose;
+				while (choose != 2 && choose != 3) {
+					cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+					cin >> choose;
+				}
+				if (choose == 2) Atk1(*patk, Enemy[2]);
+				else Atk1(*patk, Enemy[3]);
 			}
-			break;
+			if (Enemy[0].getHP() == 0 && Enemy[1].getHP() > 0) {
+				Atk1(*patk, Enemy[1])
+					cout << "“™π•ª˜À≠£ø" << endl;
+				for (int i = 2; i < 4; i++)
+					cout << i << "." << Enemy[i].Name();
+				cin >> choose;
+				while (choose != 2 && choose != 3) {
+					cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+					cin >> choose;
+				}
+				if (choose == 2) Atk1(*patk, Enemy[2]);
+				else Atk1(*patk, Enemy[3]);
+			}
+			else {
+				Atk1(*patk, Enemy[2]);
+				Atk1(*patk, Enemy[3]);
+			}
+		}
+		if (patk->getTarget() == 3) {
+			if (Enemy[0].getHP() > 0 && Enemy[1].getHP() > 0) {
+				Atk1(*patk, Enemy[0]);
+				Atk1(*patk, Enemy[1]);
+				cout << "“™π•ª˜À≠£ø" << endl;
+				for (int i = 2; i < 4; i++)
+					cout << i << "." << Enemy[i].Name();
+				cin >> choose;
+				while (choose != 2 && choose != 3) {
+					cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+					cin >> choose;
+				}
+				if (choose == 2) Atk1(*patk, Enemy[2]);
+				else Atk1(*patk, Enemy[3]);
+			}
+			else {
+				Atk1(*patk, Enemy[2]);
+				Atk1(*patk, Enemy[3]);
+				for (int i = 0; i < 2; i++) {
+					if (Enemy[i].getHP() > 0) {
+						Atk1(*patk, Enemy[i]);
+						break;
+					}
+				}
+			}
+		}
+		if (patk->getTarget() == 4) {
+			Atk1(*patk, Enemy[0]);
+			Atk1(*patk, Enemy[1]);
+			Atk1(*patk, Enemy[2]);
+			Atk1(*patk, Enemy[3]);
+		}
+		if (Enemy[0].getHP() == 0 && Enemy[1].getHP() == 0 && Enemy[2].getHP() == 0) {
+			cout << "’Ω∂∑ §¿˚!" << endl;
+			system("pause");
+			return 1;
+		}
+		break;
 	}
 }
-    	
 
-Fight::Fight(Array myArray,	Elf *enemyElf)//Ω´Œ“∑Ω≤º’Û¥´»Î,≥ı ºªØ’Ω∂∑Ω´µ–Œ“À´∑Ω’Û»›ÃÓ»Î ˝◊È
-{ 
+void attack2(int n) {
+	if (n == 1) {
+		while (Me[0].getHP() > 0) {
+			Atk2(*patk, Me[0]);
+		}
+		if (Me[0].getHP() == 0) {
+			cout << "’Ω∂∑ ß∞‹,«Î÷ÿ–¬¿¥π˝" << endl;
+			system("pause");
+			return 1;
+		}
+	}
+	if (n == 2) {
+		if (patk->getTarget() == 1) {
+			if (Me[0].getHP() > 0 && Me[1].getHP() > 0) {
+				cout << "“™π•ª˜À≠£ø" << endl;
+				for (int i = 0; i < 2; i++)
+					cout << i << "." << Me[i].Name();
+				cin >> choose;
+				while (choose != 1 && choose != 0) {
+					cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+					cin >> choose;
+				}
+				if (choose == 0) Atk2(*patk, Me[0]);
+				else Atk2(*patk, Me[1]);
+			}
+			else {
+				for (int i = 0; i < 2; i++) {
+					if (Me[i].getHP() > 0) {
+						Atk2(*patk, Me[i]);
+						break;
+					}
+				}
+			}
+		}
+		if (patk->getTarget() == 2) {
+			Atk2(*patk, Me[0]);
+			Atk2(*patk, Me[1]);
+		}
+		if (Me[0].getHP() == 0 && Me[1].getHP() == 0) {
+			cout << "’Ω∂∑ ß∞‹,«Î÷ÿ–¬¿¥π˝" << endl;
+			system("pause");
+			return 1;
+		}
+	}
+	if (n == 3) {
+		if (patk->getTarget() == 1) {
+			if (Me[0].getHP() > 0) //≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
+				Atk2(*patk, Me[0]);
+			else if (Me[1].getHP() > 0 && Me[2].getHP() > 0) {
+				cout << "“™π•ª˜À≠£ø" << endl;
+				for (int i = 1; i < 3; i++)
+					cout << i << "." << Me[i].Name();
+				cin >> choose;
+				while (choose != 1 && choose != 2) {
+					cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+					cin >> choose;
+				}
+				if (choose == 1) Atk2(*patk, Me[1]);
+				else Atk2(*patk, Me[2]);
+			}
+			else {
+				for (int i = 1; i < 3; i++) {
+					if (Me[i].getHP() > 0) {
+						Atk2(*patk, Me[i]);
+						break;
+					}
+				}
+			}
+		}
+		else if (patk->getTarget() == 2) {
+			if (Me[0].getHP() > 0) {//≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
+				cout << "“™π•ª˜À≠£ø" << endl;
+				for (int i = 1; i < 3; i++) {
+					cout << i << "." << Me[0].Name() << " ∫Õ " << Me[i].Name() << endl;
+				}
+				cin >> choose;
+				while (choose != 1 && choose != 2) {
+					cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+					cin >> choose;
+				}
+				if (choose == 1) {
+					Atk2(*patk, Me[0]);
+					Atk2(*patk, Me[1]);
+				}
+				else {
+					Atk2(*patk, Me[0]);
+					Atk2(*patk, Me[2]);
+				}
+			}
+			else {
+				Atk2(*patk, Me[1]);
+				Atk2(*patk, Me[2]);
+			}
+		}
+		else {
+			Atk2(*patk, Me[0]);
+			Atk2(*patk, Me[1]);
+			Atk2(*patk, Me[2]);
+		}
+		if (Me[0].getHP() == 0 && Me[1].getHP() == 0 && Me[2].getHP() == 0) {
+			cout << "’Ω∂∑ ß∞‹,«Î÷ÿ–¬¿¥π˝" << endl;
+			system("pause");
+			return 1;
+		}
+		break;
+	}
+	if (n == 4) {
+		if (patk->getTarget() == 1) {
+			if (Me[0].getHP() > 0 && Me[1].getHP() > 0) {
+				cout << "“™π•ª˜À≠£ø" << endl;
+				for (int i = 0; i < 2; i++)
+					cout << i << "." << Me[i].Name();
+				cin >> choose;
+				while (choose != 0 && choose != 1) {
+					cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+					cin >> choose;
+				}
+				if (choose == 0) Atk2(*patk, Me[0]);
+				if (choose == 1) Atk2(*patk, Me[1]);
+			}
+			if (Me[0].getHP() > 0 && Me[1].getHP() == 0)
+				Atk2(*patk, Me[0]);
+			if (Me[0].getHP() == 0 && Me[1].getHP() > 0)
+				Atk2(*patk, Me[1]);
+			else {
+				if (Me[2].getHP() > 0 && Me[3].getHP() > 0) {
+					cout << "“™π•ª˜À≠£ø" << endl;
+					for (int i = 2; i < 4; i++)
+						cout << i << "." << Me[i].Name();
+					cin >> choose;
+					while (choose != 2 && choose != 3) {
+						cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+						cin.clear();
+						cin.ignore(cin.rdbuf()->in_avail());
+						cin >> choose;
+					}
+					if (choose == 2) Atk2(*patk, Me[2]);
+					else Atk2(*patk, Me[3]);
+				}
+				else {
+					for (int i = 2; i < 4; i++) {
+						if (Me[i].getHP() > 0) {
+							Atk2(*patk, Me[i]);
+							break;
+						}
+					}
+				}
+			}
+		}
+		else if (patk->getTarget() == 2) {
+			if (Me[0].getHP() > 0 && Me[1].getHP() > 0) {//≈–∂œ«∞≈≈æ´¡È «∑Ò¥ÊªÓ
+				Atk2(*patk, Me[0]);
+				Atk2(*patk, Me[1]);
+			}
+			if (Me[0].getHP() > 0 && Me[1].getHP() == 0) {
+				Atk2(*patk, Me[0])
+					cout << "“™π•ª˜À≠£ø" << endl;
+				for (int i = 2; i < 4; i++)
+					cout << i << "." << Me[i].Name();
+				cin >> choose;
+				while (choose != 2 && choose != 3) {
+					cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+					cin >> choose;
+				}
+				if (choose == 2) Atk2(*patk, Me[2]);
+				else Atk2(*patk, Me[3]);
+			}
+			if (Me[0].getHP() == 0 && Me[1].getHP() > 0) {
+				Atk2(*patk, Me[1])
+					cout << "“™π•ª˜À≠£ø" << endl;
+				for (int i = 2; i < 4; i++)
+					cout << i << "." << Me[i].Name();
+				cin >> choose;
+				while (choose != 2 && choose != 3) {
+					cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+					cin >> choose;
+				}
+				if (choose == 2) Atk2(*patk, , Me[2]);
+				else Atk2(*patk, Me[3]);
+			}
+			else {
+				Atk2(*patk, Me[2]);
+				Atk2(*patk, Me[3]);
+			}
+		}
+		if (patk->getTarget() == 3) {
+			if (Me[0].getHP() > 0 && Me[1].getHP() > 0) {
+				Atk2(*patk, Me[0]);
+				Atk2(*patk, Me[1]);
+				cout << "“™π•ª˜À≠£ø" << endl;
+				for (int i = 2; i < 4; i++)
+					cout << i << "." << Me[i].Name();
+				cin >> choose;
+				while (choose != 2 && choose != 3) {
+					cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+					cin >> choose;
+				}
+				if (choose == 2) Atk2(*patk, Me[2]);
+				else Atk2(*patk, Me[3]);
+			}
+			else {
+				Atk2(*patk, Me[2]);
+				Atk2(*patk, Me[3]);
+				for (int i = 0; i < 2; i++) {
+					if (Me[i].getHP() > 0) {
+						Atk2(*patk, Me[i]);
+						break;
+					}
+				}
+			}
+		}
+		if (patk->getTarget() == 4) {
+			Atk2(*patk, Me[0]);
+			Atk2(*patk, Me[1]);
+			Atk2(*patk, Me[2]);
+			Atk2(*patk, Me[3]);
+		}
+		if (Me[0].getHP() == 0 && Me[1].getHP() == 0 && Me[2].getHP() == 0) {
+			cout << "’Ω∂∑ ß∞‹,«Î÷ÿ–¬¿¥π˝" << endl;
+			system("pause");
+			return 1;
+		}
+		break;
+	}
+}
+
+
+Fight::Fight(Array myArray, Elf* enemyElf)//Ω´Œ“∑Ω≤º’Û¥´»Î,≥ı ºªØ’Ω∂∑Ω´µ–Œ“À´∑Ω’Û»›ÃÓ»Î ˝◊È
+{
 	MyArray = myArray.ReadArray();//Myarray◊˜Œ™’Û»›µƒ‘≠ º ˝æ›£¨”√”⁄ ‰≥ˆ‘≠ º—™¡ø
 	for (int i = 0; i < 4; i++) {
 		Me[i] = *MyArray[i];// π”√Me ˝◊È◊˜Œ™ÃÊ◊Ô—Ú£¨÷ª‘⁄’Ω∂∑÷–ø€—™±‰ªØ
 	}
-	for(int i=0 ; i<4 ; i++){	
+	for (int i = 0; i < 4; i++) {
 		Enemy[i] = enemyElf[i];// π”√Enemy ˝◊È◊˜Œ™ÃÊ◊Ô—Ú£¨÷ª‘⁄’Ω∂∑÷–ø€—™±‰ªØ
 	}
 }
 
-int Fight::ProceedFight(int log, ItemBag &myItem,ElfBag &myElf)//≤Œ ˝±Í ∂±Ì æ «∑Òø…“‘≤∂◊Ω∫ÕÃ”≈‹, IBag «¥´»Î±≥∞¸ŒÔ∆∑ ˝æ›
+int Fight::ProceedFight(int n, int m, ItemBag& myItem, ElfBag& myElf)//≤Œ ˝±Í ∂±Ì æ «∑Òø…“‘≤∂◊Ω∫ÕÃ”≈‹, IBag «¥´»Î±≥∞¸ŒÔ∆∑ ˝æ›
 {
 	int choose;
-	int Round=1;
+	int Round = 1;
 	Elf* patk;
 	Elf x;
 	Turn();//≈≈–Ú≥ˆ ÷À≥–Ú
 	while (1) {
-		int n=Me.size();
-		for (int i = 0; i < 2*n; i++) {
+		for (int i = 0; i < m + n; i++) {
 			// ∂±Œ™Œ“∑Ωæ´¡È
 			if (BattleTurn[i][0] < n) {
 				if (Me[BattleTurn[i][0]].getHP() > 0) {
@@ -512,7 +511,7 @@ int Fight::ProceedFight(int log, ItemBag &myItem,ElfBag &myElf)//≤Œ ˝±Í ∂±Ì æ «∑
 					ShowBattle();
 					patk = &Me[BattleTurn[i][0]];
 					while (1) {
-						cout << " " << patk->getName() << " “™◊ˆ ≤√¥£ø" << endl;
+						cout << " " << patk->Name() << " “™◊ˆ ≤√¥£ø" << endl;
 						cout << "1.π•ª˜  2. π”√µ¿æﬂ 3.Ã”≈‹" << endl;
 						cin >> choose;
 						if (choose != 1 && choose != 2 && choose != 3) {
@@ -521,8 +520,8 @@ int Fight::ProceedFight(int log, ItemBag &myItem,ElfBag &myElf)//≤Œ ˝±Í ∂±Ì æ «∑
 							cin.ignore(cin.rdbuf()->in_avail());
 							cin >> choose;
 						}
-						 if (choose == 1) {
-						 	
+						if (choose == 1) {
+
 							attack1(n);
 						}
 						else if (choose == 2) {
@@ -530,7 +529,7 @@ int Fight::ProceedFight(int log, ItemBag &myItem,ElfBag &myElf)//≤Œ ˝±Í ∂±Ì æ «∑
 								cout << "“™ π”√ ≤√¥µ¿æﬂ£ø";
 								cout << "1.…À“© 2.»°œ˚" << endl;
 								cin >> choose;
-								while (choose != 1 && choose!=2) {
+								while (choose != 1 && choose != 2) {
 									cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
 									cin.clear();
 									cin.ignore(cin.rdbuf()->in_avail());
@@ -540,18 +539,18 @@ int Fight::ProceedFight(int log, ItemBag &myItem,ElfBag &myElf)//≤Œ ˝±Í ∂±Ì æ «∑
 								if (choose == 1) {
 									cout << "∏¯À≠ π”√£ø" << endl;
 									for (int i = 0; i < n; i++) {
-										cout << i << " ." << Me[i].getName();
+										cout << i << " ." << Me[i].Name();
 									}
 									cout << " 1.…À“© 2.»°œ˚ ";
 									cin >> choose;
-									while (choose != 1 && choose!=2) {
+									while (choose != 1 && choose != 2) {
 										cout << "¥ÌŒÛ£°«Î÷ÿ–¬ ‰»Î£°" << endl;
 										cin.clear();
 										cin.ignore(cin.rdbuf()->in_avail());
 										cin >> choose;
 									}
 									if (choose == 2) break;
-									else if (myItem.getMedicine() < 1) {
+									else if (m_items < 1) {
 										cout << "…À“© ˝¡ø≤ª◊„£°";
 										system("pause");
 										break;
@@ -564,14 +563,14 @@ int Fight::ProceedFight(int log, ItemBag &myItem,ElfBag &myElf)//≤Œ ˝±Í ∂±Ì æ «∑
 								}
 								else break;
 							}
-							i--;break;
+							i--; break;
 						}
 						//Ã”≈‹
 						else {
 							if (log == 1) {
 								cout << "æÁ«È’Ω∂∑£¨≤ªø…Ã”≈‹£°";
 								system("pause"); system("cls");
-								
+
 							}
 							else {
 								if (rand() % 3 == 0) {
@@ -591,7 +590,7 @@ int Fight::ProceedFight(int log, ItemBag &myItem,ElfBag &myElf)//≤Œ ˝±Í ∂±Ì æ «∑
 				Round++;
 			}
 			// ∂±Œ™µ–∑Ωæ´¡È
-			else { 
+			else {
 				attack2(n);
 				Round++;
 			}
@@ -599,22 +598,22 @@ int Fight::ProceedFight(int log, ItemBag &myItem,ElfBag &myElf)//≤Œ ˝±Í ∂±Ì æ «∑
 	}
 }
 
-void Fight::Turn(int n)//0-2*n-1“¿¥Œ¥˙±ÌŒ“∑Ωn÷ªæ´¡È°¢µ–∑Ωn÷ªæ´¡È£ª∂˛Œ¨ ˝◊È√ø∏ˆµ•‘™µ⁄“ª∏ˆ¥Ê…œ ˆ±‡∫≈£¨µ⁄∂˛∏Ò¥Ê∂‘”¶æ´¡ÈÀŸ∂»
+void Fight::Turn(int n, int m)//0-2*n-1“¿¥Œ¥˙±ÌŒ“∑Ωn÷ªæ´¡È°¢µ–∑Ωn÷ªæ´¡È£ª∂˛Œ¨ ˝◊È√ø∏ˆµ•‘™µ⁄“ª∏ˆ¥Ê…œ ˆ±‡∫≈£¨µ⁄∂˛∏Ò¥Ê∂‘”¶æ´¡ÈÀŸ∂»
 {
 	int t[2];
 
-	for (int i = 0; i < n; i++){
+	for (int i = 0; i < n; i++) {
 		BattleTurn[i][0] = i;
 		BattleTurn[i][1] = Me[i].getSpe();
 	}
 
-	for (int i = n; i < 2*n; i++) {
+	for (int i = n; i < m + n; i++) {
 		BattleTurn[i][0] = i;
-		BattleTurn[i][1] = Enemy[i-n].getSpe();
+		BattleTurn[i][1] = Enemy[i - n].getSpe();
 	}
 
-	for (int j = 0; j < n-1; j++) {
-		for (int i = 0; i < n-1 - j; i++) {
+	for (int j = 0; j < n - 1; j++) {
+		for (int i = 0; i < n - 1 - j; i++) {
 			if (BattleTurn[i][1] < BattleTurn[i + 1][1]) {
 				t[0] = BattleTurn[i][0];
 				t[1] = BattleTurn[i][1];
@@ -627,19 +626,19 @@ void Fight::Turn(int n)//0-2*n-1“¿¥Œ¥˙±ÌŒ“∑Ωn÷ªæ´¡È°¢µ–∑Ωn÷ªæ´¡È£ª∂˛Œ¨ ˝◊È√ø∏ˆµ•
 	}
 }
 
-void Fight::Atk(Elf &atk,Elf &target)
+void Fight::Atk1(Elf& atk, Elf& target)
 {
 	if (target.getHP() > 0) {
-		if (rand() % 100 <= target.getAttr(DODGING)) {
-			cout << atk.getName() << " π•ª˜¡À " << target.getName();
-			cout << "£¨ µ´ « " << target.getName() << " ∂„ø™¡Àπ•ª˜!" << endl;
+		if (rand() % 100 <= NPC.getAttr(3)) {
+			cout << atk.Name() << " π•ª˜¡À " << target.Name();
+			cout << "£¨ µ´ « " << target.Name() << " ∂„ø™¡Àπ•ª˜!" << endl;
 			system("pause");
 		}
 		else {
 			int hurt;
 			hurt = atk.getAtk() - target.getDef();
-			cout << atk.Name() << " π•ª˜¡À " << target.getName() << " , ";
-			if (rand() % 100 <= 0) {
+			cout << atk.Name() << " π•ª˜¡À " << target.Name() << " , ";
+			if (rand() % 100 <= NPC.getAttr(2)) {
 				hurt *= 2;
 				cout << "ª˜÷–¡À“™∫¶! ";
 			}
@@ -647,7 +646,7 @@ void Fight::Atk(Elf &atk,Elf &target)
 				hurt *= 1.5;
 				cout << "–ßπ˚∞Œ»∫! ";
 			}
-			else if(Restrain(atk, target) == 0) {
+			else if (Restrain(atk, target) == 0) {
 				hurt *= 0.5;
 				cout << " ’–ß…ıŒ¢ ";
 			}
@@ -659,13 +658,45 @@ void Fight::Atk(Elf &atk,Elf &target)
 	}
 }
 
-void Fight::UseMedicine(int n,ItemBag &myItem)
+void Fight::Atk2(Elf& atk, Elf& target)
 {
-	Me[n].ChangeHP(50);
+	if (target.getHP() > 0) {
+		if (rand() % 100 <= Enemy.m_dodging) {
+			cout << atk.Name() << " π•ª˜¡À " << target.Name();
+			cout << "£¨ µ´ « " << target.Name() << " ∂„ø™¡Àπ•ª˜!" << endl;
+			system("pause");
+		}
+		else {
+			int hurt;
+			hurt = atk.getAtk() - target.getDef();
+			cout << atk.Name() << " π•ª˜¡À " << target.Name() << " , ";
+			if (rand() % 100 <= Enemy.m_hitpoints) {
+				hurt *= 2;
+				cout << "ª˜÷–¡À“™∫¶! ";
+			}
+			if (Restrain(atk, target) == 1) {
+				hurt *= 1.5;
+				cout << "–ßπ˚∞Œ»∫! ";
+			}
+			else if (Restrain(atk, target) == 0) {
+				hurt *= 0.5;
+				cout << " ’–ß…ıŒ¢ ";
+			}
+			if (hurt < 1) hurt = 1;
+			cout << " ‘Ï≥…¡À " << hurt << " µ„…À∫¶°£";
+			target.ChangeHP(-hurt);
+			system("pause");
+		}
+	}
+}
+
+void Fight::useHealing(int n)
+{
+	Me[n].addHitPoints(50);
 	if (Me[n].getHP() > MyArray[n]->getHP())
 		Me[n] = *MyArray[n];
-	myItem.ChangeMedicine(-1);
-	cout <<" " << Me[n].getName()<<" ª÷∏¥¡À50…˙√¸°£";
+	m_items - 1;
+	cout << " " << Me[n].Name() << " ª÷∏¥¡À50…˙√¸°£";
 }
 
 int Fight::Restrain(Elf& atk, Elf& target)//0Œ™π•ª˜∑Ω±ªøÀ÷∆, 1Œ™π•ª˜∑ΩøÀ÷∆±ªπ•ª˜∑Ω, -1Œ™ŒﬁøÀ÷∆πÿœµ
@@ -682,40 +713,181 @@ int Fight::Restrain(Elf& atk, Elf& target)//0Œ™π•ª˜∑Ω±ªøÀ÷∆, 1Œ™π•ª˜∑ΩøÀ÷∆±ªπ•ª˜
 	return 0;
 }
 
-void Fight::ShowBattle1()//’Ω∂∑ ±’π æÀ´∑Ωæ´¡È
-{
-	cout <<endl << endl;
-	cout << "\t| " << left << setw(9) << Me[0].getName() <<setw(4)<< "|" << "\t\t\t|";
-	cout << "\t|µ»º∂:" <<left<<setw(9)<< Me[1].getLv()<<"|" << "\t\t\t|" ;
-	cout << "\t\t\t |µ»º∂:" << left << setw(9) << Enemy[1].getLv() << "|"<< endl;
-	cout << "\t|…˙√¸:" << right <<setw(4)<< Me[1].getHP()<<"/"<<right<<setw(4)<<MyArray[1]->getHP()<<"|" << "\t\t\t|" ;
-	cout << "\t\t\t |…˙√¸:" << left << setw(9) << Enemy[1].getHP() << "|" << endl;
-	cout << "\t|π•ª˜:" << left << setw(9) << Me[1].getAtk() << "|" << "  --------------" << "\t|";
-	cout << "\t --------------";
-	cout << "\t |π•ª˜:" << left << setw(9) << Enemy[1].getAtk() <<"|" << endl;
-	cout << "\t|∑¿”˘:" << left << setw(9) << Me[1].getDef() << "| | " << left << setw(9) << Me[0].getName() << setw(4) << Me[0].putTyp() << "|" << "\t|";
-	cout << "\t| " << left << setw(9) << Enemy[0].getName() << setw(4) << Enemy[0].putTyp() << "|";
-	cout << " |∑¿”˘:" << left << setw(9) << Enemy[1].getDef() << "| " <<endl ;
-	cout << "\t --------------" <<"\t |µ»º∂:" << left << setw(9) << Me[0].getLv() << "|" << "\t|" ;
-	cout << "\t|µ»º∂:" << left << setw(9) << Enemy[0].getLv() << "|";
-	cout << "  --------------" << endl;
-	cout << "\t --------------" << "  |…˙√¸:" << right << setw(4) << Me[0].getHP() << "/" << right << setw(4) << MyArray[0]->getHP() << "|" << "\t|";
-	cout << "\t|…˙√¸:" << left << setw(9) << Enemy[0].getHP() << "|";
-	cout << "  --------------" << endl;
-	cout << "\t| " << left << setw(9) << Me[2].getName() << setw(4) << Me[2].putTyp() << "|" << " |π•ª˜:" << left << setw(9) << Me[0].getAtk() << "|" << "\t|" ;
-	cout << "\t|π•ª˜:" << left << setw(9) << Enemy[0].getAtk() << "|" ;
-	cout << " | " << left << setw(9) << Enemy[2].getName() << setw(4) << Enemy[2].putTyp() << "|" << endl;
-	cout << "\t|µ»º∂:" << left << setw(9) << Me[2].getLv() << "|" << " |∑¿”˘:" << left << setw(9) << Me[0].getDef() << "|" << "\t|" ;
-	cout << "\t|∑¿”˘:" << left << setw(9) << Enemy[0].getDef() << "|" ;
-	cout << " |µ»º∂:" << left << setw(9) << Enemy[2].getLv() << "|" << endl;
-	cout << "\t|…˙√¸:" << right << setw(4) << Me[2].getHP()  << "/" << right << setw(4) << MyArray[2]->getHP() << "|" << "  --------------" <<"\t|";
-	cout << "\t --------------";
-	cout << "  |…˙√¸:" << left << setw(9) << Enemy[2].getHP() << "|" << endl;
-	cout << "\t|π•ª˜:" << left << setw(9) << Me[2].getAtk() <<"|" <<"\t\t\t|" ;
-	cout << "\t\t\t |π•ª˜:" << left << setw(9) << Enemy[2].getAtk() <<"|" << endl;
-	cout << "\t|∑¿”˘:" << left << setw(9) << Me[2].getDef() << "|"<<"\t\t\t|" ;
-	cout << "\t\t\t |∑¿”˘:" << left << setw(9) << Enemy[2].getDef() << "|" << endl;
-	cout << "\t --------------" "\t\t\t\t|";
-	cout << "\t\t\t  --------------"<<endl;
-	cout << endl;
+void Fight::ShowMe1() {
+	//cout << "---------------------------------- ÕÊº“–≈œ¢ ----------------------------------" << endl;
+	cout << "        \t---------------------" << endl;
+	cout << "        \t|–’√˚£∫" << left << sew(6) << (static_cast<player>Me[0])->getName() << "|" << endl;
+	cout << "        \t|µ»º∂£∫" << left << sew(6) << (static_cast<player>Me[0])->etLevel() << "|" << endl;
+	cout << "        \t|æ≠—È£∫" << left << sew(6) << (static_cast<player>Me[0])->getExp() << "|" << endl;
+	cout << "   Œ“   \t|π•ª˜ Ù–‘" << left << sew(6) << (static_cast<player>Me[0])->getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(0) << "|" << endl;
+	cout << "   ∑Ω   \t|ATTACK:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(3) << "|" << endl;
+	cout << "        \t|SPEED:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(4) << "|" << endl;
+	cout << "        \t---------------------" << endl;
+	cout << "--------------------------------------------------------------------------------\n\n";
+}
+
+void Fight::ShowMe2() {
+	//cout << "---------------------------------- ÕÊº“–≈œ¢ ----------------------------------" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t|–’√˚£∫" << left << sew(6) << (static_cast<player>Me[0])->getName() << "|" << "\t\t\t\t|–’√˚£∫" << left << sew(6) << (static_cast<npc>Me[1])->getName()<<"|"<<endl;
+	cout << "        \t|µ»º∂£∫" << left << sew(6) << (static_cast<player>Me[0])->getLevel() << "|" << "\t\t\t\t|µ»º∂£∫" << left << sew(6) << (static_cast<npc>Me[1])->getLevel()<< "|" << endl;
+	cout << "        \t|æ≠—È£∫" << left << sew(6) << (static_cast<player>Me[0])->getExp() << "|" << "\t\t\t\t|æ≠—È£∫" << left << sew(6) << (static_cast<npc>Me[1])->getExp() << "|" << endl;
+	cout << "   Œ“   \t|π•ª˜ Ù–‘" << left << sew(6) << (static_cast<player>Me[0])->getType() << "|" << "\t\t\t\t|π•ª˜ Ù–‘" << left << sew(6) << (static_cast<npc>Me[1])->getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << sew(6) << (static_cast<npc>Me[1])->getAttr(0) << "|" << endl;
+	cout << "   ∑Ω   \t|ATTACK:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << sew(6) << (static_cast<npc>Me[1])->getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << sew(6) << (static_cast<npc>Me[1])->getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << sew(6) << (static_cast<npc>Me[1])->getAttr(3) << "|" << endl;
+	cout << "        \t|SPEED:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << sew(6) << (static_cast<npc>Me[1])->getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	
+	cout << "--------------------------------------------------------------------------------\n\n";
+}
+
+void Fight::ShowMe3() {
+	//cout << "---------------------------------- ÕÊº“–≈œ¢ ----------------------------------" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t|–’√˚£∫" << left << sew(6) << (static_cast<npc>Me[1])->getName() << "|" << "\t\t\t\t|–’√˚£∫" << left << sew(6) << (static_cast<npc>Me[2])->getName() << "|" << endl;
+	cout << "        \t|µ»º∂£∫" << left << sew(6) << (static_cast<npc>Me[1])->getLevel() << "|" << "\t\t\t\t|µ»º∂£∫" << left << sew(6) << (static_cast<npc>Me[2])->getLevel() << "|" << endl;
+	cout << "        \t|æ≠—È£∫" << left << sew(6) << (static_cast<npc>Me[1])->getExp() << "|" << "\t\t\t\t|æ≠—È£∫" << left << sew(6) << (static_cast<npc>Me[2])->getExp() << "|" << endl;
+	cout << "        \t|π•ª˜ Ù–‘" << left << sew(6) << (static_cast<npc>Me[1])->getType() << "|" << "\t\t\t\t|π•ª˜ Ù–‘" << left << sew(6) << (static_cast<npc>Me[2])->getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << sew(6) << (static_cast<npc>Me[1])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << sew(6) << (static_cast<npc>Me[2])->getAttr(0) << "|" << endl;
+	cout << "        \t|ATTACK:" << left << sew(6) << (static_cast<npc>Me[1])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << sew(6) << (static_cast<npc>Me[2])->getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << sew(6) << (static_cast<npc>Me[1])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << sew(6) << (static_cast<npc>Me[2])->getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << sew(6) << (static_cast<npc>Me[1])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << sew(6) << (static_cast<npc>Me[2])->getAttr(3) << "|" << endl;
+	cout << "   Œ“   \t|SPEED:" << left << sew(6) << (static_cast<npc>Me[1])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << sew(6) << (static_cast<npc>Me[2])->getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t             \t---------------------" << endl;
+	cout << "   ∑Ω   \t             \t|–’√˚£∫" << left << sew(10) << (static_cast<player>Me[0])->getName() << "|" << endl;
+	cout << "        \t             \t|µ»º∂£∫" << left << sew(10) << (static_cast<player>Me[0])->getLevel() << "|" << endl;
+	cout << "        \t             \t|æ≠—È£∫" << left << sew(10) << (static_cast<player>Me[0])->getExp() << "|" << endl;
+	cout << "        \t             \t|π•ª˜ Ù–‘" << left << sew(10) << (static_cast<player>Me[0])->getType() << "|" << endl;
+	cout << "        \t             \t|MAXHITPOINTS:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(0) << "|" << endl;
+	cout << "        \t             \t|ATTACK:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(1) << "|" << endl;
+	cout << "        \t             \t|CRITING:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(2) << "|" << endl;
+	cout << "        \t             \t|DODGING:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(3) << "|" << endl;
+	cout << "        \t             \t|SPEED:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(4) << "|" << endl;
+	cout << "        \t             \t---------------------" << endl;
+	cout << "--------------------------------------------------------------------------------\n\n";
+}
+
+
+void Fight::ShowMe4() {
+	//cout << "---------------------------------- ÕÊº“–≈œ¢ ----------------------------------" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t|–’√˚£∫" << left << sew(60) << (static_cast<npc>Me[2])->getName() << "|" << "\t\t\t\t|–’√˚£∫" << left << sew(6) << (static_cast<npc>Me[3])->getName() << "|" << endl;
+	cout << "        \t|µ»º∂£∫" << left << sew(6) << (static_cast<npc>Me[2])->getLevel() << "|" << "\t\t\t\t|µ»º∂£∫" << left << sew(6) << (static_cast<npc>Me[3])->getLevel() << "|" << endl;
+	cout << "        \t|æ≠—È£∫" << left << sew(6) << (static_cast<npc>Me[2])->getExp() << "|" << "\t\t\t\t|æ≠—È£∫" << left << sew(6) << (static_cast<npc>Me[3])->getExp() << "|" << endl;
+	cout << "        \t|π•ª˜ Ù–‘" << left << sew(6) << (static_cast<npc>Me[2])->getAttackType() << "|" << "\t\t\t\t|π•ª˜ Ù–‘" << left << sew(6) << (static_cast<npc>Me[3])->getAttackType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << sew(6) << (static_cast<npc>Me[2])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << sew(6) << (static_cast<npc>Me[3])->getAttr(0) << "|" << endl;
+	cout << "        \t|ATTACK:" << left << sew(6) << (static_cast<npc>Me[2])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << sew(6) << (static_cast<npc>Me[3])->getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << sew(6) << (static_cast<npc>Me[2])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << sew(6) << (static_cast<npc>Me[3])->getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << sew(6) << (static_cast<npc>Me[2])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << sew(6) << (static_cast<npc>Me[3])->getAttr(3) << "|" << endl;
+	cout << "   Œ“   \t|SPEED:" << left << sew(6) << (static_cast<npc>Me[2])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << sew(6) << (static_cast<npc>Me[3])->getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "   ∑Ω   \t|–’√˚£∫" << left << sew(6) << (static_cast<player>Me[0])->getName() << "|" << "\t\t\t\t|–’√˚£∫" << left << sew(10) << (static_cast<npc>Me[1])->getName() << "|" << endl;
+	cout << "        \t|µ»º∂£∫" << left << sew(6) << (static_cast<player>Me[0])->getLevel() << "|" << "\t\t\t\t|µ»º∂£∫" << left << sew(10) << (static_cast<npc>Me[1])->getLevel() << "|" << endl;
+	cout << "        \t|æ≠—È£∫" << left << sew(6) << (static_cast<player>Me[0])->getExp() << "|" << "\t\t\t\t|æ≠—È£∫" << left << sew(10) << (static_cast<npc>Me[1])->getExp() << "|" << endl;
+	cout << "        \t|π•ª˜ Ù–‘" << left << sew(6) << (static_cast<player>Me[0])->getType() << "|" << "\t\t\t\t|π•ª˜ Ù–‘" << left << sew(10) << (static_cast<npc>Me[1])->getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << sew(6) << (static_cast<npc>Me[1])->getAttr(0) << "|" << endl;
+	cout << "        \t|ATTACK:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << sew(6) << (static_cast<npc>Me[1])->getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(2) << "|"  << "\t\t\t\t|CRITING:" << left << sew(6) << (static_cast<npc>Me[1])->getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << sew(6) << (static_cast<npc>Me[1])->getAttr(3) << "|" << endl;
+	cout << "        \t|SPEED:" << left << sew(6) << (static_cast<player>Me[0])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << sew(6) << (static_cast<npc>Me[1])->getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+
+	cout << "--------------------------------------------------------------------------------\n\n";
+}
+
+void Fight::ShowEnemy1() {
+	//cout << "---------------------------------- µ–∑Ω–≈œ¢ ----------------------------------" << endl;
+	cout << "        \t---------------------" << endl;
+	cout << "        \t|–’√˚£∫" << left << sew(6) << Enemy[0].getName() << "|" << endl;
+	cout << "        \t|µ»º∂£∫" << left << sew(6) << Enemy[0].getLevel() << "|" << endl;
+	cout << "        \t|æ≠—È£∫" << left << sew(6) << Enemy[0].getExp() << "|" << endl;
+	cout << "   µ–   \t|π•ª˜ Ù–‘" << left << sew(6) << Enemy[0].getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << sew(6) << Enemy[0].getAttr(0) << "|" << endl;
+	cout << "   ∑Ω   \t|ATTACK:" << left << sew(6) << Enemy[0].getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << sew(6) << Enemy[0].getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << sew(6) << Enemy[0].getAttr(3) << "|" << endl;
+	cout << "        \t|SPEED:" << left << sew(6) << Enemy[0].getAttr(4) << "|" << endl;
+	cout << "        \t---------------------" << endl;
+	//cout << "--------------------------------------------------------------------------------\n\n";
+}
+
+void Fight::ShowEnemy2() {
+	//cout << "---------------------------------- µ–∑Ω–≈œ¢ ----------------------------------" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t|–’√˚£∫" << left << sew(6) << Enemy[0].getName() << "|" << "\t\t\t\t|–’√˚£∫" << left << sew(6) << Enemy[1].getName() << "|" << endl;
+	cout << "        \t|µ»º∂£∫" << left << sew(6) << Enemy[0].getLevel() << "|" << "\t\t\t\t|µ»º∂£∫" << left << sew(6) << Enemy[1].getLevel() << "|" << endl;
+	cout << "        \t|æ≠—È£∫" << left << sew(6) << Enemy[0].getExp() << "|" << "\t\t\t\t|æ≠—È£∫" << left << sew(6) << Enemy[1].getExp() << "|" << endl;
+	cout << "   µ–   \t|π•ª˜ Ù–‘" << left << sew(6) << Enemy[0].getType() << "|" << "\t\t\t\t|π•ª˜ Ù–‘" << left << sew(6) << Enemy[1].getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << sew(6) << Enemy[0].getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << sew(6) << Enemy[1].getAttr(0) << "|" << endl;
+	cout << "   ∑Ω   \t|ATTACK:" << left << sew(6) << Enemy[0].getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << sew(6) << Enemy[1].getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << sew(6) << Enemy[0].getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << sew(6) << Enemy[1].getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << sew(6) << Enemy[0].getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << sew(6) << Enemy[1].getAttr(3) << "|" << endl;
+	cout << "        \t|SPEED:" << left << sew(6) << Enemy[0].getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << sew(6) << Enemy[1].getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+
+	//cout << "--------------------------------------------------------------------------------\n\n";
+}
+
+void Fight::ShowEnemy3() {
+	//cout << "---------------------------------- µ–∑Ω–≈œ¢ ----------------------------------" << endl;
+	cout << "        \t             \t---------------------" << endl;
+	cout << "        \t             \t|–’√˚£∫" << left << sew(6) << Enemy[0].getName() << "|" << endl;
+	cout << "        \t             \t|µ»º∂£∫" << left << sew(6) << Enemy[0].getLevel() << "|" << endl;
+	cout << "        \t             \t|æ≠—È£∫" << left << sew(6) << Enemy[0].getExp() << "|" << endl;
+	cout << "        \t             \t|π•ª˜ Ù–‘" << left << sew(6) << Enemy[0].getAttackType() << "|" << endl;
+	cout << "        \t             \t|MAXHITPOINTS:" << left << sew(6) << Enemy[0].getAttr(0) << "|" << endl;
+	cout << "        \t             \t|ATTACK:" << left << sew(6) << Enemy[0].getAttr(1) << "|" << endl;
+	cout << "        \t             \t|CRITING:" << left << sew(6) << Enemy[0].getAttr(2) << "|" << endl;
+	cout << "        \t             \t|DODGING:" << left << sew(6) << Enemy[0].getAttr(3) << "|" << endl;
+	cout << "   µ–   \t             \t|SPEED:" << left << sew(6) << Enemy[0].getAttr(4) << "|" << endl;
+	cout << "        \t             \t---------------------" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "   ∑Ω   \t|–’√˚£∫" << left << sew(6) << Enemy[1].getName() << "|" << "\t\t\t\t|–’√˚£∫" << left << sew(6) << Enemy[2].getName() << "|" << endl;
+	cout << "        \t|µ»º∂£∫" << left << sew(6) << Enemy[1].getLevel() << "|" << "\t\t\t\t|µ»º∂£∫" << left << sew(6) << Enemy[2].getLevel() << "|" << endl;
+	cout << "        \t|æ≠—È£∫" << left << sew(6) << Enemy[1].getExp() << "|" << "\t\t\t\t|æ≠—È£∫" << left << sew(6) << Enemy[2].getExp() << "|" << endl;
+	cout << "        \t|π•ª˜ Ù–‘" << left << sew(6) << Enemy[1].getType() << "|" << "\t\t\t\t|π•ª˜ Ù–‘" << left << sew(6) << Enemy[2].getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << sew(6) << Enemy[1].getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << sew(6) << Enemy[2].getAttr(0) << "|" << endl;
+	cout << "        \t|ATTACK:" << left << sew(6) << Enemy[1].getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << sew(6) << Enemy[2].getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << sew(6) << Enemy[1].getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << sew(6) << Enemy[2].getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << sew(6) << Enemy[1].getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << sew(6) << Enemy[2].getAttr(3) << "|" << endl;
+	cout << "        \t|SPEED:" << left << sew(6) << Enemy[1].getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << sew(6) << Enemy[2].getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+
+	//cout << "--------------------------------------------------------------------------------\n\n";
+}
+
+
+void Fight::ShowEnemy4() {
+	//cout << "---------------------------------- µ–∑Ω–≈œ¢ ----------------------------------" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t|–’√˚£∫" << left << sew(6) << Enemy[0].getName() << "|" << "\t\t\t\t|–’√˚£∫" << left << sew(6) << Enemy[1].getName() << "|" << endl;
+	cout << "        \t|µ»º∂£∫" << left << sew(6) << Enemy[0].getLevel() << "|" << "\t\t\t\t|µ»º∂£∫" << left << sew(6) << Enemy[1].getLevel() << "|" << endl;
+	cout << "        \t|æ≠—È£∫" << left << sew(6) << Enemy[0].getExp() << "|" << "\t\t\t\t|æ≠—È£∫" << left << sew(6) << Enemy[1].getExp() << "|" << endl;
+	cout << "        \t|π•ª˜ Ù–‘" << left << sew(6) << Enemy[0].getType() << "|" << "\t\t\t\t|π•ª˜ Ù–‘" << left << sew(6) << Enemy[1].getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << sew(6) << Enemy[0].getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << sew(6) << Enemy[1].getAttr(0) << "|" << endl;
+	cout << "        \t|ATTACK:" << left << sew(6) << Enemy[0].getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << sew(6) << Enemy[1].getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << sew(6) << Enemy[0].getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << sew(6) << Enemy[1].getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << sew(6) << Enemy[0].getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << sew(6) << Enemy[1].getAttr(3) << "|" << endl;
+	cout << "   µ–   \t|SPEED:" << left << sew(6) << Enemy[0].getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << sew(6) << Enemy[1].getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "   ∑Ω   \t|–’√˚£∫" << left << sew(6) << Enemy[3].getName() << "|" << "\t\t\t\t|–’√˚£∫" << left << sew(6) << Enemy[2].getName() << "|" << endl;
+	cout << "        \t|µ»º∂£∫" << left << sew(6) << Enemy[3].getLevel() << "|" << "\t\t\t\t|µ»º∂£∫" << left << sew(6) << Enemy[2].getLevel() << "|" << endl;
+	cout << "        \t|æ≠—È£∫" << left << sew(6) << Enemy[3].getExp() << "|" << "\t\t\t\t|æ≠—È£∫" << left << sew(6) << Enemy[2].getExp() << "|" << endl;
+	cout << "        \t|π•ª˜ Ù–‘" << left << sew(6) << Enemy[3].getType() << "|" << "\t\t\t\t|π•ª˜ Ù–‘" << left << sew(6) << Enemy[2].getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << sew(6) << Enemy[3].getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << sew(6) << Enemy[2].getAttr(0) << "|" << endl;
+	cout << "        \t|ATTACK:" << left << sew(6) << Enemy[3].getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << sew(6) << Enemy[2].getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << sew(6) << Enemy[3].getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << sew(6) << Enemy[2].getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << sew(6) << Enemy[3].getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << sew(6) << Enemy[2].getAttr(3) << "|" << endl;
+	cout << "        \t|SPEED:" << left << sew(6) << Enemy[3].getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << sew(6) << Enemy[2].getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+
+	//cout << "--------------------------------------------------------------------------------\n\n";
 }
