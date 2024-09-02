@@ -564,5 +564,106 @@ bool CommandExecutor::ShowFace(npc p_npc){
     return true;
 }
 
-
+bool showFace(npc p_npc){
+	if(p_npc==1){
+	
+cout<<".ii,...EGKLWt,,KKWijiLtjijKiEEiELtiELGKWKtjtGELEiG"<<endl;
+cout<<" ti   #EWGLKLttE     LLttitEiGEWLGGiEKEKKEEjtEEtGti"<<endl;
+cout<<" ti.iKWLKEGiiEtt      LLEiiGtiGKjGWLiEKEKK#WKLGE,E,i"<<endl;
+cout<<" tt    tGKKGLKij       LLGiiKiLKE GtLLEKKGKWjjiGK,G,i"<<endl;
+cout<<" ti   .#EEWELKL.      GKGLLiELiE L,EGEEKGK#jjiGE,E,i"<<endl;
+cout<<" tt    EWWEEGKL        KGLKLWLiG E jGEEKWE#WjtGKjGji"<<endl;
+cout<<" tt .WE#WWEEGKi       GGGLGLKWWWKGGEEKWE#jitGEjEji"<<endl;
+cout<<" tt    #KWEEGGL.EKWWKEiLLELEELj,,jLEEKKG#jjtGKjGji"<<endl;
+cout<<" ti    .LWEEEGWt.,,,,,,KLjL #######EGWKWEjjtGEGGGE"<<endl;
+cout<<" ti     ,#K#GGLtWKKKEGKLEt ii#####i#GiLKjWjtGLLLGG"<<endl;
+cout<<".tt   . .GKKGG#G#####j,E  # LjWWKE,#LLGGjjjtGKKKKW"<<endl;
+cout<<".ti     .GWGLKG#EWKWL..K,,G   GGt .KLiGKjjjtGKKKKK"<<endl;
+cout<<" ti    G.jKWG# G ,i    .          jt#GjKjjjjtGWKKEK"<<endl;
+cout<<" ti.    ..Wt#KL        L .  #        WiLjjjjjjtGKELtE"<<endl;
+cout<<" ti     .,LGW        #  .    W   tK   G LjjjjjtGKEijG"<<endl;
+cout<<".ti..    E.Ej#####W     .             tKLjjjjjtGKEijE"<<endl;
+cout<<" tt.  .   # L                        WiGjjjjjtGKGLjE"<<endl;
+cout<<",ti    .   WW           .            tEiGjjjjttGKGLjG"<<endl;
+cout<<"iit.,j.......W                       #.iGjjjjjtGKEGLE"<<endl;
+cout<<"iLiLiij.  ..  L                     , .iG,jjjjiGKELiE"<<endl;
+cout<<".LLi,  .. ..  .j      iiiiLL       .iGjjjjttGKGLiE"<<endl;
+cout<<"GLL,,,.  .....  L,                 E.,LGjjjjjiGKELiE"<<endl;
+cout<<"GEGGGGG...      #t                Li.,LGjjjttiGKEGiE"<<endl;
+cout<<"..,iLEiiiiiiiiiiiK t          ,ttttiiG#GEjjtttLGKEGiE"<<endl;
+cout<<",.,iLELLLLLiLiLLGt#tW.      tttt ttttLtWitijjjttLiE"<<endl;
+cout<<",.jLLEjjtjtjjjjWtiWjtjjtjjjttijtKtGjjttttGGKEEGE"<<endl;
+cout<<"j.tLLEtttjtjtjWjtKijjji,,jjtjEjjtijjLjttttLGGLGGG"<<endl;
+cout<<"GjiLLEjjtttttKjjjWjjj  K,  jK, jjtLtjjKjtttLGEEEKK"<<endl;
+cout<<"          .#E,,,jWjt.   K  W    jtii,,,WWjj,,,,,jj"<<endl;
+cout<<"EGGEEEEEE#EL,.. j#t,     j,     .tGi,,,,GWWKWWWWWW"<<endl;
+cout<<"EEEEEEE#it,,.   j#i     ####    .j#i ,,,jiLL#KKWWW"<<endl;
+cout<<"EEEEKWj,LLE     tWW    WGLGK#   .tWL    .L.tttiWKW"<<endl;
+	}
+	if(p_npc==2){
+	
+cout<<"!!!&......   #$@$%#**#oo@#&@@&$!*&&&   .......;!$."<<endl;
+cout<<"##@@&$%*#**#;;     .@**%&@&%$$$$$&&$.%%;"<<endl;
+cout<<"  o;!&$!!!#!&#&&$$$#*%%*!       &o&#&#.!!!!!&&!! ;% "<<endl;
+cout<<"  o. %.     o#&&$$#$$&%%        &#$&#@#     **   ;% "<<endl;
+cout<<"  o. *.    #@#$&$&%$#&$@         *$&@&#     **   ;% "<<endl;
+cout<<"  o. *.     @#&#&&&&!&&@          &&@#;#    **   ;% "<<endl;
+cout<<"  !. *.     #&@&&@&!!&&#    o#    #@!#      **   ;% "<<endl;
+cout<<"  !. *.    # @#@&&%  &&@ #.;@@@ @$o@      **   ;* "<<endl;
+cout<<"  !. *.   o  ##@$@###@&o  #%*   #!!       o*   !% "<<endl;
+cout<<"  !. *.      !@&#@@@%@;              o.       oo   !* "<<endl;
+cout<<"  !. o.      !&#! oo   *             .;.       oo   !* "<<endl;
+cout<<"  ;. o.      #&&          .           *         oo   !* "<<endl;
+cout<<"  ;. o                   .           $@        !!   !* "<<endl;
+cout<<"  ;. !       @#          $;          @         !!   !o "<<endl;
+cout<<"  ;  !        *!         .          &@         !!   !o "<<endl;
+cout<<"  ;  !                             !          !!   ;o "<<endl;
+cout<<"  ;  !           @       ;         oo          !!   ;o "<<endl;
+cout<<"  ;  !            $             ;o;          ;!   ;o "<<endl;
+cout<<"  ;  !             @           o*;.          ;;   ;o "<<endl;
+cout<<"  .  ;               &  .%;  %      ...;;.. ;o$"<<endl;
+cout<<"  .  ;             o**;.*;!  o      ...;;.. ;oo"<<endl;
+cout<<". .  ;            $!!!%!;;@ ;!#     ...;;.. ;oo"<<endl;
+cout<<"  .  ;           ;*!**;;*.  ;!#     ...;... .!o"<<endl;
+cout<<"$    .          o@oo!!;;    ;;###      .. . .;o"<<endl;
+cout<<"     .         #%%!!.#      ;!&&&#     ..   ;!*"<<endl;
+cout<<"     .        @&@*!.o;$     ;@$$$$$@   ..   ;!;"<<endl;
+cout<<"*           #&&&#!.#%%%.    @**%$@$$%&;     .;."<<endl;
+cout<<"*o       @#$&&&#@!!#%%%#   ..********$$$&@% ..."<<endl;
+cout<<"    #@@#&$$$%&&&&&o#;&%%#;@  .%*****%o**o***%%$&@"<<endl;
+cout<<"    &$$$%%$%@%%##!. *&%#    ;$@*****@*o*******o$$"<<endl;
+cout<<"   $$$$$%%%%$%%%*   $%%! ... *****#*******$@*o**%"<<endl;
+cout<<"  @$$%%%%%%%%%%%@.  #&&..   *@*****@*****$%%*%**%"<<endl;
+	}
+	if(p_npc==3){      
+cout<<"                GEEGjLjEWWELtEE                 "<<endl;
+cout<<"               KKKKGGKjLW#KKjGK#W                 "<<endl;
+cout<<"             i#KWKWGKKjG   WWKWKW                 "<<endl;
+cout<<"             W#KKEWK#KKK    WW#WW                 "<<endl;
+cout<<"              KWK#WEWKEE    .WKKLG                "<<endl;
+cout<<"              W#KWKKGEWG WWW W#KW K               "<<endl;
+cout<<"              W#KWiKGEE##E## W,LW                 "<<endl;
+cout<<"             #WKKjLK#i  E##L#WEt                  "<<endl;
+cout<<"              WiWWE###K  t   EGi                  "<<endl;
+cout<<"                KKL   W W    #  ,.                  "<<endl;
+cout<<"                 Wi  #t        jK                   "<<endl;
+cout<<"                      t        GK                   "<<endl;
+cout<<"                  .    t       j.                   "<<endl;
+cout<<"                   j          Kj                    "<<endl;
+cout<<"                    ,        tti                    "<<endl;
+cout<<"                      , . .  j .E                   "<<endl;
+cout<<"                          jt  E                   "<<endl;
+cout<<"                     LEGLjt.  tKW                 "<<endl;
+cout<<"                    EjGjjt , iiiWj                "<<endl;
+cout<<"                   KitKjt  L,,,i#E                "<<endl;
+cout<<"                 iG itLj  .   ,tWEKj              "<<endl;
+cout<<"                .GWW ttj  tG   #WEEjG             "<<endl;
+cout<<"              WiEEtW ttL  tji  WKGGKKiW           "<<endl;
+cout<<"            .GjEEWGjWit,,itWW  KKGGGEEEj          "<<endl;
+cout<<"         t GK#EE#WWtK  i.LLKWi GKLtLWKEGEt        "<<endl;
+cout<<"       ijjKjWWGGKEi WL..jtEK,tLLEtttWEGjjjGj      "<<endl;
+cout<<"      KtWtttjttGGL, WKWjKjj.  #LEtttjjLtjjtjG#K   "<<endl;
+cout<<"      EEttttttt#LE  ,GEEEE   .GLEttttEGttttjWKGW  "<<endl;
+    }
+}
 
