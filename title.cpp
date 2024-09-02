@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-void ShowTitle{
+void ShowTitle(){
   cout << "              $$                    $$                       $$$                 $       $   " << endl;
   cout << "            $$$$$$$$$$$$$$$       $$$                      $$     $      $$    $$$$$$$$$$$     $$           $ " << endl;
   cout << "           $$  $$$$$$$$$$$$$     $$$         $      $$$$$$$$$$$$$$$$      $$   $$$$$$$$$$       $$  $$$$$$$$$$$" << endl;

@@ -57,7 +57,8 @@ void gotoc() {
 	cout << "¼ÓÔØÖÐ...";
 	for (int j = 0; j < 100; j++) {
 		Sleep(17);
-		gotoXY(j, 15);
+		ggotoXY(j + 3, 15);
+		cout << " " << j << "%";
 		cout << "¡ö";
 	}
 	system("cls");
