@@ -1,73 +1,397 @@
-#include <sstream>
-#include <iostream>
-#include <cstdlib>
-#include "Entity.h"
-#include "Player.h"
-#include "DatabasePointer.h"
-#include "Game.h"
-#include "CommandExecutor.h"
+﻿#include <iostream>
+#include<fstream>
+#include <Windows.h>
+#include "Bag.h"
+#include "Enemy.h"
+#include "Fight.h"
+#include "Goods.h"
+#include "Map.h"
+#include "Npc.h"
+#include "Role.h"
+#include "Skill.h"
+#include "Store.h"
+#include"Save.h"
+#include"Task.h"
+
 using namespace std;
 
-int main() {
-	Game game;
-	CommandParser commandpar;
-	CommandExecutor commandexec;
-	string input;
-	bool isStart = false;
+//强制界面全屏
+/*
+void FullScreen() {
+	HWND hwnd = GetForegroundWindow();
+	int x = GetSystemMetrics(SM_CXSCREEN);
+	int y = GetSystemMetrics(SM_CYSCREEN);
+	char setting[30];
+	sprintf_s(setting, "mode con:cols=%d lines=%d", x, y);
+	system(setting);
+	SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, x, y, NULL);
+	MoveWindow(hwnd, 0, 0, x, y, 1);
+	printf("\n\n");
+}
+*/
 
-	do {
-		system("cls");
-
-		//��Ϸ��ʼ����
-		cout << "> ";
-		cin >> input;
-		input = lowerCase(intput);
-
-		isStart = game.First(input);
-	} while (!isStart);
-
-	if (input == "new") {
-		//��������
+//欢迎界面
+int welcomePage()
+{
+	HANDLE hConsole;
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY| FOREGROUND_RED);
+	/*
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, 13);
+	*/
+	for(int i = 0;i < 8;i++)
+		cout << endl;
+	cout  <<'\t' << '\t' << '\t' << '\t' << "    0   0           0          0           " << endl;
+	cout << '\t' << '\t' << '\t' << '\t' << "    0   0            0         0 0  000    " << endl;
+	cout << '\t' << '\t' << '\t' << '\t' << "    000000000  000000000000    0 0         " << endl;
+	cout << '\t' << '\t' << '\t' << '\t' << "   0    0      0    0     0   0  0 00000   " << endl;
+	cout << '\t' << '\t' << '\t' << '\t' << "  00  0 0  0   0   0  0   0  0  0    0     " << endl;
+	cout << '\t' << '\t' << '\t' << '\t' << "0      00 0       0 0  0       00    0     " << endl;
+	cout << '\t' << '\t' << '\t' << '\t' << "   0 00000000   0    0       0  0    0     " << endl;
+	cout << '\t' << '\t' << '\t' << '\t' << "   0    00         0   0        0    0     " << endl;
+	cout << '\t' << '\t' << '\t' << '\t' << "   0   0  0      0 00000 0      0    0     " << endl;
+	cout << '\t' << '\t' << '\t' << '\t' << "   0  0    0   0   0   0  0     0  0 0     " << endl;
+	cout << '\t' << '\t' << '\t' << '\t' << "   0 0      0      00000        0   00     " << endl << endl;
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, 10);
+	string newGameMenu = "   1.新的游戏  2.读取存档  3.退出游戏";
+	cout << '\t' << '\t' << '\t' << '\t' ;
+	cout << '\t' << "   ********************" << endl;
+	cout << '\t' << '\t' << '\t' << '\t' << '\t' << "       游戏制作信息" << endl;
+	cout << '\t' << '\t' << '\t' << '\t' << '\t' << "   ********************" << endl;
+	cout << '\t' << '\t' << '\t' << '\t' << "   制作人：中国海洋大学2017夏季学期c++课程设计16组" << endl;
+	cout << '\t' << '\t' << '\t' << '\t' <<"   梁同学、张同学与孟同学" << endl<<endl;
+	cout << '\t' << '\t' << '\t' << '\t';
+	for (int i = 0;i < newGameMenu.length();i++) {
+		Sleep(50);
+		cout << newGameMenu[i];
 	}
+	cout << endl << endl << '\t' << '\t' << '\t' << '\t'<<"   ";
+	return 0;
+}
 
-	Player* m_player = Player::getPlayer();
-
-	while (1) {
-		system("cls");
-
-		game.PrintPrime();
-
-		cout << "> ";
-		cin >> input;
-		input = lowerCase(intput);
-
-		if (input == "map") {
-			system("cls");
-			game.Map();
-			continue;
-		}
-		else if (input == "attack") {
-			int cnt = m_player;
-			//����ս��
-			//�ı�room��player��npc���ı�npc��״̬
-			if (cnt != m_player) {
-				if (//Ŀ�귿��){
-					//�Թ�
-					//����
-				}
-				//�ı䷿��
-			}
-		}
-		else if (input == "npc") {
-			game.NPC();
-		}
-		else if (input == "bag") {
-		    game.Bag();
-	    }
-		else {
-			//����
-		}
+//显示游戏背景
+int backgroundGame()
+{
+	HANDLE hConsole;
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, 10);
+	system("cls");
+	cout << "故事背景" << endl << endl;
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, 14);
+	string background = "    你是O大一名正在忙于实习的大三女学生";
+	for (int i = 0;i < background.length();i++) {
+		Sleep(10);
+		cout << background[i];
 	}
+	cout << endl;
+	system("pause");
+	system("cls");
+	cout << endl;
+	background = "    的美丽如同初升的朝阳，温暖而耀眼，让人不禁为之心动。你的笑容犹如春日里绽放的花朵，清新脱俗，充满了生机与活力。你的眼睛闪烁着星辰般的光芒，深邃而迷人，仿佛能洞察人心。你的每一次微笑，都如同春风拂面，让人沉醉在这份温柔与美好之中。";
+	for (int i = 0;i < background.length();i++) {
+		Sleep(10);
+		cout << background[i];
+	}
+	cout << endl;
+	system("pause");
+	system("cls");
+	cout << endl;
+	background = "    这天晚上你正在操场上散步，突然三个英俊的男人出现在你的面前，并说他们才是你未来的的真爱，你疑惑地看了他们一眼，他们在你面前从左到右依次介绍自己。他们分别是：年轻的大学教授陆陈、上市公司总裁陈凡、实力派影帝陈冰。你白了他们一眼便离开了，心想：学校怎么让这些莫名其妙的人进来了。";
+	for (int i = 0;i < background.length();i++) {
+		Sleep(10);
+		cout << background[i];
+	}
+	cout << endl;
+	system("pause");
+	system("cls");
+	cout << endl;
+	background = "    五百年后的中洲大陆，故事就发生在一个平凡冷清的小镇上。";
+	for (int i = 0;i < background.length();i++) {
+		Sleep(10);
+		cout << background[i];
+	}
+	cout << endl;
+	system("pause");
+	system("cls");
+
 
 	return 0;
 }
+
+//游戏运行函数
+void newGame(Role player,Map map) {
+
+	Goods goods[24] = { 0, 1, 2, 3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 };
+	Store store;
+	int chatNum = 0;
+	HANDLE hConsole;
+	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, 14);
+menu:
+	Sleep(2000);
+	system("cls");
+	cout <<endl<< "位于 :" << map.getName() << endl;
+	map.showRoom();
+	if (map.isThereFight()) {
+		Enemy_Boss  boss(map.getPosition());
+		
+		if(map.isThereChat() == false)
+			cout << "这里有：" << '\t' ;
+		cout << boss.getName() <<'\t'<<"三头小野怪"<< endl;
+	}
+	player.showRole();											//显示人物信息
+	cout << endl << "1.交谈 2.战斗 3.移动 4.状态 5.商店 6.退出 7.保存并退出" << endl;
+	int choice;
+	while (true) {
+		cin >> choice;
+		if (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5 && choice != 6 && choice != 7)
+			cout << "选择错误，请重新选择。" << endl;
+		else break;
+	}
+	if (choice == 1) {
+		if (map.isThereChat()) {
+			//交谈
+			Npc npc(map.getPosition());
+			map.setNpc(npc);
+			cout << endl << "可以对话的人物:" << endl ;
+			cout << map.getNpcName() << endl;
+			player = map.chatToNpc(player);
+		}
+	}
+	else if (choice == 2) {
+		if (map.isThereFight()) {
+			Enemy_Boss  boss(map.getPosition());
+			Enemy_Small smallEnemy;
+			boss.showEnemy();
+			Fight fight(player, boss);
+			system("cls");
+			cout << "正在进入战斗......." << endl;
+			while (!fight.isFightEnd()) {
+				Sleep(3000);
+				system("cls");
+				if (fight.fightRound() == true) {
+					player = fight.runEndFight();
+					goto menu;
+				}
+			}
+			player = fight.endFight();		//战斗正常结束，获得增益
+			smallEnemy.~Enemy_Small();
+		}
+		else
+		{
+			cout << "这里没有战斗可以发生" << endl;
+		}
+	}
+	else if (choice == 3) {
+		while (true)
+		{
+			map.ShowMap();
+			cout << "使用w a s d来移动 按1进入地图" << endl;
+			char order;
+			cin >> order;
+			if (order == '1') {
+				system("cls");
+				break;
+			}
+			else {
+				map.Move(order);
+				chatNum = 0;
+				player.setMapId(map.getPosition());
+			}
+
+		}
+
+	}
+	else if (choice == 4) {
+		cout << "1.属性 2.背包 3.技能 4.装备 5.任务 6.返回" << endl;
+		int choice;
+		while (true) {
+			cin >> choice;
+			if (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5 && choice != 6)
+				cout << "选择错误，请重新选择。" << endl;
+			else break;
+		}
+		if (choice == 2) {
+			player.showBag();		//显示背包
+			player.useDrug();		//是否使用药品
+		}
+
+		else if (choice == 3) player.showSkill();//显示技能
+		else if (choice == 4) {
+			player.showEquip();
+			cout << "1.更换装备		2.取下装备		3.退出" << endl;
+			int choiceEquip;
+			cin >> choiceEquip;
+			if (choiceEquip == 1) {
+				player.showBag();
+				cout << "请选择要换上的装备(24.取消)" << endl;
+				int id;
+				cin >> id;
+				if (id >= 24 || id < 0)
+					goto menu;
+				player.wearEquip(id);
+				player.getBag().reduceGoods(id, 1);
+			}
+			if (choiceEquip == 2) {
+				cout << "请输入要换下的装备" << endl;
+				cout << "1." << goods[player.getWeapon()].getName() << endl;
+				cout << "2." << goods[player.getClothes()].getName() << endl;
+				int choice;
+				cin >> choice;
+				if (choice == 1)
+				{
+					player.removeEquip(player.getWeapon());
+					player.getBag().addGoods(player.getWeapon(), 1);
+				}
+				if (choice == 2)
+				{
+					player.removeEquip(player.getClothes());
+					player.getBag().addGoods(player.getClothes(), 1);
+				}
+			}
+			if (choiceEquip == 3)
+				goto menu;
+		}
+		else if (choice == 5) {
+			cout << "任务" << player.getTaskId() << '\t' << player.getTaskName() << '\t' << player.getTaskDesc() << endl << endl;
+		}
+		else if (choice == 6) goto menu;
+		else if (choice == 1)		//这里跳转到menu开头那里显示人物信息
+			cout << "以上就为人物属性。" << endl;
+	}
+	else if (choice == 5) {
+		cout << "1.购买物品		2.售出物品		3.退出" << endl;
+		int choiceStore;
+		cin >> choiceStore;
+		if (choiceStore == 1) {
+			store.showStores();
+			player = store.storeToPlayer(player);
+		}
+		if (choiceStore == 2) {
+			player.showBag();
+			player = store.playerToStore(player);
+
+		}
+		if (choiceStore == 3)
+			goto menu;
+	}
+
+	else if (choice == 6) {
+		cout << "成功退出！" << endl;
+		exit(0);
+	}
+		
+	else if (choice == 7) {
+		Save::setToFile(player);
+		exit(0);
+	}
+	goto menu;
+
+}
+
+//读取游戏
+void readFile() {
+	ifstream fileRole("SaveRole.dat", ios_base::in | ios_base::binary);
+	ifstream fileBag("SaveBag.dat", ios_base::in | ios_base::binary);
+	ifstream fileSkill("SaveSkill.dat");
+	ifstream fileTask("SaveTask.dat");
+	if (!fileRole) {
+		cout << "没有保存的游戏！" << endl;
+		cout << "请重新选择:" << endl;
+	}
+	else {
+		string name;
+		int type, health_max, health, magic_max, magic, attack, exp, level, defend, money, mapId, story, weapon, clothes;
+		fileRole >> name >> type >> health_max >> health >> magic >> magic_max >> attack >> exp >> level >> defend >> money >> mapId >> story >> weapon >> clothes;
+
+		Role player(type);
+		player.setHealth_max(health_max);
+		player.setHealth(health);
+		player.setMagic_max(magic_max);
+		player.setMagic(magic);
+		player.setAttack(attack);
+		player.setExpSave(exp);
+		player.setLevelSave(level);
+		player.setDefend(defend);
+		player.setMoney(money);
+		player.setMapId(mapId);
+		player.setStory(story);
+		player.setWeapon(weapon);
+		player.setClothes(clothes);
+
+		Skill skill;
+		fileSkill.read(reinterpret_cast<char *>(&skill), sizeof(Skill));
+		Skill &newSkill = skill;
+		player.setSkill(newSkill);
+
+		Task task(0);
+		fileTask.read(reinterpret_cast<char *>(&task), sizeof(Task));
+		player.setTask(task);
+
+
+		for (int key2 = 24;!fileBag.eof();) {
+			
+			int key;
+			int value;
+			fileBag >> key >> value;
+			if (key2 == key)
+				break;
+			player.addSaveGoodsToBag(key, value);
+			key2 = key;
+
+		}
+		fileRole.close();
+		fileBag.close();
+		fileSkill.close();
+		Map newMap(player.getMapId());
+
+		cout << "读入成功！" << endl;
+		newGame(player,newMap);
+	}
+}
+
+//程序入口
+int main(){
+	//FullScreen();
+	welcomePage();
+	int choice;
+	while (true) {
+		cin >> choice;;
+		if (choice != 1 && choice != 2 && choice != 3)
+				cout << "选择错误，请重新选择。" << endl;
+			else break;
+	}
+		if (choice == 3)
+			exit(0);
+		//人物创建
+		if (choice == 1) {
+			backgroundGame();
+			int choiceRole;
+			cout << "职业简介: " << endl <<
+				"1.人道" << endl << "认为“道”是宇宙万物的本原和主宰，无所不在，无所不包，万物都是从“道”演化而来的。" << endl <<
+				"2.阐教" << endl << "阐者，明也。阐教主张崇尚自然，提倡道法自然，无所不容，自然无为，与自然和谐相处。" << endl <<
+				"3.截教" << endl << "主张上道无德，下道唯德。大道五十衍四十九为定数，一线生机遁去，截教的教义正是截取这一线生机，演变六道。" << endl;
+			cout << endl << "请输入要创建的职业" << endl;
+			
+			while (true) {
+				cin >> choiceRole;
+				if (choiceRole != 1 && choiceRole != 2 && choiceRole != 3 )
+					cout << "选择错误，请重新选择。" << endl;
+				else break;
+			}
+			Role player(choiceRole);
+			system("cls");
+			cout << "创建成功" << endl;
+			Map map;
+			newGame(player,map);
+		}
+		if (choice == 2) {
+			readFile();
+	}
+	return 0;
+}
+
+
+
