@@ -24,6 +24,8 @@ public:
 	int getPosition2();
 	void setPosition2(int p);
 	void ShowPosition(int p);
+	void ShowHouse();
+	void Showship();
 private:
 	string name;
 	int position=1; //µ±«∞Œª÷√
