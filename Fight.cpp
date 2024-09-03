@@ -28,7 +28,7 @@ Fight::Fight(Player* m_player) {
 	}
 
 	//¥Û≈Æ÷˜µ±«∞≈≈£¨ ◊µ±∆‰÷–≥Â
-	Me.insert(Me.begin(), 0);
+	Me.push_front(0);
 
 	//∞— ‰»Îµ–∑Ω’Û”™
 	list<enemy>::iterator enemyitr = m_room->Enemies().begin();
@@ -149,11 +149,10 @@ void Fight::ShowEnemy1() {
 	cout << "        \t---------------------" << endl;
 	cout << "        \t|–’√˚£∫" << left << setw(6) << static_cast<enemy>(Enemy[0])->Name() << "|" << endl;
 	cout << "   µ–   \t|π•ª˜ Ù–‘" << left << setw(6) << static_cast<enemy>(Enemy[0])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(0) << "|" << endl;
-	cout << "   ∑Ω   \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(3) << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(4) << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->HitPoints() << "|" << endl;
+	cout << "   ∑Ω   \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->StrikeDamage() << "|" << endl;
+	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Dodging() << "|" << endl;
+	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Speed() << "|" << endl;
 	cout << "        \t---------------------" << endl;
 	cout << "\033[0m";
 	//cout << "--------------------------------------------------------------------------------\n\n";
@@ -164,12 +163,11 @@ void Fight::ShowEnemy2() {
 	cout << "\033[33m";
 	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
 	cout << "        \t|–’√˚£∫" << left << setw(6) << static_cast<enemy>(Enemy[0])->Name() << "|" << "\t\t\t\t|–’√˚£∫" << left << setw(6) << static_cast<enemy>(Enemy[1])->Name() << "|" << endl;
-	cout << "        \t|π•ª˜ Ù–‘" << left << setw(6) << static_cast<enemy>(Enemy[0])->getType() << "|" << "\t\t\t\t|π•ª˜ Ù–‘" << left << setw(6) << static_cast<enemy>(Enemy[1])->getType() << "|" << endl;
-	cout << "   µ–   \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(0) << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(1) << "|" << endl;
-	cout << "   ∑Ω   \t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(3) << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(4) << "|" << endl;
+	cout << "   µ–   \t|π•ª˜ Ù–‘" << left << setw(6) << static_cast<enemy>(Enemy[0])->getType() << "|" << "\t\t\t\t|π•ª˜ Ù–‘" << left << setw(6) << static_cast<enemy>(Enemy[1])->getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->HitPoints() << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[1])->HitPoints() << "|" << endl;
+	cout << "   ∑Ω   \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->StrikeDamage() << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[1])->StrikeDamage() << "|" << endl;
+	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Dodging() << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->Dodging() << "|" << endl;
+	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Speed() << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[1])->Speed() << "|" << endl;
 	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
 	cout << "\033[0m";
 	//cout << "--------------------------------------------------------------------------------\n\n";
@@ -181,20 +179,18 @@ void Fight::ShowEnemy3() {
 	cout << "        \t             \t---------------------" << endl;
 	cout << "        \t             \t|–’√˚£∫" << left << setw(6) << static_cast<enemy>(Enemy[0])->Name() << "|" << endl;
 	cout << "        \t             \t|π•ª˜ Ù–‘" << left << setw(6) << static_cast<enemy>(Enemy[0])->getType() << "|" << endl;
-	cout << "        \t             \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(0) << "|" << endl;
-	cout << "        \t             \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(1) << "|" << endl;
-	cout << "        \t             \t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(2) << "|" << endl;
-	cout << "        \t             \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(3) << "|" << endl;
-	cout << "   µ–   \t             \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(4) << "|" << endl;
+	cout << "        \t             \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->HitPoints() << "|" << endl;
+	cout << "        \t             \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->StrikeDamage() << "|" << endl;
+	cout << "        \t             \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Dodging() << "|" << endl;
+	cout << "   µ–   \t             \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Speed() << "|" << endl;
 	cout << "        \t             \t---------------------" << endl;
 	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
 	cout << "   ∑Ω   \t|–’√˚£∫" << left << setw(6) << static_cast<enemy>(Enemy[1])->Name() << "|" << "\t\t\t\t|–’√˚£∫" << left << setw(6) << static_cast<enemy>(Enemy[2])->Name() << "|" << endl;
 	cout << "        \t|π•ª˜ Ù–‘" << left << setw(6) << static_cast<enemy>(Enemy[1])->getType() << "|" << "\t\t\t\t|π•ª˜ Ù–‘" << left << setw(6) << static_cast<enemy>(Enemy[2])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(0) << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(3) << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(4) << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[1])->HitPoints() << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[2])->HitPoints() << "|" << endl;
+	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[1])->StrikeDamage() << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[2])->StrikeDamage() << "|" << endl;
+	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->Dodging() << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[2])->Dodging() << "|" << endl;
+	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[1])->Speed() << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[2])->Speed() << "|" << endl;
 	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
 	cout << "\033[0m";
 	//cout << "--------------------------------------------------------------------------------\n\n";
@@ -207,20 +203,18 @@ void Fight::ShowEnemy4() {
 	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
 	cout << "        \t|–’√˚£∫" << left << setw(6) << static_cast<enemy>(Enemy[0])->Name() << "|" << "\t\t\t\t|–’√˚£∫" << left << setw(6) << static_cast<enemy>(Enemy[1])->Name() << "|" << endl;
 	cout << "        \t|π•ª˜ Ù–‘" << left << setw(6) << static_cast<enemy>(Enemy[0])->getType() << "|" << "\t\t\t\t|π•ª˜ Ù–‘" << left << setw(6) << static_cast<enemy>(Enemy[1])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(0) << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(3) << "|" << endl;
-	cout << "   µ–   \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(4) << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->HitPoints() << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[1])->HitPoints() << "|" << endl;
+	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->StrikeDamage() << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[1])->StrikeDamage() << "|" << endl;
+	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Dodging() << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->Dodging() << "|" << endl;
+	cout << "   µ–   \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Speed() << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[1])->Speed() << "|" << endl;
 	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
 	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
 	cout << "   ∑Ω   \t|–’√˚£∫" << left << setw(6) << static_cast<enemy>(Enemy[2])->Name() << "|" << "\t\t\t\t|–’√˚£∫" << left << setw(6) << static_cast<enemy>(Enemy[3])->Name() << "|" << endl;
 	cout << "        \t|π•ª˜ Ù–‘" << left << setw(6) << static_cast<enemy>(Enemy[2])->getType() << "|" << "\t\t\t\t|π•ª˜ Ù–‘" << left << setw(6) << static_cast<enemy>(Enemy[3])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[3])->getAttr(0) << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[3])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[3])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[3])->getAttr(3) << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[3])->getAttr(4) << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[3])->HitPoints() << "|" << endl;
+	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[2])->StrikeDamage() << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[3])->StrikeDamage() << "|" << endl;
+	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[2])->Dodging() << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[3])->Dodging() << "|" << endl;
+	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[2])->Speed() << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[3])->Speed() << "|" << endl;
 	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
 	cout << "\033[0m";
 	//cout << "--------------------------------------------------------------------------------\n\n";
@@ -274,7 +268,7 @@ void Fight::BattleTurn()//0-2*n-1“¿¥Œ¥˙±ÌŒ“∑Ωn÷ªæ´¡È°¢µ–∑Ωn÷ªæ´¡È£ª∂˛Œ¨ ˝◊È√ø∏ˆµ
 	}
 }
 
-void Fight::ShowBattle(){
+void Fight::ShowBattle() {
 	switch (Me.size()) {
 	case 1:
 		ShowMe1();
@@ -288,7 +282,7 @@ void Fight::ShowBattle(){
 	case 4:
 		ShowMe4();
 		break;
-	default: 
+	default:
 		break;
 	}
 
@@ -929,6 +923,8 @@ void Fight::ProceedFight()
 	int total = Turn.size();
 	int choose;
 	int Round = 0;
+	bool isWin = false;
+	bool isLose = false;
 	BattleTurn();//≈≈–Ú≥ˆ ÷À≥–Ú
 	while (1) {
 		int atk = *(Turn.begin());
