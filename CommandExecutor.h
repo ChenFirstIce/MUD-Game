@@ -24,7 +24,7 @@ public:
     void Quit(const Command& cmd);//更完善一点
 
     //玩家状态打印函数
-    static void PrintHelp();
+    static void PrintHelp();//未完成
     void PrintInventory();
     void PrintMyNPC();
    

@@ -7,7 +7,7 @@
 using namespace std;
 //未完成
 
-const int PLAYERITEMS = 20;
+const int PLAYERITEMS = 30;
 const int NPCNUM = 4;
 
 class Player{
@@ -24,6 +24,7 @@ public:
 	int& Task() { return m_task; }//改变剧情节点
 	money& Money() { return m_money; }
 	int& Exp() { return m_exp; }
+	int& Stats() { return m_statpoints; }
 
 	//等级&经验
 	int getLevel() { return m_level; }
@@ -69,7 +70,7 @@ public:
 	//寻找NPC和增加NPC
 	list<npc>& Npces() { return m_npces; }
 	npc findNPC(string& p_npc);
-	void addNPC(npc p_npc);
+	void addNPC();
 
 	//物品互动(p_index全部是背包中的索引)
 	void removeWeapon();
@@ -122,6 +123,6 @@ private:
 	list<npc> m_npces;
 
 	//房间
-	/*int m_statpoints;*/
+	int m_statpoints;
 	int m_room;//房间的ID
 };

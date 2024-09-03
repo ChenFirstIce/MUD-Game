@@ -92,9 +92,6 @@ void Maze::Set()//设置光标到初始位置
 		if (x == 6 && y == 11)
 			break;
 	}
-	cout << "获得了：" << endl;
-	cout << "去往缅甸的车票*2" << endl;
-	cout << "魔杖*2" << endl;
 
 	m_player->pickItem(1);
 	m_player->pickItem(1);

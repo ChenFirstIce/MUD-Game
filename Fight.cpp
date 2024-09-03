@@ -170,7 +170,7 @@ void Fight::ShowEnemy4() {
 	cout << "        \t|¹¥»÷ÊôÐÔ" << left << setw(6) << (static_cast<enemy>Enemy[2])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôÐÔ" << left << setw(6) << (static_cast<enemy>Enemy[3])->getType() << "|" << endl;
 	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << (static_cast<enemy>Enemy[2])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << (static_cast<enemy>Enemy[3])->getAttr(0) << "|" << endl;
 	cout << "        \t|ATTACK:" << left << setw(6) << (static_cast<enemy>Enemy[2])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << (static_cast<enemy>Enemy[3])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) <<(static_cast<enemy>Enemy[2])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << (static_cast<enemy>Enemy[3])->getAttr(2) << "|" << endl;
+	cout << "        \t|CRITING:" << left << setw(6) << (static_cast<enemy>Enemy[2])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << (static_cast<enemy>Enemy[3])->getAttr(2) << "|" << endl;
 	cout << "        \t|DODGING:" << left << setw(6) << (static_cast<enemy>Enemy[2])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << (static_cast<enemy>Enemy[3])->getAttr(3) << "|" << endl;
 	cout << "        \t|SPEED:" << left << setw(6) << (static_cast<enemy>Enemy[2])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << (static_cast<enemy>Enemy[3])->getAttr(4) << "|" << endl;
 	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
@@ -275,6 +275,43 @@ void Fight::Turn()//0-2*n-1ÒÀ´Î´ú±íÎÒ·½nÖ»¾«Áé¡¢µÐ·½nÖ»¾«Áé£»¶þÎ¬Êý×éÃ¿¸öµ¥ÔªµÚÒ
 		Turn.push_back(BattleTurn[i][0]);
 	}
 }
+
+void Fight::ShowBattle(){
+	switch (Me.size()) {
+	case 1:
+		ShowMe1();
+		break;
+	case 2:
+		ShowMe2();
+		break;
+	case 3:
+		ShowMe3();
+		break;
+	case 4:
+		ShowMe4();
+		break;
+	default: 
+		break;
+	}
+
+	switch (Enemy.size()) {
+	case 1:
+		ShowEnemy1();
+		break;
+	case 2:
+		ShowEnemy2();
+		break;
+	case 3:
+		ShowEnemy3();
+		break;
+	case 4:
+		ShowEnemy4();
+		break;
+	default:
+		break;
+	}
+}
+
 
 //ÅÐ¶ÏµÐÈËµÄÇ°ÅÅ²¢¼ÓÈë¹¥»÷¶ÓÁÐ
 int Fight::Front1() {
@@ -449,30 +486,27 @@ void Fight::Atk1(int atk, int target) {
 	enemy p_enemy = target;
 
 	if (rand() % 100 <= p_enemy->Dodging()) {
-		//cout << "\033[33m";
 		cout << p_atk->Name() << " ¹¥»÷ÁË " << p_enemy->Name();
-		cout << "£¬ \033[31mµ«ÊÇ " << p_enemy->Name() << " ¶ã¿ªÁË¹¥»÷!" << endl;
-		cout << "\033[0m";
+		cout << "£¬ µ«ÊÇ " << p_enemy->Name() << " ¶ã¿ªÁË¹¥»÷!" << endl;
 		system("pause");
 	}
 	else {
 		double hurt;
 		hurt = p_atk->geAttr(ATTACK);
-		//cout << "\033[32m";
 		cout << p_atk->Name() << " ¹¥»÷ÁË " << p_enemy->Name() << " , ";
 		if (rand() % 100 <= p_atk->getAttr(CRITING)) {
 			hurt *= 2;
-			cout << "\033[32m»÷ÖÐÁËÒªº¦! ";
+			cout << "»÷ÖÐÁËÒªº¦! ";
 		}
 		if (Restrain1(atk, target) == 1) {
 			hurt *= 1.5;
-			cout << "\033[32mÐ§¹û°ÎÈº! ";
+			cout << "Ð§¹û°ÎÈº! ";
 		}
 		else if (Restrain1(atk, target) == 0) {
 			hurt *= 0.5;
-			cout << "\033[33mÊÕÐ§ÉõÎ¢¡­¡­";
+			cout << "ÊÕÐ§ÉõÎ¢¡­¡­";
 		}
-		cout << "\033[0m";
+
 		cout << " Ôì³ÉÁË " << hurt << " µãÉËº¦¡£";
 		p_enemy->HitPoints() -= hurt;
 
@@ -498,7 +532,7 @@ void Fight::Atk2(int atk, int target) {
 
 	if (rand() % 100 <= p_target->getAttr(DODGING)) {
 		cout << p_atk->Name() << " ¹¥»÷ÁË " << p_target->Name();
-		cout << "£¬ µ«ÊÇ \033[31m" << p_target->Name() << " ¶ã¿ªÁË¹¥»÷!" << endl;
+		cout << "£¬ µ«ÊÇ " << p_target->Name() << " ¶ã¿ªÁË¹¥»÷!" << endl;
 		system("pause");
 	}
 	else {
@@ -509,13 +543,13 @@ void Fight::Atk2(int atk, int target) {
 
 		if (Restrain2(atk, target) == 1) {
 			hurt *= 1.5;
-			cout << "\033[32mÐ§¹û°ÎÈº! ";
+			cout << "Ð§¹û°ÎÈº! ";
 		}
 		else if (Restrain2(atk, target) == 0) {
 			hurt *= 0.5;
-			cout << "\033[33mÊÕÐ§ÉõÎ¢¡­¡­";
+			cout << "ÊÕÐ§ÉõÎ¢¡­¡­";
 		}
-		cout << "\033[0mÊÕÐ§ÉõÎ¢";
+
 		cout << " Ôì³ÉÁË " << hurt << " µãÉËº¦¡£";
 		p_target->HitPoints() -= hurt;
 
@@ -594,7 +628,7 @@ void Fight::AttackTurn(int atk, int& Round) {
 						return;
 					}
 
-					cout << "\033[31m´íÎó£¡ÇëÖØÐÂÊäÈë£¡\033[0m" << endl;
+					cout << "´íÎó£¡ÇëÖØÐÂÊäÈë£¡" << endl;
 					cin.clear();
 					cin.ignore(cin.rdbuf()->in_avail());
 
@@ -662,7 +696,7 @@ void Fight::UseMedical(int atk, int& Round) {
 			return;
 		}
 
-		cout << "\033[31m´íÎó£¡ÇëÖØÐÂÊäÈë£¡\033[0m" << endl;
+		cout << "´íÎó£¡ÇëÖØÐÂÊäÈë£¡" << endl;
 		cin.clear();
 		cin.ignore(cin.rdbuf()->in_avail());
 
@@ -745,11 +779,11 @@ void Fight::ProceedFight()
 			}
 			else if (choose == 3) {
 				if (rand() % 10 < 8) {
-					cout << "\033[32mÌÓÅÜ³É¹¦£¡\033[0m" << endl;
+					cout << "ÌÓÅÜ³É¹¦£¡" << endl;
 					break;
 				}
 				else {
-					cout << "\033[31mÌÓÅÜÊ§°Ü£¡\033[0m" << endl;
+					cout << "ÌÓÅÜÊ§°Ü£¡" << endl;
 					Round--;
 				}
 			}
@@ -781,7 +815,7 @@ void Fight::addTrophy() {
 	int exp = 0;
 
 	system("cls");
-	cout << "\033[32m";
+
 	cout << "    11111111111111111111111 111111111  11111       1111111" << endl;
 	cout << "    11111111111111111111111 1111111     11111        11111" << endl;
 	cout << "     1111   111   11    11     111        1111        11" << endl;
@@ -800,7 +834,7 @@ void Fight::addTrophy() {
 	cout << "           111    111       111111111    111111       11" << endl;
 	cout << "           11     11        111111111  11111111        1" << endl;
 	cout << "           11      1 " << endl;
-	cout << "\033[0m";
+
 	cout << "¹§Ï²»ñµÃ:" << endl;
 	for (int i = 0; i < Enemy.size(); i++) {
 		enemy p_enemy = Enemy[i];
@@ -834,11 +868,15 @@ void Fight::addTrophy() {
 	cout << "£¤ " << money << endl;
 
 	cout << "»ñµÃ¾­ÑéEXP:" << left << setw(4) << exp;
+
+	if (m_player->currentRoom() == 10 || m_player->currentRoom() == 7) {
+		m_player->addPlayer();
+	}
 }
 
 void Fight::loseEXP() {
 	system("cls");
-	cout << "\033[33m";
+
 	cout << "        ???       ???????  ?????  ?????????????" << endl;
 	cout << "     ????????       ?????    ??   ?????????????" << endl;
 	cout << "    ???     ??      ???      ??   ??   ???   ??" << endl;
@@ -853,7 +891,7 @@ void Fight::loseEXP() {
 	cout << "   ???       ??     ???     ??         ???" << endl;
 	cout << "    ???     ??       ?????????         ???" << endl;
 	cout << "      ???????          ?????         ???????" << endl;
-	cout << "\033[0m";
+
 	int exp = m_player->Exp();
 	m_player->Exp() -= exp * 0.2;
 }

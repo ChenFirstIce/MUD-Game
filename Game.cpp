@@ -44,21 +44,34 @@ bool Game::First(string input) {
 }
 
 bool Game::Map() {
-    string input;
+    char input;
+    Story story(m_player);
     Player* m_player = Player::getPlayer();
     Command cmd;
     CommandParser commandpar;
     CommandExecutor commandexec(m_player);
+    Map map(m_player);
 
-    cout << "请输入你的操作" << endl;
-    cout << "> ";
-    cin >> input;
+    map.gotoc();
 
+    if (story.mapPoints() == 1) {
+        map.ShowMap1();
+        do {
+            cout << "请输入你的操作" << endl;
+            cout << "> ";
+            cin >> input;
+        } while (map.Move1(input));
+    }
+    else if (story.mapPoints() == 2) {
+        map.ShowMap1();
+        do {
+            cout << "请输入你的操作" << endl;
+            cout << "> ";
+            cin >> input;
+        } while (map.Move1(input));
+    }
 
-
-    cmd = commandpar.Parse(input);
-
-    
+    story.Run();
 }
 
 void Game::Bag(){

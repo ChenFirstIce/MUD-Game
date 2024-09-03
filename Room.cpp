@@ -20,14 +20,14 @@ RoomType Room::getRoomType(string p_arr) {
 	}
 }
 
-//玩家的进入进出
-void Room::addPlayer(Player* p_player){
-	m_player = p_player;
-}
-
-void Room::removePlayer(Player* p_player){
-	m_player = nullptr;
-}
+////玩家的进入进出
+//void Room::addPlayer(Player* p_player){
+//	m_player = p_player;
+//}
+//
+//void Room::removePlayer(Player* p_player){
+//	m_player = nullptr;
+//}
 
 //其他人物的进入和退出
 void Room::addEnemy(enemy p_enemy){
@@ -42,7 +42,7 @@ void Room::addNPC(npc p_npc){
 	m_npces.push_back(p_npc);
 }
 
-void Room::remove(npc p_npc){
+void Room::removeNPC(npc p_npc){
 	m_npces.erase(find(m_npces.begin(), m_npces.end(), (entityid)p_npc));
 }
 
@@ -114,6 +114,9 @@ void Room::loadData(istream& p_stream){
 
 	p_stream >> temp;   
 	p_stream >> m_money;
+
+	p_stream >> temp;
+	p_stream >> m_task;
 }
 
 void Room::saveData(ostream& p_stream){
@@ -138,4 +141,10 @@ void Room::saveData(ostream& p_stream){
 	p_stream << "0\n";
 
 	p_stream << "[MONEY] " << m_money << "\n";
+
+	p_stream << "[TASK]  " << m_task << "\n";
+}
+
+void chooseNPC(Player* m_player){
+	f
 }

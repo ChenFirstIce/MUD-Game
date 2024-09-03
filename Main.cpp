@@ -9,6 +9,34 @@
 #include "Fight.h"
 using namespace std;
 
+void ShowTitle() {
+	cout << "\033[33m";
+	cout << "              $$                    $$                     $$$                 $       $   " << endl;
+	cout << "            $$$$$$$$$$$$$$$       $$$                      $$     $      $$    $$$$$$$$$$$     $$           $ " << endl;
+	cout << "           $$  $$$$$$$$$$$$$     $$$         $      $$$$$$$$$$$$$$$$      $$   $$$$$$$$$$       $$  $$$$$$$$$$$" << endl;
+	cout << "           $$ $ $   $    $       $$$$$$$$$$$$$$$    $$$$$$$$$$$$$$$$       $$  $$$$$$$$$$        $$ $$$$$$$$$$ " << endl;
+	cout << "          $$  $$$$$$$$$$$$$     $$$$$$$$$$$$$$$           $$$$             $$  $$$$$$$$$$        $          $$" << endl;
+	cout << "          $  $$$$$$$$$$$$$$     $$       $   $$          $$  $$$$              $$  $$  $$        $          $$" << endl;
+	cout << "         $$$$$$ $$ $$ $$ $$    $$$$$$$$$$$$  $$        $$$     $$$         $   $$$$$$$$$$    $$$$$$  $      $$ " << endl;
+	cout << "       $$$$$$  $$ $$ $$ $$   $$$$$$$$$$$$$  $$      $$$        $$  $   $$$$$$$$$$$$$$$$$    $$$$$$  $$$$$$$$$ " << endl;
+	cout << "         $  $$  $$ $$$$$ $$  $$ $$   $$  $$  $$   $$$$$$$$$$$$$$$$$$$$  $$$$$ $$$$$$$$$$$$      $$   $$$$$$$$$ " << endl;
+	cout << "           $$   $$ $$$$$ $$  $  $$$$$$$$$$$  $$    $$$$$$$$$$$$$$$$$$$     $$ $$$$$$$$$$$$      $$   $$     $$ " << endl;
+	cout << "           $    $$ $$ $$ $$     $$$$$$$$$$$  $$       $$$$$$$   $$         $$ $$   $$$$ $$      $$   $$        " << endl;
+	cout << "         $$$$$$$$$ $$$$$ $$     $$   $$  $$  $$       $$$$$$$   $$         $$ $$   $$$$$$$      $$   $$        " << endl;
+	cout << "         $$$$$  $$ $$$$$ $$     $$   $$  $$  $$       $$   $$   $$         $$ $$$$$$$$$$$$      $$   $$       $$" << endl;
+	cout << "         $      $$ $$ $$ $$     $$$$$$$$$$$  $$       $$$$$$$   $$         $$ $$ $    $$$$      $$ $$$$       $$" << endl;
+	cout << "            $$$$$$ $$ $$ $$     $$$$$$$$$$$  $$       $$$$$$$   $$         $$ $$      $$$$      $$$$ $$       $$ " << endl;
+	cout << "        $$$$$$  $$$$$$$$$$$     $$       $$  $        $$   $$   $$        $$$ $$       $$$      $$$  $$       $$ " << endl;
+	cout << "        $$     $$$$$$$$$$$     $           $$                  $$       $$  $$           $$   $$$   $$$$$$$$$$$  " << endl;
+	cout << "                $$       $$              $$$$$               $$$$$      $$   $$$$$$$$$$$$$$     $     $$$$$$$$$  " << endl;
+	cout << "                $$       $$                $$                  $$$              $$$$$$$$$$                       " << endl;
+	cout << "\033[0m";
+
+	cout << "开始新游戏" << endl;
+	cout << "继续游戏" << endl;
+	cout << "退出游戏" << endl;
+}
+
 int main() {
 	Game game;
 	CommandParser commandpar;
@@ -19,7 +47,8 @@ int main() {
 	do {
 		system("cls");
 
-		//游戏开始界面
+		ShowTitle();
+
 		cout << "> ";
 		cin >> input;
 		input = lowerCase(intput);
@@ -27,9 +56,9 @@ int main() {
 		isStart = game.First(input);
 	} while (!isStart);
 
-	if (input == "new") {
-		//背景剧情
-	}
+	//if (input == "new") {
+	//	//背景剧情
+	//}
 
 	Player* m_player = Player::getPlayer();
 
@@ -48,21 +77,17 @@ int main() {
 			continue;
 		}
 		else if (input == "attack") {
-			int cnt = m_player->Task();
-
 			Fight fight(m_player);
 			fight.ProceedFight();
-			//改变room和player的npc，改变npc的状态
-			if (cnt != m_player) {
-				if
-			}
-			//改变房间
+			continue;
 		}
 		else if (input == "npc") {
 			game.NPC();
+			continue;
 		}
 		else if (input == "bag") {
 			game.Bag();
+			continue;
 		}
 		else {
 			cmd = commandpar.Parse(input);

@@ -1,14 +1,14 @@
 #include <iostream>
-#include "map.h"
+#include "Map.h"
 #include "tool.h"
 
 
 using namespace std;
 
 void Map::setPosition2() {//±àºÅ
-    position = m_player->currentRoom();
+	position = m_player->currentRoom();
 	int p = m_player->currentRoom();
-	
+
 	if (p == 7) {
 		dx = 0;
 		dy = 0;
@@ -24,7 +24,7 @@ void Map::setPosition2() {//±àºÅ
 
 	for (int i = 0; i < 3; i++)
 	{
-			pos[0][i] = ' ';
+		pos[0][i] = ' ';
 	}
 	pos[dx][dy] = '*';
 }
@@ -50,6 +50,7 @@ void Map::Move2(char order)
 	{
 	case 'w': {
 		cout << "ÒÆ¶¯Ê§°Ü" << endl;
+		return false;
 	}
 	case 'a': {
 		if (position == 8 || position == 9) {
@@ -59,11 +60,13 @@ void Map::Move2(char order)
 		else
 		{
 			cout << "ÒÆ¶¯Ê§°Ü" << endl;
+			return false;
 		}
 		break;
 	}
 	case 's': {
 		cout << "ÒÆ¶¯Ê§°Ü" << endl;
+		return false;
 	}
 	case 'd': {
 		if (position == 7 || position == 8) {
@@ -73,17 +76,43 @@ void Map::Move2(char order)
 		else
 		{
 			cout << "ÒÆ¶¯Ê§°Ü" << endl;
+			return false;
 		}
-		break;
+		
 	}
 	default:
-		break;
+		return false;
 	}
 	for (int i = 0; i < 3; i++)
 	{
-			pos[0][i] = ' ';
+		pos[0][i] = ' ';
 	}
 	pos[dx][dy] = '*';
 	m_player->currentRoom() = position;
+
+	return true;
+}
+
+void Map::gotoc() {
+	system("cls");
+	gotoXY(55, 10);
+	cout << "µØ Í¼";
+	gotoXY(56, 20);
+	cout << "¼ÓÔØÖÐ...";
+	for (int j = 0; j < 100; j++) {
+		Sleep(17);
+		gotoXY(j + 3, 15);
+		cout << " " << j << "%";
+		cout << "¡ö";
+	}
+	system("cls");
+	for (int i = 0; i < 100; i++) {
+		for (int j = 0; j < 40; j++) {
+			gotoXY(i, j);
+			cout << "¡ö";
+			//SetColor(rand()%10);
+		}
+	}
+	system("cls");
 }
 

@@ -262,9 +262,54 @@ npc Player::findNPC(string& p_npc){
     return 0;
 }
 
-void Player::addNPC(npc p_npc){
+void Player::addNPC(){
+    npc p_npc;
+    int id;
+
+    system("cls");
+
+    cout << "你可以选择解救:" << endl;
+
+    for (int i = 1; i < 3) {
+        p_npc = i;
+
+        if (!p_npc->Stats()) {
+            cout << "ID " << i;
+            switch (i) {
+            case 1:
+                cout << "\033[32m";
+                break;
+            case 2:
+                cout << "\033[33m";
+                break;
+            case 3:
+                cout << "\033[31m";
+            }
+
+            cout << p_npc->Name() << " " << endl;
+        }
+
+        cout << "\033[0m";
+    }
+
+    cout << "请选择输入要解救的男主的ID" << endl;
+    cout << "> ";
+    cin >> id;
+
+    p_npc = id;
+
+    while (choose < 1 || choose > 3 || p_npc->Task()) {
+        cout << "错误！请重新输入！" << endl;
+        cin.clear();
+        cin.ignore(cin.rdbuf()->in_avail());
+
+        cin >> id;
+    }
+
+    p_npc = id;
     m_npces.push_back(p_npc);
     p_npc->Stats() = true;
+
     m_task++;
 }
 

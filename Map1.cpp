@@ -45,29 +45,6 @@ void Map::setPosition1() {
 	pos[dx][dy] = '*';
 }
 
-void Maze::gotoc() {
-	system("cls");
-	gotoXY(55, 10);
-	cout << "µØ Í¼";
-	gotoXY(56, 20);
-	cout << "¼ÓÔØÖÐ...";
-	for (int j = 0; j < 100; j++) {
-		Sleep(17);
-		gotoXY(j+3, 15);
-		cout<<" "<<j<<"%";
-		cout << "¡ö";
-	}
-	system("cls");
-	for (int i = 0; i < 100; i++) {
-		for (int j = 0; j < 40; j++) {
-			gotoXY(i, j);
-			cout << "¡ö";
-			//SetColor(rand()%10);
-		}
-	}
-	system("cls");
-}
-
 void Map::ShowMap1()
 {
 	system("cls");
@@ -102,6 +79,7 @@ void Map::Move1(char order)
 		else
 		{
 			cout << "ÒÆ¶¯Ê§°Ü" << endl;
+			return false;
 		}
 		break;
 	}
@@ -116,6 +94,7 @@ void Map::Move1(char order)
 		else
 		{
 			cout << "ÒÆ¶¯Ê§°Ü" << endl;
+			return false;
 		}
 		break;
 	}
@@ -127,6 +106,7 @@ void Map::Move1(char order)
 		else
 		{
 			cout << "ÒÆ¶¯Ê§°Ü" << endl;
+			return false;
 		}
 		break;
 	}
@@ -141,11 +121,12 @@ void Map::Move1(char order)
 		else
 		{
 			cout << "ÒÆ¶¯Ê§°Ü" << endl;
+			return false;
 		}
 		break;
 	}
 	default:
-		break;
+		return false;
 	}
 	for (int i = 0; i < 3; i++)
 	{
@@ -156,4 +137,6 @@ void Map::Move1(char order)
 	}
 	pos[dx][dy] = '*';
 	m_player->currentRoom() = position;
+
+	return true;
 }

@@ -240,8 +240,7 @@ void CommandExecutor::PrintRoom(){
         itemitr++;
     }
 
-    if (count > 0)
-    {
+    if (count > 0){
         string foo = temp.str();
         temp.clear();
         foo.erase(temp.size() - 2, 2);
@@ -257,6 +256,7 @@ void CommandExecutor::PrintRoom(){
         count++;
         enemyitr++;
     }
+
     if (count > 0){
         string foo = temp.str();
         temp.clear();
@@ -265,7 +265,7 @@ void CommandExecutor::PrintRoom(){
     }
 
     //最后全部打印
-    ccout << temp.str();
+    cout << temp.str();
 }
 
 bool CommandExecutor::GetItem(const Command& cmd){

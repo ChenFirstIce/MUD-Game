@@ -17,6 +17,15 @@ public:
 	bool isLive(int id);
 
 	//选择界面
+	void ShowEnemy1();
+	void ShowEnemy2();
+	void ShowEnemy3();
+	void ShowEnemy4();
+	void ShowMe1();
+	void ShowMe2();
+	void ShowMe3();
+	void ShowMe4();
+	void ShowBattle();
 	int Choice(int Round, int atk);
 
 	//属性克制
