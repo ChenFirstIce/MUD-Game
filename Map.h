@@ -17,13 +17,13 @@ public:
 	void Move1(char order);
 	void ShowMap2();			//显示大地图
 	void Move2(char order);
-	void gotoc()
-	void setPosition2(int p);
+	void gotoc(); 
+	void setPosition2();
+	void setPosition1();
 private:
 	string name;
 	int position; //当前位置
-	string mapName1[6] = { "操场","信息南楼","望海餐厅","警察局","校医院","青岛北站" };
-	string mapName2[3] = { "废弃工厂","商店","咖啡馆" };
+	string mapName[11] = { "操场","信息南楼","望海餐厅","警察局","校医院","青岛北站","废弃工厂","商场","咖啡店","木屋","飞船"};
 	char pos[3][3];
 	int dx;
 	int dy;

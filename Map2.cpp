@@ -5,8 +5,10 @@
 
 using namespace std;
 
-void Map::setPosition2(int p) {//±àºÅ
-	position = p;
+void Map::setPosition2() {//±àºÅ
+    position = m_player->currentRoom();
+	int p = m_player->currentRoom();
+	
 	if (p == 7) {
 		dx = 0;
 		dy = 0;
@@ -26,32 +28,6 @@ void Map::setPosition2(int p) {//±àºÅ
 	}
 	pos[dx][dy] = '*';
 }
-/*
-Map::Map(int p) :Player(p) {
-	position = p;
-	if (p == 1) {
-		dx = 0;
-		dy = 0;
-	}
-	if (p == 2) {
-		dx = 0;
-		dy = 1;
-	}
-	if (p == 3) {
-		dx = 0;
-		dy = 2;
-	}
-
-	for (int i = 0; i < 6; i++)
-	{
-		for (int j = 0; j < 6; j++)
-		{
-			pos[i][j] = ' ';
-		}
-	}
-	pos[dx][dy] = '*';
-}
-*/
 
 void Map::ShowMap2()
 {
@@ -111,7 +87,3 @@ void Map::Move2(char order)
 	m_player->currentRoom() = position;
 }
 
-int Map::getPosition2()
-{
-	return position;
-}
