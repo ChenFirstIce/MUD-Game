@@ -22,6 +22,7 @@
 [ATTACK]             8
 [CRITING]             20
 [DODGING]            30
+[SPEED]  20
 
 [ID]                3          
 [NAME]           铁剑
@@ -33,7 +34,8 @@
 [MAXHITPOINTS]      100
 [ATTACK]             10
 [CRITING]             20
-[DODGING]            30
+[DODGING]            3
+[SPEED]  5
 
 [ID]                4
 [NAME]            UZI
@@ -46,6 +48,7 @@
 [ATTACK]             8
 [CRITING]             30
 [DODGING]            20
+[SPEED]  20
 
 [ID]                5
 [NAME]          火之法杖
@@ -58,6 +61,7 @@
 [ATTACK]             18
 [CRITING]             30
 [DODGING]            20
+[SPEED]  0
 
 [ID]                  6
 [NAME]           SCAR突击步枪
@@ -70,6 +74,7 @@
 [ATTACK]             30
 [CRITING]             30
 [DODGING]            40
+[SPEED]  0
 
 [ID]                    7
 [NAME]              RPD轻机枪
@@ -82,6 +87,7 @@
 [ATTACK]             40
 [CRITING]             30
 [DODGING]            20
+[SPEED]  0
 
 [ID]                       8
 [NAME]             圣光守护者铠甲
@@ -94,6 +100,7 @@
 [ATTACK]             0
 [CRITING]             0
 [DODGING]            0
+[SPEED]  20
 
 
 [ID]                     9           
@@ -107,6 +114,7 @@
 [ATTACK]             0
 [CRITING]             0
 [DODGING]            0
+[SPEED]  0
 
 [ID]                10
 [NAME]          甜甜花酿鸡 
@@ -119,6 +127,7 @@
 [ATTACK]             0
 [CRITING]             0
 [DODGING]            0
+[SPEED]  0
 
 [ID]                11
 [NAME]            蒙德土豆饼 
@@ -131,6 +140,7 @@
 [ATTACK]             0
 [CRITING]             0
 [DODGING]            0
+[SPEED]  0
 
 [ID]                          12
 [NAME]                   野菇鸡肉串
@@ -143,6 +153,7 @@
 [ATTACK]             0
 [CRITING]             0
 [DODGING]            0
+[SPEED]  0
 
 
 [ID]                13
@@ -156,6 +167,7 @@
 [ATTACK]             0
 [CRITING]             0
 [DODGING]            0
+[SPEED]  0
 
 
 [ID]                14
@@ -169,6 +181,7 @@
 [ATTACK]             0
 [CRITING]             0
 [DODGING]            0
+[SPEED]  0
 
 
 [ID]                15
@@ -182,6 +195,7 @@
 [ATTACK]             0
 [CRITING]             0
 [DODGING]            0
+[SPEED]  0
 
 [ID]                16
 [NAME]         一级怪的武器 
@@ -194,6 +208,7 @@
 [ATTACK]             20
 [CRITING]             30
 [DODGING]            20
+[SPEED]  0
 
 [ID]                17
 [NAME]         二级怪的武器 
@@ -206,6 +221,7 @@
 [ATTACK]             30
 [CRITING]             40
 [DODGING]            50
+[SPEED]  0
 
 [ID]                18
 [NAME]         四级怪的武器 
@@ -218,6 +234,7 @@
 [ATTACK]             50
 [CRITING]             30
 [DODGING]            20
+[SPEED]  0
 
 [ID]                19
 [NAME]         很美味的毒药
@@ -230,6 +247,7 @@
 [ATTACK]             -10
 [CRITING]             0
 [DODGING]            0
+[SPEED]  0
 
 [ID]                20
 [NAME]         西海岸的饭菜（食用过崂山饭菜的玩家可免疫） 
@@ -242,6 +260,7 @@
 [ATTACK]             -15
 [CRITING]             0
 [DODGING]            0
+[SPEED]  0
 
 
 [ID]                21
@@ -254,6 +273,7 @@
 [MAXHITPOINTS]       1000
 [ATTACK]             40
 [CRITING]             40
+[SPEED]  0
 [DODGING]            20
 
 
