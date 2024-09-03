@@ -1,0 +1,67 @@
+[ROOMID]  1
+[ITEMS]        0
+[NPC]      1 2 3
+[MONEY] 200  
+[TASK]  1     
+
+[ROOMID]  2
+[ITEMS]                0
+[NPC]     1  2  3
+[MONEY] 300      
+[TASK]  1  
+
+[ROOMID]  3
+[ITEMS]        0
+[NPC]    2  1  3
+[MONEY] 200   
+[TASK]  1       
+
+
+[ROOMID]  4
+[ITEMS]        0
+[NPC]        0
+[MONEY] 200      
+[TASK]  0  
+
+[ROOMID]  5
+[ITEMS]        0
+[NPC]     0
+[MONEY] 200    
+[TASK]  1      
+
+[ROOMID]  6
+[ITEMS]        0
+[NPC]       1 2 3 
+[MONEY] 200   
+[TASK]  1       
+
+[ROOMID]  7
+[ITEMS]        0
+[NPC]      1  2  3
+[MONEY] 1000    
+[TASK]  1      
+
+[ROOMID]  8
+[ITEMS]        0
+[NPC]    1   2   3
+[MONEY] 200     
+[TASK]  0   
+
+[ROOMID]  9
+[ITEMS]        0
+[NPC]       1   2  3
+[MONEY] 200   
+[TASK]  0      
+
+[ROOMID]  10
+[ITEMS]        0
+[NPC]    1   2   3
+[MONEY] 200    
+[TASK]  1  
+[TASK]  1      
+
+[ROOMID]  11
+[ITEMS]        0
+[NPC]    1   2   3
+[MONEY] 200   
+[TASK]  1       

@@ -1,0 +1,153 @@
+[ID]     4
+[TEMPLATEID]    4
+[ATTACKTYPE]     1
+[HITPOINTS]      20
+[ROOM]          6
+
+[ID]     5
+[TEMPLATEID]    5
+[ATTACKTYPE]     1
+[HITPOINTS]      10
+[ROOM]          12
+
+
+[ID]     6
+[TEMPLATEID]    6
+[ATTACKTYPE]     
+[HITPOINTS]      20
+[ROOM]          
+
+
+[ID]     7
+[TEMPLATEID]    6
+[ATTACKTYPE]     2
+[HITPOINTS]      20
+[ROOM]         7
+
+[ID]     8
+[TEMPLATEID]    6
+[ATTACKTYPE]     2
+[HITPOINTS]      15
+[ROOM]         7
+
+
+[ID]     9
+[TEMPLATEID]    6
+[ATTACKTYPE]     2
+[HITPOINTS]      10
+[ROOM]         7
+
+
+[ID]     10
+[TEMPLATEID]    7
+[ATTACKTYPE]     2
+[HITPOINTS]      25
+[ROOM]         7
+
+
+[ID]     11
+[TEMPLATEID]    7
+[ATTACKTYPE]     2
+[HITPOINTS]      20
+[ROOM]         7
+
+
+[ID]     12
+[TEMPLATEID]    7
+[ATTACKTYPE]     2
+[HITPOINTS]      30
+[ROOM]         7
+
+
+[ID]     13
+[TEMPLATEID]    7
+[ATTACKTYPE]     2
+[HITPOINTS]      27
+[ROOM]         7
+
+
+[ID]     14
+[TEMPLATEID]    8
+[ATTACKTYPE]     3
+[HITPOINTS]      20
+[ROOM]         7
+
+
+[ID]     15
+[TEMPLATEID]   8
+[ATTACKTYPE]     3
+[HITPOINTS]      28
+[ROOM]         7
+
+[ID]     16
+[TEMPLATEID]   8
+[ATTACKTYPE]     2
+[HITPOINTS]      35
+[ROOM]         7
+
+
+
+[ID]     17
+[TEMPLATEID]   8
+[ATTACKTYPE]     3
+[HITPOINTS]      25
+[ROOM]         7
+
+[ID]     18
+[TEMPLATEID]   9
+[ATTACKTYPE]     4
+[HITPOINTS]      28
+[ROOM]         7
+
+[ID]     19
+[TEMPLATEID]   9
+[ATTACKTYPE]     3
+[HITPOINTS]      35
+[ROOM]         7
+
+[ID]     20
+[TEMPLATEID]   9
+[ATTACKTYPE]     4
+[HITPOINTS]      30
+[ROOM]         7
+
+[ID]     21
+[TEMPLATEID]   9
+[ATTACKTYPE]     4
+[HITPOINTS]      35
+[ROOM]         7
+
+[ID]     22
+[TEMPLATEID]   10
+[ATTACKTYPE]     2
+[HITPOINTS]      20
+[ROOM]         11
+
+[ID]     23
+[TEMPLATEID]   10
+[ATTACKTYPE]     2
+[HITPOINTS]      28
+[ROOM]         11
+
+
+[ID]     24
+[TEMPLATEID]   10
+[ATTACKTYPE]     3
+[HITPOINTS]      15
+[ROOM]         11
+
+[ID]     25
+[TEMPLATEID]   10
+[ATTACKTYPE]     2
+[HITPOINTS]      18
+[ROOM]         11
+
+
+
+
+
+
+
+
+ 
+

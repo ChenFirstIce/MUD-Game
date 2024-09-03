@@ -1,0 +1,259 @@
+[ID]                1           
+[NAME]            魔杖
+[ENGLISHNAME]     Magic wand
+[TYPE]            WEAPON
+[MIN]               1
+[MAX]               6
+[PRICE]              10
+[MAXHITPOINTS]      100
+[ATTACK]             5
+[CRITING]             2
+[DODGING]            2
+
+[ID]               2          
+[NAME]          天空之刃
+[ENGLISHNAME]   Sky Blade
+[TYPE]            WEAPON
+[MIN]               3
+[MAX]               10
+[PRICE]              20
+[MAXHITPOINTS]      100
+[ATTACK]             8
+[CRITING]             2
+[DODGING]            3
+
+[ID]                3          
+[NAME]           铁剑
+[ENGLISHNAME]   Iron Sword
+[TYPE]            WEAPON
+[MIN]               5
+[MAX]               17
+[PRICE]              15
+[MAXHITPOINTS]      100
+[ATTACK]             10
+[CRITING]             2
+[DODGING]            3
+
+[ID]                4
+[NAME]            UZI
+[ENGLISHNAME]     UZI
+[TYPE]            WEAPON
+[MIN]               6
+[MAX]               20
+[PRICE]              20
+[MAXHITPOINTS]       100
+[ATTACK]             8
+[CRITING]             3
+[DODGING]            2
+
+[ID]                5
+[NAME]          火之法杖
+[ENGLISHNAME]   Staff of Fire
+[TYPE]            WEAPON
+[MIN]               10
+[MAX]               25
+[PRICE]              25
+[MAXHITPOINTS]       100
+[ATTACK]             18
+[CRITING]             3
+[DODGING]            2
+
+[ID]                  6
+[NAME]           SCAR突击步枪
+[ENGLISHNAME]    SCAR assault rifle
+[TYPE]              WEAPON
+[MIN]               15
+[MAX]               45
+[PRICE]              30
+[MAXHITPOINTS]      100
+[ATTACK]             30
+[CRITING]             3
+[DODGING]            4
+
+[ID]                    7
+[NAME]              RPD轻机枪
+[ENGLISHNAME]    RPD light machine gun
+[TYPE]               WEAPON
+[MIN]               20
+[MAX]               50
+[PRICE]              35
+[MAXHITPOINTS]       200
+[ATTACK]             40
+[CRITING]             3
+[DODGING]            2
+
+[ID]                       8
+[NAME]             圣光守护者铠甲
+[ENGLISHNAME]    Guardian of the Light Armor
+[TYPE]                  ARMOR
+[MIN]               0
+[MAX]               0
+[PRICE]              20
+[MAXHITPOINTS]       400
+[ATTACK]             0
+[CRITING]             0
+[DODGING]            0
+
+
+[ID]                     9           
+[NAME]               经验瓶
+[ENGLISHNAME]    Experience bottles
+[TYPE]              EXP
+[MIN]               5
+[MAX]               10
+[PRICE]              10
+[MAXHITPOINTS]       0
+[ATTACK]             0
+[CRITING]             0
+[DODGING]            0
+
+[ID]                10
+[NAME]          甜甜花酿鸡 
+[ENGLISHNAME]   Sweet stuffed chicken 
+[TYPE]            HEALING
+[MIN]               20
+[MAX]               20
+[PRICE]              10
+[MAXHITPOINTS]       0
+[ATTACK]             0
+[CRITING]             0
+[DODGING]            0
+
+[ID]                11
+[NAME]            蒙德土豆饼 
+[ENGLISHNAME]   Mondstadt hash browns 
+[TYPE]           HEALING
+[MIN]               10
+[MAX]               10
+[PRICE]              5
+[MAXHITPOINTS]       0
+[ATTACK]             0
+[CRITING]             0
+[DODGING]            0
+
+[ID]                          12
+[NAME]                   野菇鸡肉串
+[ENGLISHNAME]    Chicken skewers with wild mushrooms
+[TYPE]            HEALING
+[MIN]               15
+[MAX]               15
+[PRICE]              7.5
+[MAXHITPOINTS]       0
+[ATTACK]             0
+[CRITING]             0
+[DODGING]            0
+
+
+[ID]                13
+[NAME]            嘟嘟莲海鲜羹
+[ENGLISHNAME]   Lotus seafood soup
+[TYPE]            HEALING
+[MIN]               30
+[MAX]               30
+[PRICE]              15
+[MAXHITPOINTS]       0
+[ATTACK]             0
+[CRITING]             0
+[DODGING]            0
+
+
+[ID]                14
+[NAME]          绝对不是下酒菜
+[ENGLISHNAME]   Definitely not an appetizer
+[TYPE]           HEALING
+[MIN]               10
+[MAX]               10
+[PRICE]              5
+[MAXHITPOINTS]       0
+[ATTACK]             0
+[CRITING]             0
+[DODGING]            0
+
+
+[ID]                15
+[NAME]            风神杂烩汤 
+[ENGLISHNAME]   Fengshen chowder soup 
+[TYPE]           HEALING
+[MIN]               40
+[MAX]               40
+[PRICE]              20
+[MAXHITPOINTS]       0
+[ATTACK]             0
+[CRITING]             0
+[DODGING]            0
+
+[ID]                16
+[NAME]         一级怪的武器 
+[ENGLISHNAME] The weapon of a first-class monster 
+[TYPE]           WEAPON
+[MIN]               20
+[MAX]               25
+[PRICE]              0
+[MAXHITPOINTS]       200
+[ATTACK]             20
+[CRITING]             3
+[DODGING]            2
+
+[ID]                17
+[NAME]         二级怪的武器 
+[ENGLISHNAME]   The weapon of a second-class monster 
+[TYPE]           WEAPON
+[MIN]               40
+[MAX]               40
+[PRICE]              20
+[MAXHITPOINTS]       300
+[ATTACK]             30
+[CRITING]             4
+[DODGING]            5
+
+[ID]                18
+[NAME]         四级怪的武器 
+[ENGLISHNAME]    The weapon of a forth-class monster 
+[TYPE]           WEAPON
+[MIN]               60
+[MAX]               60
+[PRICE]              0
+[MAXHITPOINTS]       1000
+[ATTACK]             50
+[CRITING]             7
+[DODGING]            2
+
+[ID]                19
+[NAME]         很美味的毒药
+[ENGLISHNAME]   Very delicious poison
+[TYPE]           HEALING
+[MIN]               -10
+[MAX]               -10
+[PRICE]              0
+[MAXHITPOINTS]       1000
+[ATTACK]             -10
+[CRITING]             0
+[DODGING]            0
+
+[ID]                20
+[NAME]         西海岸的饭菜（食用过崂山饭菜的玩家可免疫） 
+[ENGLISHNAME]   West Coast meals
+[TYPE]           HEALING
+[MIN]               -15
+[MAX]               -15
+[PRICE]              0
+[MAXHITPOINTS]       1000
+[ATTACK]             -15
+[CRITING]             0
+[DODGING]            0
+
+
+[ID]                21
+[NAME]         三级怪的武器 
+[ENGLISHNAME]   The weapon of a third-class monster 
+[TYPE]           WEAPON
+[MIN]               20
+[MAX]             50
+[PRICE]              0
+[MAXHITPOINTS]       1000
+[ATTACK]             40
+[CRITING]             8
+[DODGING]            7
+
+
+

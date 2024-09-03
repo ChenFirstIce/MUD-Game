@@ -1,0 +1,52 @@
+[ID]           1
+[NAME]          陆陈
+[ENGLISHNAME]   Chen Lu
+[ATTACKTYPE]    GRASS
+[EXPERINENCE]       0
+[LEVEL]              1
+[ROOM]         1  2 7  10   11
+[HITPOINTS]      160
+[MAXHITPOINTS]      160
+[ATTACK]          20
+[CRITING]          30
+[DODGING]        20
+[SPEED]           5
+[WEAPON]         0
+[ARMOR]          0
+[TARGET]         3
+
+[ID]           2
+[NAME]          陈凡
+[ENGLISHNAME]   Fan Chen 
+[ATTACKTYPE]    GOLD
+[EXPERINENCE]       0
+[LEVEL]              1
+[ROOM]         1    3 7  10  11
+[HITPOINTS]      160
+[MAXHITPOINTS]      160
+[ATTACK]          25
+[CRITING]          30
+[DODGING]        20
+[SPEED]           4
+[WEAPON]         0
+[ARMOR]          0
+[TARGET]          4
+
+
+[ID]           3
+[NAME]          陈冰
+[ENGLISHNAME]   Chen Lu
+[ATTACKTYPE]    FIRE
+[EXPERINENCE]       0
+[LEVEL]              1
+[ROOM]         1   4   7  10   11
+[HITPOINTS]      160
+[MAXHITPOINTS]      160
+[ATTACK]          20
+[CRITING]          50
+[DODGING]        40
+[SPEED]           5
+[WEAPON]         0
+[ARMOR]          0
+[TARGET]          2
+

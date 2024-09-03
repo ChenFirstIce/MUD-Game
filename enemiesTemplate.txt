@@ -1,0 +1,104 @@
+[ID]               4
+[NAME]         想攻占地球的外星人小A  
+[ENGLISHNAME]  Little A, an alien who wants to take over the earth  
+[HITPOINTS]         20
+[DODGING]           2
+[STRIKEDAMAGE]      5
+[EXP]               10
+[WEAPON]           1
+[TARGET]           1
+[MONEYMIN]          5
+[MONEYMAX]         10
+[NATURE]           FIRE
+[LOOT]    1   100                                  [ENDLOOT] 
+
+
+[ID]                  5
+[NAME]           钱利来
+[ENGLISHNAME]  Lilai Qian
+[HITPOINTS]         30
+[DODGING]           2
+[STRIKEDAMAGE]      8
+[EXP]               20
+[WEAPON]           2
+[TARGET]           2
+[MONEYMIN]          10
+[MONEYMAX]         18
+[ATTACKTYPE]           GOLD
+[LOOT]    2        100                             [ENDLOOT] 
+
+[ID]                  6
+[NAME]           QQ弹弹史莱姆
+[ENGLISHNAME]     QQ Bounce Slime
+[HITPOINTS]         40
+[DODGING]           4
+[STRIKEDAMAGE]      10
+[EXP]               30
+[WEAPON]           16
+[TARGET]           3
+[MONEYMIN]          18
+[MONEYMAX]         25
+[ATTACKTYPE]           GRASS
+[LOOT]    3        50                             [ENDLOOT] 
+
+
+[ID]                  7
+[NAME]           八翼蓝巨人
+[ENGLISHNAME]  Eight-winged blue giant
+[HITPOINTS]         60
+[DODGING]           7
+[STRIKEDAMAGE]      20
+[EXP]               50
+[WEAPON]           17
+[TARGET]           3
+[MONEYMIN]          35
+[MONEYMAX]         50
+[ATTACKTYPE]          GRASS
+[LOOT]    4       50                              [ENDLOOT] 
+
+
+[ID]                  8
+[NAME]           绿蛛莫烈卡
+[ENGLISHNAME]   Morica, the green spider
+[HITPOINTS]         80
+[DODGING]           7
+[STRIKEDAMAGE]      30
+[EXP]               70
+[WEAPON]           21
+[TARGET]           3
+[MONEYMIN]          35
+[MONEYMAX]         50
+[ATTACKTYPE]           FIRE
+[LOOT]    5        50                            [ENDLOOT] 
+
+
+[ID]                  9
+[NAME]           金刚法外狂徒
+[ENGLISHNAME]  King Kong outlaw fanatics
+[HITPOINTS]         1000
+[DODGING]           10
+[STRIKEDAMAGE]      40
+[EXP]               100
+[WEAPON]           18
+[TARGET]           3
+[MONEYMIN]         999
+[MONEYMAX]        1000
+[ATTACKTYPE]          LIGHT
+[LOOT]    6           40                          [ENDLOOT] 
+
+
+[ID]               10
+[NAME]         肥遗
+[ENGLISHNAME]  YI FEI
+[HITPOINTS]         20
+[DODGING]           2
+[STRIKEDAMAGE]      5
+[EXP]               10
+[WEAPON]           1
+[TARGET]           4
+[MONEYMIN]          5
+[MONEYMAX]         10
+[NATURE]           FIRE
+[LOOT]    7        20                             [ENDLOOT] 
+
+ 
