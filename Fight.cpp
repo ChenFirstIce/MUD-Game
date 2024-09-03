@@ -2,182 +2,6 @@
 #include "Fight.h"
 using namespace std;
 
-void Fight::ShowMe1() {
-	//cout << "---------------------------------- Íæ¼ÒĞÅÏ¢ ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t---------------------" << endl;
-	cout << "        \t|ĞÕÃû£º" << left << setw(6) << (static_cast<player>Me[0])->Name() << "|" << endl;
-	cout << "        \t|µÈ¼¶£º" << left << setw(6) << (static_cast<player>Me[0])->getLevel() << "|" << endl;
-	cout << "        \t|¾­Ñé£º" << left << setw(6) << (static_cast<player>Me[0])->getExp() << "|" << endl;
-	cout << "   ÎÒ   \t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<player>Me[0])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(0) << "|" << endl;
-	cout << "   ·½   \t|ATTACK:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(3) << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(4) << "|" << endl;
-	cout << "        \t---------------------" << endl;
-	cout << "\033[31m--------------------------------------------------------------------------------\033[0m\n\n";
-}
-
-void Fight::ShowMe2() {
-	//cout << "---------------------------------- Íæ¼ÒĞÅÏ¢ ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t|ĞÕÃû£º" << left << setw(6) << (static_cast<player>Me[0])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << (static_cast<npc>Me[1])->Name() << "|" << endl;
-	cout << "        \t|µÈ¼¶£º" << left << setw(6) << (static_cast<player>Me[0])->getLevel() << "|" << "\t\t\t\t|µÈ¼¶£º" << left << setw(6) << (static_cast<npc>Me[1])->getLevel() << "|" << endl;
-	cout << "        \t|¾­Ñé£º" << left << setw(6) << (static_cast<player>Me[0])->getExp() << "|" << "\t\t\t\t|¾­Ñé£º" << left << setw(6) << (static_cast<npc>Me[1])->getExp() << "|" << endl;
-	cout << "   ÎÒ   \t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<player>Me[0])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<npc>Me[1])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << (static_cast<npc>Me[1])->getAttr(0) << "|" << endl;
-	cout << "   ·½   \t|ATTACK:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << (static_cast<npc>Me[1])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << (static_cast<npc>Me[1])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << (static_cast<npc>Me[1])->getAttr(3) << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << (static_cast<npc>Me[1])->getAttr(4) << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "\033[0m";
-	cout << "\033[31m--------------------------------------------------------------------------------\033[0m\n\n";
-}
-
-void Fight::ShowMe3() {
-	//cout << "---------------------------------- Íæ¼ÒĞÅÏ¢ ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t|ĞÕÃû£º" << left << setw(6) << (static_cast<npc>Me[1])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << (static_cast<npc>Me[2])->Name() << "|" << endl;
-	cout << "        \t|µÈ¼¶£º" << left << setw(6) << (static_cast<npc>Me[1])->getLevel() << "|" << "\t\t\t\t|µÈ¼¶£º" << left << setw(6) << (static_cast<npc>Me[2])->getLevel() << "|" << endl;
-	cout << "        \t|¾­Ñé£º" << left << setw(6) << (static_cast<npc>Me[1])->getExp() << "|" << "\t\t\t\t|¾­Ñé£º" << left << setw(6) << (static_cast<npc>Me[2])->getExp() << "|" << endl;
-	cout << "        \t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<npc>Me[1])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<npc>Me[2])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << (static_cast<npc>Me[1])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << (static_cast<npc>Me[2])->getAttr(0) << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << (static_cast<npc>Me[1])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << (static_cast<npc>Me[2])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << (static_cast<npc>Me[1])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << (static_cast<npc>Me[2])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << (static_cast<npc>Me[1])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << (static_cast<npc>Me[2])->getAttr(3) << "|" << endl;
-	cout << "   ÎÒ   \t|SPEED:" << left << setw(6) << (static_cast<npc>Me[1])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << (static_cast<npc>Me[2])->getAttr(4) << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t             \t---------------------" << endl;
-	cout << "   ·½   \t             \t|ĞÕÃû£º" << left << setw(6) << (static_cast<player>Me[0])->Name() << "|" << endl;
-	cout << "        \t             \t|µÈ¼¶£º" << left << setw(6) << (static_cast<player>Me[0])->getLevel() << "|" << endl;
-	cout << "        \t             \t|¾­Ñé£º" << left << setw(6) << (static_cast<player>Me[0])->getExp() << "|" << endl;
-	cout << "        \t             \t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<player>Me[0])->getType() << "|" << endl;
-	cout << "        \t             \t|MAXHITPOINTS:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(0) << "|" << endl;
-	cout << "        \t             \t|ATTACK:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(1) << "|" << endl;
-	cout << "        \t             \t|CRITING:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(2) << "|" << endl;
-	cout << "        \t             \t|DODGING:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(3) << "|" << endl;
-	cout << "        \t             \t|SPEED:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(4) << "|" << endl;
-	cout << "        \t             \t---------------------" << endl;
-	cout << "\033[0m";
-	cout << "\033[31m--------------------------------------------------------------------------------\033[0m\n\n";
-}
-
-void Fight::ShowMe4() {
-	//cout << "---------------------------------- Íæ¼ÒĞÅÏ¢ ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t|ĞÕÃû£º" << left << setw(6) << (static_cast<npc>Me[2])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << (static_cast<npc>Me[3])->Name() << "|" << endl;
-	cout << "        \t|µÈ¼¶£º" << left << setw(6) << (static_cast<npc>Me[2])->getLevel() << "|" << "\t\t\t\t|µÈ¼¶£º" << left << setw(6) << (static_cast<npc>Me[3])->getLevel() << "|" << endl;
-	cout << "        \t|¾­Ñé£º" << left << setw(6) << (static_cast<npc>Me[2])->getExp() << "|" << "\t\t\t\t|¾­Ñé£º" << left << setw(6) << (static_cast<npc>Me[3])->getExp() << "|" << endl;
-	cout << "        \t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<npc>Me[2])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<npc>Me[3])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << (static_cast<npc>Me[2])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << (static_cast<npc>Me[3])->getAttr(0) << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << (static_cast<npc>Me[2])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << (static_cast<npc>Me[3])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << (static_cast<npc>Me[2])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << (static_cast<npc>Me[3])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << (static_cast<npc>Me[2])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << (static_cast<npc>Me[3])->getAttr(3) << "|" << endl;
-	cout << "   ÎÒ   \t|SPEED:" << left << setw(6) << (static_cast<npc>Me[2])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << (static_cast<npc>Me[3])->getAttr(4) << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "   ·½   \t|ĞÕÃû£º" << left << setw(6) << (static_cast<player>Me[0])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << (static_cast<npc>Me[1])->Name() << "|" << endl;
-	cout << "        \t|µÈ¼¶£º" << left << setw(6) << (static_cast<player>Me[0])->getLevel() << "|" << "\t\t\t\t|µÈ¼¶£º" << left << setw(6) << (static_cast<npc>Me[1])->getLevel() << "|" << endl;
-	cout << "        \t|¾­Ñé£º" << left << setw(6) << (static_cast<player>Me[0])->getExp() << "|" << "\t\t\t\t|¾­Ñé£º" << left << setw(6) << (static_cast<npc>Me[1])->getExp() << "|" << endl;
-	cout << "        \t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<player>Me[0])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<npc>Me[1])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << (static_cast<npc>Me[1])->getAttr(0) << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << (static_cast<npc>Me[1])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << (static_cast<npc>Me[1])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << (static_cast<npc>Me[1])->getAttr(3) << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << (static_cast<player>Me[0])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << (static_cast<npc>Me[1])->getAttr(4) << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "\033[0m";
-	cout << "\033[31m--------------------------------------------------------------------------------\033[0m\n\n";
-}
-
-void Fight::ShowEnemy1() {
-	//cout << "---------------------------------- µĞ·½ĞÅÏ¢ ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t---------------------" << endl;
-	cout << "        \t|ĞÕÃû£º" << left << setw(6) << (static_cast<enemy>Enemy[0])->Name() << "|" << endl;
-	cout << "   µĞ   \t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<enemy>Enemy[0])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(0) << "|" << endl;
-	cout << "   ·½   \t|ATTACK:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(3) << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(4) << "|" << endl;
-	cout << "        \t---------------------" << endl;
-	cout << "\033[0m";
-	//cout << "--------------------------------------------------------------------------------\n\n";
-}
-
-void Fight::ShowEnemy2() {
-	//cout << "---------------------------------- µĞ·½ĞÅÏ¢ ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t|ĞÕÃû£º" << left << setw(6) << (static_cast<enemy>Enemy[0])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << (static_cast<enemy>Enemy[1])->Name() << "|" << endl;
-	cout << "        \t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<enemy>Enemy[0])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<enemy>Enemy[1])->getType() << "|" << endl;
-	cout << "   µĞ   \t|MAXHITPOINTS:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << (static_cast<enemy>Enemy[1])->getAttr(0) << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << (static_cast<enemy>Enemy[1])->getAttr(1) << "|" << endl;
-	cout << "   ·½   \t|CRITING:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << (static_cast<enemy>Enemy[1])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << (static_cast<enemy>Enemy[1])->getAttr(3) << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << (static_cast<enemy>Enemy[1])->getAttr(4) << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "\033[0m";
-	//cout << "--------------------------------------------------------------------------------\n\n";
-}
-
-void Fight::ShowEnemy3() {
-	//cout << "---------------------------------- µĞ·½ĞÅÏ¢ ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t             \t---------------------" << endl;
-	cout << "        \t             \t|ĞÕÃû£º" << left << setw(6) << (static_cast<enemy>Enemy[0])->Name() << "|" << endl;
-	cout << "        \t             \t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<enemy>Enemy[0])->getType() << "|" << endl;
-	cout << "        \t             \t|MAXHITPOINTS:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(0) << "|" << endl;
-	cout << "        \t             \t|ATTACK:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(1) << "|" << endl;
-	cout << "        \t             \t|CRITING:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(2) << "|" << endl;
-	cout << "        \t             \t|DODGING:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(3) << "|" << endl;
-	cout << "   µĞ   \t             \t|SPEED:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(4) << "|" << endl;
-	cout << "        \t             \t---------------------" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "   ·½   \t|ĞÕÃû£º" << left << setw(6) << (static_cast<enemy>Enemy[1])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << (static_cast<enemy>Enemy[2])->Name() << "|" << endl;
-	cout << "        \t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<enemy>Enemy[1])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<enemy>Enemy[2])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << (static_cast<enemy>Enemy[1])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << (static_cast<enemy>Enemy[2])->getAttr(0) << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << (static_cast<enemy>Enemy[1])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << (static_cast<enemy>Enemy[2])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << (static_cast<enemy>Enemy[1])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << (static_cast<enemy>Enemy[2])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << (static_cast<enemy>Enemy[1])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << (static_cast<enemy>Enemy[2])->getAttr(3) << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << (static_cast<enemy>Enemy[1])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << (static_cast<enemy>Enemy[2])->getAttr(4) << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "\033[0m";
-	//cout << "--------------------------------------------------------------------------------\n\n";
-}
-
-
-void Fight::ShowEnemy4() {
-	//cout << "---------------------------------- µĞ·½ĞÅÏ¢ ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t|ĞÕÃû£º" << left << setw(6) << (static_cast<enemy>Enemy[0])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << (static_cast<enemy>Enemy[1])->Name() << "|" << endl;
-	cout << "        \t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<enemy>Enemy[0])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<enemy>Enemy[1])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << (static_cast<enemy>Enemy[1])->getAttr(0) << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << (static_cast<enemy>Enemy[1])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << (static_cast<enemy>Enemy[1])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << (static_cast<enemy>Enemy[1])->getAttr(3) << "|" << endl;
-	cout << "   µĞ   \t|SPEED:" << left << setw(6) << (static_cast<enemy>Enemy[0])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << (static_cast<enemy>Enemy[1])->getAttr(4) << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "   ·½   \t|ĞÕÃû£º" << left << setw(6) << (static_cast<enemy>Enemy[2])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << (static_cast<enemy>Enemy[3])->Name() << "|" << endl;
-	cout << "        \t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<enemy>Enemy[2])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << (static_cast<enemy>Enemy[3])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << (static_cast<enemy>Enemy[2])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << (static_cast<enemy>Enemy[3])->getAttr(0) << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << (static_cast<enemy>Enemy[2])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << (static_cast<enemy>Enemy[3])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << (static_cast<enemy>Enemy[2])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << (static_cast<enemy>Enemy[3])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << (static_cast<enemy>Enemy[2])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << (static_cast<enemy>Enemy[3])->getAttr(3) << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << (static_cast<enemy>Enemy[2])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << (static_cast<enemy>Enemy[3])->getAttr(4) << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "\033[0m";
-	//cout << "--------------------------------------------------------------------------------\n\n";
-}
-
 Fight::Fight(Player* m_player) {
 	int i, j;
 	m_room = m_player->currentRoom();
@@ -218,17 +42,191 @@ Fight::Fight(Player* m_player) {
 		enemy temp = Enemy[i];
 		for (j = i - 1; j >= 0; j--) {
 			enemy m_enemy = Enemy[j];
-			if (temp->getAttr(SPEED) < m_enemy->getAttr(SPEED)) {
+			if (temp->Speed() < m_enemy->Speed()) {
 				Enemy[j + 1] = Enemy[j];
 			}
 		}
 		Enemy[j + 1] = temp;
 	}
-
-
 }
 
-void Fight::Turn()//0-2*n-1ÒÀ´Î´ú±íÎÒ·½nÖ»¾«Áé¡¢µĞ·½nÖ»¾«Áé£»¶şÎ¬Êı×éÃ¿¸öµ¥ÔªµÚÒ»¸ö´æÉÏÊö±àºÅ£¬µÚ¶ş¸ñ´æ¶ÔÓ¦¾«ÁéËÙ¶È
+void Fight::ShowMe1() {
+	//cout << "---------------------------------- Íæ¼ÒĞÅÏ¢ ----------------------------------" << endl;
+	cout << "\033[33m";
+	cout << "        \t---------------------" << endl;
+	cout << "        \t|ĞÕÃû£º" << left << setw(6) << static_cast<player>(Me[0])->Name() << "|" << endl;
+	cout << "        \t|µÈ¼¶£º" << left << setw(6) << static_cast<player>(Me[0])->Level() << "|" << endl;
+	cout << "        \t|¾­Ñé£º" << left << setw(6) << static_cast<player>(Me[0])->Exp() << "|" << endl;
+	cout << "   ÎÒ   \t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<player>(Me[0])->getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(0) << "|" << endl;
+	cout << "   ·½   \t|ATTACK:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(3) << "|" << endl;
+	cout << "        \t|SPEED:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(4) << "|" << endl;
+	cout << "        \t---------------------" << endl;
+	cout << "\033[31m--------------------------------------------------------------------------------\033[0m\n\n";
+}
+
+void Fight::ShowMe2() {
+	//cout << "---------------------------------- Íæ¼ÒĞÅÏ¢ ----------------------------------" << endl;
+	cout << "\033[33m";
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t|ĞÕÃû£º" << left << setw(6) << static_cast<player>(Me[0])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << static_cast<npc>(Me[1])->Name() << "|" << endl;
+	cout << "        \t|µÈ¼¶£º" << left << setw(6) << static_cast<player>(Me[0])->Level() << "|" << "\t\t\t\t|µÈ¼¶£º" << left << setw(6) << static_cast<npc>(Me[1])->Level() << "|" << endl;
+	cout << "        \t|¾­Ñé£º" << left << setw(6) << static_cast<player>(Me[0])->Exp() << "|" << "\t\t\t\t|¾­Ñé£º" << left << setw(6) << static_cast<npc>(Me[1])->Exp() << "|" << endl;
+	cout << "   ÎÒ   \t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<player>(Me[0])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<npc>(Me[1])->getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(0) << "|" << endl;
+	cout << "   ·½   \t|ATTACK:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(3) << "|" << endl;
+	cout << "        \t|SPEED:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "\033[0m";
+	cout << "\033[31m--------------------------------------------------------------------------------\033[0m\n\n";
+}
+
+void Fight::ShowMe3() {
+	//cout << "---------------------------------- Íæ¼ÒĞÅÏ¢ ----------------------------------" << endl;
+	cout << "\033[33m";
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t|ĞÕÃû£º" << left << setw(6) << static_cast<npc>(Me[1])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << static_cast<npc>(Me[2])->Name() << "|" << endl;
+	cout << "        \t|µÈ¼¶£º" << left << setw(6) << static_cast<npc>(Me[1])->Level() << "|" << "\t\t\t\t|µÈ¼¶£º" << left << setw(6) << static_cast<npc>(Me[2])->Level() << "|" << endl;
+	cout << "        \t|¾­Ñé£º" << left << setw(6) << static_cast<npc>(Me[1])->Exp() << "|" << "\t\t\t\t|¾­Ñé£º" << left << setw(6) << static_cast<npc>(Me[2])->Exp() << "|" << endl;
+	cout << "        \t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<npc>(Me[1])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<npc>(Me[2])->getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(0) << "|" << endl;
+	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(3) << "|" << endl;
+	cout << "   ÎÒ   \t|SPEED:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t             \t---------------------" << endl;
+	cout << "   ·½   \t             \t|ĞÕÃû£º" << left << setw(6) << static_cast<player>(Me[0])->Name() << "|" << endl;
+	cout << "        \t             \t|µÈ¼¶£º" << left << setw(6) << static_cast<player>(Me[0])->Level() << "|" << endl;
+	cout << "        \t             \t|¾­Ñé£º" << left << setw(6) << static_cast<player>(Me[0])->Exp() << "|" << endl;
+	cout << "        \t             \t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<player>(Me[0])->getType() << "|" << endl;
+	cout << "        \t             \t|MAXHITPOINTS:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(0) << "|" << endl;
+	cout << "        \t             \t|ATTACK:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(1) << "|" << endl;
+	cout << "        \t             \t|CRITING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(2) << "|" << endl;
+	cout << "        \t             \t|DODGING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(3) << "|" << endl;
+	cout << "        \t             \t|SPEED:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(4) << "|" << endl;
+	cout << "        \t             \t---------------------" << endl;
+	cout << "\033[0m";
+	cout << "\033[31m--------------------------------------------------------------------------------\033[0m\n\n";
+}
+
+void Fight::ShowMe4() {
+	//cout << "---------------------------------- Íæ¼ÒĞÅÏ¢ ----------------------------------" << endl;
+	cout << "\033[33m";
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t|ĞÕÃû£º" << left << setw(6) << static_cast<npc>(Me[2])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << static_cast<npc>(Me[3])->Name() << "|" << endl;
+	cout << "        \t|µÈ¼¶£º" << left << setw(6) << static_cast<npc>(Me[2])->Level() << "|" << "\t\t\t\t|µÈ¼¶£º" << left << setw(6) << static_cast<npc>(Me[3])->Level() << "|" << endl;
+	cout << "        \t|¾­Ñé£º" << left << setw(6) << static_cast<npc>(Me[2])->Exp() << "|" << "\t\t\t\t|¾­Ñé£º" << left << setw(6) << static_cast<npc>(Me[3])->Exp() << "|" << endl;
+	cout << "        \t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<npc>(Me[2])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<npc>(Me[3])->getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<npc>(Me[3])->getAttr(0) << "|" << endl;
+	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<npc>(Me[3])->getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<npc>(Me[3])->getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<npc>(Me[3])->getAttr(3) << "|" << endl;
+	cout << "   ÎÒ   \t|SPEED:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<npc>(Me[3])->getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "   ·½   \t|ĞÕÃû£º" << left << setw(6) << static_cast<player>(Me[0])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << static_cast<npc>(Me[1])->Name() << "|" << endl;
+	cout << "        \t|µÈ¼¶£º" << left << setw(6) << static_cast<player>(Me[0])->Level() << "|" << "\t\t\t\t|µÈ¼¶£º" << left << setw(6) << static_cast<npc>(Me[1])->Level() << "|" << endl;
+	cout << "        \t|¾­Ñé£º" << left << setw(6) << static_cast<player>(Me[0])->Exp() << "|" << "\t\t\t\t|¾­Ñé£º" << left << setw(6) << static_cast<npc>(Me[1])->Exp() << "|" << endl;
+	cout << "        \t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<player>(Me[0])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<npc>(Me[1])->getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(0) << "|" << endl;
+	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(3) << "|" << endl;
+	cout << "        \t|SPEED:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "\033[0m";
+	cout << "\033[31m--------------------------------------------------------------------------------\033[0m\n\n";
+}
+
+void Fight::ShowEnemy1() {
+	//cout << "---------------------------------- µĞ·½ĞÅÏ¢ ----------------------------------" << endl;
+	cout << "\033[33m";
+	cout << "        \t---------------------" << endl;
+	cout << "        \t|ĞÕÃû£º" << left << setw(6) << static_cast<enemy>(Enemy[0])->Name() << "|" << endl;
+	cout << "   µĞ   \t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<enemy>(Enemy[0])->getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(0) << "|" << endl;
+	cout << "   ·½   \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(3) << "|" << endl;
+	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(4) << "|" << endl;
+	cout << "        \t---------------------" << endl;
+	cout << "\033[0m";
+	//cout << "--------------------------------------------------------------------------------\n\n";
+}
+
+void Fight::ShowEnemy2() {
+	//cout << "---------------------------------- µĞ·½ĞÅÏ¢ ----------------------------------" << endl;
+	cout << "\033[33m";
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t|ĞÕÃû£º" << left << setw(6) << static_cast<enemy>(Enemy[0])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << static_cast<enemy>(Enemy[1])->Name() << "|" << endl;
+	cout << "        \t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<enemy>(Enemy[0])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<enemy>(Enemy[1])->getType() << "|" << endl;
+	cout << "   µĞ   \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(0) << "|" << endl;
+	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(1) << "|" << endl;
+	cout << "   ·½   \t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(3) << "|" << endl;
+	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "\033[0m";
+	//cout << "--------------------------------------------------------------------------------\n\n";
+}
+
+void Fight::ShowEnemy3() {
+	//cout << "---------------------------------- µĞ·½ĞÅÏ¢ ----------------------------------" << endl;
+	cout << "\033[33m";
+	cout << "        \t             \t---------------------" << endl;
+	cout << "        \t             \t|ĞÕÃû£º" << left << setw(6) << static_cast<enemy>(Enemy[0])->Name() << "|" << endl;
+	cout << "        \t             \t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<enemy>(Enemy[0])->getType() << "|" << endl;
+	cout << "        \t             \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(0) << "|" << endl;
+	cout << "        \t             \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(1) << "|" << endl;
+	cout << "        \t             \t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(2) << "|" << endl;
+	cout << "        \t             \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(3) << "|" << endl;
+	cout << "   µĞ   \t             \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(4) << "|" << endl;
+	cout << "        \t             \t---------------------" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "   ·½   \t|ĞÕÃû£º" << left << setw(6) << static_cast<enemy>(Enemy[1])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << static_cast<enemy>(Enemy[2])->Name() << "|" << endl;
+	cout << "        \t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<enemy>(Enemy[1])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<enemy>(Enemy[2])->getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(0) << "|" << endl;
+	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(3) << "|" << endl;
+	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "\033[0m";
+	//cout << "--------------------------------------------------------------------------------\n\n";
+}
+
+
+void Fight::ShowEnemy4() {
+	//cout << "---------------------------------- µĞ·½ĞÅÏ¢ ----------------------------------" << endl;
+	cout << "\033[33m";
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t|ĞÕÃû£º" << left << setw(6) << static_cast<enemy>(Enemy[0])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << static_cast<enemy>(Enemy[1])->Name() << "|" << endl;
+	cout << "        \t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<enemy>(Enemy[0])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<enemy>(Enemy[1])->getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(0) << "|" << endl;
+	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(3) << "|" << endl;
+	cout << "   µĞ   \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[1])->getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "   ·½   \t|ĞÕÃû£º" << left << setw(6) << static_cast<enemy>(Enemy[2])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << static_cast<enemy>(Enemy[3])->Name() << "|" << endl;
+	cout << "        \t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<enemy>(Enemy[2])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<enemy>(Enemy[3])->getType() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[3])->getAttr(0) << "|" << endl;
+	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[3])->getAttr(1) << "|" << endl;
+	cout << "        \t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<enemy>(Enemy[3])->getAttr(2) << "|" << endl;
+	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[3])->getAttr(3) << "|" << endl;
+	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[3])->getAttr(4) << "|" << endl;
+	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
+	cout << "\033[0m";
+	//cout << "--------------------------------------------------------------------------------\n\n";
+}
+
+void Fight::BattleTurn()//0-2*n-1ÒÀ´Î´ú±íÎÒ·½nÖ»¾«Áé¡¢µĞ·½nÖ»¾«Áé£»¶şÎ¬Êı×éÃ¿¸öµ¥ÔªµÚÒ»¸ö´æÉÏÊö±àºÅ£¬µÚ¶ş¸ñ´æ¶ÔÓ¦¾«ÁéËÙ¶È
 {
 	int n = Me.size();
 	int m = Enemy.size();
@@ -243,7 +241,7 @@ void Fight::Turn()//0-2*n-1ÒÀ´Î´ú±íÎÒ·½nÖ»¾«Áé¡¢µĞ·½nÖ»¾«Áé£»¶şÎ¬Êı×éÃ¿¸öµ¥ÔªµÚÒ
 
 	for (int i = 0; i < n; i++) {
 		BattleTurn[i][0] = Me[i];
-		if (M[i] == 0) {
+		if (Me[i] == 0) {
 			BattleTurn[i][1] = m_player->getAttr(SPEED);
 		}
 		else {
@@ -320,7 +318,7 @@ int Fight::Front1() {
 
 	for (int i = 0; i < n; i++) {
 		enemy m_enemy = Enemy[i];
-		if (m_enemy->hitPoints() > 0) {
+		if (m_enemy->HitPoints() > 0) {
 			cnt++;
 			targets.push_back(m_enemy);
 		}
@@ -375,96 +373,149 @@ bool Fight::isLive(int id) {
 			return false;
 		}
 	}
-	return true
+	return true;
 }
 
-int Fight::Choice(int Round, int atk) {
+int Fight::Choice(int& Round, int atk) {
 	int choose;
 
 	if (atk == 0) {
 		Player* patk = m_player;
+
+		while (1) {
+			cout << " " << patk->Name() << " Òª×öÊ²Ã´£¿" << endl;
+			cout << "1.¹¥»÷  2.Ê¹ÓÃµÀ¾ß 3.ÌÓÅÜ" << endl;
+			cin >> choose;
+			if (choose < 1 || choose>3) {
+				cout << "´íÎó£¡ÇëÖØĞÂÊäÈë£¡" << endl;
+				cin.clear();
+				cin.ignore(cin.rdbuf()->in_avail());
+			}
+			else {
+				return choose;
+			}
+
+		}
 	}
 	else {
 		npc patk = atk;
-	}
 
-	while (1) {
-		cout << " " << patk->Name() << " Òª×öÊ²Ã´£¿" << endl;
-		cout << "1.¹¥»÷  2.Ê¹ÓÃµÀ¾ß 3.ÌÓÅÜ" << endl;
-		cin >> choose;
-		if (choose < 1 || choose>3) {
-			cout << "´íÎó£¡ÇëÖØĞÂÊäÈë£¡" << endl;
-			cin.clear();
-			cin.ignore(cin.rdbuf()->in_avail());
-		}
-		else {
-			return choose;
-		}
+		while (1) {
+			cout << " " << patk->Name() << " Òª×öÊ²Ã´£¿" << endl;
+			cout << "1.¹¥»÷  2.Ê¹ÓÃµÀ¾ß 3.ÌÓÅÜ" << endl;
+			cin >> choose;
+			if (choose < 1 || choose>3) {
+				cout << "´íÎó£¡ÇëÖØĞÂÊäÈë£¡" << endl;
+				cin.clear();
+				cin.ignore(cin.rdbuf()->in_avail());
+			}
+			else {
+				return choose;
+			}
 
+		}
 	}
 }
 
 int Fight::Restrain1(int p_atk, int p_target)//·µ»ØÖµ0Îª¹¥»÷·½±»¿ËÖÆ, 1Îª¹¥»÷·½¿ËÖÆ±»¹¥»÷·½, -1ÎªÎŞ¿ËÖÆ¹ØÏµ
 //ÊôĞÔ0¿ËÖÆËùÓĞ£¬1¿ËÖÆ2£¬2¿ËÖÆ3£¬3¿ËÖÆ1 
 {
+	enemy target = p_target;
+
 	if (p_atk == 0) {
 		Player* atk = Player::getPlayer();
+
+		if (atk->getType() == "LIGHT") {
+			return 1;
+		}
+		else if (atk->getType() == "GOLD") {
+			if (target->getType() == "GOLD") return -1;
+			else if (target->getType() == "FIRE") return 1;
+			else if (target->getType() == "GRASS") return 0;
+		}
+		else if (atk->getType() == "FIRE") {
+			if (target->getType() == "GOLD") return 0;
+			else if (target->getType() == "FIRE") return -1;
+			else if (target->getType() == "GRASS") return 1;
+		}
+		else if (atk->getType() == "GRASS") {
+			if (target->getType() == "GOLD") return 1;
+			else if (target->getType() == "FIRE") return 0;
+			else if (target->getType() == "GRASS") return -1;
+		}
 	}
 	else {
 		npc atk = p_atk;
-	}
 
-	enemy target = p_target;
-
-	if (atk->getType() == "LIGHT") {
-		return 1;
-	}
-	else if (atk->getType() == "GOLD") {
-		if (target->getType() == "GOLD") return -1;
-		else if (target->getType() == "FIRE") return 1;
-		else if (target->getType() == "GRASS") return 0;
-	}
-	else if (atk->getType() == "FIRE") {
-		if (target->getType() == "GOLD") return 0;
-		else if (target->getType() == "FIRE") return -1;
-		else if (target->getType() == "GRASS") return 1;
-	}
-	else if (atk->getType() == "GRASS") {
-		if (target->getType() == "GOLD") return 1;
-		else if (target->getType() == "FIRE") return 0;
-		else if (target->getType() == "GRASS") return -1;
+		if (atk->getType() == "LIGHT") {
+			return 1;
+		}
+		else if (atk->getType() == "GOLD") {
+			if (target->getType() == "GOLD") return -1;
+			else if (target->getType() == "FIRE") return 1;
+			else if (target->getType() == "GRASS") return 0;
+		}
+		else if (atk->getType() == "FIRE") {
+			if (target->getType() == "GOLD") return 0;
+			else if (target->getType() == "FIRE") return -1;
+			else if (target->getType() == "GRASS") return 1;
+		}
+		else if (atk->getType() == "GRASS") {
+			if (target->getType() == "GOLD") return 1;
+			else if (target->getType() == "FIRE") return 0;
+			else if (target->getType() == "GRASS") return -1;
+		}
 	}
 }
 
 int Fight::Restrain2(int p_atk, int p_target)//·µ»ØÖµ0Îª¹¥»÷·½±»¿ËÖÆ, 1Îª¹¥»÷·½¿ËÖÆ±»¹¥»÷·½, -1ÎªÎŞ¿ËÖÆ¹ØÏµ
 //ÊôĞÔ0¿ËÖÆËùÓĞ£¬1¿ËÖÆ2£¬2¿ËÖÆ3£¬3¿ËÖÆ1 
 {
+	enemy atk = p_atk;
+
 	if (p_target == 0) {
 		Player* target = Player::getPlayer();
+
+		if (atk->getType() == "LIGHT") {
+			return 1;
+		}
+		else if (atk->getType() == "GOLD") {
+			if (target->getType() == "GOLD") return -1;
+			else if (target->getType() == "FIRE") return 1;
+			else if (target->getType() == "GRASS") return 0;
+		}
+		else if (atk->getType() == "FIRE") {
+			if (target->getType() == "GOLD") return 0;
+			else if (target->getType() == "FIRE") return -1;
+			else if (target->getType() == "GRASS") return 1;
+		}
+		else if (atk->getType() == "GRASS") {
+			if (target->getType() == "GOLD") return 1;
+			else if (target->getType() == "FIRE") return 0;
+			else if (target->getType() == "GRASS") return -1;
+		}
 	}
 	else {
 		npc target = p_target;
-	}
 
-	enemy atk = p_atk;
-
-	if (atk->getType() == "LIGHT") {
-		return 1;
-	}
-	else if (atk->getType() == "GOLD") {
-		if (target->getType() == "GOLD") return -1;
-		else if (target->getType() == "FIRE") return 1;
-		else if (target->getType() == "GRASS") return 0;
-	}
-	else if (atk->getType() == "FIRE") {
-		if (target->getType() == "GOLD") return 0;
-		else if (target->getType() == "FIRE") return -1;
-		else if (target->getType() == "GRASS") return 1;
-	}
-	else if (atk->getType() == "GRASS") {
-		if (target->getType() == "GOLD") return 1;
-		else if (target->getType() == "FIRE") return 0;
-		else if (target->getType() == "GRASS") return -1;
+		if (atk->getType() == "LIGHT") {
+			return 1;
+		}
+		else if (atk->getType() == "GOLD") {
+			if (target->getType() == "GOLD") return -1;
+			else if (target->getType() == "FIRE") return 1;
+			else if (target->getType() == "GRASS") return 0;
+		}
+		else if (atk->getType() == "FIRE") {
+			if (target->getType() == "GOLD") return 0;
+			else if (target->getType() == "FIRE") return -1;
+			else if (target->getType() == "GRASS") return 1;
+		}
+		else if (atk->getType() == "GRASS") {
+			if (target->getType() == "GOLD") return 1;
+			else if (target->getType() == "FIRE") return 0;
+			else if (target->getType() == "GRASS") return -1;
+		}
 	}
 }
 
@@ -475,42 +526,70 @@ void Fight::Atk1(int atk, int target) {
 		return;
 	}
 
+	enemy p_enemy = target;
+
 	//ÅĞ¶ÏÀàĞÍ
 	if (atk == 0) {
 		Player* p_atk = m_player;
+
+		if (rand() % 100 <= p_enemy->Dodging()) {
+			cout << p_atk->Name() << " ¹¥»÷ÁË " << p_enemy->Name();
+			cout << "£¬ µ«ÊÇ " << p_enemy->Name() << " ¶ã¿ªÁË¹¥»÷!" << endl;
+			system("pause");
+		}
+		else {
+			double hurt;
+			hurt = p_atk->getAttr(ATTACK);
+			cout << p_atk->Name() << " ¹¥»÷ÁË " << p_enemy->Name() << " , ";
+			if (rand() % 100 <= p_atk->getAttr(CRITING)) {
+				hurt *= 2;
+				cout << "»÷ÖĞÁËÒªº¦! ";
+			}
+			if (Restrain1(atk, target) == 1) {
+				hurt *= 1.5;
+				cout << "Ğ§¹û°ÎÈº! ";
+			}
+			else if (Restrain1(atk, target) == 0) {
+				hurt *= 0.5;
+				cout << "ÊÕĞ§ÉõÎ¢¡­¡­";
+			}
+
+			cout << " Ôì³ÉÁË " << hurt << " µãÉËº¦¡£";
+			p_enemy->HitPoints() -= hurt;
+
+			system("pause");
+		}
 	}
 	else {
 		npc p_atk = atk;
-	}
 
-	enemy p_enemy = target;
-
-	if (rand() % 100 <= p_enemy->Dodging()) {
-		cout << p_atk->Name() << " ¹¥»÷ÁË " << p_enemy->Name();
-		cout << "£¬ µ«ÊÇ " << p_enemy->Name() << " ¶ã¿ªÁË¹¥»÷!" << endl;
-		system("pause");
-	}
-	else {
-		double hurt;
-		hurt = p_atk->geAttr(ATTACK);
-		cout << p_atk->Name() << " ¹¥»÷ÁË " << p_enemy->Name() << " , ";
-		if (rand() % 100 <= p_atk->getAttr(CRITING)) {
-			hurt *= 2;
-			cout << "»÷ÖĞÁËÒªº¦! ";
+		if (rand() % 100 <= p_enemy->Dodging()) {
+			cout << p_atk->Name() << " ¹¥»÷ÁË " << p_enemy->Name();
+			cout << "£¬ µ«ÊÇ " << p_enemy->Name() << " ¶ã¿ªÁË¹¥»÷!" << endl;
+			system("pause");
 		}
-		if (Restrain1(atk, target) == 1) {
-			hurt *= 1.5;
-			cout << "Ğ§¹û°ÎÈº! ";
-		}
-		else if (Restrain1(atk, target) == 0) {
-			hurt *= 0.5;
-			cout << "ÊÕĞ§ÉõÎ¢¡­¡­";
-		}
+		else {
+			double hurt;
+			hurt = p_atk->getAttr(ATTACK);
+			cout << p_atk->Name() << " ¹¥»÷ÁË " << p_enemy->Name() << " , ";
+			if (rand() % 100 <= p_atk->getAttr(CRITING)) {
+				hurt *= 2;
+				cout << "»÷ÖĞÁËÒªº¦! ";
+			}
+			if (Restrain1(atk, target) == 1) {
+				hurt *= 1.5;
+				cout << "Ğ§¹û°ÎÈº! ";
+			}
+			else if (Restrain1(atk, target) == 0) {
+				hurt *= 0.5;
+				cout << "ÊÕĞ§ÉõÎ¢¡­¡­";
+			}
 
-		cout << " Ôì³ÉÁË " << hurt << " µãÉËº¦¡£";
-		p_enemy->HitPoints() -= hurt;
+			cout << " Ôì³ÉÁË " << hurt << " µãÉËº¦¡£";
+			p_enemy->HitPoints() -= hurt;
 
-		system("pause");
+			system("pause");
+		}
 	}
 }
 
@@ -525,35 +604,61 @@ void Fight::Atk2(int atk, int target) {
 	//ÅĞ¶ÏÀàĞÍ
 	if (target == 0) {
 		Player* p_target = m_player;
+
+		if (rand() % 100 <= p_target->getAttr(DODGING)) {
+			cout << p_atk->Name() << " ¹¥»÷ÁË " << p_target->Name();
+			cout << "£¬ µ«ÊÇ " << p_target->Name() << " ¶ã¿ªÁË¹¥»÷!" << endl;
+			system("pause");
+		}
+		else {
+			double hurt;
+
+			hurt = p_atk->StrikeDamage();
+			cout << p_atk->Name() << " ¹¥»÷ÁË " << p_target->Name() << " , ";
+
+			if (Restrain2(atk, target) == 1) {
+				hurt *= 1.5;
+				cout << "Ğ§¹û°ÎÈº! ";
+			}
+			else if (Restrain2(atk, target) == 0) {
+				hurt *= 0.5;
+				cout << "ÊÕĞ§ÉõÎ¢¡­¡­";
+			}
+
+			cout << " Ôì³ÉÁË " << hurt << " µãÉËº¦¡£";
+			p_target->HitPoints() -= hurt;
+
+			system("pause");
+		}
 	}
 	else {
 		npc p_target = target;
-	}
 
-	if (rand() % 100 <= p_target->getAttr(DODGING)) {
-		cout << p_atk->Name() << " ¹¥»÷ÁË " << p_target->Name();
-		cout << "£¬ µ«ÊÇ " << p_target->Name() << " ¶ã¿ªÁË¹¥»÷!" << endl;
-		system("pause");
-	}
-	else {
-		double hurt;
-
-		hurt = p_atk->StrikeDamage();
-		cout << p_atk->Name() << " ¹¥»÷ÁË " << p_target->Name() << " , ";
-
-		if (Restrain2(atk, target) == 1) {
-			hurt *= 1.5;
-			cout << "Ğ§¹û°ÎÈº! ";
+		if (rand() % 100 <= p_target->getAttr(DODGING)) {
+			cout << p_atk->Name() << " ¹¥»÷ÁË " << p_target->Name();
+			cout << "£¬ µ«ÊÇ " << p_target->Name() << " ¶ã¿ªÁË¹¥»÷!" << endl;
+			system("pause");
 		}
-		else if (Restrain2(atk, target) == 0) {
-			hurt *= 0.5;
-			cout << "ÊÕĞ§ÉõÎ¢¡­¡­";
+		else {
+			double hurt;
+
+			hurt = p_atk->StrikeDamage();
+			cout << p_atk->Name() << " ¹¥»÷ÁË " << p_target->Name() << " , ";
+
+			if (Restrain2(atk, target) == 1) {
+				hurt *= 1.5;
+				cout << "Ğ§¹û°ÎÈº! ";
+			}
+			else if (Restrain2(atk, target) == 0) {
+				hurt *= 0.5;
+				cout << "ÊÕĞ§ÉõÎ¢¡­¡­";
+			}
+
+			cout << " Ôì³ÉÁË " << hurt << " µãÉËº¦¡£";
+			p_target->HitPoints() -= hurt;
+
+			system("pause");
 		}
-
-		cout << " Ôì³ÉÁË " << hurt << " µãÉËº¦¡£";
-		p_target->HitPoints() -= hurt;
-
-		system("pause");
 	}
 }
 
@@ -567,83 +672,154 @@ void Fight::AttackTurn(int atk, int& Round) {
 
 		//ÅĞ¶ÏÊÇÍæ¼Ò»¹ÊÇÄĞÖ÷
 		if (atk == 0) {
-			Player* patk = m_player;
+			player patk = atk;
 			targetnum = 1;
+
+			cout << "¿É¹¥»÷ÈËÊıÎª£º" << targetnum << endl;
+
+			front = Front1();
+
+			if (front == targetnum) {//Ç°ÅÅËø¶¨(ÒÑ¾­×Ô¶¯½«Ç°ÅÅÊäÈë¹¥»÷¶ÓÁĞ
+				cout << "ÒÑ¾­Ëø¶¨Ç°ÅÅ£º";
+				for (int i = 0; i < front; i++) {
+					cout << static_cast<enemy>(targets[i])->Name() << "  ";
+				}
+				cout << endl;
+			}
+			else
+			{
+				if (front > targetnum) {//Ñ¡ÔñÇ°ÅÅ
+					targets.clear();//Çå¿Õº¬ÓĞÇ°ÅÅµÄ¹¥»÷¶ÓÁĞ
+
+					front = 0;
+					n = Enemy.size() / 2;
+				}
+				else {
+					n = Enemy.size();
+				}
+
+				if (targets.size() > 0) {
+					cout << "ÒÑ¾­Ëø¶¨Ç°ÅÅ£º";
+					for (int i = 0; i < front; i++) {
+						cout << static_cast<enemy>(targets[i])->Name() << "  ";
+					}
+					cout << endl;
+				}
+
+				//Î´È«²¿Ëø¶¨
+				//Êä³ö¿ÉÒÔÑ¡ÔñµÄµĞÈË
+				cout << "Òª¹¥»÷Ë­£¿(×ÔÓÉÑ¡Ôñ»·½Ú)" << endl;//Ñ¡Ôñ¹¥»÷Ë­
+				for (int i = front; i < n; i++) {
+					if (isLive(Enemy[i])) {
+						cout << "ID:" << left << setw(3) << i + 1 << "   Name:" << static_cast<enemy>(Enemy[i])->Name() << endl;
+						cout << endl;
+					}
+				}
+
+				//Ñ¡Ôñ¹¥»÷µÄµĞÈË
+				for (int i = 0; i < targetnum - targets.size(); i++) {
+					cout << "ÇëÊäÈëID£¨ÊäÈë0£¬È¡Ïû¹¥»÷)" << endl;
+					cout << "> ";
+					cin >> choose;
+
+					while (choose < front + 1 || choose > n || !isLive(Enemy[choose - 1])) {//ÊäÈëÊı×éË÷Òı + 1
+						if (choose == 0) {
+							Round--;
+							return;
+						}
+
+						cout << "´íÎó£¡ÇëÖØĞÂÊäÈë£¡" << endl;
+						cin.clear();
+						cin.ignore(cin.rdbuf()->in_avail());
+
+						cin >> choose;
+					}
+
+					targets.push_back(Enemy[choose - 1]);
+					cout << static_cast<enemy>(Enemy[choose - 1])->Name() << "ÒÑ¼ÓÈë¹¥»÷¶ÓÁĞ";
+
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+				}
+			}
+			for (int i = 0; i < targetnum; i++) {
+				Atk1(patk, targets[i]);
+			}
 		}
 		else {
 			npc patk = atk;
 			targetnum = patk->getTarget();
-		}
 
-		cout << "¿É¹¥»÷ÈËÊıÎª£º" << targetnum << endl;
+			cout << "¿É¹¥»÷ÈËÊıÎª£º" << targetnum << endl;
 
-		front = Front1();
+			front = Front1();
 
-		if (front == targetnum) {//Ç°ÅÅËø¶¨(ÒÑ¾­×Ô¶¯½«Ç°ÅÅÊäÈë¹¥»÷¶ÓÁĞ
-			cout << "ÒÑ¾­Ëø¶¨Ç°ÅÅ£º";
-			for (int i = 0; i < front; i++) {
-				cout << (static_cast<enemy>targets[i])->Name() << "  ";
-			}
-			cout << endl;
-		}
-		else
-		{
-			if (front > targetnum) {//Ñ¡ÔñÇ°ÅÅ
-				targets.clear();//Çå¿Õº¬ÓĞÇ°ÅÅµÄ¹¥»÷¶ÓÁĞ
-
-				front = 0;
-				n = Enemy.size() / 2;
-			}
-			else {
-				n = Enemy.size();
-			}
-
-			if (targets.size() > 0) {
+			if (front == targetnum) {//Ç°ÅÅËø¶¨(ÒÑ¾­×Ô¶¯½«Ç°ÅÅÊäÈë¹¥»÷¶ÓÁĞ
 				cout << "ÒÑ¾­Ëø¶¨Ç°ÅÅ£º";
 				for (int i = 0; i < front; i++) {
-					cout << (static_cast<enemy>targets[i])->Name() << "  ";
+					cout << static_cast<enemy>(targets[i])->Name() << "  ";
 				}
 				cout << endl;
 			}
+			else
+			{
+				if (front > targetnum) {//Ñ¡ÔñÇ°ÅÅ
+					targets.clear();//Çå¿Õº¬ÓĞÇ°ÅÅµÄ¹¥»÷¶ÓÁĞ
 
-			//Î´È«²¿Ëø¶¨
-			//Êä³ö¿ÉÒÔÑ¡ÔñµÄµĞÈË
-			cout << "Òª¹¥»÷Ë­£¿(×ÔÓÉÑ¡Ôñ»·½Ú)" << endl;//Ñ¡Ôñ¹¥»÷Ë­
-			for (int i = front; i < n; i++) {
-				if (isLive(Enemy[i])) {
-					cout << "ID:" << left << setw(3) << i + 1 << "   Name:" << (static_cast<enemy>Enemy[i])->Name() << endl;
+					front = 0;
+					n = Enemy.size() / 2;
+				}
+				else {
+					n = Enemy.size();
+				}
+
+				if (targets.size() > 0) {
+					cout << "ÒÑ¾­Ëø¶¨Ç°ÅÅ£º";
+					for (int i = 0; i < front; i++) {
+						cout << static_cast<enemy>(targets[i])->Name() << "  ";
+					}
 					cout << endl;
 				}
-			}
 
-			//Ñ¡Ôñ¹¥»÷µÄµĞÈË
-			for (int i = 0; i < targetnum - targets.size(); i++) {
-				cout << "ÇëÊäÈëID£¨ÊäÈë0£¬È¡Ïû¹¥»÷)" << endl;
-				cout << "> ";
-				cin >> choose;
-
-				while (choose < front + 1 || choose > n || !isLive(Enemy[choose - 1])) {//ÊäÈëÊı×éË÷Òı + 1
-					if (choose == 0) {
-						Round--;
-						return;
+				//Î´È«²¿Ëø¶¨
+				//Êä³ö¿ÉÒÔÑ¡ÔñµÄµĞÈË
+				cout << "Òª¹¥»÷Ë­£¿(×ÔÓÉÑ¡Ôñ»·½Ú)" << endl;//Ñ¡Ôñ¹¥»÷Ë­
+				for (int i = front; i < n; i++) {
+					if (isLive(Enemy[i])) {
+						cout << "ID:" << left << setw(3) << i + 1 << "   Name:" << static_cast<enemy>(Enemy[i])->Name() << endl;
+						cout << endl;
 					}
-
-					cout << "´íÎó£¡ÇëÖØĞÂÊäÈë£¡" << endl;
-					cin.clear();
-					cin.ignore(cin.rdbuf()->in_avail());
-
-					cin >> choose;
 				}
 
-				targets.push_back(Enemy[choose - 1]);
-				cout << (static_cast<enemy>Enemy[choose - 1])->Name() << "ÒÑ¼ÓÈë¹¥»÷¶ÓÁĞ";
+				//Ñ¡Ôñ¹¥»÷µÄµĞÈË
+				for (int i = 0; i < targetnum - targets.size(); i++) {
+					cout << "ÇëÊäÈëID£¨ÊäÈë0£¬È¡Ïû¹¥»÷)" << endl;
+					cout << "> ";
+					cin >> choose;
 
-				cin.clear();
-				cin.ignore(cin.rdbuf()->in_avail());
+					while (choose < front + 1 || choose > n || !isLive(Enemy[choose - 1])) {//ÊäÈëÊı×éË÷Òı + 1
+						if (choose == 0) {
+							Round--;
+							return;
+						}
+
+						cout << "´íÎó£¡ÇëÖØĞÂÊäÈë£¡" << endl;
+						cin.clear();
+						cin.ignore(cin.rdbuf()->in_avail());
+
+						cin >> choose;
+					}
+
+					targets.push_back(Enemy[choose - 1]);
+					cout << static_cast<enemy>(Enemy[choose - 1])->Name() << "ÒÑ¼ÓÈë¹¥»÷¶ÓÁĞ";
+
+					cin.clear();
+					cin.ignore(cin.rdbuf()->in_avail());
+				}
 			}
-		}
-		for (int i = 0; i < targetnum; i++) {
-			Atk1(patk, targets[i]);
+			for (int i = 0; i < targetnum; i++) {
+				Atk1(patk, targets[i]);
+			}
 		}
 	}
 	else {
@@ -708,7 +884,7 @@ void Fight::UseMedical(int atk, int& Round) {
 	}
 	else {
 		npc m_atk = atk;
-		m_atk->usdHealing(m_player->getItem(choose - 1));
+		m_atk->useHealing(m_player->getItem(choose - 1));
 	}
 
 	m_player->dropItem(choose - 1);
@@ -755,9 +931,9 @@ void Fight::ProceedFight()
 	int Round = 0;
 	bool isWin = false;
 	bool isLose = false;
-	Turn();//ÅÅĞò³öÊÖË³Ğò
+	BattleTurn();//ÅÅĞò³öÊÖË³Ğò
 	while (1) {
-		int atk = Turn[0];
+		int atk = *(Turn.begin());
 		if (!isLive(atk)) {//ËÀÍöµÄpop³öTurn¶ÓÁĞ
 			Turn.pop_front();
 			total--;
@@ -793,7 +969,7 @@ void Fight::ProceedFight()
 			}
 		}
 		else {
-			AttackTurn(atk);
+			AttackTurn(atk, Round);
 			if (isLose()) {
 				loseEXP();
 				break;
@@ -839,7 +1015,7 @@ void Fight::addTrophy() {
 	for (int i = 0; i < Enemy.size(); i++) {
 		enemy p_enemy = Enemy[i];
 
-		list<loot>::iteratror itm = p_enemy->LootList().begin();
+		list<loot>::iterator itm = p_enemy->LootList().begin();
 		while (itm != p_enemy->LootList().end()) {
 			if (rand() % 100 <= (*itm).second) {
 				m_player->pickItem((*itm).first);
