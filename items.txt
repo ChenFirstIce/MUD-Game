@@ -9,6 +9,7 @@
 [ATTACK]             5
 [CRITING]             20
 [DODGING]            20
+[SPEED]  0
 
 [ID]               2          
 [NAME]          天空之刃
