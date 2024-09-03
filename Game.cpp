@@ -5,7 +5,7 @@ using namespace std;
 
 void Game::Load(){
     ItemDatabase::Load();
-    PlayerDatabase::Load();
+    Player::addPlayer();
     RoomDatabase::LoadTemplates();
     RoomDatabase::LoadData();
     StoreDatabase::Load();
@@ -15,20 +15,19 @@ void Game::Load(){
 }
 
 void Game::Save() {
-    PlayerDatabase::Save();
     RoomDatabase::SaveData();
     EnemyDatabase::Save();
+    NPCDatabase::Save();
     Player::savePlayer();
 }
 
 //分界面
 bool Game::First(string input) {
     Player* m_player = Player::getPlayer();
-    Command cmd;
     CommandParser commandpar;
     CommandExecutor commandexec(m_player);
 
-    cmd = commandpar.Parse(input);
+    Command cmd = commandpar.Parse(input);
 
     if (cmd.action == "new") {
         RoomDatabase::LoadData("iRoomthings.txt");//最初的房间物品
@@ -43,32 +42,31 @@ bool Game::First(string input) {
     return false;
 }
 
-bool Game::Map() {
+void Game::Mape() {
     char input;
-    Story story(m_player);
     Player* m_player = Player::getPlayer();
-    Command cmd;
+    Story story(m_player);
     CommandParser commandpar;
     CommandExecutor commandexec(m_player);
-    Map map(m_player);
+    Map mape(m_player);
 
-    map.gotoc();
+    mape.gotoc();
 
     if (story.mapPoints() == 1) {
-        map.ShowMap1();
+        mape.ShowMap1();
         do {
-            cout << "请输入你的操作" << endl;
+            cout << "请输入你的操作(w向上，a向左，s向下，d向右，1进入房间)" << endl;
             cout << "> ";
             cin >> input;
-        } while (map.Move1(input));
+        } while (!mape.Move1(input));
     }
     else if (story.mapPoints() == 2) {
-        map.ShowMap1();
+        mape.ShowMap1();
         do {
             cout << "请输入你的操作" << endl;
             cout << "> ";
             cin >> input;
-        } while (map.Move1(input));
+        } while (!mape.Move1(input));
     }
 
     story.Run();
@@ -77,14 +75,13 @@ bool Game::Map() {
 void Game::Bag(){
     string input;
     Player* m_player = Player::getPlayer();
-    Command cmd;
     CommandParser commandpar;
     CommandExecutor commandexec(m_player);
 
     while (true) {
         system("cls");
 
-        PrintInventory();
+        commandexec.PrintInventory();
 
         cout << "请输入指令进行操作" << endl;
         cout << "> ";
@@ -94,14 +91,14 @@ void Game::Bag(){
             return;
         }
 
-        commandexec.Execute(input);
+        Command cmd = commandpar.Parse(input);
+        commandexec.Execute(cmd);
     }
 }
 
 void Game::NPC() {
     string input;
     Player* m_player = Player::getPlayer();
-    Command cmd;
     CommandParser commandpar;
     CommandExecutor commandexec(m_player);
 
@@ -119,7 +116,7 @@ void Game::NPC() {
 
         if (input == "cancel") return;
 
-        ta = commandexec.ChooseNPC(input);
+        ta = m_player->findNPC(input);
 
         if (ta != 0) {
             isRun = true;
@@ -140,7 +137,7 @@ void Game::NPC() {
 
         if (input == "cancel") return;
 
-        cmd = commandpar.Parse(input);
+        Command cmd = commandpar.Parse(input);
 
         if (cmd.action == "use") {
             isRun = commandexec.UseItemToNPC(cmd,ta);
@@ -168,13 +165,12 @@ void Game::NPC() {
 
 void Game::PrintPrime(){
     Player* m_player = Player::getPlayer();
-    Command cmd;
     CommandParser commandpar;
     CommandExecutor commandexec(m_player);
     
     m_player->showPlayer();
     if (m_player->currentRoom()->Data() != 0) {
-        CommandExesutor::StoreList(m_player->currentRoom()->Data());
+        CommandExecutor::StoreList(m_player->currentRoom()->Data());
     }
     else {
         commandexec.PrintRoom();

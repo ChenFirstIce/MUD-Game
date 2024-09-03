@@ -1,6 +1,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <iostream>
 #include "CommandParser.h"
 using namespace std;
 
@@ -21,8 +22,10 @@ Command CommandParser::Parse(const string& input) {
         argus += *i;
         argus += " ";
     }
-    argus -= " ";
-    cout << argus;//ºóÃæÔÙÉ¾µô
+
+    if (!argus.empty() && argus.back() == ' ') {
+        argus.pop_back();
+    }
 
     return Command(action, argus);
 }

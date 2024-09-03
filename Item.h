@@ -7,7 +7,7 @@ using namespace std;
 class Item : public Entity {
 public:
     Item() = default;
-    Item(string p_name, string p_enname, entityid p_id) :Entity(p_name, p_id)
+    Item(string p_name, string p_enname, entityid p_id) :Entity(p_name,p_enname ,p_id)
     {
         m_type = WEAPON;
         m_min = 0;

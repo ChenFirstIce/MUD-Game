@@ -11,10 +11,11 @@ using namespace std;
 class NPC :public Entity {
 public:
 	NPC();
-	//void showNPC();未完成
+	void showNPC();
 
 	//等级&经验
-	int getLevel() { return m_level; }
+	int Level() { return m_level; }
+	int Exp() { return m_exp; }
 	void addExp(int exp);
 	int needforLevel(int p_level);
 	int needforNextLevel();
@@ -61,8 +62,6 @@ public:
 	//输入输出重载
 	friend ostream& operator <<(ostream& p_stream, NPC& p);
 	friend istream& operator >>(istream& p_stream, NPC& p);
-
-	
 protected:
 	//信息(姓名在Entity里)
 	bool m_stats;

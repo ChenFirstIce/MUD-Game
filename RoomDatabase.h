@@ -5,7 +5,7 @@ using namespace std;
 
 class RoomDatabase :public EntityDatabase<Room> {
 public:
-	static void loadTemplates();
-	static void loadData(string filename = "Roomthings.txt");
-	static void saveData();
+	static void LoadTemplates();
+	static void LoadData(string filename = "Roomthings.txt");
+	static void SaveData();
 };

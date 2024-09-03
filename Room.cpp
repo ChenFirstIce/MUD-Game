@@ -122,20 +122,20 @@ void Room::loadData(istream& p_stream){
 void Room::saveData(ostream& p_stream){
 	p_stream << "[ITEMS] ";//房间物品
 
-	list<item>::iterator itr = m_items.begin();
-	while (itr != m_items.end()){
-		p_stream << *itr << " ";
-		itr++;
+	list<item>::iterator itr1 = m_items.begin();
+	while (itr1 != m_items.end()){
+		p_stream << *itr1 << " ";
+		itr1++;
 	}
 
 	p_stream << "0\n";
 
 	p_stream << "[NPCES] ";//房间NPC
 
-	list<npc>::iterator itr = m_npces.begin();
-	while (itr != m_items.end()){
-		p_stream << *itr << " ";
-		itr++;
+	list<npc>::iterator itr2 = m_npces.begin();
+	while (itr2 != m_npces.end()){
+		p_stream << *itr2 << " ";
+		itr2++;
 	}
 
 	p_stream << "0\n";
@@ -143,8 +143,4 @@ void Room::saveData(ostream& p_stream){
 	p_stream << "[MONEY] " << m_money << "\n";
 
 	p_stream << "[TASK]  " << m_task << "\n";
-}
-
-void chooseNPC(Player* m_player){
-	f
 }

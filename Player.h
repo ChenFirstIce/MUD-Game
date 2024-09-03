@@ -13,7 +13,7 @@ const int NPCNUM = 4;
 class Player{
 public:
 	//构造函数
-	static void creatPlayer(string p_name = "雌鹰", int type = 1);//
+	static void creatPlayer(string p_name = "雌鹰", string type = "LIGHT");//
 	static void deletePlayer();
 	static Player* getPlayer();
 	~Player() = default;
@@ -27,7 +27,7 @@ public:
 	int& Stats() { return m_statpoints; }
 
 	//等级&经验
-	int getLevel() { return m_level; }
+	int Level() { return m_level; }
 	void addExp(int exp);
 	int needforLevel(int p_level);
 	int needforNextLevel();
@@ -124,5 +124,5 @@ private:
 
 	//房间
 	int m_statpoints;
-	int m_room;//房间的ID
+	room m_room;//房间的ID
 };

@@ -1,6 +1,7 @@
 #include <sstream>
 #include <iostream>
 #include <cstdlib>
+#include <string>
 #include "Entity.h"
 #include "Player.h"
 #include "DatabasePointer.h"
@@ -8,6 +9,11 @@
 #include "CommandExecutor.h"
 #include "Fight.h"
 using namespace std;
+
+string lowerCase(string str) {// 全部转写成小写字母,但实参不改变
+	transform(str.begin(), str.end(), str.begin(), ::tolower);
+	return str;
+}
 
 void ShowTitle() {
 	cout << "\033[33m";
@@ -51,7 +57,7 @@ int main() {
 
 		cout << "> ";
 		cin >> input;
-		input = lowerCase(intput);
+		input = lowerCase(input);
 
 		isStart = game.First(input);
 	} while (!isStart);
@@ -69,11 +75,11 @@ int main() {
 
 		cout << "> ";
 		cin >> input;
-		input = lowerCase(intput);
+		input = lowerCase(input);
 
 		if (input == "map") {
 			system("cls");
-			game.Map();
+			game.Mape();
 			continue;
 		}
 		else if (input == "attack") {
@@ -90,7 +96,7 @@ int main() {
 			continue;
 		}
 		else {
-			cmd = commandpar.Parse(input);
+			Command cmd = commandpar.Parse(input);
 			commandexec.Execute(cmd);
 		}
 	}

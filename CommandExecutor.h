@@ -7,6 +7,7 @@
 #include "NPCDatabase.h"
 #include "Player.h"
 #include "NPC.h"
+#include "Entity.h"
 using namespace std;
 //未完成
 class CommandExecutor {
@@ -15,13 +16,13 @@ public:
     CommandExecutor(Player* player):m_player(player){}
     
     //解析命令并执行
-    void Execute(const Command& cmd);
+    bool Execute(const Command& cmd);
     
 
     //玩家登入登出
     void New();//应该增加一个克制关系的输出
-    void Continue();
-    void Quit(const Command& cmd);//更完善一点
+    bool Continue();
+    bool Quit(const Command& cmd);//更完善一点
 
     //玩家状态打印函数
     static void PrintHelp();//未完成
@@ -44,7 +45,7 @@ public:
     bool Sell(const Command& cmd);
 
     //NPC互动函数
-    npc ChooseNPC(string p_item);
+    /*npc ChooseNPC(string p_item);*/
     bool UseItemToNPC(const Command& cmd, npc& p_npc);
     bool RemoveItemFromNPC(const Command& cmd, npc& p_npc);
     bool ShowFace(npc p_npc);

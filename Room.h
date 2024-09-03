@@ -16,7 +16,7 @@ public:
 	string& Description() { return m_desc; }//会变
 	entityid& Adjacent(int p_dir) { return m_rooms[p_dir]; }
 	RoomType getRoomType(string p_arr);
-	bool& Task{ return m_task; }
+	bool& Task(){ return m_task; }
 
 		//敌人
 	enemytemplate& spawnWhichEnemy() { return m_enemy; }
@@ -25,7 +25,6 @@ public:
 
 	//npc
 	list<npc>& Npces() { return m_npces; }
-	void chooseNPC(Player* m_player);
 
 	//物品信息
 	list<item>& Item() { return m_items; }
@@ -35,7 +34,7 @@ public:
 	void addEnemy(enemy p_enemy);
 	void removeEnemy(enemy p_enemy);
 	void addNPC(npc p_npc);
-	void removeNPC(npc p_npc)
+	void removeNPC(npc p_npc);
 
 	//物品函数
 	item findItem(string& p_item);

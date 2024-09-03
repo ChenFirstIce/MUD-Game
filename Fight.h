@@ -1,5 +1,9 @@
 #pragma once
 #include <vector>
+#include "DatabasePointer.h"
+#include "Player.h"
+#include "Enemy.h"
+#include "Room.h"
 using namespace std;
 
 class Fight {
@@ -7,7 +11,7 @@ public:
 	Fight(Player* m_player);//入阵
 	
 	//出手顺序
-	void Turn();
+	void BattleTurn();
 
 	//前排
 	int Front1();
@@ -26,7 +30,7 @@ public:
 	void ShowMe3();
 	void ShowMe4();
 	void ShowBattle();
-	int Choice(int Round, int atk);
+	int Choice(int& Round, int atk);
 
 	//属性克制
 	int Restrain1(int p_atk, int p_target);

@@ -14,6 +14,17 @@ NPC::NPC(){
 	cout << "NPC" << m_name << "创造成功…" << endl;
 }
 
+void NPC::showNPC() {
+	cout << "---------------------------------- NPC信息 ----------------------------------" << endl;
+	cout << " 名字:          " << m_name << "\033[35m(" << m_enname << ")\033[0m" << endl;
+	cout << " 等级:          " << m_level << endl;
+	cout << " 经验:          " << right << setw(4) << m_exp << " / " << right << setw(4) << needforLevel(m_level + 1) << endl;
+	cout << " 攻击属性:      " << getType() << endl;
+	cout << " 暴击率：       " << getAttr(CRITING) << endl;
+	cout << " 闪避率：       " << getAttr(DODGING) << endl;
+	cout << "--------------------------------------------------------------------------------\n\n";
+}
+
 //等级经验
 void NPC::addExp(int exp){
 	m_exp += exp;
@@ -217,7 +228,7 @@ ostream& operator<<(ostream& p_stream, NPC& p) {
 
 istream& operator>>(istream& p_stream, NPC& p) {
 	string temp;
-	int type;
+	string type;
 
 	p_stream >> temp >> ws;
 	getline(p_stream, p.m_name);

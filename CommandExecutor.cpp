@@ -3,6 +3,11 @@
 #include <sstream>
 using namespace std;
 
+string lowerCase(string str) {// 全部转写成小写字母,但实参不改变
+    transform(str.begin(), str.end(), str.begin(), ::tolower);
+    return str;
+}
+
 //需要完善NPC的界面和逻辑部分
 bool CommandExecutor::Execute(const Command& cmd) {
     if (cmd.action == "drop") {
@@ -39,7 +44,8 @@ bool CommandExecutor::Execute(const Command& cmd) {
 //玩家登入登出
 void CommandExecutor::New() {
     string name;
-    int type;
+    int choice = 0;
+    string type;
 
     if (Player::getPlayer() != nullptr) {
         Player::deletePlayer();
@@ -53,8 +59,23 @@ void CommandExecutor::New() {
     cout << "> ";
     cin >> type;
 
-    //增加元素选择
-    m_player = Player::creatPlayer(name, type);
+    switch (choice) {
+    case 1:
+        type = "LIGHT";
+        break;
+    case 2:
+        type = "GOLD";
+        break;
+    case 3:
+        type = "FIRE";
+        break;
+    case 4:
+        type = "GRASS";
+        break;
+    }
+
+   Player::creatPlayer(name, type);
+   m_player = Player::getPlayer();
 }
 
 bool CommandExecutor::Continue() {
@@ -114,7 +135,12 @@ void CommandExecutor::PrintInventory(){
 }
 
 void CommandExecutor::PrintMyNPC(){
+    list<npc>::iterator itr = m_player->Npces().begin();
 
+    while (itr != m_player->Npces().end()) {
+        (*itr)->showNPC();
+        cout << endl;
+    }
 }
 
 //物品互动函数
@@ -146,7 +172,7 @@ bool CommandExecutor::UseItem(const Command& cmd){
 
     case ARMOR:
         m_player->useArmor(i);
-        cout << "穿上" << itm.Name() < endl;
+        cout << "穿上" << itm.Name() << endl;
 
         return true;
 
@@ -157,7 +183,7 @@ bool CommandExecutor::UseItem(const Command& cmd){
 
         return true;
     case EXP:
-        m_player->addEXP(i);
+        m_player->addExp(i);
         m_player->dropItem(i);
         cout << "使用" << itm.Name() << endl;
 
@@ -171,18 +197,18 @@ bool CommandExecutor::RemoveItem(const Command& cmd){
     string p_item = cmd.argus;
     p_item = lowerCase(p_item);
 
-    if (p_item == "weapon" && m_player.Weapon() != 0)
+    if (p_item == "weapon" && m_player->Weapon() != 0)
     {
-        cout << "卸下" << m_player.Weapon()->Nmae() << endl;
-        m_player.RemoveWeapon();
+        cout << "卸下" << m_player->Weapon()->Name() << endl;
+        m_player->removeWeapon();
 
         return true;
     }
 
-    if (p_item == "armor" && m_player.Armor() != 0)
+    if (p_item == "armor" && m_player->Armor() != 0)
     {
-        cout << "脱下" << m_player.Armor()->Name() << endl;
-        m_player.RemoveArmor();
+        cout << "脱下" << m_player->Armor()->Name() << endl;
+        m_player->removeArmor();
 
         return true;
     }
@@ -219,7 +245,7 @@ void CommandExecutor::PrintRoom(){
     stringstream temp;
     int count = 0;
 
-    temp << p_room->Description() << "\n\n";
+    /*temp << p_room->Description() << "\n\n";*/
 
     //房间金钱
     count = 0;
@@ -232,8 +258,8 @@ void CommandExecutor::PrintRoom(){
 
     //物品
     temp << "物品：  ";
-    list<item>::iterator itemitr = p_room->Items().begin();
-    while (itemitr != p_room->Items().end())
+    list<item>::iterator itemitr = p_room->Item().begin();
+    while (itemitr != p_room->Item().end())
     {
         count++;
         temp << (*itemitr)->Name() << ", ";
@@ -242,14 +268,15 @@ void CommandExecutor::PrintRoom(){
 
     if (count > 0){
         string foo = temp.str();
+        temp.str("");
         temp.clear();
-        foo.erase(temp.size() - 2, 2);
+        foo.erase(foo.size() - 2, 2);
         temp << foo << "\n\n";
     }
 
     //敌人
     temp <<  "敌人：  ";
-    cout = 0;
+    count = 0;
     list<enemy>::iterator enemyitr = p_room->Enemies().begin();
     while (enemyitr != p_room->Enemies().end()){
         temp << (*enemyitr)->Name() << " (血量:   " << (*enemyitr)->HitPoints() << " )" << ", ";
@@ -259,8 +286,9 @@ void CommandExecutor::PrintRoom(){
 
     if (count > 0){
         string foo = temp.str();
+        temp.str("");
         temp.clear();
-        foo.erase(temp.size() - 2, 2);
+        foo.erase(foo.size() - 2, 2);
         temp << foo << "\n\n";
     }
 
@@ -278,14 +306,14 @@ bool CommandExecutor::GetItem(const Command& cmd){
     }
 
     if (p_item[0] == '￥'){
-        sstream p_money; 
+        stringstream p_money; 
         money m;
 
         p_item.erase(0, 1);
         p_money << p_item;
         p_money >> m;
        
-        if (m > m_player->CurrentRoom()->Money())
+        if (m > m_player->currentRoom()->Money())
         {
             cout << "没有那么多钱，少做梦！" << endl;
 
@@ -293,8 +321,8 @@ bool CommandExecutor::GetItem(const Command& cmd){
         }
         else
         {
-            m_player.Money() += m;
-            m_player->CurrentRoom()->Money() -= m;
+            m_player->Money() += m;
+            m_player->currentRoom()->Money() -= m;
             cout << "捡起 ￥" << m << "元" << endl;
             cout << "tips：劝你交到警察局:)" << endl;
         }
@@ -302,7 +330,7 @@ bool CommandExecutor::GetItem(const Command& cmd){
         return true;
     }
 
-    item i = m_player->CurrentRoom()->FindItem(p_item);
+    item i = m_player->currentRoom()->findItem(p_item);
 
     if (i == 0){
         cout << "这里没你想要的东西。" << endl;
@@ -316,7 +344,7 @@ bool CommandExecutor::GetItem(const Command& cmd){
         return false;
     }
 
-    m_player->CurrentRoom()->removeItem(i);
+    m_player->currentRoom()->removeItem(i);
     cout << "你从地上捡起满是灰尘的" << i->Name() << endl;
 
     return true;
@@ -332,7 +360,7 @@ bool CommandExecutor::DropItem(const Command& cmd){
     }
 
     if (p_item[0] == '$'){
-        sstream p_money;
+        stringstream p_money;
         money m;
 
         p_item.erase(0, 1);
@@ -382,48 +410,50 @@ void CommandExecutor::StoreList(entityid p_store){//格式控制未完成
     Store::iterator itr = s.begin();
     while (itr != s.end())
     {
-        cout << left << setw(40) << itr->Name() << "| ";
-        cout << left << setw(4) << itr->Price() << '\n';
+        cout << left << setw(40) << (*itr)->Name() << "| ";
+        cout << left << setw(4) << (*itr)->Price() << '\n';
         itr++;
     }
     cout << "--------------------------------------------------------------------------------\n";
         
 }
 
-void CommandExecutor::Buy(const Command& cmd){
+bool CommandExecutor::Buy(const Command& cmd){
     string p_item = cmd.argus;
     Player& p = *m_player;
     Store& s = StoreDatabase::get(p.currentRoom()->Data());
 
     if (cmd.argus.empty()) {
         cout << "啥？" << endl;
-        return;
+        return false;
     }
 
     item i = s.find(p_item);
     if (i == 0)
     {
         cout << "这里没有你想要的东西" << endl;
-        return;
+        return false;
     }
 
     if (p.Money() < i->Price())
     {
         cout << "……诶呀，有点担负不起" << endl;
-        return;
+        return false;
     }
 
     if (!p.pickItem(i))
     {
         cout << "背包已经装不下了！" << endl;
-        return;
+        return false;
     }
 
     p.Money() -= i->Price();
     cout << "购入" << p_item << ",已经放入背包了！" << endl;
+    
+    return true;
 }
 
-void CommandExecutor::Sell(const Command& cmd){
+bool CommandExecutor::Sell(const Command& cmd){
     string p_item = cmd.argus;
     Player& p = *m_player;
     Store& s = StoreDatabase::get(p.currentRoom()->Data());
@@ -451,31 +481,25 @@ void CommandExecutor::Sell(const Command& cmd){
     return true;
 }
 
-//NPC互动函数
-npc CommandExecutor::ChooseNPC(string p_item){
-    int id = m_player->findNPC(p_item);
+////NPC互动函数
+//npc CommandExecutor::ChooseNPC(string p_item){
+//    int id = m_player->findNPC(p_item);
+//
+//    if (id = 0) {
+//        cout << "找不到他。\n" << "他是你的谁？" << endl;
+//        return 0;
+//    }
+//
+//    cout << "> " << endl;
+//    cin >>
+//
+//    return static_cast<npc>(id);
+//}
 
-    if (id = 0) {
-        cout << "找不到他。\n" << "他是你的谁？" << endl;
-        return 0;
-    }
-
-    cout << "> " << endl;
-    cin >>
-
-    return id;
-}
-
-bool CommandExecutor::UseItemToNPC(const Command& cmd, npc& p_npc){//未完成
+bool CommandExecutor::UseItemToNPC(const Command& cmd, npc& m_npc){
+    //检验物品在不在
     string p_item = cmd.argus;
 
-    if (cmd.argus.empty()) {
-        cout << "啥？" << endl;
-
-        return false;
-    }
-
-    //检验物品在不在
     int index = m_player->getItemIndex(p_item);
 
     if (index == 0) {
@@ -484,34 +508,36 @@ bool CommandExecutor::UseItemToNPC(const Command& cmd, npc& p_npc){//未完成
         return false;
     }
     //判断装备有没有被装备过
-    if (itm == m_player->Weapon()||itm == m_player->Armor()) {
+    if (index == m_player->Weapon()||index == m_player->Armor()) {
         cout << "你已经装备过来，物品可不会分身……" << endl;
 
         return false;
     }
 
-    switch (itm.Type())
+    item itm = m_player->getItem(index);
+
+    switch (itm->Type())
     {
     case WEAPON:
         m_npc->useWeapon(itm);
-        cout << "给" << m_npc->Name() << "装备上" << itm.Name() << endl;
+        cout << "给" << m_npc->Name() << "装备上" << itm->Name() << endl;
 
         return true;
     case ARMOR:
         m_npc->useArmor(itm);
-        cout << "给" << m_npc->Name() << "穿上" << itm.Name() < endl;
+        cout << "给" << m_npc->Name() << "穿上" << itm->Name() << endl;
 
         return true;
     case HEALING:
         m_npc->useHealing(itm);
         m_player->dropItem(index);
-        cout << "给" << m_npc->Name() << "使用" << itm.Name() << endl;
+        cout << "给" << m_npc->Name() << "使用" << itm->Name() << endl;
 
         return true;
     case EXP:
-        m_npc->addEXP(itm);
+        m_npc->addExp(itm);
         m_player->dropItem(index);
-        cout << <<"给" << m_npc->Name() << "使用" << itm.Name() << endl;
+        cout <<"给" << m_npc->Name() << "使用" << itm->Name() << endl;
 
         return true;
     default:
@@ -522,20 +548,12 @@ bool CommandExecutor::UseItemToNPC(const Command& cmd, npc& p_npc){//未完成
 }
 
 bool CommandExecutor::RemoveItemFromNPC(const Command& cmd, npc& p_npc){
+    //判断有没有装备过
     string p_item = cmd.argus;
 
-    if (cmd.argus.empty()) {
-        cout << "啥？" << endl;
-
-        return false;
-    }
-
-    npc p_npc = ChooseNPC(cmd.argus);
-
-    //判断有没有装备过
     if (p_item == "武器" && p_npc->Weapon() != 0)
     {
-        cout << "卸下" << p_npc->Weapon()->Nmae() << endl;
+        cout << "卸下" << p_npc->Weapon()->Name() << endl;
         p_npc->removeWeapon();
 
         return true;
@@ -551,7 +569,7 @@ bool CommandExecutor::RemoveItemFromNPC(const Command& cmd, npc& p_npc){
 }
 
 bool CommandExecutor::ShowFace(npc p_npc) {
-    int id = npc;
+    int id = p_npc;
 
     if (p_npc == 1) {
 
@@ -587,6 +605,7 @@ bool CommandExecutor::ShowFace(npc p_npc) {
         cout << "EGGEEEEEE#EL,.. j#t,     j,     .tGi,,,,GWWKWWWWWW" << endl;
         cout << "EEEEEEE#it,,.   j#i     ####    .j#i ,,,jiLL#KKWWW" << endl;
         cout << "EEEEKWj,LLE     tWW    WGLGK#   .tWL    .L.tttiWKW" << endl;
+        return true;
     }
     else if (p_npc == 2) {
 
@@ -622,6 +641,7 @@ bool CommandExecutor::ShowFace(npc p_npc) {
         cout << "    &$$$%%$%@%%##!. *&%#    ;$@*****@*o*******o$$" << endl;
         cout << "   $$$$$%%%%$%%%*   $%%! ... *****#*******$@*o**%" << endl;
         cout << "  @$$%%%%%%%%%%%@.  #&&..   *@*****@*****$%%*%**%" << endl;
+        return true;
     }
     else if (p_npc == 3) {
         cout << "                GEEGjLjEWWELtEE                 " << endl;
@@ -652,7 +672,10 @@ bool CommandExecutor::ShowFace(npc p_npc) {
         cout << "       ijjKjWWGGKEi WL..jtEK,tLLEtttWEGjjjGj      " << endl;
         cout << "      KtWtttjttGGL, WKWjKjj.  #LEtttjjLtjjtjG#K   " << endl;
         cout << "      EEttttttt#LE  ,GEEEE   .GLEttttEGttttjWKGW  " << endl;
+        return true;
     }
+
+    return false;
 }
 
 

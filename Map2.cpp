@@ -39,18 +39,18 @@ void Map::ShowMap2()
 	cout << "| 废弃工厂 |   商店   |  咖啡馆  |" << endl;
 	cout << "|     " << pos[0][0] << "    |    " << pos[0][1] << "     |    " << pos[0][2] << "     |" << endl;
 	cout << "|__________|__________|__________|" << endl;
-	cout << "您现在的位置为" << mapName2[position] << endl;
+	cout << "您现在的位置为" << mapName[position] << endl;
 	cout << "033[0m";
 }
 
-void Map::Move2(char order)
+bool Map::Move2(char order)
 {
 	pos[dx][dy] = ' ';
 	switch (order)
 	{
 	case 'w': {
 		cout << "移动失败" << endl;
-		return false;
+		break;
 	}
 	case 'a': {
 		if (position == 8 || position == 9) {
@@ -60,13 +60,12 @@ void Map::Move2(char order)
 		else
 		{
 			cout << "移动失败" << endl;
-			return false;
 		}
 		break;
 	}
 	case 's': {
 		cout << "移动失败" << endl;
-		return false;
+		break;
 	}
 	case 'd': {
 		if (position == 7 || position == 8) {
@@ -76,12 +75,14 @@ void Map::Move2(char order)
 		else
 		{
 			cout << "移动失败" << endl;
-			return false;
 		}
-		
+		break;
 	}
+	case '1':
+		m_player->currentRoom() = position;
+		return 1;
 	default:
-		return false;
+		break;
 	}
 	for (int i = 0; i < 3; i++)
 	{
@@ -90,7 +91,7 @@ void Map::Move2(char order)
 	pos[dx][dy] = '*';
 	m_player->currentRoom() = position;
 
-	return true;
+	return 0;
 }
 
 void Map::gotoc() {

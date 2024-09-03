@@ -55,7 +55,7 @@ void EnemyTemplate::setType(string type) {
 istream& operator>>(istream& p_stream, EnemyTemplate& t)
 {
     string temp;
-    int type;
+    string type;
 
     p_stream >> temp >> ws;  
     getline(p_stream, t.m_name);//名字
@@ -151,7 +151,7 @@ ostream& operator<<(ostream& p_stream, Enemy& t){
 istream& operator>>(istream& p_stream, Enemy& t)
 {
     string temp;
-    int type;
+    string type;
 
     p_stream >> temp >> t.m_template;
     p_stream >> temp >> type;//后来增加的

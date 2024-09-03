@@ -52,21 +52,21 @@ void Map::ShowMap1()
 
 	cout << "            _____________               _____________" << endl;
 	cout << "           |             |             |             |" << endl;
-	cout << "           |   警察局    |             |   青岛北站  |" << endl;
+	cout << "           |   望海苑    |             |   青岛北站  |" << endl;
 	cout << "           |     "<<pos[0][0]<<"       |             |     "<<pos[0][2]<<" | " << endl;
 	cout << "           |_____________|_____________|_____________|" << endl;
 	cout << "           |             |             |             |" << endl;
-	cout << "           |   望海餐厅  |  信息南楼   |   校医院    |" << endl;
+	cout << "           |   望海餐厅  |  信息南楼   |   图书馆    |" << endl;
 	cout << "           |     "<<pos[1][0]<<"       |     "<<pos[1][1]<<"       |     "<<pos[1][2]<<"| " << endl;
 	cout << "           |_____________|_____________|_____________|" << endl;
 	cout << "                         |             |" << endl;
 	cout << "                         |     操场    |" << endl;
 	cout << "                         |     "<<pos[2][1]<<" | " << endl;
 	cout << "                         |_____________|" << endl;
-	cout << "您现在的位置为" << mapName1[position] << endl;
+	cout << "您现在的位置为" << mapName[position] << endl;
 }
 
-void Map::Move1(char order)
+bool Map::Move1(char order)
 {
 	pos[dx][dy] = ' ';
 	switch (order)
@@ -79,7 +79,6 @@ void Map::Move1(char order)
 		else
 		{
 			cout << "移动失败" << endl;
-			return false;
 		}
 		break;
 	}
@@ -94,7 +93,6 @@ void Map::Move1(char order)
 		else
 		{
 			cout << "移动失败" << endl;
-			return false;
 		}
 		break;
 	}
@@ -106,7 +104,6 @@ void Map::Move1(char order)
 		else
 		{
 			cout << "移动失败" << endl;
-			return false;
 		}
 		break;
 	}
@@ -121,12 +118,14 @@ void Map::Move1(char order)
 		else
 		{
 			cout << "移动失败" << endl;
-			return false;
 		}
 		break;
 	}
+	case '1':
+		m_player->currentRoom() = position;
+		return 1;
 	default:
-		return false;
+		break;
 	}
 	for (int i = 0; i < 3; i++)
 	{
@@ -136,7 +135,6 @@ void Map::Move1(char order)
 		}
 	}
 	pos[dx][dy] = '*';
-	m_player->currentRoom() = position;
 
-	return true;
+	return 0;
 }

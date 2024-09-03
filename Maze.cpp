@@ -2,7 +2,7 @@
 #include <windows.h>
 #include <conio.h>
 #include "Maze.h"
-
+using namespace std;
 
 char a[50][50] = { "############",
 				"#O#    #   #",
@@ -28,7 +28,7 @@ void Maze::Welcome()//欢迎界面
 {
 	cout << "\n\n           走 迷 宫";
 	cout << "\n\n        请按任意键开始";
-	getch();
+	_getch();
 	system("cls");
 }
 
@@ -49,7 +49,7 @@ void Maze::Set()//设置光标到初始位置
 		puts(a[i]);
 	while (1)
 	{
-		ch = getch();
+		ch = _getch();
 		if (ch == 's')//下
 		{
 			if (a[x + 1][y] == ' ')

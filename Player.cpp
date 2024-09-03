@@ -8,7 +8,7 @@ Player* Player::Instance = nullptr;
 
 Player::Player(string p_name, AttackType p_type) :name(p_name),m_type(p_type) {
     m_level = 1;
-    m_room = 0;
+    m_room = 1;
     m_task = 0;
     m_money = 100;
     m_items = 0;
@@ -19,7 +19,7 @@ Player::Player(string p_name, AttackType p_type) :name(p_name),m_type(p_type) {
     cout << "创建玩家" << name << "成功…" << endl;
 }
 
-void Player::creatPlayer(string p_name, int type){
+void Player::creatPlayer(string p_name, string type){
     if (Instance == nullptr) {
         Instance = new Player(p_name);
         Instance->setType(type);
@@ -48,7 +48,7 @@ void Player::showPlayer() {//未完成
     cout << "---------------------------------- 玩家信息 ----------------------------------" << endl;
     cout << " 名字:          " << name << endl;
     cout << " 等级:          " << m_level << endl;
-    cout << " 经验:          " << right << setw(4) << m_exp << " / " << right << setw(4) << NeedForLevel(m_level + 1) << endl;
+    cout << " 经验:          " << right << setw(4) << m_exp << " / " << right << setw(4) << needforLevel(m_level + 1) << endl;
 
     
     cout << "--------------------------------------------------------------------------------\n\n";
@@ -270,7 +270,7 @@ void Player::addNPC(){
 
     cout << "你可以选择解救:" << endl;
 
-    for (int i = 1; i < 3) {
+    for (int i = 1; i < 3;i++) {
         p_npc = i;
 
         if (!p_npc->Stats()) {
@@ -298,7 +298,7 @@ void Player::addNPC(){
 
     p_npc = id;
 
-    while (choose < 1 || choose > 3 || p_npc->Task()) {
+    while (id < 1 || id > 3 || p_npc->Stats()) {
         cout << "错误！请重新输入！" << endl;
         cin.clear();
         cin.ignore(cin.rdbuf()->in_avail());
@@ -382,7 +382,7 @@ ostream& operator<<(ostream& p_stream, Player& p){
 
 istream& operator>>(istream& p_stream, Player& p){
     string temp;
-    int type;
+    string type;
 
     p_stream >> temp >> ws;
     getline(p_stream, p.name);
