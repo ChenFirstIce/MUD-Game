@@ -7,8 +7,8 @@
 [PRICE]              10
 [MAXHITPOINTS]      100
 [ATTACK]             5
-[CRITING]             2
-[DODGING]            2
+[CRITING]             20
+[DODGING]            20
 
 [ID]               2          
 [NAME]          天空之刃
@@ -19,8 +19,8 @@
 [PRICE]              20
 [MAXHITPOINTS]      100
 [ATTACK]             8
-[CRITING]             2
-[DODGING]            3
+[CRITING]             20
+[DODGING]            30
 
 [ID]                3          
 [NAME]           铁剑
@@ -31,8 +31,8 @@
 [PRICE]              15
 [MAXHITPOINTS]      100
 [ATTACK]             10
-[CRITING]             2
-[DODGING]            3
+[CRITING]             20
+[DODGING]            30
 
 [ID]                4
 [NAME]            UZI
@@ -43,8 +43,8 @@
 [PRICE]              20
 [MAXHITPOINTS]       100
 [ATTACK]             8
-[CRITING]             3
-[DODGING]            2
+[CRITING]             30
+[DODGING]            20
 
 [ID]                5
 [NAME]          火之法杖
@@ -55,8 +55,8 @@
 [PRICE]              25
 [MAXHITPOINTS]       100
 [ATTACK]             18
-[CRITING]             3
-[DODGING]            2
+[CRITING]             30
+[DODGING]            20
 
 [ID]                  6
 [NAME]           SCAR突击步枪
@@ -67,8 +67,8 @@
 [PRICE]              30
 [MAXHITPOINTS]      100
 [ATTACK]             30
-[CRITING]             3
-[DODGING]            4
+[CRITING]             30
+[DODGING]            40
 
 [ID]                    7
 [NAME]              RPD轻机枪
@@ -79,8 +79,8 @@
 [PRICE]              35
 [MAXHITPOINTS]       200
 [ATTACK]             40
-[CRITING]             3
-[DODGING]            2
+[CRITING]             30
+[DODGING]            20
 
 [ID]                       8
 [NAME]             圣光守护者铠甲
@@ -191,8 +191,8 @@
 [PRICE]              0
 [MAXHITPOINTS]       200
 [ATTACK]             20
-[CRITING]             3
-[DODGING]            2
+[CRITING]             30
+[DODGING]            20
 
 [ID]                17
 [NAME]         二级怪的武器 
@@ -203,8 +203,8 @@
 [PRICE]              20
 [MAXHITPOINTS]       300
 [ATTACK]             30
-[CRITING]             4
-[DODGING]            5
+[CRITING]             40
+[DODGING]            50
 
 [ID]                18
 [NAME]         四级怪的武器 
@@ -215,8 +215,8 @@
 [PRICE]              0
 [MAXHITPOINTS]       1000
 [ATTACK]             50
-[CRITING]             7
-[DODGING]            2
+[CRITING]             30
+[DODGING]            20
 
 [ID]                19
 [NAME]         很美味的毒药
@@ -252,8 +252,8 @@
 [PRICE]              0
 [MAXHITPOINTS]       1000
 [ATTACK]             40
-[CRITING]             8
-[DODGING]            7
+[CRITING]             40
+[DODGING]            20
 
 
 
