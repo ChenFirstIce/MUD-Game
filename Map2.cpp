@@ -7,25 +7,22 @@ using namespace std;
 
 void Map::setPosition2(int p) {//±àºÅ
 	position = p;
-	if (p == 1) {
+	if (p == 7) {
 		dx = 0;
 		dy = 0;
 	}
-	if (p == 2) {
+	if (p == 8) {
 		dx = 0;
 		dy = 1;
 	}
-	if (p == 3) {
+	if (p == 9) {
 		dx = 0;
 		dy = 2;
 	}
 
 	for (int i = 0; i < 3; i++)
 	{
-		for (int j = 0; j < 3; j++)
-		{
-			pos[i][j] = ' ';
-		}
+			pos[0][i] = ' ';
 	}
 	pos[dx][dy] = '*';
 }
@@ -79,7 +76,7 @@ void Map::Move2(char order)
 		cout << "ÒÆ¶¯Ê§°Ü" << endl;
 	}
 	case 'a': {
-		if (position == 2 || position == 3) {
+		if (position == 8 || position == 9) {
 			dy--;
 			position--;
 		}
@@ -93,7 +90,7 @@ void Map::Move2(char order)
 		cout << "ÒÆ¶¯Ê§°Ü" << endl;
 	}
 	case 'd': {
-		if (position == 1 || position == 2) {
+		if (position == 7 || position == 8) {
 			dy++;
 			position++;
 		}
@@ -106,6 +103,12 @@ void Map::Move2(char order)
 	default:
 		break;
 	}
+	for (int i = 0; i < 3; i++)
+	{
+			pos[0][i] = ' ';
+	}
+	pos[dx][dy] = '*';
+	m_player->currentRoom() = position;
 }
 
 int Map::getPosition2()

@@ -97,7 +97,6 @@ void Map::Move1(char order)
 		if (position == 3 || position == 5 || position == 6) {
 			dx--;
 			position++;
-			m_player->currentRoom() = position;
 		}
 		else
 		{
@@ -109,11 +108,9 @@ void Map::Move1(char order)
 		if (position == 5 || position == 4) {
 			dy--;
 			position++;
-			m_player->currentRoom() = position;
 		}
 		else if (position == 5) {
 			position == 2;
-			m_player->currentRoom() = position;
 		}
 		else
 		{
@@ -125,7 +122,6 @@ void Map::Move1(char order)
 		if (position == 1 || position == 2 || position == 4 || position == 7 || position == 8 || position == 9) {
 			dx++;
 			position--;
-			m_player->currentRoom() = position;
 		}
 		else
 		{
@@ -137,11 +133,9 @@ void Map::Move1(char order)
 		if (position == 3 || position == 5) {
 			dy++;
 			position--;
-			m_player->currentRoom() = position;
 		}
 		else if (position == 2) {
 			position == 5;
-			m_player->currentRoom() = position;
 		}
 		else
 		{
@@ -152,5 +146,13 @@ void Map::Move1(char order)
 	default:
 		break;
 	}
-
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			pos[i][j] = ' ';
+		}
+	}
+	pos[dx][dy] = '*';
+	m_player->currentRoom() = position;
 }
