@@ -4,6 +4,7 @@
 [HITPOINTS]         20
 [DODGING]           2
 [STRIKEDAMAGE]      5
+[SPEED]   10
 [EXP]               10
 [WEAPON]           1
 [TARGET]           1
@@ -19,6 +20,7 @@
 [HITPOINTS]         30
 [DODGING]           2
 [STRIKEDAMAGE]      8
+[SPEED]   13
 [EXP]               20
 [WEAPON]           2
 [TARGET]           2
@@ -33,6 +35,7 @@
 [HITPOINTS]         40
 [DODGING]           4
 [STRIKEDAMAGE]      10
+[SPEED]   17
 [EXP]               30
 [WEAPON]           16
 [TARGET]           3
@@ -48,6 +51,7 @@
 [HITPOINTS]         60
 [DODGING]           7
 [STRIKEDAMAGE]      20
+[SPEED]   19
 [EXP]               50
 [WEAPON]           17
 [TARGET]           3
@@ -63,6 +67,7 @@
 [HITPOINTS]         80
 [DODGING]           7
 [STRIKEDAMAGE]      30
+[SPEED]   20
 [EXP]               70
 [WEAPON]           21
 [TARGET]           3
@@ -78,6 +83,7 @@
 [HITPOINTS]         1000
 [DODGING]           10
 [STRIKEDAMAGE]      40
+[SPEED]   25
 [EXP]               100
 [WEAPON]           18
 [TARGET]           3
@@ -93,6 +99,7 @@
 [HITPOINTS]         20
 [DODGING]           2
 [STRIKEDAMAGE]      5
+[SPEED]   30
 [EXP]               10
 [WEAPON]           1
 [TARGET]           4
