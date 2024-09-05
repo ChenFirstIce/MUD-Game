@@ -1,9 +1,12 @@
 #include "stdc++.h"
 #include <Windows.h>
+#include <cctype>
 #include "Maze.h"
 #include "Story.h"
 #include "Fight.h"
 using namespace std;
+
+extern string lowerCase(string str);
 
 void Story::showStory(int id) {
 
@@ -55,7 +58,7 @@ void Story::showStory(int id) {
 		system("cls");
 		cout << "\033[0m`";
 	}
-	
+
 	else if (id == 3) {
 		HANDLE hConsole;
 		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -70,7 +73,7 @@ void Story::showStory(int id) {
 		system("pause");
 		system("cls");
 		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-		background = "    不一会，总裁坐到了你的面前，说：“这栋楼被我承包了，我已经让闲杂人等都离开了，现在只有我们两个，我有很重要的事情告诉你。总裁说到：“XX，我们是时空局派来拯救你的，只有你和我们三个中的一个恋爱，才能拯救你的未来！”你问到：“你们三个是合伙来骗我吗，这也太无聊了吧。”";
+		background = "    不一会，总裁坐到了你的面前，说：“这栋楼被我承包了，我已经让闲杂人等都离开了，现在只有我们两个，我有很重要的事情告诉你。总裁说到：“我们是时空局派来拯救你的，只有你和我们三个中的一个恋爱，才能拯救你的未来！”你问到：“你们三个是合伙来骗我吗，这也太无聊了吧。”";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
 			cout << background[i];
@@ -94,7 +97,7 @@ void Story::showStory(int id) {
 		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 		SetConsoleTextAttribute(hConsole, 14);
 		system("cls");
-		string background = "    叮铃铃……，你的手机铃声响了，你接通了这个陌生电话，里面传来一个自称是缅甸绑匪的男人的声音：“我是来自M78星云，光之国的MINMIN，我们的星球距离你们地球有300万光年。那天的三个男人是我们星球的叛徒，他们想要改变你的命运，不惜违法了我们星球的法律，穿越虫洞来到了你们星球。不过他们现在就在缅甸z城被我绑着，快来拯救他们吧，成功的话我会给你三个亿的奖励并且开具一份实习证明，最后再让你听听他们绝望的声音吧！”“别来！这里实在是太危险了！”，你听到他们三人齐声喊道。";
+		string background = "    叮铃铃……，你的手机铃声响了，你接通了这个陌生电话，里面传来一个自称是缅甸绑匪的男人的声音：“我是来自M78星云，光之国的MINMIN，我们的星球距离你们地球有300万光年。那天的三个男人是我们星球的叛徒，他们想要改变你的命运，不惜违法了我们星球的法律，穿越虫洞来到了你们星球。不过他们现在就在缅甸z城被我绑着，快来拯救他们吧，成功的话我会给你三个亿的奖励并且开具一份实习证明，最后再让你听听他们绝望的声音吧！”\n    “别来！这里实在是太危险了！”，你听到他们三人齐声喊道。";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
 			cout << background[i];
@@ -103,7 +106,14 @@ void Story::showStory(int id) {
 		system("pause");
 		system("cls");
 		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-		background = "    原来是他们三人接到了AI合成的你的被绑架录像。教授说：“实验暂停，我去救人！”总裁说：“会议暂停，我去救人！”影帝说：“拍戏暂停，我去救人！”结果可想而知，三人全军覆没。";
+		background = "    原来是他们三人接到了AI合成的你的被绑架录像。";
+		for (int i = 0; i < background.length(); i++) {
+			Sleep(10);
+			cout << background[i];
+		}
+		cout << endl;
+		system("pause");
+		background = "    教授说：“实验暂停，我去救人！”\n    总裁说：“会议暂停，我去救人！”\n    影帝说：“拍戏暂停，我去救人！”\n    结果可想而知，三人全军覆没。";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
 			cout << background[i];
@@ -137,7 +147,7 @@ void Story::showStory(int id) {
 		system("pause");
 		system("cls");
 		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-		background = "    “第五排23D47号……找到了！”你刚站起来，一个人拍了拍你的肩膀。你回头一看，原来是影帝。只见他拿着笔在本子上焦急地写着什么，然后撕下来揉成团紧紧塞到你的手里。你被他手心的温度烫到，呆呆地看着眼前的人，想问他到底是怎么回事，他却突然像故障的电子屏幕一般，变成了红蓝黄的线条，在闪烁几次后就凝聚成一个小点，消失了。你的脑子宕机了几秒后，你急忙将手中的纸团展开，字迹也全部消失得无影无踪，只留下浅浅的印子，你可以模糊地看到几个字，高纬度，快逃……";
+		background = "    “第五排23D47号……找到了！”你刚站起来，一个人拍了拍你的肩膀。你回头一看，原来是影帝。只见他拿着笔在本子上焦急地写着什么，然后撕下来揉成团紧紧塞到你的手里。你被他手心的温度烫到，呆呆地看着眼前的人，想问他到底是怎么回事，他却突然像故障的电子屏幕一般，变成了红蓝黄的线条，在闪烁几次后就凝聚成一个小点，消失了。你的脑子宕机了几秒后，你急忙将手中的纸团展开，字迹也全部消失得无影无踪，只留下浅浅的印子，你可以模糊地看到几个字：";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
 			cout << background[i];
@@ -145,6 +155,16 @@ void Story::showStory(int id) {
 		cout << endl;
 		system("pause");
 		system("cls");
+		background = "    高纬度，快逃!!!";
+		cout << "\033[31m";
+		for (int i = 0; i < background.length(); i++) {
+			Sleep(10);
+			cout << background[i];
+		}
+		cout << endl;
+		system("pause");
+		system("cls");
+		SetConsoleTextAttribute(hConsole, 14);
 		background = "    寂静的房间里只剩下你和头顶昏暗的灯光，如果不是你的手心还攥着那团纸，你甚至开始怀疑刚刚发生的一切是不是你的幻觉。";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
@@ -153,7 +173,6 @@ void Story::showStory(int id) {
 		cout << endl;
 		system("pause");
 		system("cls");
-		cout << endl;
 		cout << "\033[0m`";
 	}
 
@@ -175,6 +194,7 @@ void Story::showStory(int id) {
 		//迷宫
 		Maze maz(m_player);
 		maz.maze();
+		m_player->addNPC();
 
 		//HANDLE hConsole;
 		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -208,6 +228,7 @@ void Story::showStory(int id) {
 		system("cls");
 		cout << "\033[31m" << "成功拯救一名男主，获得前往缅甸的车票和魔杖！" << "\033[0m" << endl;
 		cout << "\033[0m`";
+		Sleep(1500);
 	}
 
 	else if (id == 7) {
@@ -289,7 +310,7 @@ void Story::showStory(int id) {
 		cout << endl;
 		system("pause");
 		system("cls");
-	    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 		cout << "\033[0m`";
 	}
 
@@ -400,7 +421,7 @@ void Story::showStory(int id) {
 	}
 }
 
-void Story::arriving() {
+void Story::Arriving() {
 	HANDLE hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hConsole, 14);
@@ -416,37 +437,69 @@ void Story::arriving() {
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 }
 
+void Story::Change(){
+	char choice;
+	room m_room = m_player->currentRoom();
+	Fight fight(m_player);
+	
+	cout << "\t\t\t是否继续下面的剧情？[Y/N]\n";
+	cout << "> ";
+	cin >> choice;
+
+	choice = tolower(choice);
+
+	while (choice != 'y' && choice != 'n') {
+		system("cls");
+
+		cout << "\t\t\t是否继续下面的剧情？[Y/N]\n";
+		cout << "> ";
+		cin >> choice;
+
+		choice = tolower(choice);
+	}
+
+	if (choice == 'y') {
+		//青岛北车站
+		showStory(6);//剧情+迷宫
+		m_room->Task() = false;//插入
+
+		//木屋
+		m_room = 10;
+		showStory(10);//木屋剧情
+		m_room->Task() = false;
+
+		fight.ProceedFight();
+		if (fight.isWin()) {
+			cout << "\033[31m" << "成功拯救一名男主，获得信物一份和z城地图一份！" << "\033[0m" << endl;
+			Sleep(1500);
+		}
+
+		//进入缅甸的剧情
+		Arriving();
+		m_player->currentRoom() = 7;
+
+		map_points = 2;
+	}
+}
+
 void Story::Run(){
 	int id = m_player->currentRoom();
 	room m_room = m_player->currentRoom();
 	Fight fight(m_player);
 
 	if (m_room->Task()) {
-		if (id == 6) {
-			//青岛北车站
-			showStory(6);//剧情+迷宫
-			m_room->Task() = false;//插入
-			m_player->addNPC();
+		if (!static_cast<room>(2)->Task() && !static_cast<room>(4)->Task() && !static_cast<room>(5)->Task() && id == 6) {
+			showStory(4);
+			static_cast<room>(6)->Task() = false;
 
-			//木屋
-			showStory(10);//木屋剧情
-			fight.ProceedFight();
-			if (fight.isWin()) {
-				cout << "\033[31m" << "成功拯救一名男主，获得信物一份和z城地图一份！" << "\033[0m" << endl;
-			}
-
-			//进入缅甸的剧情
-			arriving();
-			m_player->currentRoom() = 7;
-
-			map_points = 2;
+			Change();
 		}
-		else {
+		else if(id !=6){
 			showStory(id);
 			m_room->Task() = false;
 		}
 	}
-	else if (!static_cast<room>(2)->Task() && !static_cast<room>(4)->Task() && !static_cast<room>(5)->Task()&& m_player->Task()) {
-		showStory(3);
+	else if (id == 6) {
+		Change();
 	}
 }
