@@ -1,66 +1,66 @@
 [ROOMID]  1
-[ITEMS]        9 9 9
-[NPC]      1 2 3
+[ITEMS]        9 9 9 0
+[NPC]      1 2 3  0
 [MONEY] 200  
     
 
 [ROOMID]  2
-[ITEMS]     9 9 9 9 9   
-[NPC]     1  2  3
+[ITEMS]     9 9 9 9 9   0
+[NPC]     1  2  3  0
 [MONEY] 300      
  
 
 [ROOMID]  3
-[ITEMS]      9 9 9 9
-[NPC]    2  1  3
+[ITEMS]      9 9 9 9  0
+[NPC]    2  1  3  0
 [MONEY] 200   
     
 
 
 [ROOMID]  4
-[ITEMS]        9 9 9 12
+[ITEMS]        9 9 9 12  0
 [NPC]        0
 [MONEY] 200      
 
 
 [ROOMID]  5
-[ITEMS]        9
+[ITEMS]        9  0
 [NPC]     0
 [MONEY] 200    
      
 
 [ROOMID]  6
-[ITEMS]        9 9 9
-[NPC]       1 2 3 
+[ITEMS]        9 9 9  0
+[NPC]       1 2 3  0
 [MONEY] 200   
       
 
 [ROOMID]  7
-[ITEMS]        9 9 9 9 9 9 9
-[NPC]      1  2  3
+[ITEMS]        9 9 9 9 9 9 9  0
+[NPC]      1  2  3  0
 [MONEY] 1000
     
 
 [ROOMID]  8
-[ITEMS]        0
-[NPC]    1   2   3
+[ITEMS]        0   0
+[NPC]    1   2   3  0
 [MONEY] 200     
   
 
 [ROOMID]  9
-[ITEMS]        0
-[NPC]       1   2  3
+[ITEMS]        0   0
+[NPC]       1   2  3  0
 [MONEY] 200   
      
 
 [ROOMID]  10
 [ITEMS]        0
-[NPC]    1   2   3
+[NPC]    1   2   3   0
 [MONEY] 200    
 
 
 [ROOMID]  11
-[ITEMS]        9 9 
-[NPC]    1   2   3
+[ITEMS]        9 9   0
+[NPC]    1   2   3  0
 [MONEY] 200   
 
