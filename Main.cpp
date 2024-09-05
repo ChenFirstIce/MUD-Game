@@ -72,8 +72,9 @@ void End() {
 void ShowBackground(Player* m_player) {
 	HANDLE hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hConsole, 14);
 	system("cls");
+	cout << "\033[32m游戏背景" << endl;
+	SetConsoleTextAttribute(hConsole, 14);
 	cout << endl;
 	string background = "    你是O大一名正在忙于实习的大三女学生";
 	for (int i = 0; i < background.length(); i++) {
@@ -93,7 +94,7 @@ void ShowBackground(Player* m_player) {
 		cout << background[i];
 	}
 	cout << endl;
-	SetConsoleTextAttribute(hConsole, 0); 
+	//SetConsoleTextAttribute(hConsole, 0); 
 	system("pause");
 	system("cls");
 	cout << endl;
@@ -104,7 +105,7 @@ void ShowBackground(Player* m_player) {
 		cout << background[i];
 	}
 	cout << endl;
-	SetConsoleTextAttribute(hConsole, 0);
+	//SetConsoleTextAttribute(hConsole, 0);
 	system("pause");
 	cout << endl;
 	SetConsoleTextAttribute(hConsole, 14);
@@ -122,7 +123,7 @@ void ShowBackground(Player* m_player) {
 		cout << background[i];
 	}
 	cout << endl;
-	SetConsoleTextAttribute(hConsole, 0);
+	//SetConsoleTextAttribute(hConsole, 0);
 	system("pause");
 	SetConsoleTextAttribute(hConsole, 14);
 	system("cls");
@@ -145,7 +146,7 @@ void ShowBackground(Player* m_player) {
 		cout << background[i];
 	}
 	cout << endl;
-	SetConsoleTextAttribute(hConsole, 0);
+	//SetConsoleTextAttribute(hConsole, 0);
 	system("pause");
 	system("cls");
 	SetConsoleTextAttribute(hConsole, 14);
@@ -162,12 +163,12 @@ void ShowBackground(Player* m_player) {
 		cout << background[i];
 	}
 	cout << endl;
-	SetConsoleTextAttribute(hConsole, 0);
+	//SetConsoleTextAttribute(hConsole, 0);
 	system("pause");
 	system("cls");
 	SetConsoleTextAttribute(hConsole, 14);
 	cout << endl;
-	background = "    “至于我嘛……”陈凡淡淡开口。“只是看到一个小女孩在游乐园门口哭着拉着她爸妈的手要继续玩，不想回家才记住你的，仅此而已。ㅎ.ㅎ”";
+	background = "    “至于我嘛……”陈凡淡淡开口。“只是看到一个小女孩在游乐园门口哭着拉着她爸妈的手要继续玩，不想回家才记住你的，仅此而已。”";
 	for (int i = 0; i < background.length(); i++) {
 		Sleep(10);
 		cout << background[i];
@@ -179,8 +180,9 @@ void ShowBackground(Player* m_player) {
 		cout << background[i];
 	}
 	cout << endl;
-	SetConsoleTextAttribute(hConsole, 0);
+	//SetConsoleTextAttribute(hConsole, 0);
 	system("pause");
+	system("cls");
 	SetConsoleTextAttribute(hConsole, 14);
 	cout << endl;
 	background = "    不过最后你白了他们一眼便离开了，心想：学校怎么让这些莫名其妙的人进来了。";

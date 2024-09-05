@@ -3,10 +3,7 @@
 #include <sstream>
 using namespace std;
 
-string lowerCase(string str) {// 全部转写成小写字母,但实参不改变
-    transform(str.begin(), str.end(), str.begin(), ::tolower);
-    return str;
-}
+extern string lowerCase(string str);
 
 //需要完善NPC的界面和逻辑部分
 bool CommandExecutor::Execute(const Command& cmd) {
@@ -43,6 +40,7 @@ bool CommandExecutor::Execute(const Command& cmd) {
 
 //玩家登入登出
 void CommandExecutor::New() {
+    system("cls");
     string name;
     int choice = 0;
     string type;
@@ -55,9 +53,18 @@ void CommandExecutor::New() {
     cout << "> ";
     cin >> name;
 
-    cout << "你的攻击类型是？（输入1，则攻击类型为光）" << endl;
+    cout << "你的攻击类型是？"<<endl<<"\t输入1，则攻击类型为光【推荐】"<<endl<<"\t输入2，则攻击类型为金"<<endl<<"\t输入3，则攻击类型为火"<<endl<<"\t输入4，则攻击类型为草" << endl;
+    cout << "\t       " << "\033[33m" << "金" << "\033[0m" << endl;
+    cout << "\t     / ^ ^" << endl;
+    cout << "\t    /  |  \\" << endl;
+    cout << "\t   /   光  \\" << endl;
+    cout << "\t  /  /   \\  \\" << endl;
+    cout << "\t v  v     v  \\" << endl;
+    cout << "\t  " << "\033[31m" << "火" << "\033[0m" << "—--—--> " << "\033[32m" << "草" << "\033[0m" << endl;
+
     cout << "> ";
-    cin >> type;
+    cin >> choice;
+
 
     switch (choice) {
     case 1:
