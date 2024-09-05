@@ -207,6 +207,7 @@
 [ATTACKTYPE]   GRASS
 [HITPOINTS]      15
 [ROOM]         1
+
 [ID]     37
 [TEMPLATEID]   15
 [ATTACKTYPE]     FIRE
