@@ -37,9 +37,9 @@ void Map::ShowMap2()
 	cout << " __________ __________ __________ " << endl;
 	cout << "|          |          |          |" << endl;
 	cout << "| 废弃工厂 |   商店   |  咖啡馆  |" << endl;
-	cout << "|     " << pos[0][0] << "    |    " << pos[0][1] << "     |    " << pos[0][2] << "     |" << endl;
+	cout << "|     " << pos[0][0] << "    |     " << pos[0][1] << "    |     " << pos[0][2] << "    |" << endl;
 	cout << "|__________|__________|__________|" << endl;
-	cout << "您现在的位置为" << mapName[position] << endl;
+	cout << "您现在的位置为" << mapName[position-1] << endl;
 	cout << "033[0m";
 }
 
@@ -53,7 +53,7 @@ bool Map::Move2(char order)
 		break;
 	}
 	case 'a': {
-		if (position == 8 || position == 9) {
+		if ( position == 8 || position == 9) {
 			dy--;
 			position--;
 		}
@@ -98,12 +98,13 @@ void Map::gotoc() {
 	system("cls");
 	gotoXY(55, 10);
 	cout << "地 图";
-	gotoXY(56, 20);
-	cout << "加载中...";
+	gotoXY(54, 20);
+	cout << "加 载 中...";
 	for (int j = 0; j < 100; j++) {
 		Sleep(17);
 		gotoXY(j + 3, 15);
 		cout << " " << j << "%";
+		gotoXY(j , 15);
 		cout << "■";
 	}
 	system("cls");

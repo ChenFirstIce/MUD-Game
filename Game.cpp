@@ -1,11 +1,10 @@
-#include <bits/stdc++.h>
+#include "stdc++.h"
 #include <windows.h>
 #include "Game.h"
 using namespace std;
 
 void Game::Load(){
     ItemDatabase::Load();
-    Player::addPlayer();
     RoomDatabase::LoadTemplates();
     RoomDatabase::LoadData();
     StoreDatabase::Load();
@@ -53,20 +52,22 @@ void Game::Mape() {
     mape.gotoc();
 
     if (story.mapPoints() == 1) {
-        mape.ShowMap1();
+        mape.setPosition1();
         do {
+            mape.ShowMap1();
             cout << "请输入你的操作(w向上，a向左，s向下，d向右，1进入房间)" << endl;
             cout << "> ";
             cin >> input;
         } while (!mape.Move1(input));
     }
     else if (story.mapPoints() == 2) {
-        mape.ShowMap1();
+        mape.setPosition2();
         do {
+            mape.ShowMap1();
             cout << "请输入你的操作" << endl;
             cout << "> ";
             cin >> input;
-        } while (!mape.Move1(input));
+        } while (!mape.Move2(input));
     }
 
     story.Run();
