@@ -17,7 +17,7 @@
 [MAXENEMY]        0   
 
 
-[ID]     4
+[ID]     3
 [NAME]     望海餐厅
 [DESC]           0
 [TYPE]       NORMAL
@@ -27,7 +27,7 @@
 [MAXENEMY]         0
 
 
-[ID]        3
+[ID]        4
 [NAME]       望海苑
 [DESC]         0
 [TYPE]       N0RMAL
