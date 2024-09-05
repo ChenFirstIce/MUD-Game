@@ -43,7 +43,7 @@
 [DESC]       0
 [TYPE]      N0RMAL
 [DATA]            0
-[DIRECTE]        0 2 1 6
+[DIRECTE]        0 0 2 6
 [ENEMY]            0
 [MAXENEMY]           0
 
