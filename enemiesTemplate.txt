@@ -108,4 +108,86 @@
 [NATURE]           FIRE
 [LOOT]    7        20                             [ENDLOOT] 
 
+[ID]               11
+[NAME]         把足球踢到别人脸上的人
+[ENGLISHNAME]  The person who kicks a football into someone's face
+[HITPOINTS]         20
+[DODGING]           2
+[STRIKEDAMAGE]     3
+[SPEED]   10
+[EXP]               10
+[WEAPON]           0
+[TARGET]           1
+[MONEYMIN]          5
+[MONEYMAX]         10
+[NATURE]           FIRE
+[LOOT]    8        100                             [ENDLOOT] 
+
+[ID]               12
+[NAME]         正在考试作弊的家伙
+[ENGLISHNAME]  The guy who is cheating on the exam
+[HITPOINTS]         20
+[DODGING]           2
+[STRIKEDAMAGE]      7
+[SPEED]   10
+[EXP]               10
+[WEAPON]           0
+[TARGET]           1
+[MONEYMIN]          5
+[MONEYMAX]         10
+[NATURE]           GOLD
+[LOOT]    9        100                             [ENDLOOT] 
+
+[ID]               13
+[NAME]         偷外卖的小贼
+[ENGLISHNAME]  The petty thief who steals takeout
+[HITPOINTS]         30
+[DODGING]           20
+[STRIKEDAMAGE]      10
+[SPEED]   10
+[EXP]               10
+[WEAPON]           0
+[TARGET]           1
+[MONEYMIN]          5
+[MONEYMAX]         10
+[NATURE]           FIRE
+[LOOT]    10        100                             [ENDLOOT] 
+
+[ID]               14
+[NAME]         一应三不回的小组成员
+[ENGLISHNAME] A team member who responds to one thing but ignores three
+[HITPOINTS]         20
+[DODGING]           40
+[STRIKEDAMAGE]      10
+[SPEED]   5
+[EXP]               10
+[WEAPON]           0
+[TARGET]           1
+[MONEYMIN]          5
+[MONEYMAX]         10
+[NATURE]           GRASS
+[LOOT]    11        100                             [ENDLOOT] 
+
+[ID]               15
+[NAME]         黎盛
+[ENGLISHNAME] Sheng Li
+[HITPOINTS]         20
+[DODGING]           40
+[STRIKEDAMAGE]      5
+[SPEED]   5
+[EXP]               10
+[WEAPON]           0
+[TARGET]           1
+[MONEYMIN]          5
+[MONEYMAX]         10
+[NATURE]           GOLD
+[LOOT]    12        100                             [ENDLOOT] 
+
+
+
+
+
+
+
+
  
