@@ -1,7 +1,10 @@
-#include <bits/stdc++.h>
+#include "stdc++.h"
 #include "Matchentity.h"
 #include "Player.h"
+#include "func.h"
 using namespace std;
+
+extern string UTF8ToGB(const char* str);
 
 //实例化
 Player* Player::Instance = nullptr;
@@ -46,12 +49,25 @@ Player* Player::getPlayer(){
 //打印信息
 void Player::showPlayer() {//未完成
     cout << "---------------------------------- 玩家信息 ----------------------------------" << endl;
-    cout << " 名字:          " << name << endl;
-    cout << " 等级:          " << m_level << endl;
-    cout << " 经验:          " << right << setw(4) << m_exp << " / " << right << setw(4) << needforLevel(m_level + 1) << endl;
+    cout << " 名字:   " << name << endl;
+    cout << " 等级:   " << left << setw(4) << m_level << endl;
+    cout << " 经验:   " << left << setw(4) << m_exp << "/" << left << setw(4) << needforLevel(m_level + 1) << endl;
+    cout << " 属性:   ";
 
-    
-    cout << "--------------------------------------------------------------------------------\n\n";
+    if (m_type == LIGHT)
+    {
+        cout << "光";
+    }
+    else if (m_type == FIRE) {
+        cout << "\033[31m火";
+    }
+    else if (m_type == GRASS) {
+        cout << "\033[32m草";
+    }
+    else if (m_type == GOLD) {
+        cout << "\033[33m金";
+    }
+    cout << "\033[0m\n--------------------------------------------------------------------------------\n";
 }
 
 //等级&经验
@@ -150,7 +166,7 @@ void Player::addBonuses(item p_item){
         return;
     }//不成功，未找到
     else {
-        t = i.Min() + rand() % (i.Max() - i.Min());
+        t = i.Min() + rand() % (i.Max() - i.Min() + 1);
     }
 
     if (i.Type() == HEALING) {
@@ -224,6 +240,8 @@ bool Player::pickItem(item p_item) {
 
         *itr = p_item;
         m_items++;
+
+        return true;
     }
 
     return false;
@@ -270,7 +288,7 @@ void Player::addNPC(){
 
     cout << "你可以选择解救:" << endl;
 
-    for (int i = 1; i < 3;i++) {
+    for (int i = 1; i <= 3;i++) {
         p_npc = i;
 
         if (!p_npc->Stats()) {
@@ -303,6 +321,7 @@ void Player::addNPC(){
         cin.clear();
         cin.ignore(cin.rdbuf()->in_avail());
 
+        cout << "> ";
         cin >> id;
     }
 
@@ -372,7 +391,9 @@ ostream& operator<<(ostream& p_stream, Player& p){
         p_stream << *itr << " ";
         itr++;
     }
-    p_stream << "\n";
+
+    
+    p_stream << "0\n";
 
     p_stream << "[WEAPON]         " << p.m_weapon << "\n";
     p_stream << "[ARMOR]          " << p.m_armor << "\n";
@@ -425,6 +446,8 @@ void Player::savePlayer(){
     file << *Instance;
 
     cout << "玩家" << Instance->name << "存档成功" << endl;
+
+    file.close();
 }
 
 Player* Player::addPlayer(){
@@ -435,6 +458,8 @@ Player* Player::addPlayer(){
     file >> *Instance;
 
     cout << "玩家" << Instance->name << "读档成功" << endl;
+
+    file.close();
     return Instance;
 }
 

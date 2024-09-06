@@ -1,6 +1,7 @@
 #include "CommandExecutor.h"
 #include <iostream>
 #include <sstream>
+#include <Windows.h>
 using namespace std;
 
 extern string lowerCase(string str);
@@ -25,9 +26,9 @@ bool CommandExecutor::Execute(const Command& cmd) {
     else if (cmd.action == "remove") {
         return (RemoveItem(cmd));
     }
-    else if (cmd.action == "quit") {
+   /* else if (cmd.action == "quit") {
         return (Quit(cmd));
-    }
+    }*/
     else if (cmd.action == "help") {
         PrintHelp();
         return true;
@@ -40,10 +41,13 @@ bool CommandExecutor::Execute(const Command& cmd) {
 
 //玩家登入登出
 void CommandExecutor::New() {
-    system("cls");
     string name;
     int choice = 0;
     string type;
+
+    system("cls");
+    cin.clear();
+    cin.ignore(cin.rdbuf()->in_avail());
 
     if (Player::getPlayer() != nullptr) {
         Player::deletePlayer();
@@ -51,20 +55,11 @@ void CommandExecutor::New() {
 
     cout << "你的名字是？（例如：雌鹰）" << endl;
     cout << "> ";
-    cin >> name;
+    getline(cin, name);
 
-    cout << "你的攻击类型是？"<<endl<<"\t输入1，则攻击类型为光【推荐】"<<endl<<"\t输入2，则攻击类型为金"<<endl<<"\t输入3，则攻击类型为火"<<endl<<"\t输入4，则攻击类型为草" << endl;
-    cout << "\t       " << "\033[33m" << "金" << "\033[0m" << endl;
-    cout << "\t     / ^ ^" << endl;
-    cout << "\t    /  |  \\" << endl;
-    cout << "\t   /   光  \\" << endl;
-    cout << "\t  /  /   \\  \\" << endl;
-    cout << "\t v  v     v  \\" << endl;
-    cout << "\t  " << "\033[31m" << "火" << "\033[0m" << "—--—--> " << "\033[32m" << "草" << "\033[0m" << endl;
-
+    cout << "你的攻击类型是？（输入1，则攻击类型为光）" << endl;
     cout << "> ";
     cin >> choice;
-
 
     switch (choice) {
     case 1:
@@ -96,14 +91,14 @@ bool CommandExecutor::Continue() {
     return true;
 }
 
-bool CommandExecutor::Quit(const Command& cmd){
-    if (!cmd.argus.empty()) {
-        cout << "啥" << endl;
-        return false;
-    }
-
-    exit(0);
-}
+//bool CommandExecutor::Quit(const Command& cmd){
+//    if (!cmd.argus.empty()) {
+//        cout << "啥" << endl;
+//        return false;
+//    }
+//
+//    exit(0);
+//}
 
 //打印函数
 void CommandExecutor::PrintHelp(){
@@ -136,9 +131,9 @@ void CommandExecutor::PrintInventory(){
         cout << " 护具:  " << p.Armor()->Name() << endl;
     }
 
-    cout << "Money:  ￥" << p.Money() << endl;
+    cout << "Money:  $" << p.Money() << endl;
 
-    cout << "--------------------------------------------------------------------------------" << endl;
+    cout << "------------------------------------------------------------------------------" << endl;
 }
 
 void CommandExecutor::PrintMyNPC(){
@@ -252,16 +247,19 @@ void CommandExecutor::PrintRoom(){
     stringstream temp;
     int count = 0;
 
-    /*temp << p_room->Description() << "\n\n";*/
+    cout << "您现在的位置为\033[32m" << p_room->Name() << "\033[0m\n\n";
 
     //房间金钱
-    count = 0;
-    temp << "金钱：  ";
+    temp << "金钱： ";
     if (p_room->Money() > 0)
     {
-        count++;
-        temp << "￥" << p_room->Money() << "\n ";
+        temp << "\033[33m$" << p_room->Money() << "\033[0m\n";
+        cout << temp.str();
     }
+
+    temp.str("");
+    temp.clear();
+    
 
     //物品
     temp << "物品：  ";
@@ -269,7 +267,7 @@ void CommandExecutor::PrintRoom(){
     while (itemitr != p_room->Item().end())
     {
         count++;
-        temp << (*itemitr)->Name() << ", ";
+        temp << (*itemitr)->Name() <<"( "<< (*itemitr)->EnName() <<")" << ", ";
         itemitr++;
     }
 
@@ -279,28 +277,35 @@ void CommandExecutor::PrintRoom(){
         temp.clear();
         foo.erase(foo.size() - 2, 2);
         temp << foo << "\n\n";
+
+        cout << temp.str();
     }
 
+    temp.str("");
+    temp.clear();
+
     //敌人
-    temp <<  "敌人：  ";
+    temp <<  "敌人：  \n";
     count = 0;
     list<enemy>::iterator enemyitr = p_room->Enemies().begin();
     while (enemyitr != p_room->Enemies().end()){
-        temp << (*enemyitr)->Name() << " (血量:   " << (*enemyitr)->HitPoints() << " )" << ", ";
+        temp << "\033[35m"<< left << setw(25) << (*enemyitr)->Name() << "\033[0m(" << (*enemyitr)->EnName() << ")" << " \033[31m(血量:   " << (*enemyitr)->HitPoints() << ")" << "\033[0m\n";
         count++;
         enemyitr++;
     }
 
-    if (count > 0){
+    if (count > 0 || p_room == 6){
         string foo = temp.str();
         temp.str("");
         temp.clear();
-        foo.erase(foo.size() - 2, 2);
+        foo.erase(foo.size() - 1, 1);
         temp << foo << "\n\n";
+
+        cout << temp.str();
     }
 
-    //最后全部打印
-    cout << temp.str();
+    temp.str("");
+    temp.clear();
 }
 
 bool CommandExecutor::GetItem(const Command& cmd){
@@ -312,7 +317,7 @@ bool CommandExecutor::GetItem(const Command& cmd){
         return false;
     }
 
-    if (p_item[0] == '￥'){
+    if (p_item[0] == '$') {
         stringstream p_money; 
         money m;
 
@@ -323,6 +328,7 @@ bool CommandExecutor::GetItem(const Command& cmd){
         if (m > m_player->currentRoom()->Money())
         {
             cout << "没有那么多钱，少做梦！" << endl;
+            Sleep(500);
 
             return false;
         }
@@ -330,8 +336,10 @@ bool CommandExecutor::GetItem(const Command& cmd){
         {
             m_player->Money() += m;
             m_player->currentRoom()->Money() -= m;
-            cout << "捡起 ￥" << m << "元" << endl;
+            cout << "捡起 $" << m << "元" << endl;
             cout << "tips：劝你交到警察局:)" << endl;
+
+            Sleep(1000);
         }
 
         return true;
@@ -341,18 +349,21 @@ bool CommandExecutor::GetItem(const Command& cmd){
 
     if (i == 0){
         cout << "这里没你想要的东西。" << endl;
+        Sleep(500);
 
         return false;
     }
     
     if (!m_player->pickItem(i)){
         cout << "你拿不下这么多东西了，别太贪。" << endl;
+        Sleep(500);
 
         return false;
     }
 
     m_player->currentRoom()->removeItem(i);
     cout << "你从地上捡起满是灰尘的" << i->Name() << endl;
+    Sleep(500);
 
     return true;
 }
@@ -362,6 +373,7 @@ bool CommandExecutor::DropItem(const Command& cmd){
 
     if (cmd.argus.empty()) {
         cout << "啥？" << endl;
+        Sleep(500);
 
         return false;
     }
@@ -376,6 +388,7 @@ bool CommandExecutor::DropItem(const Command& cmd){
 
         if (m > m_player->Money()){
             cout << "你没那么多钱……" << endl;
+            Sleep(500);
 
             return false;
         }
@@ -383,6 +396,7 @@ bool CommandExecutor::DropItem(const Command& cmd){
             m_player->Money() -= m;
             m_player->currentRoom()->Money() += m;
             cout << "恭喜你！你又少了" << m << "元钱！" << endl;
+            Sleep(500);
         }
 
         return true;
@@ -393,11 +407,13 @@ bool CommandExecutor::DropItem(const Command& cmd){
     if (i == -1)
     {
         cout << "你不曾拥有" << p_item << endl;
+        Sleep(500);
 
         return false;
     }
 
     cout << "你抛弃了" << p_item << endl;
+    Sleep(500);
 
     m_player->currentRoom()->addItem(m_player->getItem(i));
     m_player->dropItem(i);
@@ -432,6 +448,8 @@ bool CommandExecutor::Buy(const Command& cmd){
 
     if (cmd.argus.empty()) {
         cout << "啥？" << endl;
+        Sleep(500);
+
         return false;
     }
 
@@ -439,23 +457,30 @@ bool CommandExecutor::Buy(const Command& cmd){
     if (i == 0)
     {
         cout << "这里没有你想要的东西" << endl;
+        Sleep(500);
+        
         return false;
     }
 
     if (p.Money() < i->Price())
     {
         cout << "……诶呀，有点担负不起" << endl;
+        Sleep(500);
+
         return false;
     }
 
     if (!p.pickItem(i))
     {
         cout << "背包已经装不下了！" << endl;
+        Sleep(500);
+
         return false;
     }
 
     p.Money() -= i->Price();
     cout << "购入" << p_item << ",已经放入背包了！" << endl;
+    Sleep(500);
     
     return true;
 }
@@ -469,6 +494,7 @@ bool CommandExecutor::Sell(const Command& cmd){
     if (index == -1)
     {
         cout << "你不曾拥有" << p_item << endl;
+        Sleep(500);
 
         return false;
     }
@@ -477,6 +503,7 @@ bool CommandExecutor::Sell(const Command& cmd){
     if (!s.has(i))
     {
         cout << "我们已经有" << p_item << "，交易取消" << endl;
+        Sleep(500);
 
         return false;
     }
@@ -484,6 +511,7 @@ bool CommandExecutor::Sell(const Command& cmd){
     p.dropItem(index);
     p.Money() += i->Price();
     cout << "成功卖出" << p_item << "，恭喜钱包又多了" << i->Price() << "元" << endl;
+    Sleep(500);
 
     return true;
 }
@@ -511,12 +539,14 @@ bool CommandExecutor::UseItemToNPC(const Command& cmd, npc& m_npc){
 
     if (index == 0) {
         cout << "你不曾拥有" << p_item << endl;
+        Sleep(500);
 
         return false;
     }
     //判断装备有没有被装备过
     if (index == m_player->Weapon()||index == m_player->Armor()) {
         cout << "你已经装备过来，物品可不会分身……" << endl;
+        Sleep(500);
 
         return false;
     }
@@ -528,27 +558,32 @@ bool CommandExecutor::UseItemToNPC(const Command& cmd, npc& m_npc){
     case WEAPON:
         m_npc->useWeapon(itm);
         cout << "给" << m_npc->Name() << "装备上" << itm->Name() << endl;
+        Sleep(500);
 
         return true;
     case ARMOR:
         m_npc->useArmor(itm);
         cout << "给" << m_npc->Name() << "穿上" << itm->Name() << endl;
+        Sleep(500);
 
         return true;
     case HEALING:
         m_npc->useHealing(itm);
         m_player->dropItem(index);
         cout << "给" << m_npc->Name() << "使用" << itm->Name() << endl;
+        Sleep(500);
 
         return true;
     case EXP:
         m_npc->addExp(itm);
         m_player->dropItem(index);
         cout <<"给" << m_npc->Name() << "使用" << itm->Name() << endl;
+        Sleep(500);
 
         return true;
     default:
         cout << "给予失败" << endl;
+        Sleep(500);
 
         return false;
     }
@@ -562,6 +597,7 @@ bool CommandExecutor::RemoveItemFromNPC(const Command& cmd, npc& p_npc){
     {
         cout << "卸下" << p_npc->Weapon()->Name() << endl;
         p_npc->removeWeapon();
+        Sleep(500);
 
         return true;
     }
@@ -570,6 +606,7 @@ bool CommandExecutor::RemoveItemFromNPC(const Command& cmd, npc& p_npc){
     {
         cout << "脱下" << p_npc->Armor()->Name() << endl;
         p_npc->removeArmor();
+        Sleep(500);
 
         return true;
     }

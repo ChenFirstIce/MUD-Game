@@ -1,16 +1,11 @@
 #pragma once
-#include <bits/stdc++.h>
+#include "stdc++.h"
 #include "Attributes.h"
+#include "func.h"
 using namespace std;
 //实体
 typedef unsigned int entityid;
 typedef unsigned long int money;
-
-template< typename type >
-inline type& extract(istream& s, type& t){//管理ID标签的加载，加载名称和各个物品，ID为0结束
-	s >> t;
-	return t;
-}
 
 class Entity {
 public:

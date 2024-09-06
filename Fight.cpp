@@ -1,12 +1,11 @@
-#include<bits/stdc++.h>
+#include "stdc++.h"
 #include "Fight.h"
 using namespace std;
 
-Fight::Fight(Player* m_player) {
+Fight::Fight(Player* m_player):m_player(m_player){
 	int i, j;
-	m_room = m_player->currentRoom();
 
-	Me.push_back(0);
+	m_room = m_player->currentRoom();
 
 	//ÊäÈëÎÒ·½ÕóÓª
 	list<npc>::iterator npcitr = m_player->Npces().begin();
@@ -22,13 +21,14 @@ Fight::Fight(Player* m_player) {
 			npc m_npc = Me[j];
 			if (temp->getAttr(SPEED) < m_npc->getAttr(SPEED)) {
 				Me[j + 1] = Me[j];
+				break;
 			}
 		}
 		Me[j + 1] = temp;
 	}
 
 	//´óÅ®Ö÷µ±Ç°ÅÅ£¬Ê×µ±ÆäÖĞ³å
-	Me.push_front(0);
+	Me.insert(Me.begin(), 0);
 
 	//°ÑÊäÈëµĞ·½ÕóÓª
 	list<enemy>::iterator enemyitr = m_room->Enemies().begin();
@@ -42,8 +42,11 @@ Fight::Fight(Player* m_player) {
 		enemy temp = Enemy[i];
 		for (j = i - 1; j >= 0; j--) {
 			enemy m_enemy = Enemy[j];
-			if (temp->Speed() < m_enemy->Speed()) {
+			if (temp->Speed() > m_enemy->Speed()) {
 				Enemy[j + 1] = Enemy[j];
+			}
+			else {
+				break;
 			}
 		}
 		Enemy[j + 1] = temp;
@@ -211,7 +214,7 @@ void Fight::ShowEnemy4() {
 	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
 	cout << "   ·½   \t|ĞÕÃû£º" << left << setw(6) << static_cast<enemy>(Enemy[2])->Name() << "|" << "\t\t\t\t|ĞÕÃû£º" << left << setw(6) << static_cast<enemy>(Enemy[3])->Name() << "|" << endl;
 	cout << "        \t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<enemy>(Enemy[2])->getType() << "|" << "\t\t\t\t|¹¥»÷ÊôĞÔ" << left << setw(6) << static_cast<enemy>(Enemy[3])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[2])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[3])->HitPoints() << "|" << endl;
+	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[2])->HitPoints() << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[3])->HitPoints() << "|" << endl;
 	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[2])->StrikeDamage() << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[3])->StrikeDamage() << "|" << endl;
 	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[2])->Dodging() << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[3])->Dodging() << "|" << endl;
 	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[2])->Speed() << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[3])->Speed() << "|" << endl;
@@ -225,7 +228,6 @@ void Fight::BattleTurn()//0-2*n-1ÒÀ´Î´ú±íÎÒ·½nÖ»¾«Áé¡¢µĞ·½nÖ»¾«Áé£»¶şÎ¬Êı×éÃ¿¸öµ
 	int n = Me.size();
 	int m = Enemy.size();
 	vector<vector<int>> BattleTurn;
-	int t[2];
 
 	BattleTurn.resize(n + m);
 
@@ -245,20 +247,17 @@ void Fight::BattleTurn()//0-2*n-1ÒÀ´Î´ú±íÎÒ·½nÖ»¾«Áé¡¢µĞ·½nÖ»¾«Áé£»¶şÎ¬Êı×éÃ¿¸öµ
 	}
 
 	for (int i = n; i < m + n; i++) {
-		enemy m_enemy = Enemy[i];
-		BattleTurn[i][0] = Enemy[i];
+		enemy m_enemy = Enemy[i - n];
+		cout << m_enemy->Name();
+		BattleTurn[i][0] = m_enemy;
 		BattleTurn[i][1] = m_enemy->Speed();
 	}
 
-	for (int j = 0; j < n + m - 1; j++) {
-		for (int i = 0; i < n + m - 1 - j; i++) {
+	for (int j = 0; j < n + m; j++) {
+		for (int i = 0; i < n + m - j - 1; i++) {  // ĞŞ¸ÄÑ­»··¶Î§£¬¼õÉÙ¶àÓàµÄ±È½Ï
 			if (BattleTurn[i][1] < BattleTurn[i + 1][1]) {
-				t[0] = BattleTurn[i][0];
-				t[1] = BattleTurn[i][1];
-				BattleTurn[i][0] = BattleTurn[i + 1][0];
-				BattleTurn[i][1] = BattleTurn[i + 1][1];
-				BattleTurn[i + 1][0] = t[0];
-				BattleTurn[i + 1][1] = t[1];
+				swap(BattleTurn[i][0], BattleTurn[i + 1][0]);
+				swap(BattleTurn[i][1], BattleTurn[i + 1][1]);
 			}
 		}
 	}
@@ -268,7 +267,7 @@ void Fight::BattleTurn()//0-2*n-1ÒÀ´Î´ú±íÎÒ·½nÖ»¾«Áé¡¢µĞ·½nÖ»¾«Áé£»¶şÎ¬Êı×éÃ¿¸öµ
 	}
 }
 
-void Fight::ShowBattle() {
+void Fight::ShowBattle(){
 	switch (Me.size()) {
 	case 1:
 		ShowMe1();
@@ -282,7 +281,7 @@ void Fight::ShowBattle() {
 	case 4:
 		ShowMe4();
 		break;
-	default:
+	default: 
 		break;
 	}
 
@@ -599,7 +598,7 @@ void Fight::Atk2(int atk, int target) {
 	if (target == 0) {
 		Player* p_target = m_player;
 
-		if (rand() % 100 <= p_target->getAttr(DODGING)) {
+		if (rand() % 100 <= p_target->Dodging()) {
 			cout << p_atk->Name() << " ¹¥»÷ÁË " << p_target->Name();
 			cout << "£¬ µ«ÊÇ " << p_target->Name() << " ¶ã¿ªÁË¹¥»÷!" << endl;
 			system("pause");
@@ -656,7 +655,7 @@ void Fight::Atk2(int atk, int target) {
 	}
 }
 
-void Fight::AttackTurn(int atk, int& Round) {
+bool Fight::AttackTurn(int atk) {
 	int targetnum = 1;
 	int choose = 0;
 	int n = 0;//¿ÉÒÔ×ÔÓÉÑ¡ÔñµÄÊ×Ë÷ÒıÎ²Ë÷Òı
@@ -718,8 +717,7 @@ void Fight::AttackTurn(int atk, int& Round) {
 
 					while (choose < front + 1 || choose > n || !isLive(Enemy[choose - 1])) {//ÊäÈëÊı×éË÷Òı + 1
 						if (choose == 0) {
-							Round--;
-							return;
+							return false;
 						}
 
 						cout << "´íÎó£¡ÇëÖØĞÂÊäÈë£¡" << endl;
@@ -793,8 +791,7 @@ void Fight::AttackTurn(int atk, int& Round) {
 
 					while (choose < front + 1 || choose > n || !isLive(Enemy[choose - 1])) {//ÊäÈëÊı×éË÷Òı + 1
 						if (choose == 0) {
-							Round--;
-							return;
+							return false;
 						}
 
 						cout << "´íÎó£¡ÇëÖØĞÂÊäÈë£¡" << endl;
@@ -837,9 +834,11 @@ void Fight::AttackTurn(int atk, int& Round) {
 			Atk2(patk, targets[i]);
 		}
 	}
+
+	return true;
 }
 
-void Fight::UseMedical(int atk, int& Round) {
+bool Fight::UseMedical(int atk) {
 	int choose = 0;
 
 	system("cls");
@@ -857,13 +856,12 @@ void Fight::UseMedical(int atk, int& Round) {
 	cout << "---------------------------------------------------------------------------" << endl;
 
 	cout << "ÇëÑ¡ÔñÒªÊ¹ÓÃµÄÒ©Æ·µÄID(ÊäÈë0£¬È¡Ïû²Ù×÷)" << endl;
-	cout << "< ";
+	cout << "> ";
 	cin >> choose;
 
 	while (choose < 1 || choose > m_player->Items() || m_player->getItem(choose - 1)->Type() != HEALING) {//ÊäÈëÊı×éË÷Òı+1
 		if (choose == 0) {
-			Round--;
-			return;
+			return false;
 		}
 
 		cout << "´íÎó£¡ÇëÖØĞÂÊäÈë£¡" << endl;
@@ -882,6 +880,7 @@ void Fight::UseMedical(int atk, int& Round) {
 	}
 
 	m_player->dropItem(choose - 1);
+	return true;
 }
 
 bool Fight::isWin() {
@@ -893,7 +892,7 @@ bool Fight::isWin() {
 		}
 	}
 
-	if (cnt == Enemy.size() - 1) {
+	if (cnt == Enemy.size()) {
 		return true;
 	}
 	else {
@@ -910,7 +909,7 @@ bool Fight::isLose() {
 		}
 	}
 
-	if (cnt == Me.size() - 1) {
+	if (cnt == Me.size()) {
 		return true;
 	}
 	else {
@@ -923,11 +922,10 @@ void Fight::ProceedFight()
 	int total = Turn.size();
 	int choose;
 	int Round = 0;
-	bool isWin = false;
-	bool isLose = false;
 	BattleTurn();//ÅÅĞò³öÊÖË³Ğò
 	while (1) {
 		int atk = *(Turn.begin());
+
 		if (!isLive(atk)) {//ËÀÍöµÄpop³öTurn¶ÓÁĞ
 			Turn.pop_front();
 			total--;
@@ -942,10 +940,14 @@ void Fight::ProceedFight()
 			choose = Choice(Round, atk);//Ñ¡Ôñ½çÃæ
 
 			if (choose == 1) {
-				AttackTurn(atk, Round);
+				if (!AttackTurn(atk)) {
+					continue;
+				}
 			}
 			else if (choose == 2) {
-				UseMedical(atk, Round);
+				if (!UseMedical(atk)) {
+					continue;
+				}
 			}
 			else if (choose == 3) {
 				if (rand() % 10 < 8) {
@@ -963,7 +965,7 @@ void Fight::ProceedFight()
 			}
 		}
 		else {
-			AttackTurn(atk, Round);
+			AttackTurn(atk);
 			if (isLose()) {
 				loseEXP();
 				break;
@@ -1022,7 +1024,7 @@ void Fight::addTrophy() {
 	for (int i = 0; i < Enemy.size(); i++) {
 		enemy p_enemy = Enemy[i];
 
-		money += p_enemy->MoneyMin() + rand() % (p_enemy->MoneyMax() - p_enemy->MoneyMin());
+		money += p_enemy->MoneyMin() + rand() % (p_enemy->MoneyMax() - p_enemy->MoneyMin() + 1);
 		exp += p_enemy->Exp();
 	}
 
@@ -1040,7 +1042,7 @@ void Fight::addTrophy() {
 	cout << "»ñµÃ¾­ÑéEXP:" << left << setw(4) << exp;
 
 	if (m_player->currentRoom() == 10 || m_player->currentRoom() == 7) {
-		m_player->addPlayer();
+		m_player->addNPC();
 	}
 }
 

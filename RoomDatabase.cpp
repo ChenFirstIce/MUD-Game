@@ -4,21 +4,26 @@ using namespace std;
 
 map<entityid, Room> EntityDatabase<Room>::m_map;
 
-void RoomDatabase::loadTemplates(){
+void RoomDatabase::LoadTemplates(){
 	ifstream file("Room.txt");
+    string line;
 	entityid id;
 	string temp;
 
 	while (file.good()) {
-		file >> temp >> id;
-		
+        file >> temp >> id;
+
 		m_map[id].ID() = id;
 		m_map[id].loadTemplate(file);//函数名字之前写错了
 		file >> ws;
 	}
+
+    cout << "RomeDatabase Template Loaded successful." << endl;
+
+    file.close();
 }
 
-void RoomDatabase::loadData(string filename)
+void RoomDatabase::LoadData(string filename)
 {
     ifstream file(filename);
 
@@ -32,9 +37,13 @@ void RoomDatabase::loadData(string filename)
         m_map[roomid].loadData(file);
         file >> ws;
     }
+
+    cout << "RomeDatabase Data Loaded successful." << endl;
+
+    file.close();
 }
 
-void RoomDatabase::saveData(){
+void RoomDatabase::SaveData(){
     ofstream file("Roomthings.txt");
 
     iterator itr = begin();
@@ -47,4 +56,6 @@ void RoomDatabase::saveData(){
 
         itr++;
     }
+
+    file.close();
 }

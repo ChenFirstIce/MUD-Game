@@ -6,6 +6,6 @@ using namespace std;
 class RoomDatabase :public EntityDatabase<Room> {
 public:
 	static void LoadTemplates();
-	static void LoadData(string filename = "Roomthings.txt");
+	static void LoadData(string filename = "iRoomthings.txt");
 	static void SaveData();
 };

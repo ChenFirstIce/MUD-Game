@@ -4,6 +4,7 @@
 #include "RoomDatabase.h"
 #include "ItemDatabase.h"
 #include "StoreDatabase.h"
+#include "Store.h"
 #include "NPCDatabase.h"
 #include "Player.h"
 #include "NPC.h"
@@ -22,7 +23,6 @@ public:
     //玩家登入登出
     void New();//应该增加一个克制关系的输出
     bool Continue();
-    bool Quit(const Command& cmd);//更完善一点
 
     //玩家状态打印函数
     static void PrintHelp();//未完成

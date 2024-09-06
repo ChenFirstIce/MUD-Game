@@ -8,7 +8,7 @@ enum Attribute { MAXHITPOINTS,ATTACK,CRITING,DODGING,SPEED };//属性,对应Attribut
 
 enum ItemType { WEAPON, ARMOR, HEALING, EXP};//物品类型
 
-enum RoomType { NOMAL, STORE };
+enum RoomType { NORMAL, STORE };
 
 enum AttackType { LIGHT, GOLD, FIRE, GRASS };
 

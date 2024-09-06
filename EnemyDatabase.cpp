@@ -16,6 +16,9 @@ void EnemyTemplateDatabase::Load(){
 		m_map[id].ID() = id;
 		file >> m_map[id] >> ws;
 	}
+	cout << "enemies Load" << endl;
+
+	file.close();
 }
 
 
@@ -50,6 +53,9 @@ void EnemyDatabase::Load(){
 		file >> m_map[id] >> ws;
 		m_map[id].currentRoom()->addEnemy(p_enemy);
 	}
+	cout << "EnemyDatabase Load" << endl;
+
+	file.close();
 }
 
 void EnemyDatabase::Save(){
@@ -62,4 +68,6 @@ void EnemyDatabase::Save(){
 		file << itr->second << "\n";
 		itr++;
 	}
+
+	file.close();
 }

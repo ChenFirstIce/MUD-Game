@@ -14,6 +14,8 @@ void NPCDatabase::Load(){
 		m_map[id].ID() = id;
 		file >> m_map[id] >> ws;
 	}
+
+	file.close();
 }
 
 void NPCDatabase::Save(){
@@ -26,4 +28,6 @@ void NPCDatabase::Save(){
 		file << itr->second << "\n";
 		itr++;
 	}
+
+	file.close();
 }

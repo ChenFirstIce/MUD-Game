@@ -41,8 +41,8 @@ public:
 	void Atk2(int atk, int target);
 
 	//选择攻击或者用药
-	void AttackTurn(int atk, int& Round);
-	void UseMedical(int atk, int& Round);
+	bool AttackTurn(int atk);
+	bool UseMedical(int atk);
 
 	//判断战局
 	bool isWin();

@@ -43,7 +43,7 @@ int& AttributeSet::operator[](int p_attr){
 ostream& operator<<(ostream& p_stream, AttributeSet& a)
 {
 	for (int i = 0; i < NUMATTRIBUTES; i++) {
-		p_stream << "[" << getAttributesString((Attribute)i) << "]" << a.getPoint(i)<< "\n";
+		p_stream << "[" << getAttributesString((Attribute)i) << "]  " << a.getPoint(i)<< "\n";
 	}
 	return p_stream;
 }

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
-#include "Windows.h"
+#include <Windows.h>
 #include "Entity.h"
 #include "Player.h"
 #include "DatabasePointer.h"
@@ -12,6 +12,29 @@
 using namespace std;
 
 extern string lowerCase(string str);
+
+string UTF8ToGB(const char* str)
+{
+	string result;
+	WCHAR* strSrc;
+	LPSTR szRes;
+
+	//获得临时变量的大小
+	int i = MultiByteToWideChar(CP_UTF8, 0, str, -1, NULL, 0);
+	strSrc = new WCHAR[i + 1];
+	MultiByteToWideChar(CP_UTF8, 0, str, -1, strSrc, i);
+
+	//获得临时变量的大小
+	i = WideCharToMultiByte(CP_ACP, 0, strSrc, -1, NULL, 0, NULL, NULL);
+	szRes = new CHAR[i + 1];
+	WideCharToMultiByte(CP_ACP, 0, strSrc, -1, szRes, i, NULL, NULL);
+
+	result = szRes;
+	delete[]strSrc;
+	delete[]szRes;
+
+	return result;
+}
 
 void End() {
 	HANDLE hConsole;
@@ -72,16 +95,15 @@ void End() {
 void ShowBackground(Player* m_player) {
 	HANDLE hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	system("cls");
-	cout << "\033[32m游戏背景" << endl;
 	SetConsoleTextAttribute(hConsole, 14);
+	system("cls");
 	cout << endl;
 	string background = "    你是O大一名正在忙于实习的大三女学生";
 	for (int i = 0; i < background.length(); i++) {
 		Sleep(10);
 		cout << background[i];
 	}
-		cout << m_player->Name();
+	cout << m_player->Name();
 	background = "。";
 	for (int i = 0; i < background.length(); i++) {
 		Sleep(10);
@@ -94,7 +116,7 @@ void ShowBackground(Player* m_player) {
 		cout << background[i];
 	}
 	cout << endl;
-	//SetConsoleTextAttribute(hConsole, 0); 
+	SetConsoleTextAttribute(hConsole, 0);
 	system("pause");
 	system("cls");
 	cout << endl;
@@ -105,7 +127,7 @@ void ShowBackground(Player* m_player) {
 		cout << background[i];
 	}
 	cout << endl;
-	//SetConsoleTextAttribute(hConsole, 0);
+	SetConsoleTextAttribute(hConsole, 0);
 	system("pause");
 	cout << endl;
 	SetConsoleTextAttribute(hConsole, 14);
@@ -123,7 +145,7 @@ void ShowBackground(Player* m_player) {
 		cout << background[i];
 	}
 	cout << endl;
-	//SetConsoleTextAttribute(hConsole, 0);
+	SetConsoleTextAttribute(hConsole, 0);
 	system("pause");
 	SetConsoleTextAttribute(hConsole, 14);
 	system("cls");
@@ -139,14 +161,14 @@ void ShowBackground(Player* m_player) {
 		Sleep(10);
 		cout << background[i];
 	}
-	cout << endl<<endl;
+	cout << endl << endl;
 	background = "    “你想起来了，当时好像是因为你不想写作业，想把它们都藏起来，才去的公园，结果才刚把作业交给一个自称可以帮你写作业的大哥哥你妈就把你拽走了，还因为作业不在了又给你买了三本60页的“快乐寒假”。 ";
 	for (int i = 0; i < background.length(); i++) {
 		Sleep(10);
 		cout << background[i];
 	}
 	cout << endl;
-	//SetConsoleTextAttribute(hConsole, 0);
+	SetConsoleTextAttribute(hConsole, 0);
 	system("pause");
 	system("cls");
 	SetConsoleTextAttribute(hConsole, 14);
@@ -163,26 +185,25 @@ void ShowBackground(Player* m_player) {
 		cout << background[i];
 	}
 	cout << endl;
-	//SetConsoleTextAttribute(hConsole, 0);
+	SetConsoleTextAttribute(hConsole, 0);
 	system("pause");
 	system("cls");
 	SetConsoleTextAttribute(hConsole, 14);
 	cout << endl;
-	background = "    “至于我嘛……”陈凡淡淡开口。“只是看到一个小女孩在游乐园门口哭着拉着她爸妈的手要继续玩，不想回家才记住你的，仅此而已。”";
+	background = "    “至于我嘛……”陈凡淡淡开口。“只是看到一个小女孩在游乐园门口哭着拉着她爸妈的手要继续玩，不想回家才记住你的，仅此而已。ㅎ.ㅎ”";
 	for (int i = 0; i < background.length(); i++) {
 		Sleep(10);
 		cout << background[i];
 	}
-	cout << endl<<endl;
+	cout << endl << endl;
 	background = "    “你别听这么说，他自从那天后就收购了那个游乐园，想要再次见到你（>_<），结果那之后你就再也没来过了。”陈冰笑嘻嘻地说道。";
 	for (int i = 0; i < background.length(); i++) {
 		Sleep(10);
 		cout << background[i];
 	}
 	cout << endl;
-	//SetConsoleTextAttribute(hConsole, 0);
+	SetConsoleTextAttribute(hConsole, 0);
 	system("pause");
-	system("cls");
 	SetConsoleTextAttribute(hConsole, 14);
 	cout << endl;
 	background = "    不过最后你白了他们一眼便离开了，心想：学校怎么让这些莫名其妙的人进来了。";
@@ -220,20 +241,20 @@ void ShowTitle() {
 	cout << "        $$     $$$$$$$$$$$     $           $$                  $$       $$  $$           $$   $$$   $$$$$$$$$$$  " << endl;
 	cout << "                $$       $$              $$$$$               $$$$$      $$   $$$$$$$$$$$$$$     $     $$$$$$$$$  " << endl;
 	cout << "                $$       $$                $$                  $$$              $$$$$$$$$$                       " << endl;
-	cout << "\033[0m"<<endl<<endl<<endl;
+	cout << "\033[0m" << endl << endl << endl;
 
-	cout << "\033[36m" << "\t\t\t\t\t\t开始新游戏【请输入new】" << endl<<endl;
-	cout << "\t\t\t\t\t\t继续游戏【请输入continue】" << endl<<endl;
-	cout << "\t\t\t\t\t\t退出游戏【请输入quit】" << "\033[0m" << endl<<endl;
+	cout << "\033[36m" << "\t\t\t\t\t\t开始新游戏【请输入new】" << endl << endl;
+	cout << "\t\t\t\t\t\t继续游戏【请输入continue】" << endl << endl;
+	cout << "\t\t\t\t\t\t退出游戏【请输入quit】" << "\033[0m" << endl << endl;
 
 }
+
 
 
 
 int main() {
 	Game game;
 	CommandParser commandpar;
-	CommandExecutor commandexec;
 	string input;
 	bool isStart = false;
 
@@ -242,8 +263,8 @@ int main() {
 
 		ShowTitle();
 
-		cout << "> ";
-		cin >> input;
+		cout << "\t\t\t\t\t\t> ";
+		getline(cin, input);
 		input = lowerCase(input);
 
 		isStart = game.First(input);
@@ -251,45 +272,55 @@ int main() {
 
 	Player* m_player = Player::getPlayer();
 
-	if (input == "new") {
+	/*if (input == "new") {
 		ShowBackground(m_player);
-	}
+	}*/
 
 	while (1) {
 		system("cls");
+		cin.clear();
+		cin.ignore(cin.rdbuf()->in_avail());
 
 		game.PrintPrime();
 
 		cout << "> ";
-		cin >> input;
+		getline(cin, input);
 		input = lowerCase(input);
 
 		if (input == "map") {
 			system("cls");
 			game.Mape();
-			continue;
 		}
 		else if (input == "attack") {
+			if (m_player->currentRoom()->Enemies().size() == 0) {
+				cout << "没有敌人，calm down。" << endl;
+				Sleep(1500);
+
+				continue;
+			}
+
 			Fight fight(m_player);
 			fight.ProceedFight();
-			continue;
 		}
 		else if (input == "npc") {
 			game.NPC();
-			continue;
 		}
 		else if (input == "bag") {
 			game.Bag();
-			continue;
+		}
+		else if (input == "quit")
+		{
+			break;
 		}
 		else {
+			CommandExecutor commandexec(m_player);
 			Command cmd = commandpar.Parse(input);
 			commandexec.Execute(cmd);
 		}
 
-		if (m_player->Task() == 4) {
+		if (m_player->Task() == 3) {
 			End();
-			exit(0);
+			break;
 		}
 	}
 }

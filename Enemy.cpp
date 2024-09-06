@@ -1,8 +1,10 @@
 #include "Enemy.h"
+#include "func.h"
 using namespace std;
 
-EnemyTemplate::EnemyTemplate()
-{
+extern string UTF8ToGB(const char* str);
+
+EnemyTemplate::EnemyTemplate(){
     m_hitpoints = 0;
     m_dodging = 0;
     m_strikedamage = 0;
@@ -10,6 +12,9 @@ EnemyTemplate::EnemyTemplate()
     m_weapon = 0;
     m_moneymin = 0;
     m_moneymax = 0;
+    m_speed = 10;
+    m_target = 1;
+    m_type = GRASS;
 }
 
 //战斗属性
@@ -56,13 +61,14 @@ istream& operator>>(istream& p_stream, EnemyTemplate& t)
 {
     string temp;
     string type;
-
+    
     p_stream >> temp >> ws;  
     getline(p_stream, t.m_name);//名字
+    t.m_name = UTF8ToGB(t.m_name.c_str()).c_str();
+    cout << t.m_name << endl;
     p_stream >> temp >> ws;
     getline(p_stream, t.m_enname);//英文名字
-    p_stream >> temp >> type;//增加的
-    t.setType(type);
+    cout << t.m_enname << endl;
     p_stream >> temp >> t.m_hitpoints;//血量
     p_stream >> temp >> t.m_dodging;//闪避
     p_stream >> temp >> t.m_strikedamage;//攻击力
@@ -72,6 +78,9 @@ istream& operator>>(istream& p_stream, EnemyTemplate& t)
     p_stream >> temp >> t.m_target;
     p_stream >> temp >> t.m_moneymin;
     p_stream >> temp >> t.m_moneymax;
+    p_stream >> temp >> type;//增加的
+    cout << type << endl;
+    t.setType(type);
 
     t.m_loot.clear();
     while (extract(p_stream, temp) != "[ENDLOOT]")  //敌人物品栏的以[ENDLOOT]结束
@@ -81,6 +90,7 @@ istream& operator>>(istream& p_stream, EnemyTemplate& t)
         p_stream >> id >> chance;
         t.m_loot.push_back(loot(id, chance));
     }
+    cout << endl;
 
     return p_stream;
 }
@@ -154,11 +164,12 @@ istream& operator>>(istream& p_stream, Enemy& t)
     string type;
 
     p_stream >> temp >> t.m_template;
+    cout << t.m_template << endl;
     p_stream >> temp >> type;//后来增加的
+    cout << type;
     t.setType(type);
     p_stream >> temp >> t.m_hitpoints;
     p_stream >> temp >> t.m_room;
-    p_stream >> temp;   
 
     return p_stream;
 }

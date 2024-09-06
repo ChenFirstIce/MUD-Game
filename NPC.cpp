@@ -2,16 +2,17 @@
 #include "NPC.h"
 using namespace std;
 
+extern string UTF8ToGB(const char* str);
+
 NPC::NPC(){
 	m_level = 1;
 	m_stats = false;
-	//m_statpoints = 0;
 	m_type = GOLD;
 	m_weapon = -1;
 	m_armor = -1;
 	recalculateStats();
 	m_hitpoints = getAttr(MAXHITPOINTS);
-	cout << "NPC" << m_name << "创造成功…" << endl;
+	//cout << "NPC" << m_name << "创造成功…" << endl;
 }
 
 void NPC::showNPC() {
@@ -212,7 +213,6 @@ void NPC::useExp(int p_item) {
 ostream& operator<<(ostream& p_stream, NPC& p) {
 	p_stream << "[NAME]           " << p.m_name << "\n";
 	p_stream << "[ENGLISHNAME]    " << p.m_enname << "\n";
-	/*p_stream << "[STATPOINTS]     " << p.m_stats << "\n";*/
 	p_stream << "[ATTACKTYPE]     " << p.getType() << "\n";//后来增加的
 	p_stream << "[EXPERIENCE]     " << p.m_exp << "\n";
 	p_stream << "[LEVEL]          " << p.m_level << "\n";
@@ -222,6 +222,7 @@ ostream& operator<<(ostream& p_stream, NPC& p) {
 	p_stream << "[WEAPON]         " << p.m_weapon << "\n";
 	p_stream << "[ARMOR]          " << p.m_armor << "\n";
 	p_stream << "[TARGET]         " << p.m_target << "\n";
+	p_stream << "[STATS]          " << p.m_stats << "\n";
 
 	return p_stream;
 }
@@ -232,6 +233,7 @@ istream& operator>>(istream& p_stream, NPC& p) {
 
 	p_stream >> temp >> ws;
 	getline(p_stream, p.m_name);
+	cout << p.m_name;
 	p_stream >> temp >> ws;
 	getline(p_stream, p.m_enname);//英文名字
 	/*p_stream >> temp >> p.m_stats;*/
@@ -245,6 +247,7 @@ istream& operator>>(istream& p_stream, NPC& p) {
 	p_stream >> temp >> p.m_weapon;
 	p_stream >> temp >> p.m_armor;
 	p_stream >> temp >> p.m_target;
+	p_stream >> temp >> p.m_stats;
 
 	p.recalculateStats();
 

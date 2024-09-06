@@ -1,7 +1,10 @@
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 #include "Room.h"
 #include "Matchentity.h"
+#include "func.h"
 using namespace std;
+
+extern string UTF8ToGB(const char* str);
 
 const int MAXITEMNUM = 32;
 
@@ -10,7 +13,7 @@ RoomType Room::getRoomType(string p_arr) {
 
 	switch (chr) {
 	case 'N':
-		return NOMAL;
+		return NORMAL;
 		break;
 	case 'S':
 		return STORE;
@@ -80,43 +83,60 @@ void Room::loadTemplate(istream& p_stream){
 
 	p_stream >> temp >> ws;    
 	getline(p_stream, m_name);
+	m_name = UTF8ToGB(m_name.c_str()).c_str();
+	cout << m_name;
 	p_stream >> temp >> ws;    
 	getline(p_stream, m_desc);
 	p_stream >> temp >> temp;       
 	m_type = getRoomType(temp);
 	p_stream >> temp >> m_data;
 
+	p_stream >> temp;
 	for (int d = 0; d < NUMDIRECTIONS; d++)
-		p_stream >> temp >> m_rooms[d];
+		p_stream >> m_rooms[d];
 
-	p_stream >> temp >> m_enemy;
+	p_stream >> temp;
+
+	entityid last;
+	while (extract(p_stream, last) != 0) {
+		m_enemies.push_back(last);
+		cout << last;
+	}
+
 	p_stream >> temp >> m_maxenemies;
-	//p_stream >> temp >> m_npc;
-
 }
 
 void Room::loadData(istream& p_stream){
 	string temp;
+	int task;
 
 	p_stream >> temp;
 
 	m_items.clear();//房间物品
 	entityid last;
-	while (extract(p_stream, last) != 0)
+	while (extract(p_stream, last) != 0) {
 		m_items.push_back(last);
+		cout << last;
+	}
 
 	p_stream >> temp;
 
-	m_npces.clear();//房间NPC
-	entityid lase;
+	m_enemies.clear();//房间NPC
 	while (extract(p_stream, last) != 0)
-		m_npces.push_back(last);
+		m_enemies.push_back(last);
 
-	p_stream >> temp;   
+	p_stream >> temp >> ws;
 	p_stream >> m_money;
 
 	p_stream >> temp;
-	p_stream >> m_task;
+	p_stream >> task;
+	if (task == 1) {
+		m_task = true;
+	}
+	else if(task ==0) {
+		m_task = false;
+	}
+	cout << m_task;
 }
 
 void Room::saveData(ostream& p_stream){
@@ -130,10 +150,10 @@ void Room::saveData(ostream& p_stream){
 
 	p_stream << "0\n";
 
-	p_stream << "[NPCES] ";//房间NPC
+	p_stream << "[ENEMY] ";//房间敌人
 
-	list<npc>::iterator itr2 = m_npces.begin();
-	while (itr2 != m_npces.end()){
+	list<enemy>::iterator itr2 = m_enemies.begin();
+	while (itr2 != m_enemies.end()){
 		p_stream << *itr2 << " ";
 		itr2++;
 	}

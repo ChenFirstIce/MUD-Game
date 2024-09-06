@@ -1,4 +1,5 @@
 #include "DatabasePointer.h"
+#include "StoreDatabase.h"
 #include "NPCDatabase.h"
 #include "EnemyDatabase.h"
 #include "RoomDatabase.h"
@@ -29,4 +30,5 @@ DATABASEPOINTERIMPL(room, Room, RoomDatabase)
 DATABASEPOINTERIMPL(npc, NPC, NPCDatabase)
 DATABASEPOINTERIMPL(enemy, Enemy, EnemyDatabase)
 DATABASEPOINTERIMPL(enemytemplate, EnemyTemplate, EnemyTemplateDatabase)
+DATABASEPOINTERIMPL(store, Store, StoreDatabase)
 DATABASEPOINTERIMPL(player, Player, Player)

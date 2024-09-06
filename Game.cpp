@@ -37,6 +37,9 @@ bool Game::First(string input) {
         RoomDatabase::LoadData("Roomthings.txt");//上一次保存的房间物品
         return (commandexec.Continue());
     }
+    else if (cmd.action == "quit") {
+        exit(0);
+    }
 
     return false;
 }
@@ -67,7 +70,7 @@ void Game::Mape() {
             cout << "请输入你的操作" << endl;
             cout << "> ";
             cin >> input;
-        } while (!mape.Move2(input));
+        } while (!mape.Move1(input));
     }
 
     story.Run();

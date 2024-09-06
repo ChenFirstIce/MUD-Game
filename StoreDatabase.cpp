@@ -1,6 +1,5 @@
 #include <fstream>
 #include "StoreDatabase.h"
-#include "Store.h"
 using namespace std;
 
 map<entityid, Store> EntityDatabase<Store>::m_map;
@@ -16,5 +15,9 @@ bool StoreDatabase::Load(){
         m_map[id].ID() = id;
         file >> m_map[id] >> ws;     //¼ÓÔØÉÌµêÄÚÈİ
     }
+
+    cout << "StoreDatabase Load" << endl;
+
+    file.close();
     return true;
 }

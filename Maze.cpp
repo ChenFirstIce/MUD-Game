@@ -26,8 +26,8 @@ void Maze::Hide()//用于隐藏控制台光标
 
 void Maze::Welcome()//欢迎界面 
 {
-	cout << "\n\n           走 迷 宫";
-	cout << "\n\n        请按任意键开始";
+	cout << "\n\n           勇敢的少女哟，快去拯救男主吧！！！";
+	cout << "\n\n			请按任意键开始";
 	_getch();
 	system("cls");
 }
@@ -96,5 +96,5 @@ void Maze::Set()//设置光标到初始位置
 	m_player->pickItem(1);
 	m_player->pickItem(1);
 
-	Sleep(10000);
+	Sleep(1000);
 }

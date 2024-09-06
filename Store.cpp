@@ -1,10 +1,13 @@
 #include "Store.h"
 #include "Item.h"
 #include "Matchentity.h"
+#include "func.h"
 using namespace std;
 
+extern string UTF8ToGB(const char* str);
+
 item Store::find(string& p_item){
-    iterator itr = find_if(begin(), end(), matchEntityFull(p_item));
+    /*iterator itr = find_if(begin(), end(), matchEntityFull(p_item));
 
     if (itr != end()) {
         return *itr;
@@ -14,10 +17,9 @@ item Store::find(string& p_item){
         if (itr != end()) {
             return *itr;
         }
-    }
+    }*/
 
-    return 0;
-    /*iterator itr;
+    iterator itr;
     for (itr = begin(); itr != end(); itr++) {
         if ((*itr)->Match(p_item)) {
             return *itr;
@@ -28,11 +30,15 @@ item Store::find(string& p_item){
         if ((*itr)->fullMatch(p_item)) {
             return *itr;
         }
-    }*/
+    }
+
+    cout << endl;
+
+    return 0;
 }
 
 bool Store::has(entityid p_item){
-    return std:: find(begin(), end(), p_item) != end();
+    return (std::find(begin(), end(), p_item) != end());
 }
 
 istream& operator>>(istream& p_stream, Store& s){

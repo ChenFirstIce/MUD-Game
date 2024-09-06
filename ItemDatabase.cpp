@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include "stdc++.h"
 #include "Entity.h"
 #include "ItemDatabase.h"
 using namespace std;
@@ -29,5 +29,6 @@ bool ItemDatabase::Load()
 
 	cout << "ItemDatabase Loaded successful." << endl;
 
+	file.close();
 	return true;
 }

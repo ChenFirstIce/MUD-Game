@@ -6,19 +6,27 @@
 using namespace std;
 
 Command CommandParser::Parse(const string& input) {
-    istringstream iss(input);
+    stringstream iss(input);
     string word;
     vector<string> tokens;
+    string argus;
 
     while (iss >> word) {
         tokens.push_back(word);
     }
 
+    if (tokens.empty()) {
+        return Command("", "");
+    }
+
     string action = tokens[0];
     tokens.erase(tokens.begin());
 
-    string argus = tokens[0] + " ";
-    for (auto i = tokens.begin() + 1; i != tokens.end(); i++) {
+    if (tokens.empty()) {
+        return Command(action, "");
+    }
+
+    for (auto i = tokens.begin(); i != tokens.end(); i++) {
         argus += *i;
         argus += " ";
     }

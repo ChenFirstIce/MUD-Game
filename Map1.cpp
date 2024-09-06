@@ -49,7 +49,6 @@ void Map::ShowMap1()
 {
 	system("cls");
 	cout << "µØÍ¼1:" << endl;
-
 	cout << "            _____________               _____________" << endl;
 	cout << "           |             |             |             |" << endl;
 	cout << "           |   Íûº£Ô·    |             |   Çàµº±±Õ¾  |" << endl;
@@ -79,11 +78,12 @@ bool Map::Move1(char order)
 		else
 		{
 			cout << "ÒÆ¶¯Ê§°Ü" << endl;
+			Sleep(500);
 		}
 		break;
 	}
 	case 'a': {
-		if (position == 2 ) {
+		if (position == 2) {
 			dy--;
 			position++;
 		}
@@ -94,22 +94,24 @@ bool Map::Move1(char order)
 		else
 		{
 			cout << "ÒÆ¶¯Ê§°Ü" << endl;
+			Sleep(500);
 		}
 		break;
 	}
 	case 's': {
-		if ( position == 2 || position == 4 || position == 6) {
+		if (position == 2 || position == 4 || position == 6) {
 			dx++;
 			position--;
 		}
 		else
 		{
 			cout << "ÒÆ¶¯Ê§°Ü" << endl;
+			Sleep(500);
 		}
 		break;
 	}
 	case 'd': {
-		if (position == 3 ) {
+		if (position == 3) {
 			dy++;
 			position--;
 		}
@@ -120,6 +122,7 @@ bool Map::Move1(char order)
 		else
 		{
 			cout << "ÒÆ¶¯Ê§°Ü" << endl;
+			Sleep(500);
 		}
 		break;
 	}
