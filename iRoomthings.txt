@@ -6,7 +6,7 @@
 
 [ROOMID]  2
 [ITEMS]          9 9      9 9 9 9 0
-[ENEMY]     37  35 34 33 29 28 0
+[ENEMY]      28 33 0
 [MONEY] 300      
 [TASK]  1  
 
