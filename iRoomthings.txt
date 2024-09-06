@@ -1,5 +1,5 @@
 [ROOMID]  1
-[ITEMS]        21 9 9 9 9 9 0
+[ITEMS]        22 9 9 9 9 9 0
 [ENEMY]       27  30 36 0
 [MONEY] 200  
 [TASK]  1     
