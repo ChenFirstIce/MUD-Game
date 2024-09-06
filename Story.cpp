@@ -73,7 +73,7 @@ void Story::showStory(int id) {
 		system("pause");
 		system("cls");
 		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-		background = "    不一会，总裁坐到了你的面前，说：“这栋楼被我承包了，我已经让闲杂人等都离开了，现在只有我们两个，我有很重要的事情告诉你。总裁说到：“XX，我们是时空局派来拯救你的，只有你和我们三个中的一个恋爱，才能拯救你的未来！”你问到：“你们三个是合伙来骗我吗，这也太无聊了吧。”";
+		background = "    不一会，总裁坐到了你的面前，说：“这栋楼被我承包了，我已经让闲杂人等都离开了，现在只有我们两个，我有很重要的事情告诉你。总裁说到：“我们是时空局派来拯救你的，只有你和我们三个中的一个恋爱，才能拯救你的未来！”你问到：“你们三个是合伙来骗我吗，这也太无聊了吧。”";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
 			cout << background[i];
@@ -106,7 +106,7 @@ void Story::showStory(int id) {
 		system("pause");
 		system("cls");
 		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-		background = "    原来是他们三人接到了AI合成的你的被绑架录像。教授说：“实验暂停，我去救人！”总裁说：“会议暂停，我去救人！”影帝说：“拍戏暂停，我去救人！”结果可想而知，三人全军覆没。";
+		background = "    原来是他们三人接到了AI合成的你的被绑架录像。\n    教授说：“实验暂停，我去救人！”\n    总裁说：“会议暂停，我去救人！”\n    影帝说：“拍戏暂停，我去救人！”\n    结果可想而知，三人全军覆没。";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
 			cout << background[i];
@@ -140,7 +140,7 @@ void Story::showStory(int id) {
 		system("pause");
 		system("cls");
 		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-		background = "    “第五排23D47号……找到了！”你刚站起来，一个人拍了拍你的肩膀。你回头一看，原来是影帝。只见他拿着笔在本子上焦急地写着什么，然后撕下来揉成团紧紧塞到你的手里。你被他手心的温度烫到，呆呆地看着眼前的人，想问他到底是怎么回事，他却突然像故障的电子屏幕一般，变成了红蓝黄的线条，在闪烁几次后就凝聚成一个小点，消失了。你的脑子宕机了几秒后，你急忙将手中的纸团展开，字迹也全部消失得无影无踪，只留下浅浅的印子，你可以模糊地看到几个字，高纬度，快逃……";
+		background = "    “第五排23D47号……找到了！”你刚站起来，一个人拍了拍你的肩膀。你回头一看，原来是影帝。只见他拿着笔在本子上焦急地写着什么，然后撕下来揉成团紧紧塞到你的手里。你被他手心的温度烫到，呆呆地看着眼前的人，想问他到底是怎么回事，他却突然像故障的电子屏幕一般，变成了红蓝黄的线条，在闪烁几次后就凝聚成一个小点，消失了。你的脑子宕机了几秒后，你急忙将手中的纸团展开，字迹也全部消失得无影无踪，只留下浅浅的印子，你可以模糊地看到几个字:";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
 			cout << background[i];
@@ -148,6 +148,17 @@ void Story::showStory(int id) {
 		cout << endl;
 		system("pause");
 		system("cls");
+		cout<<"\033[31m"<<end;;
+		background = "    高纬度，快逃……";
+		for (int i = 0; i < background.length(); i++) {
+			Sleep(10);
+			cout << background[i];
+		}
+		cout << endl;
+		system("pause");
+		system("cls");
+		cout << endl;
+		SetConsoleTextAttribute(hConsole, 14);
 		background = "    寂静的房间里只剩下你和头顶昏暗的灯光，如果不是你的手心还攥着那团纸，你甚至开始怀疑刚刚发生的一切是不是你的幻觉。";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
@@ -157,7 +168,7 @@ void Story::showStory(int id) {
 		system("pause");
 		system("cls");
 		cout << endl;
-		cout << "\033[0m`";
+		cout << "\033[0m";
 	}
 
 	else if (id == 6) {
@@ -183,7 +194,7 @@ void Story::showStory(int id) {
 		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 		SetConsoleTextAttribute(hConsole, 14);
 		system("cls");
-		background = "    成功走出迷宫后，外星人却突然化作泡沫消失了，一切恢复正常，仿佛不曾发生。时间终于按下了启动键，路人开始行走，车辆开始疾驰，树叶开始沙沙作响。你的眼前突然出现一行字，“成功击败小A，你可以拯救陆陈、陈凡、陈冰三人中的一人，你要选择谁？”";
+		background = "    成功走出迷宫后，外星人却突然化作泡沫消失了，一切恢复正常，仿佛不曾发生。时间终于按下了启动键，路人开始行走，车辆开始疾驰，树叶开始沙沙作响。";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
 			cout << background[i];
@@ -365,7 +376,7 @@ void Story::showStory(int id) {
 		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 		SetConsoleTextAttribute(hConsole, 14);
 		system("cls");
-		string background = "    “启动自动驾驶模式，前往光之国。”陈冰说完边开始和你解释起来。原来XXX是光之国的一名科学家，但他十分痛恨地球人，而银河三号就是他研发的准备毁灭地球的飞船，如果不及时阻止他，后果不堪设想。";
+		string background = "    “启动自动驾驶模式，前往光之国。”陈冰说完边开始和你解释起来。原来博斯是光之国的一名科学家，但他十分痛恨地球人，而银河三号就是他研发的准备毁灭地球的飞船，如果不及时阻止他，后果不堪设想。";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
 			cout << background[i];
@@ -374,7 +385,7 @@ void Story::showStory(int id) {
 		system("pause");
 		system("cls");
 		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-		background = "    你疑惑不已，问到：“为什么你们要这样帮助地球呢，他不是你们星球的人吗？”“我们隶属于国际组织维和部，我们是反对这样对其他星球的侵略行为的，因此我们想要阻止他。而你的身上有着可以对抗XXX的光之力量，因此，我们需要你的协助。”陆陈向你解释道。“所以我们来到了地球找你，xxx实在是太恶趣味了，他设定的毁灭制止装置就是让你和我们三个恋爱，但他又反悔了，所以把我们抓了回去！”陈凡也愤愤的说着。你看着窗外的景象，他们说话的瞬间，你们就已经到了地球外层，你看着这个蓝色的星球，思绪万千。";
+		background = "    你疑惑不已，问到：“为什么你们要这样帮助地球呢，他不是你们星球的人吗？”“我们隶属于国际组织维和部，我们是反对这样对其他星球的侵略行为的，因此我们想要阻止他。而你的身上有着可以对抗博斯的光之力量，因此，我们需要你的协助。”陆陈向你解释道。“所以我们来到了地球找你，博斯实在是太恶趣味了，他设定的毁灭制止装置就是让你和我们三个恋爱，但他又反悔了，所以把我们抓了回去！”陈凡也愤愤的说着。你看着窗外的景象，他们说话的瞬间，你们就已经到了地球外层，你看着这个蓝色的星球，思绪万千。";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
 			cout << background[i];
