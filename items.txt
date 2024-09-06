@@ -275,7 +275,7 @@
 [CRITING]             40
 [SPEED]  0
 
-[ID]                21
+[ID]                22
 [NAME]          防狼喷雾 
 [ENGLISHNAME]   pepper spray
 [TYPE]           WEAPON
