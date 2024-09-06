@@ -55,171 +55,160 @@ Fight::Fight(Player* m_player):m_player(m_player){
 
 void Fight::ShowMe1() {
 	//cout << "---------------------------------- 玩家信息 ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t---------------------" << endl;
-	cout << "        \t|姓名：" << left << setw(6) << static_cast<player>(Me[0])->Name() << "|" << endl;
-	cout << "        \t|等级：" << left << setw(6) << static_cast<player>(Me[0])->Level() << "|" << endl;
-	cout << "        \t|经验：" << left << setw(6) << static_cast<player>(Me[0])->Exp() << "|" << endl;
-	cout << "   我   \t|攻击属性" << left << setw(6) << static_cast<player>(Me[0])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(0) << "|" << endl;
-	cout << "   方   \t|ATTACK:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(3) << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(4) << "|" << endl;
-	cout << "        \t---------------------" << endl;
-	cout << "\033[31m--------------------------------------------------------------------------------\033[0m\n\n";
+	cout << endl;
+	cout << "        \t\t\t _____________________________________" << endl;
+	cout << "        \t\t\t|" << left << setw(14)  <<"姓名：" << left << setw(23) << static_cast<player>(Me[0])->Name() << "| " << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "等级：" << left << setw(23) << static_cast<player>(Me[0])->Level() << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "经验：" << left << setw(23) << static_cast<player>(Me[0])->Exp() << "|" << endl;
+	cout << "   我   \t\t\t|" << left << setw(14) << "攻击属性：" << left << setw(23) << static_cast<player>(Me[0])->getType() << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<player>(Me[0])->HitPoints() <<"/" << left << setw(19) << static_cast<player>(Me[0])->getAttr(0) << "|" << endl;
+	cout << "   方   \t\t\t|" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(1) << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "CRITING:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(2) << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(3) << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(4) << "|" << endl;
+	cout << "        \t\t\t|_____________________________________|" << endl<<endl;
+	//cout << "--------------------------------------------------------------------------------\033[0m\n\n";
 }
 
 void Fight::ShowMe2() {
 	//cout << "---------------------------------- 玩家信息 ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t|姓名：" << left << setw(6) << static_cast<player>(Me[0])->Name() << "|" << "\t\t\t\t|姓名：" << left << setw(6) << static_cast<npc>(Me[1])->Name() << "|" << endl;
-	cout << "        \t|等级：" << left << setw(6) << static_cast<player>(Me[0])->Level() << "|" << "\t\t\t\t|等级：" << left << setw(6) << static_cast<npc>(Me[1])->Level() << "|" << endl;
-	cout << "        \t|经验：" << left << setw(6) << static_cast<player>(Me[0])->Exp() << "|" << "\t\t\t\t|经验：" << left << setw(6) << static_cast<npc>(Me[1])->Exp() << "|" << endl;
-	cout << "   我   \t|攻击属性" << left << setw(6) << static_cast<player>(Me[0])->getType() << "|" << "\t\t\t\t|攻击属性" << left << setw(6) << static_cast<npc>(Me[1])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(0) << "|" << endl;
-	cout << "   方   \t|ATTACK:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(3) << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(4) << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "\033[0m";
-	cout << "\033[31m--------------------------------------------------------------------------------\033[0m\n\n";
+	cout <<endl;
+	cout << "         _____________________________________\t \t _____________________________________" << endl;
+	cout << "        |" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<player>(Me[0])->Name() << "|" << "\t \t|" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<npc>(Me[1])->Name() << "|" << endl;
+	cout << "        |" << left << setw(14) << "等级：" << left << setw(23) << static_cast<player>(Me[0])->Level() << "|" << "\t \t|" << left << setw(14) << "等级：" << left << setw(23) << static_cast<npc>(Me[1])->Level() << "|" << endl;
+	cout << "        |" << left << setw(14) << "经验：" << left << setw(23) << static_cast<player>(Me[0])->Exp() << "|" << "\t \t|" << left << setw(14) << "经验：" << left << setw(23) << static_cast<npc>(Me[1])->Exp() << "|" << endl;
+	cout << "   我   |" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<player>(Me[0])->getType() << "|" << "\t \t|" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<npc>(Me[1])->getType() << "|" << endl;
+	cout << "        |" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<player>(Me[0])->HitPoints() << "/" << left << setw(19) << static_cast<player>(Me[0])->getAttr(0) << "|" << "\t \t|" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<npc>(Me[1])->HitPoints() << "/" << left << setw(19) << static_cast<npc>(Me[1])->getAttr(0) << "|" << endl;
+	cout << "   方   |" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(1) << "|" << "\t \t|" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<npc>(Me[1])->getAttr(1) << "|" << endl;
+	cout << "        |" << left << setw(14) << "CRITING:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(2) << "|" << "\t \t|" << left << setw(14) << "CRITING:" << left << setw(23) << static_cast<npc>(Me[1])->getAttr(2) << "|" << endl;
+	cout << "        |" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(3) << "|" << "\t \t|" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<npc>(Me[1])->getAttr(3) << "|" << endl;
+	cout << "        |" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(4) << "|" << "\t \t|" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<npc>(Me[1])->getAttr(4) << "|" << endl;
+	cout << "        |_____________________________________|\t \t|_____________________________________|" << endl<<endl;
+	//cout << "--------------------------------------------------------------------------------\033[0m\n\n";
 }
 
 void Fight::ShowMe3() {
 	//cout << "---------------------------------- 玩家信息 ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t|姓名：" << left << setw(6) << static_cast<npc>(Me[1])->Name() << "|" << "\t\t\t\t|姓名：" << left << setw(6) << static_cast<npc>(Me[2])->Name() << "|" << endl;
-	cout << "        \t|等级：" << left << setw(6) << static_cast<npc>(Me[1])->Level() << "|" << "\t\t\t\t|等级：" << left << setw(6) << static_cast<npc>(Me[2])->Level() << "|" << endl;
-	cout << "        \t|经验：" << left << setw(6) << static_cast<npc>(Me[1])->Exp() << "|" << "\t\t\t\t|经验：" << left << setw(6) << static_cast<npc>(Me[2])->Exp() << "|" << endl;
-	cout << "        \t|攻击属性" << left << setw(6) << static_cast<npc>(Me[1])->getType() << "|" << "\t\t\t\t|攻击属性" << left << setw(6) << static_cast<npc>(Me[2])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(0) << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(3) << "|" << endl;
-	cout << "   我   \t|SPEED:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(4) << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t             \t---------------------" << endl;
-	cout << "   方   \t             \t|姓名：" << left << setw(6) << static_cast<player>(Me[0])->Name() << "|" << endl;
-	cout << "        \t             \t|等级：" << left << setw(6) << static_cast<player>(Me[0])->Level() << "|" << endl;
-	cout << "        \t             \t|经验：" << left << setw(6) << static_cast<player>(Me[0])->Exp() << "|" << endl;
-	cout << "        \t             \t|攻击属性" << left << setw(6) << static_cast<player>(Me[0])->getType() << "|" << endl;
-	cout << "        \t             \t|MAXHITPOINTS:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(0) << "|" << endl;
-	cout << "        \t             \t|ATTACK:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(1) << "|" << endl;
-	cout << "        \t             \t|CRITING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(2) << "|" << endl;
-	cout << "        \t             \t|DODGING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(3) << "|" << endl;
-	cout << "        \t             \t|SPEED:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(4) << "|" << endl;
-	cout << "        \t             \t---------------------" << endl;
-	cout << "\033[0m";
-	cout << "\033[31m--------------------------------------------------------------------------------\033[0m\n\n";
+	cout << endl;
+	cout << "         _____________________________________\t \t _____________________________________" << endl;
+	cout << "        |" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<npc>(Me[1])->Name() << "|" << "\t \t|" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<npc>(Me[2])->Name() << "|" << endl;
+	cout << "        |" << left << setw(14) << "等级：" << left << setw(23) << static_cast<npc>(Me[1])->Level() << "|" << "\t \t|" << left << setw(14) << "等级：" << left << setw(23) << static_cast<npc>(Me[2])->Level() << "|" << endl;
+	cout << "        |" << left << setw(14) << "经验：" << left << setw(23) << static_cast<npc>(Me[1])->Exp() << "|" << "\t \t|" << left << setw(14) << "经验：" << left << setw(23) << static_cast<npc>(Me[2])->Exp() << "|" << endl;
+	cout << "        |" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<npc>(Me[1])->getType() << "|" << "\t \t|" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<npc>(Me[2])->getType() << "|" << endl;
+	cout << "        |" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<npc>(Me[1])->HitPoints() << "/" << left << setw(19) << static_cast<npc>(Me[1])->getAttr(0) << "|" << "\t \t|" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<npc>(Me[2])->HitPoints() << "/" << left << setw(19) << static_cast<npc>(Me[2])->getAttr(0) << "|" << endl;
+	cout << "        |" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<npc>(Me[1])->getAttr(1) << "|" << "\t \t|" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<npc>(Me[2])->getAttr(1) << "|" << endl;
+	cout << "        |" << left << setw(14) << "CRITING:" << left << setw(23) << static_cast<npc>(Me[1])->getAttr(2) << "|" << "\t \t|" << left << setw(14) << "CRITING:" << left << setw(23) << static_cast<npc>(Me[2])->getAttr(2) << "|" << endl;
+	cout << "        |" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<npc>(Me[1])->getAttr(3) << "|" << "\t \t|" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<npc>(Me[2])->getAttr(3) << "|" << endl;
+	cout << "   我   |" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<npc>(Me[1])->getAttr(4) << "|" << "\t \t|" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<npc>(Me[2])->getAttr(4) << "|" << endl;
+	cout << "        |_____________________________________|\t \t|_____________________________________|" << endl;
+	cout << "        \t\t\t _____________________________________" << endl;
+	cout << "   方   \t\t\t|" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<player>(Me[0])->Name() << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "等级：" << left << setw(23) << static_cast<player>(Me[0])->Level() << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "经验：" << left << setw(23) << static_cast<player>(Me[0])->Exp() << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<player>(Me[0])->getType() << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<player>(Me[0])->HitPoints() << "/" << left << setw(19) << static_cast<player>(Me[0])->getAttr(0) << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(1) << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "CRITING:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(2) << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(3) << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(4) << "|" << endl;
+	cout << "        \t\t\t|_____________________________________|" << endl<<endl;
+	//cout << "--------------------------------------------------------------------------------\033[0m\n\n";
 }
 
 void Fight::ShowMe4() {
 	//cout << "---------------------------------- 玩家信息 ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t|姓名：" << left << setw(6) << static_cast<npc>(Me[2])->Name() << "|" << "\t\t\t\t|姓名：" << left << setw(6) << static_cast<npc>(Me[3])->Name() << "|" << endl;
-	cout << "        \t|等级：" << left << setw(6) << static_cast<npc>(Me[2])->Level() << "|" << "\t\t\t\t|等级：" << left << setw(6) << static_cast<npc>(Me[3])->Level() << "|" << endl;
-	cout << "        \t|经验：" << left << setw(6) << static_cast<npc>(Me[2])->Exp() << "|" << "\t\t\t\t|经验：" << left << setw(6) << static_cast<npc>(Me[3])->Exp() << "|" << endl;
-	cout << "        \t|攻击属性" << left << setw(6) << static_cast<npc>(Me[2])->getType() << "|" << "\t\t\t\t|攻击属性" << left << setw(6) << static_cast<npc>(Me[3])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<npc>(Me[3])->getAttr(0) << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<npc>(Me[3])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<npc>(Me[3])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<npc>(Me[3])->getAttr(3) << "|" << endl;
-	cout << "   我   \t|SPEED:" << left << setw(6) << static_cast<npc>(Me[2])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<npc>(Me[3])->getAttr(4) << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "   方   \t|姓名：" << left << setw(6) << static_cast<player>(Me[0])->Name() << "|" << "\t\t\t\t|姓名：" << left << setw(6) << static_cast<npc>(Me[1])->Name() << "|" << endl;
-	cout << "        \t|等级：" << left << setw(6) << static_cast<player>(Me[0])->Level() << "|" << "\t\t\t\t|等级：" << left << setw(6) << static_cast<npc>(Me[1])->Level() << "|" << endl;
-	cout << "        \t|经验：" << left << setw(6) << static_cast<player>(Me[0])->Exp() << "|" << "\t\t\t\t|经验：" << left << setw(6) << static_cast<npc>(Me[1])->Exp() << "|" << endl;
-	cout << "        \t|攻击属性" << left << setw(6) << static_cast<player>(Me[0])->getType() << "|" << "\t\t\t\t|攻击属性" << left << setw(6) << static_cast<npc>(Me[1])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(0) << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(0) << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(1) << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(1) << "|" << endl;
-	cout << "        \t|CRITING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(2) << "|" << "\t\t\t\t|CRITING:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(2) << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(3) << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(3) << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << static_cast<player>(Me[0])->getAttr(4) << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<npc>(Me[1])->getAttr(4) << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "\033[0m";
-	cout << "\033[31m--------------------------------------------------------------------------------\033[0m\n\n";
+	cout << endl;
+	cout << "         _____________________________________\t \t _____________________________________" << endl;
+	cout << "        |" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<npc>(Me[2])->Name() << "|" << "\t \t|" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<npc>(Me[3])->Name() << "|" << endl;
+	cout << "        |" << left << setw(14) << "等级：" << left << setw(23) << static_cast<npc>(Me[2])->Level() << "|" << "\t \t|" << left << setw(14) << "等级：" << left << setw(23) << static_cast<npc>(Me[3])->Level() << "|" << endl;
+	cout << "        |" << left << setw(14) << "经验：" << left << setw(23) << static_cast<npc>(Me[2])->Exp() << "|" << "\t \t|" << left << setw(14) << "经验：" << left << setw(23) << static_cast<npc>(Me[3])->Exp() << "|" << endl;
+	cout << "        |" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<npc>(Me[2])->getType() << "|" << "\t \t|" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<npc>(Me[3])->getType() << "|" << endl;
+	cout << "        |" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<npc>(Me[2])->HitPoints() << "/" << left << setw(19) << static_cast<npc>(Me[2])->getAttr(0) << "|" << "\t \t|" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<npc>(Me[3])->HitPoints() << "/" << left << setw(19) << static_cast<npc>(Me[3])->getAttr(0) << "|" << endl;
+	cout << "        |" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<npc>(Me[2])->getAttr(1) << "|" << "\t \t|" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<npc>(Me[3])->getAttr(1) << "|" << endl;
+	cout << "        |" << left << setw(14) << "CRITING:" << left << setw(23) << static_cast<npc>(Me[2])->getAttr(2) << "|" << "\t \t|" << left << setw(14) << "CRITING:" << left << setw(23) << static_cast<npc>(Me[3])->getAttr(2) << "|" << endl;
+	cout << "        |" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<npc>(Me[2])->getAttr(3) << "|" << "\t \t|" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<npc>(Me[3])->getAttr(3) << "|" << endl;
+	cout << "   我   |" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<npc>(Me[2])->getAttr(4) << "|" << "\t \t|" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<npc>(Me[3])->getAttr(4) << "|" << endl;
+	cout << "        |_____________________________________|\t \t|_____________________________________|" << endl;
+	cout << "         _____________________________________\t \t _____________________________________" << endl;
+	cout << "   方   |" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<player>(Me[0])->Name() << "|" << "\t \t|" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<npc>(Me[1])->Name() << "|" << endl;
+	cout << "        |" << left << setw(14) << "等级：" << left << setw(23) << static_cast<player>(Me[0])->Level() << "|" << "\t \t|" << left << setw(14) << "等级：" << left << setw(23) << static_cast<npc>(Me[1])->Level() << "|" << endl;
+	cout << "        |" << left << setw(14) << "经验：" << left << setw(23) << static_cast<player>(Me[0])->Exp() << "|" << "\t \t|" << left << setw(14) << "经验：" << left << setw(23) << static_cast<npc>(Me[1])->Exp() << "|" << endl;
+	cout << "        |" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<player>(Me[0])->getType() << "|" << "\t \t|" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<npc>(Me[1])->getType() << "|" << endl;
+	cout << "        |" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<player>(Me[0])->HitPoints() << "/" << left << setw(19) << static_cast<player>(Me[0])->getAttr(0) << "|" << "\t \t|" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<npc>(Me[1])->HitPoints() << "/" << left << setw(19) << static_cast<npc>(Me[1])->getAttr(0) << "|" << endl;
+	cout << "        |" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(1) << "|" << "\t \t|" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<npc>(Me[1])->getAttr(1) << "|" << endl;
+	cout << "        |" << left << setw(14) << "CRITING:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(2) << "|" << "\t \t|" << left << setw(14) << "CRITING:" << left << setw(23) << static_cast<npc>(Me[1])->getAttr(2) << "|" << endl;
+	cout << "        |" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(3) << "|" << "\t \t|" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<npc>(Me[1])->getAttr(3) << "|" << endl;
+	cout << "        |" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<player>(Me[0])->getAttr(4) << "|" << "\t \t|" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<npc>(Me[1])->getAttr(4) << "|" << endl;
+	cout << "        |_____________________________________|\t \t|_____________________________________|" << endl<<endl;
+	//cout << "--------------------------------------------------------------------------------\033[0m\n\n";
 }
 
 void Fight::ShowEnemy1() {
 	//cout << "---------------------------------- 敌方信息 ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t---------------------" << endl;
-	cout << "        \t|姓名：" << left << setw(6) << static_cast<enemy>(Enemy[0])->Name() << "|" << endl;
-	cout << "   敌   \t|攻击属性" << left << setw(6) << static_cast<enemy>(Enemy[0])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->HitPoints() << "|" << endl;
-	cout << "   方   \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->StrikeDamage() << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Dodging() << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Speed() << "|" << endl;
-	cout << "        \t---------------------" << endl;
-	cout << "\033[0m";
+	cout << "        \t\t\t _____________________________________" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<enemy>(Enemy[0])->Name() << "|" << endl;
+	cout << "   敌   \t\t\t|" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<enemy>(Enemy[0])->getType() << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<enemy>(Enemy[0])->HitPoints() << "/" << left << setw(19) << static_cast<enemy>(Enemy[0])->MixHitPoints() << "|" << endl;
+	cout << "   方   \t\t\t|" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<enemy>(Enemy[0])->StrikeDamage() << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<enemy>(Enemy[0])->Dodging() << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<enemy>(Enemy[0])->Speed() << "|" << endl;
+	cout << "        \t\t\t|_____________________________________|" << endl;
 	//cout << "--------------------------------------------------------------------------------\n\n";
 }
 
 void Fight::ShowEnemy2() {
 	//cout << "---------------------------------- 敌方信息 ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t|姓名：" << left << setw(6) << static_cast<enemy>(Enemy[0])->Name() << "|" << "\t\t\t\t|姓名：" << left << setw(6) << static_cast<enemy>(Enemy[1])->Name() << "|" << endl;
-	cout << "   敌   \t|攻击属性" << left << setw(6) << static_cast<enemy>(Enemy[0])->getType() << "|" << "\t\t\t\t|攻击属性" << left << setw(6) << static_cast<enemy>(Enemy[1])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->HitPoints() << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[1])->HitPoints() << "|" << endl;
-	cout << "   方   \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->StrikeDamage() << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[1])->StrikeDamage() << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Dodging() << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->Dodging() << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Speed() << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[1])->Speed() << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "\033[0m";
+	cout << "         _____________________________________\t \t _____________________________________" << endl;
+	cout << "        |" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<enemy>(Enemy[0])->Name() << "|" << "\t \t|" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<enemy>(Enemy[1])->Name() << "|" << endl;
+	cout << "   敌   |" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<enemy>(Enemy[0])->getType() << "|" << "\t \t|" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<enemy>(Enemy[1])->getType() << "|" << endl;
+	cout << "        |" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<enemy>(Enemy[0])->HitPoints() <<"/"<<left<<setw(19)<< static_cast<enemy>(Enemy[0])->MixHitPoints() << "|" << "\t \t|" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<enemy>(Enemy[1])->HitPoints() << "/" << left << setw(19) << static_cast<enemy>(Enemy[1])->MixHitPoints() << "|" << endl;
+	cout << "   方   |" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<enemy>(Enemy[0])->StrikeDamage() << "|" << "\t \t|" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<enemy>(Enemy[1])->StrikeDamage() << "|" << endl;
+	cout << "        |" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<enemy>(Enemy[0])->Dodging() << "|" << "\t \t|" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<enemy>(Enemy[1])->Dodging() << "|" << endl;
+	cout << "        |" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<enemy>(Enemy[0])->Speed() << "|" << "\t \t|" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<enemy>(Enemy[1])->Speed() << "|" << endl;
+	cout << "        |_____________________________________|\t \t|_____________________________________|" << endl;
 	//cout << "--------------------------------------------------------------------------------\n\n";
 }
 
 void Fight::ShowEnemy3() {
 	//cout << "---------------------------------- 敌方信息 ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t             \t---------------------" << endl;
-	cout << "        \t             \t|姓名：" << left << setw(6) << static_cast<enemy>(Enemy[0])->Name() << "|" << endl;
-	cout << "        \t             \t|攻击属性" << left << setw(6) << static_cast<enemy>(Enemy[0])->getType() << "|" << endl;
-	cout << "        \t             \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->HitPoints() << "|" << endl;
-	cout << "        \t             \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->StrikeDamage() << "|" << endl;
-	cout << "        \t             \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Dodging() << "|" << endl;
-	cout << "   敌   \t             \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Speed() << "|" << endl;
-	cout << "        \t             \t---------------------" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "   方   \t|姓名：" << left << setw(6) << static_cast<enemy>(Enemy[1])->Name() << "|" << "\t\t\t\t|姓名：" << left << setw(6) << static_cast<enemy>(Enemy[2])->Name() << "|" << endl;
-	cout << "        \t|攻击属性" << left << setw(6) << static_cast<enemy>(Enemy[1])->getType() << "|" << "\t\t\t\t|攻击属性" << left << setw(6) << static_cast<enemy>(Enemy[2])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[1])->HitPoints() << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[2])->HitPoints() << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[1])->StrikeDamage() << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[2])->StrikeDamage() << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->Dodging() << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[2])->Dodging() << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[1])->Speed() << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[2])->Speed() << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "\033[0m";
+	cout << "        \t\t\t _____________________________________" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<enemy>(Enemy[0])->Name() << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<enemy>(Enemy[0])->getType() << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<enemy>(Enemy[0])->HitPoints() << "/" << left << setw(19) << static_cast<enemy>(Enemy[0])->MixHitPoints() << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<enemy>(Enemy[0])->StrikeDamage() << "|" << endl;
+	cout << "        \t\t\t|" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<enemy>(Enemy[0])->Dodging() << "|" << endl;
+	cout << "   敌   \t\t\t|" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<enemy>(Enemy[0])->Speed() << "|" << endl;
+	cout << "        \t\t\t|_____________________________________|" << endl;
+	cout << "         _____________________________________\t \t _____________________________________" << endl;
+	cout << "   方   |" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<enemy>(Enemy[1])->Name() << "|" << "\t \t|" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<enemy>(Enemy[2])->Name() << "|" << endl;
+	cout << "        |" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<enemy>(Enemy[1])->getType() << "|" << "\t \t|" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<enemy>(Enemy[2])->getType() << "|" << endl;
+	cout << "        |" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<enemy>(Enemy[1])->HitPoints() << "/" << left << setw(19) << static_cast<enemy>(Enemy[1])->MixHitPoints() << "|" << "\t \t|" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<enemy>(Enemy[2])->HitPoints() << "/" << left << setw(19) << static_cast<enemy>(Enemy[2])->MixHitPoints() << "|" << endl;
+	cout << "        |" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<enemy>(Enemy[1])->StrikeDamage() << "|" << "\t \t|" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<enemy>(Enemy[2])->StrikeDamage() << "|" << endl;
+	cout << "        |" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<enemy>(Enemy[1])->Dodging() << "|" << "\t \t|" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<enemy>(Enemy[2])->Dodging() << "|" << endl;
+	cout << "        |" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<enemy>(Enemy[1])->Speed() << "|" << "\t \t|" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<enemy>(Enemy[2])->Speed() << "|" << endl;
+	cout << "        |_____________________________________|\t \t|_____________________________________|" << endl;
 	//cout << "--------------------------------------------------------------------------------\n\n";
 }
 
 
 void Fight::ShowEnemy4() {
 	//cout << "---------------------------------- 敌方信息 ----------------------------------" << endl;
-	cout << "\033[33m";
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t|姓名：" << left << setw(6) << static_cast<enemy>(Enemy[0])->Name() << "|" << "\t\t\t\t|姓名：" << left << setw(6) << static_cast<enemy>(Enemy[1])->Name() << "|" << endl;
-	cout << "        \t|攻击属性" << left << setw(6) << static_cast<enemy>(Enemy[0])->getType() << "|" << "\t\t\t\t|攻击属性" << left << setw(6) << static_cast<enemy>(Enemy[1])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[0])->HitPoints() << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[1])->HitPoints() << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[0])->StrikeDamage() << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[1])->StrikeDamage() << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Dodging() << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[1])->Dodging() << "|" << endl;
-	cout << "   敌   \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[0])->Speed() << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[1])->Speed() << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "   方   \t|姓名：" << left << setw(6) << static_cast<enemy>(Enemy[2])->Name() << "|" << "\t\t\t\t|姓名：" << left << setw(6) << static_cast<enemy>(Enemy[3])->Name() << "|" << endl;
-	cout << "        \t|攻击属性" << left << setw(6) << static_cast<enemy>(Enemy[2])->getType() << "|" << "\t\t\t\t|攻击属性" << left << setw(6) << static_cast<enemy>(Enemy[3])->getType() << "|" << endl;
-	cout << "        \t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[2])->HitPoints() << "|" << "\t\t\t\t|MAXHITPOINTS:" << left << setw(6) << static_cast<enemy>(Enemy[3])->HitPoints() << "|" << endl;
-	cout << "        \t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[2])->StrikeDamage() << "|" << "\t\t\t\t|ATTACK:" << left << setw(6) << static_cast<enemy>(Enemy[3])->StrikeDamage() << "|" << endl;
-	cout << "        \t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[2])->Dodging() << "|" << "\t\t\t\t|DODGING:" << left << setw(6) << static_cast<enemy>(Enemy[3])->Dodging() << "|" << endl;
-	cout << "        \t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[2])->Speed() << "|" << "\t\t\t\t|SPEED:" << left << setw(6) << static_cast<enemy>(Enemy[3])->Speed() << "|" << endl;
-	cout << "        \t---------------------\t\t\t\t---------------------" << endl;
-	cout << "\033[0m";
+	cout << "         _____________________________________\t \t _____________________________________" << endl;
+	cout << "        |" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<enemy>(Enemy[0])->Name() << "|" << "\t \t|" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<enemy>(Enemy[1])->Name() << "|" << endl;
+	cout << "        |" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<enemy>(Enemy[0])->getType() << "|" << "\t \t|" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<enemy>(Enemy[1])->getType() << "|" << endl;
+	cout << "        |" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<enemy>(Enemy[0])->HitPoints() << "/" << left << setw(19) << static_cast<enemy>(Enemy[0])->MixHitPoints() << "|" << "\t \t|" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<enemy>(Enemy[1])->HitPoints() << "/" << left << setw(19) << static_cast<enemy>(Enemy[1])->MixHitPoints() << "|" << endl;
+	cout << "        |" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<enemy>(Enemy[0])->StrikeDamage() << "|" << "\t \t|" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<enemy>(Enemy[1])->StrikeDamage() << "|" << endl;
+	cout << "        |" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<enemy>(Enemy[0])->Dodging() << "|" << "\t \t|" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<enemy>(Enemy[1])->Dodging() << "|" << endl;
+	cout << "   敌   |" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<enemy>(Enemy[0])->Speed() << "|" << "\t \t|" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<enemy>(Enemy[1])->Speed() << "|" << endl;
+	cout << "        |_____________________________________|\t \t|_____________________________________|" << endl;
+	cout << "         _____________________________________\t \t _____________________________________" << endl;
+	cout << "   方   |" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<enemy>(Enemy[2])->Name() << "|" << "\t \t|" << left << setw(14) << "姓名：" << left << setw(23) << static_cast<enemy>(Enemy[3])->Name() << "|" << endl;
+	cout << "        |" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<enemy>(Enemy[2])->getType() << "|" << "\t \t|" << left << setw(14) << "攻击属性" << left << setw(23) << static_cast<enemy>(Enemy[3])->getType() << "|" << endl;
+	cout << "        |" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<enemy>(Enemy[2])->HitPoints() << "/" << left << setw(19) << static_cast<enemy>(Enemy[2])->MixHitPoints() << "|" << "\t \t|" << left << setw(14) << "HITPOINTS:" << left << setw(3) << static_cast<enemy>(Enemy[3])->HitPoints() << "/" << left << setw(19) << static_cast<enemy>(Enemy[3])->MixHitPoints() << "|" << endl;
+	cout << "        |" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<enemy>(Enemy[2])->StrikeDamage() << "|" << "\t \t|" << left << setw(14) << "ATTACK:" << left << setw(23) << static_cast<enemy>(Enemy[3])->StrikeDamage() << "|" << endl;
+	cout << "        |" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<enemy>(Enemy[2])->Dodging() << "|" << "\t \t|" << left << setw(14) << "DODGING:" << left << setw(23) << static_cast<enemy>(Enemy[3])->Dodging() << "|" << endl;
+	cout << "        |" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<enemy>(Enemy[2])->Speed() << "|" << "\t \t|" << left << setw(14) << "SPEED:" << left << setw(23) << static_cast<enemy>(Enemy[3])->Speed() << "|" << endl;
+	cout << "        |_____________________________________|\t \t|_____________________________________|" << endl;
 	//cout << "--------------------------------------------------------------------------------\n\n";
 }
 
@@ -598,7 +587,7 @@ void Fight::Atk2(int atk, int target) {
 	if (target == 0) {
 		Player* p_target = m_player;
 
-		if (rand() % 100 <= p_target->Dodging()) {
+		if (rand() % 100 <= p_target->getAttr(DODGING)) {
 			cout << p_atk->Name() << " 攻击了 " << p_target->Name();
 			cout << "， 但是 " << p_target->Name() << " 躲开了攻击!" << endl;
 			system("pause");
