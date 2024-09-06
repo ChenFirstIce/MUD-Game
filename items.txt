@@ -6,7 +6,7 @@
 [MAX]               6
 [PRICE]              10
 [MAXHITPOINTS]      100
-[ATTACK]             5
+[ATTACK]             7
 [CRITING]             20
 [DODGING]            20
 [SPEED]  0
@@ -274,6 +274,19 @@
 [ATTACK]             40
 [CRITING]             40
 [SPEED]  0
+
+[ID]                21
+[NAME]          防狼喷雾 
+[ENGLISHNAME]   pepper spray
+[TYPE]           WEAPON
+[MIN]               20
+[MAX]             50
+[PRICE]              0
+[MAXHITPOINTS]       1000
+[ATTACK]             5
+[CRITING]             40
+[SPEED]  0
+[DODGING]            20
 [DODGING]            20
 
 
