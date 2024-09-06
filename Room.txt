@@ -66,7 +66,7 @@
 [TYPE]         NORMAL
 [DATA]            0
 [DIRECTE]        8 0 0 0
-[ENEMY]      11  14 18   0     
+[ENEMY]     6 11  14 18   0     
 [MAXENEMY]       16
 
 [ID]     8
