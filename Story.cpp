@@ -1,12 +1,9 @@
 #include "stdc++.h"
 #include <Windows.h>
-#include <cctype>
 #include "Maze.h"
 #include "Story.h"
 #include "Fight.h"
 using namespace std;
-
-extern string lowerCase(string str);
 
 void Story::showStory(int id) {
 
@@ -32,7 +29,7 @@ void Story::showStory(int id) {
 		cout << endl;
 		system("pause");
 		system("cls");
-		background = "    你不禁问旁边的同学，“你闻到什么奇特的味道了吗？”她摇摇头，说：“没有啊，我没闻到什么奇怪的味道啊。”一整堂课你都处于震惊之中，心不在焉地在课本上写下了“奇怪奇怪奇怪……”下课铃将你拉到了现实，你收拾东西准备离开。";
+		background = "    你不禁问旁边的同学，“你闻到什么奇特的味道了吗？”她摇摇头，说：“没有啊，我没闻到什么奇怪的味道啊。” 一整堂课你都处于震惊之中，心不在焉地在课本上写下了“奇怪奇怪奇怪……”下课铃将你拉到了现实，你收拾东西准备离开。";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
 			cout << background[i];
@@ -58,7 +55,7 @@ void Story::showStory(int id) {
 		system("cls");
 		cout << "\033[0m`";
 	}
-
+	
 	else if (id == 3) {
 		HANDLE hConsole;
 		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -105,15 +102,7 @@ void Story::showStory(int id) {
 		cout << endl;
 		system("pause");
 		system("cls");
-		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-		background = "    原来是他们三人接到了AI合成的你的被绑架录像。";
-		for (int i = 0; i < background.length(); i++) {
-			Sleep(10);
-			cout << background[i];
-		}
-		cout << endl;
-		system("pause");
-		background = "    教授说：“实验暂停，我去救人！”\n    总裁说：“会议暂停，我去救人！”\n    影帝说：“拍戏暂停，我去救人！”\n    结果可想而知，三人全军覆没。";
+		background = "    原来是他们三人接到了AI合成的你的被绑架录像。\n    教授说：“实验暂停，我去救人！”\n    总裁说：“会议暂停，我去救人！”\n    影帝说：“拍戏暂停，我去救人！”\n    结果可想而知，三人全军覆没。";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
 			cout << background[i];
@@ -147,7 +136,7 @@ void Story::showStory(int id) {
 		system("pause");
 		system("cls");
 		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-		background = "    “第五排23D47号……找到了！”你刚站起来，一个人拍了拍你的肩膀。你回头一看，原来是影帝。只见他拿着笔在本子上焦急地写着什么，然后撕下来揉成团紧紧塞到你的手里。你被他手心的温度烫到，呆呆地看着眼前的人，想问他到底是怎么回事，他却突然像故障的电子屏幕一般，变成了红蓝黄的线条，在闪烁几次后就凝聚成一个小点，消失了。你的脑子宕机了几秒后，你急忙将手中的纸团展开，字迹也全部消失得无影无踪，只留下浅浅的印子，你可以模糊地看到几个字：";
+		background = "    “第五排23D47号……找到了！”你刚站起来，一个人拍了拍你的肩膀。你回头一看，原来是影帝。只见他拿着笔在本子上焦急地写着什么，然后撕下来揉成团紧紧塞到你的手里。你被他手心的温度烫到，呆呆地看着眼前的人，想问他到底是怎么回事，他却突然像故障的电子屏幕一般，变成了红蓝黄的线条，在闪烁几次后就凝聚成一个小点，消失了。你的脑子宕机了几秒后，你急忙将手中的纸团展开，字迹也全部消失得无影无踪，只留下浅浅的印子，你可以模糊地看到几个字，高纬度，快逃……";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
 			cout << background[i];
@@ -155,16 +144,6 @@ void Story::showStory(int id) {
 		cout << endl;
 		system("pause");
 		system("cls");
-		background = "    高纬度，快逃!!!";
-		cout << "\033[31m";
-		for (int i = 0; i < background.length(); i++) {
-			Sleep(10);
-			cout << background[i];
-		}
-		cout << endl;
-		system("pause");
-		system("cls");
-		SetConsoleTextAttribute(hConsole, 14);
 		background = "    寂静的房间里只剩下你和头顶昏暗的灯光，如果不是你的手心还攥着那团纸，你甚至开始怀疑刚刚发生的一切是不是你的幻觉。";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
@@ -173,6 +152,7 @@ void Story::showStory(int id) {
 		cout << endl;
 		system("pause");
 		system("cls");
+		cout << endl;
 		cout << "\033[0m`";
 	}
 
@@ -194,13 +174,12 @@ void Story::showStory(int id) {
 		//迷宫
 		Maze maz(m_player);
 		maz.maze();
-		m_player->addNPC();
 
 		//HANDLE hConsole;
 		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 		SetConsoleTextAttribute(hConsole, 14);
 		system("cls");
-		background = "    成功走出迷宫后，外星人却突然化作泡沫消失了，一切恢复正常，仿佛不曾发生。时间终于按下了启动键，路人开始行走，车辆开始疾驰，树叶开始沙沙作响。你的眼前突然出现一行字，“成功击败小A，你可以拯救陆陈、陈凡、陈冰三人中的一人，你要选择谁？”";
+		background = "    成功走出迷宫后，外星人却突然化作泡沫消失了，一切恢复正常，仿佛不曾发生。时间终于按下了启动键，路人开始行走，车辆开始疾驰，树叶开始沙沙作响......";
 		for (int i = 0; i < background.length(); i++) {
 			Sleep(10);
 			cout << background[i];
@@ -228,7 +207,6 @@ void Story::showStory(int id) {
 		system("cls");
 		cout << "\033[31m" << "成功拯救一名男主，获得前往缅甸的车票和魔杖！" << "\033[0m" << endl;
 		cout << "\033[0m`";
-		Sleep(1500);
 	}
 
 	else if (id == 7) {
@@ -310,7 +288,7 @@ void Story::showStory(int id) {
 		cout << endl;
 		system("pause");
 		system("cls");
-		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 		cout << "\033[0m`";
 	}
 
@@ -421,7 +399,7 @@ void Story::showStory(int id) {
 	}
 }
 
-void Story::Arriving() {
+void Story::arriving() {
 	HANDLE hConsole;
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hConsole, 14);
@@ -437,69 +415,37 @@ void Story::Arriving() {
 	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 }
 
-void Story::Change(){
-	char choice;
-	room m_room = m_player->currentRoom();
-	Fight fight(m_player);
-	
-	cout << "\t\t\t是否继续下面的剧情？[Y/N]\n";
-	cout << "> ";
-	cin >> choice;
-
-	choice = tolower(choice);
-
-	while (choice != 'y' && choice != 'n') {
-		system("cls");
-
-		cout << "\t\t\t是否继续下面的剧情？[Y/N]\n";
-		cout << "> ";
-		cin >> choice;
-
-		choice = tolower(choice);
-	}
-
-	if (choice == 'y') {
-		//青岛北车站
-		showStory(6);//剧情+迷宫
-		m_room->Task() = false;//插入
-
-		//木屋
-		m_room = 10;
-		showStory(10);//木屋剧情
-		m_room->Task() = false;
-
-		fight.ProceedFight();
-		if (fight.isWin()) {
-			cout << "\033[31m" << "成功拯救一名男主，获得信物一份和z城地图一份！" << "\033[0m" << endl;
-			Sleep(1500);
-		}
-
-		//进入缅甸的剧情
-		Arriving();
-		m_player->currentRoom() = 7;
-
-		map_points = 2;
-	}
-}
-
 void Story::Run(){
 	int id = m_player->currentRoom();
 	room m_room = m_player->currentRoom();
 	Fight fight(m_player);
 
 	if (m_room->Task()) {
-		if (!static_cast<room>(2)->Task() && !static_cast<room>(4)->Task() && !static_cast<room>(5)->Task() && id == 6) {
-			showStory(4);
-			static_cast<room>(6)->Task() = false;
+		if (id == 6) {
+			//青岛北车站
+			showStory(6);//剧情+迷宫
+			m_room->Task() = false;//插入
+			m_player->addNPC();
 
-			Change();
+			//木屋
+			showStory(10);//木屋剧情
+			fight.ProceedFight();
+			if (fight.isWin()) {
+				cout << "\033[31m" << "成功拯救一名男主，获得信物一份和z城地图一份！" << "\033[0m" << endl;
+			}
+
+			//进入缅甸的剧情
+			arriving();
+			m_player->currentRoom() = 7;
+
+			map_points = 2;
 		}
-		else if(id !=6){
+		else {
 			showStory(id);
 			m_room->Task() = false;
 		}
 	}
-	else if (id == 6) {
-		Change();
+	else if (!static_cast<room>(2)->Task() && !static_cast<room>(4)->Task() && !static_cast<room>(5)->Task()&& m_player->Task()) {
+		showStory(3);
 	}
 }
