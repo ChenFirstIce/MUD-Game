@@ -1,66 +1,66 @@
 [ROOMID]  1
-[ITEMS]        0
+[ITEMS]        21 9 9 9 9 9 0
 [ENEMY]       27  30 36 0
 [MONEY] 200  
 [TASK]  1     
 
 [ROOMID]  2
-[ITEMS]                0
+[ITEMS]          9 9      9 9 9 9 0
 [ENEMY]     37  35 34 33 29 28 0
 [MONEY] 300      
 [TASK]  1  
 
 [ROOMID]  3
-[ITEMS]        0
+[ITEMS]        9 9 9 9 9 0
 [ENEMY]           38  0
 [MONEY] 200   
 [TASK]  1       
 
 
 [ROOMID]  4
-[ITEMS]        0
+[ITEMS]        9 9 9 9 9 0
 [ENEMY]            38 32 31 0
 [MONEY] 200      
 [TASK]  0  
 
 [ROOMID]  5
-[ITEMS]        0
+[ITEMS]        9 9 9 9 0
 [ENEMY]            40 0
 [MONEY] 200    
 [TASK]  1      
 
 [ROOMID]  6
-[ITEMS]        0
+[ITEMS]         9 9 9 9 0
 [ENEMY]         4  0
 [MONEY] 200   
 [TASK]  1       
 
 [ROOMID]  7
-[ITEMS]        0
+[ITEMS]        9 9 9 9 9 9 0
 [ENEMY]      6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21   0  
 [MONEY] 1000    
 [TASK]  1      
 
 [ROOMID]  8
-[ITEMS]        0
+[ITEMS]        3 3 4 4 5 5 6 6 7 7 8 8 9 9 9 9 0
 [ENEMY]       0     
 [MONEY] 200     
 [TASK]  0   
 
 [ROOMID]  9
-[ITEMS]        0
+[ITEMS]       10 10 11 11 12 12 13 13 14 14 15 15 0
 [ENEMY]       0     
 [MONEY] 200   
 [TASK]  0      
 
 [ROOMID]  10
-[ITEMS]        0
+[ITEMS]        9 9 9 9 0
 [ENEMY]        5 0     
 [MONEY] 200    
 [TASK]  1    
 
 [ROOMID]  11
-[ITEMS]        0
+[ITEMS]        9 9 9 9 0
 [ENEMY]     22 23 24 25 0    
 [MONEY] 200   
 [TASK]  1       
