@@ -26,9 +26,6 @@ bool CommandExecutor::Execute(const Command& cmd) {
     else if (cmd.action == "remove") {
         return (RemoveItem(cmd));
     }
-   /* else if (cmd.action == "quit") {
-        return (Quit(cmd));
-    }*/
     else if (cmd.action == "help") {
         PrintHelp();
         return true;
@@ -57,7 +54,15 @@ void CommandExecutor::New() {
     cout << "> ";
     getline(cin, name);
 
-    cout << "你的攻击类型是？（输入1，则攻击类型为光）" << endl;
+    cout << "你的攻击类型是？\n"  << "\t输入1，则攻击类型为光【推荐】\n"  << "\t输入2，则攻击类型为金\n"  << "\t输入3，则攻击类型为火\n" << "\t输入4，则攻击类型为草" << endl;
+    cout << "\t       " << "\033[33m" << "金" << "\033[0m" << endl;
+    cout << "\t     / ^ ^" << endl;
+    cout << "\t    /  |  \\" << endl;
+    cout << "\t   /   光  \\" << endl;
+    cout << "\t  /  /   \\  \\" << endl;
+    cout << "\t v  v     v  \\" << endl;
+    cout << "\t  " << "\033[31m" << "火" << "\033[0m" << "—--—--> " << "\033[32m" << "草" << "\033[0m" << endl;
+
     cout << "> ";
     cin >> choice;
 
@@ -102,6 +107,31 @@ bool CommandExecutor::Continue() {
 
 //打印函数
 void CommandExecutor::PrintHelp(){
+    system("cls");
+
+    cout << "         _______" << endl;
+    cout << "        |       |" << endl;
+    cout << "        |   W   |" << endl;
+    cout << "________|_______|________" << endl;
+    cout << "|       |       |       |" << endl;
+    cout << "|   A   |   S   |   D   |" << endl;
+    cout << "|       |       |       |" << endl;
+    cout << "-------------------------" << endl;
+    cout << "使用 " << "\033[34m" << "W" << "\033[0m" << "（向上)、" << "\033[34m" << "S" << "\033[0m" << "（向下）、" << "\033[34m" << "A" << "\033[0m" << "（向左）、" << "\033[34m" << "D" << "\033[0m" << "（向右）移动时记得使用" << "\033[34m" << "英文输入法" << "\033[0m" << "哦 > - <" << endl;
+
+    Sleep(1500);
+
+    system("cls");
+    system("pause");
+    cout << "输入map进入地图" << endl;
+    cout << "输入attack进入战斗" << endl;
+    cout << "输入pick捡起物品（如捡起$100需输入“pick $100”）" << endl;
+    cout << "输入use使用物品（如使用water需输入“use water”)" << endl;
+    cout << "输入buy购买物品（如使用购买water需输入“buy water”)" << endl;
+    cout << "输入sell卖出物品（如卖出water需输入“sell water”)" << endl;
+    cout << "输入remove将物品移除背包（如移除water需输入“remove water”)" << endl;
+
+    Sleep(2500);
 
 }
 
@@ -152,12 +182,14 @@ bool CommandExecutor::UseItem(const Command& cmd){
 
     if (cmd.argus.empty()) {
         cout << "啥？" << endl;
+        Sleep(1000);
         return false;
     }
 
     if (i == -1)
     {
         cout << "找不到该物品。" << endl;
+        Sleep(1000);
         return false;
     }
 
