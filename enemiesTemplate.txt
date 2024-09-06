@@ -183,11 +183,4 @@
 [NATURE]           GOLD
 [LOOT]    12        100                             [ENDLOOT] 
 
-
-
-
-
-
-
-
  

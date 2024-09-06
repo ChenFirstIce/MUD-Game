@@ -1,0 +1,17 @@
+[NAME]           Chen Ice
+[ATTACKTYPE]     LIGHT
+[TASK]           0
+[EXPERIENCE]     0
+[LEVEL]          1
+[ROOM]           1
+[MONEY]          100
+[HITPOINTS]      16
+[MHP]  0
+[ATTACK]  0
+[CRITING]  0
+[DODGING]  0
+[SPEED]  0
+[INVENTORY]      0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+[NPC]            0
+[WEAPON]         -1
+[ARMOR]          -1

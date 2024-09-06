@@ -93,7 +93,7 @@
 [DESC]           0
 [TYPE]      NORMAL
 [DATA]	0
-[DIRECTE]      0
+[DIRECTE]      0 0 0 0
 [ENEMY]        5 0     
 [MAXENEMY]       1
 
@@ -102,7 +102,7 @@
 [DESC]       0
 [TYPE]      NORMAL
 [DATA]            0
-[DIRECTE]     0
+[DIRECTE]     0 0 0 0
 [ENEMY]     22 23 24 25 0    
 [MAXENEMY]        4
 

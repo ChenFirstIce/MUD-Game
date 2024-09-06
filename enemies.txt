@@ -1,248 +1,259 @@
-[ID]     4
-[TEMPLATEID]    4
+[ID]             4
+[TEMPLATEID]     4
 [ATTACKTYPE]     GOLD
 [HITPOINTS]      20
-[ROOM]          6
+[ROOM]           6
 
-[ID]     5
-[TEMPLATEID]    5
+
+[ID]             5
+[TEMPLATEID]     5
 [ATTACKTYPE]     FIRE
 [HITPOINTS]      10
-[ROOM]          10
+[ROOM]           10
 
 
-[ID]     6
-[TEMPLATEID]    6
+[ID]             6
+[TEMPLATEID]     6
 [ATTACKTYPE]     GOLD
 [HITPOINTS]      20
-[ROOM]         7 
+[ROOM]           7
 
 
-[ID]     7
-[TEMPLATEID]    6
+[ID]             7
+[TEMPLATEID]     6
 [ATTACKTYPE]     GRASS
 [HITPOINTS]      20
-[ROOM]         7
+[ROOM]           7
 
-[ID]     8
-[TEMPLATEID]    6
+
+[ID]             8
+[TEMPLATEID]     6
 [ATTACKTYPE]     FIRE
 [HITPOINTS]      15
-[ROOM]         7
+[ROOM]           7
 
 
-[ID]     9
-[TEMPLATEID]    6
+[ID]             9
+[TEMPLATEID]     6
 [ATTACKTYPE]     FIRE
 [HITPOINTS]      10
-[ROOM]         7
+[ROOM]           7
 
 
-[ID]     10
-[TEMPLATEID]    7
+[ID]             10
+[TEMPLATEID]     7
 [ATTACKTYPE]     GRASS
 [HITPOINTS]      25
-[ROOM]         7
+[ROOM]           7
 
 
-[ID]     11
-[TEMPLATEID]    7
+[ID]             11
+[TEMPLATEID]     7
 [ATTACKTYPE]     FIRE
 [HITPOINTS]      20
-[ROOM]         7
+[ROOM]           7
 
 
-[ID]     12
-[TEMPLATEID]    7
+[ID]             12
+[TEMPLATEID]     7
 [ATTACKTYPE]     GOLD
 [HITPOINTS]      30
-[ROOM]         7
+[ROOM]           7
 
 
-[ID]     13
-[TEMPLATEID]    7
+[ID]             13
+[TEMPLATEID]     7
 [ATTACKTYPE]     GOLD
 [HITPOINTS]      27
-[ROOM]         7
+[ROOM]           7
 
 
-[ID]     14
-[TEMPLATEID]    8
+[ID]             14
+[TEMPLATEID]     8
 [ATTACKTYPE]     GRASS
 [HITPOINTS]      20
-[ROOM]         7
+[ROOM]           7
 
 
-[ID]     15
-[TEMPLATEID]   8
+[ID]             15
+[TEMPLATEID]     8
 [ATTACKTYPE]     FIRE
 [HITPOINTS]      28
-[ROOM]         7
+[ROOM]           7
 
-[ID]     16
-[TEMPLATEID]   8
+
+[ID]             16
+[TEMPLATEID]     8
 [ATTACKTYPE]     GOLD
 [HITPOINTS]      35
-[ROOM]         7
+[ROOM]           7
 
 
-
-[ID]     17
-[TEMPLATEID]   8
+[ID]             17
+[TEMPLATEID]     8
 [ATTACKTYPE]     GOLD
 [HITPOINTS]      25
-[ROOM]         7
+[ROOM]           7
 
-[ID]     18
-[TEMPLATEID]   9
+
+[ID]             18
+[TEMPLATEID]     9
 [ATTACKTYPE]     FIRE
 [HITPOINTS]      28
-[ROOM]         7
+[ROOM]           7
 
-[ID]     19
-[TEMPLATEID]   9
+
+[ID]             19
+[TEMPLATEID]     9
 [ATTACKTYPE]     GOLD
 [HITPOINTS]      35
-[ROOM]         7
+[ROOM]           7
 
-[ID]     20
-[TEMPLATEID]   9
+
+[ID]             20
+[TEMPLATEID]     9
 [ATTACKTYPE]     GRASS
 [HITPOINTS]      30
-[ROOM]         7
+[ROOM]           7
 
-[ID]     21
-[TEMPLATEID]   9
+
+[ID]             21
+[TEMPLATEID]     9
 [ATTACKTYPE]     FIRE
 [HITPOINTS]      35
-[ROOM]         7
+[ROOM]           7
 
-[ID]     22
-[TEMPLATEID]   10
+
+[ID]             22
+[TEMPLATEID]     10
 [ATTACKTYPE]     GOLD
 [HITPOINTS]      20
-[ROOM]         11
+[ROOM]           11
 
-[ID]     23
-[TEMPLATEID]   10
+
+[ID]             23
+[TEMPLATEID]     10
 [ATTACKTYPE]     GRASS
 [HITPOINTS]      28
-[ROOM]         11
+[ROOM]           11
 
 
-[ID]     24
-[TEMPLATEID]   10
+[ID]             24
+[TEMPLATEID]     10
 [ATTACKTYPE]     FIRE
 [HITPOINTS]      15
-[ROOM]         11
+[ROOM]           11
 
-[ID]     25
-[TEMPLATEID]   10
+
+[ID]             25
+[TEMPLATEID]     10
 [ATTACKTYPE]     FIRE
 [HITPOINTS]      18
-[ROOM]         11
+[ROOM]           11
 
-[ID]     26
-[TEMPLATEID]   11
+
+[ID]             26
+[TEMPLATEID]     11
 [ATTACKTYPE]     GOLD
 [HITPOINTS]      7
-[ROOM]         1
+[ROOM]           1
 
-[ID]     27
-[TEMPLATEID]   11
+
+[ID]             27
+[TEMPLATEID]     11
 [ATTACKTYPE]     FIRE
 [HITPOINTS]      8
-[ROOM]         1
+[ROOM]           1
 
-[ID]     28
-[TEMPLATEID]   12
+
+[ID]             28
+[TEMPLATEID]     12
 [ATTACKTYPE]     GOLD
 [HITPOINTS]      5
-[ROOM]         2
+[ROOM]           2
 
-[ID]     29
-[TEMPLATEID]   12
+
+[ID]             29
+[TEMPLATEID]     12
 [ATTACKTYPE]     GRASS
 [HITPOINTS]      8
-[ROOM]         2
+[ROOM]           2
 
-[ID]     30
-[TEMPLATEID]   13
+
+[ID]             30
+[TEMPLATEID]     13
 [ATTACKTYPE]     FIRE
 [HITPOINTS]      10
-[ROOM]         1
+[ROOM]           1
 
-[ID]     31
-[TEMPLATEID]   13
+
+[ID]             31
+[TEMPLATEID]     13
 [ATTACKTYPE]     GOLD
 [HITPOINTS]      8
-[ROOM]         4
+[ROOM]           4
 
-[ID]     32
-[TEMPLATEID]   13
+
+[ID]             32
+[TEMPLATEID]     13
 [ATTACKTYPE]     GRASS
 [HITPOINTS]      9
-[ROOM]         4
+[ROOM]           4
 
-[ID]     33
-[TEMPLATEID]   14
+
+[ID]             33
+[TEMPLATEID]     14
 [ATTACKTYPE]     GOLD
 [HITPOINTS]      10
-[ROOM]         2
+[ROOM]           2
 
-[ID]     34
-[TEMPLATEID]   14
+
+[ID]             34
+[TEMPLATEID]     14
 [ATTACKTYPE]     FIRE
 [HITPOINTS]      13
-[ROOM]         2
+[ROOM]           2
 
-[ID]     35
-[TEMPLATEID]   14
-[ATTACKTYPE]    GOLD
+
+[ID]             35
+[TEMPLATEID]     14
+[ATTACKTYPE]     GOLD
 [HITPOINTS]      15
-[ROOM]         2
+[ROOM]           2
 
-[ID]     36
-[TEMPLATEID]   15
-[ATTACKTYPE]   GRASS
+
+[ID]             36
+[TEMPLATEID]     15
+[ATTACKTYPE]     GRASS
 [HITPOINTS]      15
-[ROOM]         1
+[ROOM]           1
 
-[ID]     37
-[TEMPLATEID]   15
+
+[ID]             37
+[TEMPLATEID]     15
 [ATTACKTYPE]     FIRE
 [HITPOINTS]      12
-[ROOM]         2
+[ROOM]           2
 
-[ID]     38
-[TEMPLATEID]   15
+
+[ID]             38
+[TEMPLATEID]     15
 [ATTACKTYPE]     FIRE
 [HITPOINTS]      11
-[ROOM]         3
+[ROOM]           3
 
-[ID]     39
-[TEMPLATEID]   15
-[ATTACKTYPE]    GOLD
+
+[ID]             39
+[TEMPLATEID]     15
+[ATTACKTYPE]     GOLD
 [HITPOINTS]      17
-[ROOM]         4
+[ROOM]           4
 
-[ID]     40
-[TEMPLATEID]   15
+
+[ID]             40
+[TEMPLATEID]     15
 [ATTACKTYPE]     GRASS
 [HITPOINTS]      12
-[ROOM]         5
+[ROOM]           5
 
-
-
-
-
-
-
-
-
-
-
-
-
- 
 
