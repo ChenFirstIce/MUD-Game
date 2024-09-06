@@ -74,7 +74,7 @@
 [DESC]        0
 [TYPE]      STORE
 [DATA]      8
-[DIRECTE]     9 07 0
+[DIRECTE]     9 0 7 0
 [ENEMY]       0     
 [MAXENEMY]        0
 
