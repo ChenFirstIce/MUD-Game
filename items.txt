@@ -2,9 +2,9 @@
 [NAME]            魔杖
 [ENGLISHNAME]     Magic wand
 [TYPE]            WEAPON
-[MIN]               4
-[MAX]               7
-[PRICE]              100
+[MIN]               10
+[MAX]               20
+[PRICE]              20
 [MAXHITPOINTS]      0
 [ATTACK]             7
 [CRITING]             2
@@ -17,7 +17,7 @@
 [TYPE]            WEAPON
 [MIN]               4
 [MAX]               10
-[PRICE]              200
+[PRICE]              30
 [MAXHITPOINTS]      10
 [ATTACK]             8
 [CRITING]             3
@@ -28,9 +28,9 @@
 [NAME]           铁剑
 [ENGLISHNAME]   Iron Sword
 [TYPE]            WEAPON
-[MIN]               5
-[MAX]               14
-[PRICE]              150
+[MIN]               20
+[MAX]               35
+[PRICE]              40
 [MAXHITPOINTS]       0
 [ATTACK]             10
 [CRITING]             4
@@ -41,9 +41,9 @@
 [NAME]            UZI
 [ENGLISHNAME]     UZI
 [TYPE]            WEAPON
-[MIN]               6
-[MAX]               17
-[PRICE]              200
+[MIN]               25
+[MAX]               30
+[PRICE]              50
 [MAXHITPOINTS]       0
 [ATTACK]             8
 [CRITING]             3
@@ -54,9 +54,9 @@
 [NAME]          火之法杖
 [ENGLISHNAME]   Staff of Fire
 [TYPE]            WEAPON
-[MIN]               10
-[MAX]               25
-[PRICE]              250
+[MIN]               25
+[MAX]               40
+[PRICE]              55
 [MAXHITPOINTS]       10
 [ATTACK]             18
 [CRITING]             4
@@ -67,9 +67,9 @@
 [NAME]           SCAR突击步枪
 [ENGLISHNAME]    SCAR assault rifle
 [TYPE]              WEAPON
-[MIN]               15
-[MAX]               25
-[PRICE]              300
+[MIN]               45
+[MAX]               60
+[PRICE]              70
 [MAXHITPOINTS]      0
 [ATTACK]             30
 [CRITING]             4
@@ -80,9 +80,9 @@
 [NAME]              RPD轻机枪
 [ENGLISHNAME]    RPD light machine gun
 [TYPE]               WEAPON
-[MIN]               15
-[MAX]               25
-[PRICE]              350
+[MIN]               30
+[MAX]               70
+[PRICE]              100
 [MAXHITPOINTS]       0
 [ATTACK]             40
 [CRITING]             3
@@ -95,7 +95,7 @@
 [TYPE]                  ARMOR
 [MIN]               0
 [MAX]               0
-[PRICE]              200
+[PRICE]              75
 [MAXHITPOINTS]       20
 [ATTACK]             0
 [CRITING]             4
@@ -109,7 +109,7 @@
 [TYPE]              EXP
 [MIN]               10
 [MAX]               20
-[PRICE]              50
+[PRICE]              30
 [MAXHITPOINTS]       0
 [ATTACK]             0
 [CRITING]             0
