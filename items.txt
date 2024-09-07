@@ -203,8 +203,8 @@
 [PRICE]              0
 [MAXHITPOINTS]      0
 [ATTACK]             20
-[CRITING]             30
-[DODGING]            20
+[CRITING]             3
+[DODGING]            5
 [SPEED]  0
 
 [ID]                17
@@ -216,8 +216,8 @@
 [PRICE]              20
 [MAXHITPOINTS]       0
 [ATTACK]             30
-[CRITING]             40
-[DODGING]            50
+[CRITING]             4
+[DODGING]            5
 [SPEED]  0
 
 [ID]                18
@@ -229,8 +229,8 @@
 [PRICE]              0
 [MAXHITPOINTS]       0
 [ATTACK]             50
-[CRITING]             30
-[DODGING]            20
+[CRITING]             3
+[DODGING]             7
 [SPEED]  0
 
 [ID]                19
@@ -268,8 +268,8 @@
 [PRICE]              0
 [MAXHITPOINTS]       0
 [ATTACK]             40
-[CRITING]             40
-[DODGING]            20
+[CRITING]             4
+[DODGING]            7
 [SPEED]  0
 
 [ID]                22
