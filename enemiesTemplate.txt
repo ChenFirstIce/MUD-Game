@@ -183,4 +183,49 @@
 [NATURE]           GOLD
 [LOOT]    12        100                             [ENDLOOT] 
 
+[ID]               16
+[NAME]         毕方
+[ENGLISHNAME]  Fang Bi
+[HITPOINTS]         100
+[DODGING]           20
+[STRIKEDAMAGE]      18
+[SPEED]             5
+[EXP]               40
+[WEAPON]           0
+[TARGET]           3
+[MONEYMIN]          70
+[MONEYMAX]         120
+[NATURE]           Fire
+[LOOT]    13        100                             [ENDLOOT] 
+
+[ID]               17
+[NAME]         诸怀
+[ENGLISHNAME] Huai Zhu
+[HITPOINTS]         110
+[DODGING]           20
+[STRIKEDAMAGE]      27
+[SPEED]             5
+[EXP]               30
+[WEAPON]           0
+[TARGET]           3
+[MONEYMIN]          40
+[MONEYMAX]         100
+[NATURE]           GOLD
+[LOOT]    14        100                             [ENDLOOT] 
+
+[ID]               18
+[NAME]         白泽
+[ENGLISHNAME] Ze Bai
+[HITPOINTS]         100
+[DODGING]           20
+[STRIKEDAMAGE]      20
+[SPEED]             5
+[EXP]               20
+[WEAPON]           1
+[TARGET]           2
+[MONEYMIN]          30
+[MONEYMAX]         100
+[NATURE]           GRASS
+[LOOT]    15        100                             [ENDLOOT] 
+
  
