@@ -253,7 +253,27 @@
 [ID]             40
 [TEMPLATEID]     15
 [ATTACKTYPE]     GRASS
-[HITPOINTS]      12
-[ROOM]           5
+[HITPOINTS]      120
+[ROOM]           11
 
+
+[ID]             41
+[TEMPLATEID]     16
+[ATTACKTYPE]     FIRE
+[HITPOINTS]      110
+[ROOM]           11
+
+
+[ID]             42
+[TEMPLATEID]     17
+[ATTACKTYPE]     GOLD
+[HITPOINTS]      17
+[ROOM]           11
+
+
+[ID]             43
+[TEMPLATEID]     18
+[ATTACKTYPE]     GRASS
+[HITPOINTS]      120
+[ROOM]           11
 
