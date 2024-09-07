@@ -12,7 +12,7 @@
 
 [ROOMID]  3
 [ITEMS]        9  0
-[ENEMY]           38  0
+[ENEMY]           34  0
 [MONEY] 0   
 [TASK]  1       
 
