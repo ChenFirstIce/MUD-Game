@@ -128,7 +128,7 @@
 [ENGLISHNAME]  The guy who is cheating on the exam
 [HITPOINTS]         20
 [DODGING]           2
-[STRIKEDAMAGE]      7
+[STRIKEDAMAGE]      4
 [SPEED]   10
 [EXP]               10
 [WEAPON]           0
@@ -158,7 +158,7 @@
 [ENGLISHNAME] A team member who responds to one thing but ignores three
 [HITPOINTS]         20
 [DODGING]           10
-[STRIKEDAMAGE]      6
+[STRIKEDAMAGE]      3
 [SPEED]   5
 [EXP]               10
 [WEAPON]           0
