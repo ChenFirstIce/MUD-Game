@@ -109,7 +109,7 @@
 [TYPE]              EXP
 [MIN]               10
 [MAX]               20
-[PRICE]              10
+[PRICE]              20
 [MAXHITPOINTS]       0
 [ATTACK]             0
 [CRITING]             0
@@ -174,7 +174,7 @@
 [TYPE]           HEALING
 [MIN]               10
 [MAX]               10
-[PRICE]              5
+[PRICE]              15
 [MAXHITPOINTS]       1
 [ATTACK]             0
 [CRITING]             0
