@@ -267,7 +267,7 @@
 [ID]             42
 [TEMPLATEID]     17
 [ATTACKTYPE]     GOLD
-[HITPOINTS]      17
+[HITPOINTS]      130
 [ROOM]           11
 
 
