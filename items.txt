@@ -148,13 +148,12 @@
 [TYPE]            HEALING
 [MIN]               15
 [MAX]               15
-[PRICE]              7.5
+[PRICE]              7
 [MAXHITPOINTS]       0
 [ATTACK]             0
 [CRITING]             0
 [DODGING]            0
 [SPEED]  0
-
 
 [ID]                13
 [NAME]            嘟嘟莲海鲜羹
@@ -169,7 +168,6 @@
 [DODGING]            0
 [SPEED]  0
 
-
 [ID]                14
 [NAME]          绝对不是下酒菜
 [ENGLISHNAME]   Definitely not an appetizer
@@ -182,7 +180,6 @@
 [CRITING]             0
 [DODGING]            0
 [SPEED]  0
-
 
 [ID]                15
 [NAME]            风神杂烩汤 
@@ -262,7 +259,6 @@
 [DODGING]            0
 [SPEED]  0
 
-
 [ID]                21
 [NAME]         三级怪的武器 
 [ENGLISHNAME]   The weapon of a third-class monster 
@@ -273,6 +269,7 @@
 [MAXHITPOINTS]       1000
 [ATTACK]             40
 [CRITING]             40
+[DODGING]            20
 [SPEED]  0
 
 [ID]                22
@@ -285,9 +282,9 @@
 [MAXHITPOINTS]       1000
 [ATTACK]             5
 [CRITING]             40
+[DODGING]            20
 [SPEED]  0
-[DODGING]            20
-[DODGING]            20
+
 
 
 

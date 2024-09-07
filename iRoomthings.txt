@@ -63,4 +63,4 @@
 [ITEMS]        9 9 9 9 0
 [ENEMY]     22 23 24 25 0    
 [MONEY] 200   
-[TASK]  1       
+[TASK]  1      
