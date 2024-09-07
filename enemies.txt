@@ -212,7 +212,7 @@
 [TEMPLATEID]     14
 [ATTACKTYPE]     FIRE
 [HITPOINTS]      13
-[ROOM]           2
+[ROOM]           3
 
 
 [ID]             35
