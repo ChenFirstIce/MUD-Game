@@ -7,8 +7,8 @@
 [PRICE]              10
 [MAXHITPOINTS]      0
 [ATTACK]             7
-[CRITING]             20
-[DODGING]            20
+[CRITING]             2
+[DODGING]            3
 [SPEED]  0
 
 [ID]               2          
@@ -20,9 +20,9 @@
 [PRICE]              20
 [MAXHITPOINTS]      10
 [ATTACK]             8
-[CRITING]             20
-[DODGING]            30
-[SPEED]  20
+[CRITING]             3
+[DODGING]            5
+[SPEED]  5
 
 [ID]                3          
 [NAME]           铁剑
@@ -33,9 +33,9 @@
 [PRICE]              15
 [MAXHITPOINTS]       0
 [ATTACK]             10
-[CRITING]             20
-[DODGING]            3
-[SPEED]  5
+[CRITING]             4
+[DODGING]            5
+[SPEED]  3
 
 [ID]                4
 [NAME]            UZI
@@ -46,9 +46,9 @@
 [PRICE]              20
 [MAXHITPOINTS]       0
 [ATTACK]             8
-[CRITING]             30
-[DODGING]            20
-[SPEED]  20
+[CRITING]             3
+[DODGING]            7
+[SPEED]  4
 
 [ID]                5
 [NAME]          火之法杖
@@ -59,9 +59,9 @@
 [PRICE]              25
 [MAXHITPOINTS]       10
 [ATTACK]             18
-[CRITING]             30
-[DODGING]            20
-[SPEED]  0
+[CRITING]             4
+[DODGING]            7
+[SPEED]  5
 
 [ID]                  6
 [NAME]           SCAR突击步枪
@@ -72,9 +72,9 @@
 [PRICE]              30
 [MAXHITPOINTS]      0
 [ATTACK]             30
-[CRITING]             30
-[DODGING]            40
-[SPEED]  0
+[CRITING]             4
+[DODGING]            8
+[SPEED]  2
 
 [ID]                    7
 [NAME]              RPD轻机枪
@@ -85,9 +85,9 @@
 [PRICE]              35
 [MAXHITPOINTS]       0
 [ATTACK]             40
-[CRITING]             30
-[DODGING]            20
-[SPEED]  0
+[CRITING]             3
+[DODGING]            10
+[SPEED]  4
 
 [ID]                       8
 [NAME]             圣光守护者铠甲
@@ -98,9 +98,9 @@
 [PRICE]              20
 [MAXHITPOINTS]       20
 [ATTACK]             0
-[CRITING]             0
+[CRITING]             4
 [DODGING]            0
-[SPEED]  20
+[SPEED]  9
 
 
 [ID]                     9           
@@ -281,8 +281,8 @@
 [PRICE]              0
 [MAXHITPOINTS]      2
 [ATTACK]             5
-[CRITING]             40
-[DODGING]            20
+[CRITING]             2
+[DODGING]            2
 [SPEED]  0
 
 
