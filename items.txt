@@ -285,6 +285,18 @@
 [DODGING]            2
 [SPEED]  0
 
+[ID]                23
+[NAME]          崂(山的)饭 
+[ENGLISHNAME]  The food of Lao Shan
+[TYPE]           HEALING
+[MIN]               20
+[MAX]             25
+[PRICE]              25
+[MAXHITPOINTS]      0
+[ATTACK]             0
+[CRITING]             0
+[DODGING]            0
+[SPEED]  0
 
 
 
