@@ -253,7 +253,7 @@
 [ID]             40
 [TEMPLATEID]     15
 [ATTACKTYPE]     GRASS
-[HITPOINTS]      120
+[HITPOINTS]      12
 [ROOM]           11
 
 
