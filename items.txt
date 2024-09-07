@@ -4,7 +4,7 @@
 [TYPE]            WEAPON
 [MIN]               4
 [MAX]               7
-[PRICE]              10
+[PRICE]              100
 [MAXHITPOINTS]      0
 [ATTACK]             7
 [CRITING]             2
@@ -17,7 +17,7 @@
 [TYPE]            WEAPON
 [MIN]               4
 [MAX]               10
-[PRICE]              20
+[PRICE]              200
 [MAXHITPOINTS]      10
 [ATTACK]             8
 [CRITING]             3
@@ -30,7 +30,7 @@
 [TYPE]            WEAPON
 [MIN]               5
 [MAX]               14
-[PRICE]              15
+[PRICE]              150
 [MAXHITPOINTS]       0
 [ATTACK]             10
 [CRITING]             4
@@ -43,7 +43,7 @@
 [TYPE]            WEAPON
 [MIN]               6
 [MAX]               17
-[PRICE]              20
+[PRICE]              200
 [MAXHITPOINTS]       0
 [ATTACK]             8
 [CRITING]             3
@@ -56,7 +56,7 @@
 [TYPE]            WEAPON
 [MIN]               10
 [MAX]               25
-[PRICE]              25
+[PRICE]              250
 [MAXHITPOINTS]       10
 [ATTACK]             18
 [CRITING]             4
@@ -69,7 +69,7 @@
 [TYPE]              WEAPON
 [MIN]               15
 [MAX]               25
-[PRICE]              30
+[PRICE]              300
 [MAXHITPOINTS]      0
 [ATTACK]             30
 [CRITING]             4
@@ -82,7 +82,7 @@
 [TYPE]               WEAPON
 [MIN]               15
 [MAX]               25
-[PRICE]              35
+[PRICE]              350
 [MAXHITPOINTS]       0
 [ATTACK]             40
 [CRITING]             3
@@ -95,7 +95,7 @@
 [TYPE]                  ARMOR
 [MIN]               0
 [MAX]               0
-[PRICE]              20
+[PRICE]              200
 [MAXHITPOINTS]       20
 [ATTACK]             0
 [CRITING]             4
@@ -109,7 +109,7 @@
 [TYPE]              EXP
 [MIN]               10
 [MAX]               20
-[PRICE]              20
+[PRICE]              50
 [MAXHITPOINTS]       0
 [ATTACK]             0
 [CRITING]             0
@@ -120,9 +120,9 @@
 [NAME]          甜甜花酿鸡 
 [ENGLISHNAME]   Sweet stuffed chicken 
 [TYPE]            HEALING
-[MIN]               20
-[MAX]               20
-[PRICE]              10
+[MIN]               10
+[MAX]               10
+[PRICE]              50
 [MAXHITPOINTS]       2
 [ATTACK]             0
 [CRITING]             0
@@ -135,7 +135,7 @@
 [TYPE]           HEALING
 [MIN]               10
 [MAX]               10
-[PRICE]              5
+[PRICE]              30
 [MAXHITPOINTS]       1
 [ATTACK]             0
 [CRITING]             0
@@ -148,7 +148,7 @@
 [TYPE]            HEALING
 [MIN]               15
 [MAX]               15
-[PRICE]              7
+[PRICE]              40
 [MAXHITPOINTS]       2
 [ATTACK]             0
 [CRITING]             0
@@ -161,7 +161,7 @@
 [TYPE]            HEALING
 [MIN]               30
 [MAX]               30
-[PRICE]              15
+[PRICE]              100
 [MAXHITPOINTS]       3
 [ATTACK]             0
 [CRITING]             0
@@ -174,7 +174,7 @@
 [TYPE]           HEALING
 [MIN]               10
 [MAX]               10
-[PRICE]              15
+[PRICE]              30
 [MAXHITPOINTS]       1
 [ATTACK]             0
 [CRITING]             0
@@ -187,7 +187,7 @@
 [TYPE]           HEALING
 [MIN]               40
 [MAX]               40
-[PRICE]              20
+[PRICE]              100
 [MAXHITPOINTS]       2
 [ATTACK]             0
 [CRITING]             0
