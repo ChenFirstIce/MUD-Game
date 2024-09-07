@@ -23,7 +23,7 @@
 [TYPE]       NORMAL
 [DATA]            0
 [DIRECTE]       2 0 0 4
-[ENEMY]           37  0
+[ENEMY]           34  0
 [MAXENEMY]         1
 
 
