@@ -143,7 +143,7 @@
 [ENGLISHNAME]  The petty thief who steals takeout
 [HITPOINTS]         30
 [DODGING]           20
-[STRIKEDAMAGE]      10
+[STRIKEDAMAGE]      5
 [SPEED]   10
 [EXP]               10
 [WEAPON]           0
@@ -157,8 +157,8 @@
 [NAME]         一应三不回的小组成员
 [ENGLISHNAME] A team member who responds to one thing but ignores three
 [HITPOINTS]         20
-[DODGING]           40
-[STRIKEDAMAGE]      10
+[DODGING]           10
+[STRIKEDAMAGE]      6
 [SPEED]   5
 [EXP]               10
 [WEAPON]           0
@@ -172,9 +172,9 @@
 [NAME]         黎盛
 [ENGLISHNAME] Sheng Li
 [HITPOINTS]         20
-[DODGING]           40
-[STRIKEDAMAGE]      5
-[SPEED]   5
+[DODGING]           20
+[STRIKEDAMAGE]      2
+[SPEED]             5
 [EXP]               10
 [WEAPON]           0
 [TARGET]           1
