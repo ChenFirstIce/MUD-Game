@@ -1,15 +1,15 @@
 [ID]             1
-[NAME]           ???
+[NAME]           é™†é™ˆ
 [ENGLISHNAME]    Chen Lu
 [ATTACKTYPE]     GRASS
 [EXPERIENCE]     20
 [LEVEL]          1
 [ROOM]           1
-[HITPOINTS]      176
+[HITPOINTS]      160
 [MHP]  160
 [ATTACK]  20
-[CRITING]  30
-[DODGING]  20
+[CRITING]  5
+[DODGING]  8
 [SPEED]  5
 [WEAPON]         0
 [ARMOR]          0
@@ -17,17 +17,17 @@
 [STATS]          1
 
 [ID]             2
-[NAME]           ?¡¤?
+[NAME]           é™ˆå‡¡
 [ENGLISHNAME]    Fan Chen 
 [ATTACKTYPE]     GOLD
 [EXPERIENCE]     0
 [LEVEL]          1
 [ROOM]           1
-[HITPOINTS]      160
-[MHP]  160
+[HITPOINTS]      140
+[MHP]  140
 [ATTACK]  25
-[CRITING]  30
-[DODGING]  20
+[CRITING]  5
+[DODGING]  9
 [SPEED]  4
 [WEAPON]         0
 [ARMOR]          0
@@ -35,7 +35,7 @@
 [STATS]          0
 
 [ID]             3
-[NAME]           ?¡À?
+[NAME]           é™ˆå†°
 [ENGLISHNAME]    Ice Chen 
 [ATTACKTYPE]     FIRE
 [EXPERIENCE]     0
@@ -44,11 +44,11 @@
 [HITPOINTS]      160
 [MHP]  160
 [ATTACK]  20
-[CRITING]  50
-[DODGING]  40
+[CRITING]  9
+[DODGING]  9
 [SPEED]  5
 [WEAPON]         0
 [ARMOR]          0
-[TARGET]         2
+[TARGET]         3
 [STATS]          0
 
